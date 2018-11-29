@@ -16,11 +16,7 @@ namespace AgendaMais.Classes.VOs
         private string tel_cel;
         private int id_funcionario;
         private string nome_funcionario;
-        private DateTime data;
-        private DateTime hora;
-        //private double valor_total;
-        //private int qtd_total_itens;
-        //private double desc_total;
+        private DateTime data_hora;
         private string obs;
         private char status;
 
@@ -64,33 +60,18 @@ namespace AgendaMais.Classes.VOs
                     id_funcionario = value;
             }
         }
-        public DateTime Data
+        public DateTime Data_hora
         {
-            get => data;
+            get => data_hora;
             set
             {
                 if (value == null)
-                    throw new Exception("Data é obrigatório.");
+                    throw new Exception("Data e hora é obrigatório.");
                 else
-                    data = value;
+                    data_hora = value;
             }
         }
-        public DateTime Hora
-        {
-            get => hora;
-            set
-            {
-                if (value == null)
-                    throw new Exception("Hora é obrigatório.");
-                else
-                    hora = value;
-            }
-        }
-        //public double Valor_total { get => valor_total; set => valor_total = value; }
-        //public int Qtd_total_itens { get => qtd_total_itens; set => qtd_total_itens = value; }
-        //public double Desc_total { get => desc_total; set => desc_total = value; }
         public string Obs { get => obs; set => obs = value; }
-        //public string[] Serv_prod { get => serv_prod; set => serv_prod = value; }
         public List<ProdutoVO> Itens { get => serv_prod; set => serv_prod = value; }
         public string Nome_cliente { get => nome_cliente; set => nome_cliente = value; }
         public string Tel_cel { get => tel_cel; set => tel_cel = value; }
@@ -107,6 +88,6 @@ namespace AgendaMais.Classes.VOs
             }
         }
 
-        
+
     }
 }

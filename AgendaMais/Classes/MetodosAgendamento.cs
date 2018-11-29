@@ -191,11 +191,11 @@ namespace AgendaMais.Classes
             listAgenda.Clear();
 
             // select agendamentos
-            listAgenda = AgendaDAO.GetRegistros(string.Format("where a.data between '{0}' and '{1}' and " +
+            listAgenda = AgendaDAO.GetRegistros(string.Format("where a.data_hora between '{0}' and '{1}' and " +
                                                               "(a.status='{2}' or a.status='{3}' or a.status='{4}') and " +
                                                               "f.id = {5} " +
-                                                              "order by a.data, a.hora",
-                                                              data_ini.ToString("dd/MM/yyyy"), data_fim.ToString("dd/MM/yyyy"), status1, status2, status3, id_funcionario));
+                                                              "order by a.data_hora",
+                                                              data_ini.ToString(), data_fim.ToString(), status1, status2, status3, id_funcionario));
         }
 
         /// <summary>
@@ -214,8 +214,8 @@ namespace AgendaMais.Classes
                 for (int i = 0; i < listAgenda.Count; i++)
                 {
 
-                    listPanAgendamentos.Add(ConstrutorAgendamentosFuncionario(listAgenda[i].Data,
-                                                                              listAgenda[i].Hora.ToString("HH:mm"),
+                    listPanAgendamentos.Add(ConstrutorAgendamentosFuncionario(listAgenda[i].Data_hora,
+                                                                              listAgenda[i].Data_hora.ToString("HH:mm"),
                                                                               listAgenda[i].Nome_cliente,
                                                                               listAgenda[i].Itens,
                                                                               flpAgendaFuncionario.Controls.Count));
@@ -337,12 +337,15 @@ namespace AgendaMais.Classes
 
             foreach (ItemVendaVO item in listItemVenda)
             {
-                ProdutoVO p = new ProdutoVO();
-                p = ProdutoDAO.GetRegistroPorId(item.Id_produto);
-                listItens.Add(p);
-                TextBox txtItem = ConstrutorProdutoOuItem(flpItens.Controls.Count, p.Descricao, p.Vl_venda, ProdutoOuItem.item);
-                flpItens.Controls.Add(txtItem);
-                listTxtItens.Add(txtItem);
+                for (int i = 0; i < item.Quantidade; i++)
+                {
+                    ProdutoVO p = new ProdutoVO();
+                    p = ProdutoDAO.GetRegistroPorId(item.Id_produto);
+                    listItens.Add(p);
+                    TextBox txtItem = ConstrutorProdutoOuItem(flpItens.Controls.Count, p.Descricao, p.Vl_venda, ProdutoOuItem.item);
+                    flpItens.Controls.Add(txtItem);
+                    listTxtItens.Add(txtItem);
+                }
             }
         }
         #endregion

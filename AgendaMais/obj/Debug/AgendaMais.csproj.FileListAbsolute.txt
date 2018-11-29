@@ -411,3 +411,23 @@ D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\A
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.exe
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.pdb
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.Telas.Cadastros.frCadastros.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\AgendaMais.exe.config
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Npgsql.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.Telas.Cadastros.frCadastros.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.pdb

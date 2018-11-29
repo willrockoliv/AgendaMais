@@ -2,6 +2,7 @@
 using AgendaMais.Classes.DAOs;
 using AgendaMais.Classes.VOs;
 using AgendaMais.Classes.Windows;
+using AgendaMais.Properties;
 using AgendaMais.Telas.Cadastros;
 using System;
 using System.Collections.Generic;
@@ -70,16 +71,30 @@ namespace AgendaMais
         }
         #endregion
 
+        void ValidaPastasDoSistema()
+        {
+            if (!Directory.Exists(mainPath + "\\BD"))
+            {
+                Directory.CreateDirectory(mainPath + "\\BD");
+                Directory.CreateDirectory(mainPath + "\\BD\\imagens");
+            }
+            else if (!Directory.Exists(mainPath + "\\BD\\imagens"))
+                Directory.CreateDirectory(mainPath + "\\BD\\imagens");
+        }
+
         #region Load e Initialize
         public frPrincipal()
         {
             //ValidaServicoPostgreSQL();
+            ValidaPastasDoSistema();
             InitializeComponent();
             try
             {
                 using (new Carregando("Só um momentinho\nJá iremos iniciar..."))
                 {
-                    metodosAgenda.Atualiza_listAgenda(DateTime.Now, DateTime.Now, 'P', 'P', 'P');
+                    metodosAgenda.Atualiza_listAgenda(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
+                                                      Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 23:59:59"),
+                                                      'P', 'P', 'P');
                     if (metodosAgenda.listAgenda != null)
                     {
                         metodosAgenda.ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.hoje);
@@ -204,7 +219,9 @@ namespace AgendaMais
             {
                 using (new Carregando())
                 {
-                    metodosAgenda.Atualiza_listAgenda(DateTime.Now, DateTime.Now, 'P', 'P', 'P');
+                    metodosAgenda.Atualiza_listAgenda(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
+                                                      Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 23:59:59"),
+                                                      'P', 'P', 'P');
                     metodosAgenda.ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.hoje);
                     metodosAgenda.AtualizaStatus(flpAgendamentos);
                 }
@@ -213,24 +230,12 @@ namespace AgendaMais
 
         private void ptbAgendamento_MouseHover(object sender, EventArgs e)
         {
-            try
-            {
-                ptbAgendamento.Image = Image.FromFile(mainPath + "\\BD\\calendary.png");
-            }
-            catch
-            {
-            }
+            ptbAgendamento.Image = Resources.calendary;
         }
 
         private void ptbAgendamento_MouseLeave(object sender, EventArgs e)
         {
-            try
-            {
-                ptbAgendamento.Image = Image.FromFile(mainPath + "\\BD\\calendary-transparency.png");
-            }
-            catch
-            {
-            }
+            ptbAgendamento.Image = Resources.calendary_transparency;
         }
         #endregion
 
@@ -243,24 +248,12 @@ namespace AgendaMais
 
         private void ptbClientes_MouseHover(object sender, EventArgs e)
         {
-            try
-            {
-                ptbClientes.Image = Image.FromFile(mainPath + "\\BD\\peaple.png");
-            }
-            catch
-            {
-            }
+            ptbClientes.Image = Resources.peaple__4_;
         }
 
         private void ptbClientes_MouseLeave(object sender, EventArgs e)
         {
-            try
-            {
-                ptbClientes.Image = Image.FromFile(mainPath + "\\BD\\peaple-transparency.png");
-            }
-            catch
-            {
-            }
+            ptbClientes.Image = Resources.peaple__4__transparency;
         }
         #endregion
 

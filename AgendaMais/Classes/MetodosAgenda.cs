@@ -334,10 +334,10 @@ namespace AgendaMais.Classes
             listAgenda = new List<AgendaVO>();
 
             // select agendamentos
-            listAgenda = AgendaDAO.GetRegistros(String.Format("where a.data between '{0}' and '{1}' and " +
+            listAgenda = AgendaDAO.GetRegistros(String.Format("where a.data_hora between '{0}' and '{1}' and " +
                                                               "(a.status='{2}' or a.status='{3}' or a.status='{4}') " +
-                                                              "order by a.data, a.hora",
-                                                              data_ini.ToString("dd/MM/yyyy"), data_fim.ToString("dd/MM/yyyy"), status1, status2, status3));
+                                                              "order by a.data_hora",
+                                                              data_ini.ToString(), data_fim.ToString(), status1, status2, status3));
         }
 
         public void ExibeAgendamentos(FlowLayoutPanel flpAgendamentos, Enum_TipoExibicaoAgenda p_Enum_TipoExibicaoAgenda)
@@ -350,7 +350,7 @@ namespace AgendaMais.Classes
                 for (int i = 0; i < listAgenda.Count; i++)
                 {
                     if (p_Enum_TipoExibicaoAgenda == Enum_TipoExibicaoAgenda.hoje)
-                        listPanAgendamentos.Add(ConstrutorAgendamentos(listAgenda[i].Hora.ToString("HH:mm"),
+                        listPanAgendamentos.Add(ConstrutorAgendamentos(listAgenda[i].Data_hora.ToString("HH:mm"),
                                                                        listAgenda[i].Nome_funcionario,
                                                                        listAgenda[i].Nome_cliente,
                                                                        listAgenda[i].Tel_cel,
@@ -358,8 +358,8 @@ namespace AgendaMais.Classes
                     else if (p_Enum_TipoExibicaoAgenda == Enum_TipoExibicaoAgenda.semana)
                         listPanAgendamentos.Add(ConstrutorAgendamentos(Enum_TipoExibicaoAgenda.semana,
                                                                        (EnumStatusAgendamento)(listAgenda[i].Status),
-                                                                       listAgenda[i].Data.ToString("dd/MM/yyyy"),
-                                                                       listAgenda[i].Hora.ToString("HH:mm"),
+                                                                       listAgenda[i].Data_hora.ToString("dd/MM/yyyy"),
+                                                                       listAgenda[i].Data_hora.ToString("HH:mm"),
                                                                        listAgenda[i].Nome_funcionario,
                                                                        listAgenda[i].Nome_cliente,
                                                                        listAgenda[i].Tel_cel,
@@ -367,8 +367,8 @@ namespace AgendaMais.Classes
                     else if (p_Enum_TipoExibicaoAgenda == Enum_TipoExibicaoAgenda.mes)
                         listPanAgendamentos.Add(ConstrutorAgendamentos(Enum_TipoExibicaoAgenda.mes,
                                                                        (EnumStatusAgendamento)(listAgenda[i].Status),
-                                                                       listAgenda[i].Data.ToString("dd/MM/yyyy"),
-                                                                       listAgenda[i].Hora.ToString("HH:mm"),
+                                                                       listAgenda[i].Data_hora.ToString("dd/MM/yyyy"),
+                                                                       listAgenda[i].Data_hora.ToString("HH:mm"),
                                                                        listAgenda[i].Nome_funcionario,
                                                                        listAgenda[i].Nome_cliente,
                                                                        listAgenda[i].Tel_cel,
@@ -436,13 +436,16 @@ namespace AgendaMais.Classes
 
             frAgendamento frAgendamento = new frAgendamento(listAgenda[posicao]);
             frAgendamento.ShowDialog();
+
             if (frAgendamento.alteracao)
             {
                 FlowLayoutPanel flpAgendamentos = (FlowLayoutPanel)(panAgendamento.FindForm().Controls.Find("flpAgendamentos", false)[0]);
                 AtualizaStatus(flpAgendamentos);
                 if (panAgendamento.FindForm().Name == "frPrincipal")
                 {
-                    Atualiza_listAgenda(DateTime.Now, DateTime.Now, 'P', 'P', 'P');
+                    Atualiza_listAgenda(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
+                                        Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 23:59:59"),
+                                        'P', 'P', 'P');
                     ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.hoje);
                 }
                 else if (panAgendamento.FindForm().Name == "frAgendados")
@@ -452,12 +455,6 @@ namespace AgendaMais.Classes
                         frAgendados.AtualizaTodasAgendas();
                         ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.semana);
                     }
-                    //else if ((panAgendamento.FindForm().Controls.Find("panMes", false)) != null)
-                    //{
-                    //    frAgendados frAgendados = panAgendamento.FindForm() as frAgendados;
-                    //    frAgendados.AtualizaAgendaMeses();
-                    //    ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.mes);
-                    //}
             }
         }
 

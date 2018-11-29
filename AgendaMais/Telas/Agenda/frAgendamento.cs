@@ -17,7 +17,6 @@ namespace AgendaMais
 {
     public partial class frAgendamento : Form
     {
-
         #region Variáveis Globais
         public bool alteracao = false;
         private AgendaVO agendaVO = new AgendaVO();
@@ -220,8 +219,8 @@ namespace AgendaMais
                 txtBairro.Text = clienteVO.Bairro.ToString();
                 txtCidade.Text = clienteVO.Cidade.ToString();
                 txtComplemento.Text = clienteVO.Complemento.ToString();
-                dtpData.Text = agendaVO.Data.ToString("dd/MM/yyyy");
-                mkbHorario.Text = agendaVO.Hora.ToString("HH:mm");
+                dtpData.Text = agendaVO.Data_hora.ToString("dd/MM/yyyy");
+                mkbHorario.Text = agendaVO.Data_hora.ToString("HH:mm");
             }
 
             for (int i = 0; i < listFuncionarioVO.Count; i++)
@@ -325,7 +324,10 @@ namespace AgendaMais
             using (new Carregando())
             {
                 MetodosAgendamento m = new MetodosAgendamento();
-                m.Atualiza_listAgendaPorFuncionario(DateTime.Now, DateTime.Now.AddDays(6), 'P', 'P', 'P', id_funcionario);
+                m.Atualiza_listAgendaPorFuncionario(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
+                                                    Convert.ToDateTime(DateTime.Now.AddDays(6).ToString("dd/MM/yyyy") + " 23:59:59"),
+                                                    'P', 'P', 'P',
+                                                    id_funcionario);
                 m.ExibeAgendamentosFuncionario(flpAgendaFuncionario);
             }
         }
@@ -768,8 +770,7 @@ namespace AgendaMais
                     agendaVO.Id_cliente = clienteVO.Id;
                     agendaVO.Id_funcionario = funcionarioVOSelecionado.Id;
                     agendaVO.Id_venda = Convert.ToInt32(AgendaDAO.ExecutaSelect("select id from agenda order by id desc limit 1").Rows[0]["id"]) + 1;
-                    agendaVO.Data = dtpData.Value;
-                    agendaVO.Hora = Convert.ToDateTime(mkbHorario.Text);
+                    agendaVO.Data_hora = Convert.ToDateTime(dtpData.Text + " " + mkbHorario.Text);
                     agendaVO.Obs = "";
                     agendaVO.Status = 'P';
                     agendaVO.Itens = metodosAgendamento.listItens;

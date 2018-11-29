@@ -1716,21 +1716,47 @@ namespace AgendaMais
         {
             using (new Carregando())
             {
-                agendaJaneiro.Atualiza_listAgenda(Convert.ToDateTime("01/01/" + DateTime.Now.Year), Convert.ToDateTime("31/01/" + DateTime.Now.Year), 'P', 'C', 'N');
+                agendaJaneiro.Atualiza_listAgenda(Convert.ToDateTime("01/01/" + DateTime.Now.Year + " 00:00:00"),
+                                                  Convert.ToDateTime("31/01/" + DateTime.Now.Year + " 23:59:59"),
+                                                  'P', 'C', 'N');
                 if (AnoBissexto(DateTime.Now))
-                    agendaFevereiro.Atualiza_listAgenda(Convert.ToDateTime("01/02/" + DateTime.Now.Year), Convert.ToDateTime("29/02/" + DateTime.Now.Year), 'P', 'C', 'N');
+                    agendaFevereiro.Atualiza_listAgenda(Convert.ToDateTime("01/02/" + DateTime.Now.Year + " 00:00:00"),
+                                                        Convert.ToDateTime("29/02/" + DateTime.Now.Year + " 23:59:59"),
+                                                        'P', 'C', 'N');
                 else
-                    agendaFevereiro.Atualiza_listAgenda(Convert.ToDateTime("01/02/" + DateTime.Now.Year), Convert.ToDateTime("28/02/" + DateTime.Now.Year), 'P', 'C', 'N');
-                agendaMarco.Atualiza_listAgenda(Convert.ToDateTime("01/03/" + DateTime.Now.Year), Convert.ToDateTime("31/03/" + DateTime.Now.Year), 'P', 'C', 'N');
-                agendaAbril.Atualiza_listAgenda(Convert.ToDateTime("01/04/" + DateTime.Now.Year), Convert.ToDateTime("30/04/" + DateTime.Now.Year), 'P', 'C', 'N');
-                agendaMaio.Atualiza_listAgenda(Convert.ToDateTime("01/05/" + DateTime.Now.Year), Convert.ToDateTime("31/05/" + DateTime.Now.Year), 'P', 'C', 'N');
-                agendaJunho.Atualiza_listAgenda(Convert.ToDateTime("01/06/" + DateTime.Now.Year), Convert.ToDateTime("30/06/" + DateTime.Now.Year), 'P', 'C', 'N');
-                agendaJulho.Atualiza_listAgenda(Convert.ToDateTime("01/07/" + DateTime.Now.Year), Convert.ToDateTime("31/07/" + DateTime.Now.Year), 'P', 'C', 'N');
-                agendaAgosto.Atualiza_listAgenda(Convert.ToDateTime("01/08/" + DateTime.Now.Year), Convert.ToDateTime("31/08/" + DateTime.Now.Year), 'P', 'C', 'N');
-                agendaSetembro.Atualiza_listAgenda(Convert.ToDateTime("01/09/" + DateTime.Now.Year), Convert.ToDateTime("30/09/" + DateTime.Now.Year), 'P', 'C', 'N');
-                agendaOutubro.Atualiza_listAgenda(Convert.ToDateTime("01/10/" + DateTime.Now.Year), Convert.ToDateTime("31/10/" + DateTime.Now.Year), 'P', 'C', 'N');
-                agendaNovembro.Atualiza_listAgenda(Convert.ToDateTime("01/11/" + DateTime.Now.Year), Convert.ToDateTime("30/11/" + DateTime.Now.Year), 'P', 'C', 'N');
-                agendaDezembro.Atualiza_listAgenda(Convert.ToDateTime("01/12/" + DateTime.Now.Year), Convert.ToDateTime("31/12/" + DateTime.Now.Year), 'P', 'C', 'N');
+                    agendaFevereiro.Atualiza_listAgenda(Convert.ToDateTime("01/02/" + DateTime.Now.Year + " 00:00:00"),
+                                                        Convert.ToDateTime("28/02/" + DateTime.Now.Year + " 23:59:59"),
+                                                        'P', 'C', 'N');
+                agendaMarco.Atualiza_listAgenda(Convert.ToDateTime("01/03/" + DateTime.Now.Year + " 00:00:00"),
+                                                Convert.ToDateTime("31/03/" + DateTime.Now.Year + " 23:59:59"),
+                                                'P', 'C', 'N');
+                agendaAbril.Atualiza_listAgenda(Convert.ToDateTime("01/04/" + DateTime.Now.Year + " 00:00:00"),
+                                                Convert.ToDateTime("30/04/" + DateTime.Now.Year + " 23:59:59"),
+                                                'P', 'C', 'N');
+                agendaMaio.Atualiza_listAgenda(Convert.ToDateTime("01/05/" + DateTime.Now.Year + " 00:00:00"),
+                                               Convert.ToDateTime("31/05/" + DateTime.Now.Year + " 23:59:59"),
+                                               'P', 'C', 'N');
+                agendaJunho.Atualiza_listAgenda(Convert.ToDateTime("01/06/" + DateTime.Now.Year + " 00:00:00"),
+                                                Convert.ToDateTime("30/06/" + DateTime.Now.Year + " 23:59:59"),
+                                                'P', 'C', 'N');
+                agendaJulho.Atualiza_listAgenda(Convert.ToDateTime("01/07/" + DateTime.Now.Year + " 00:00:00"),
+                                                Convert.ToDateTime("31/07/" + DateTime.Now.Year + " 23:59:59"),
+                                                'P', 'C', 'N');
+                agendaAgosto.Atualiza_listAgenda(Convert.ToDateTime("01/08/" + DateTime.Now.Year + " 00:00:00"),
+                                                 Convert.ToDateTime("31/08/" + DateTime.Now.Year + " 23:59:59"),
+                                                 'P', 'C', 'N');
+                agendaSetembro.Atualiza_listAgenda(Convert.ToDateTime("01/09/" + DateTime.Now.Year + " 00:00:00"),
+                                                   Convert.ToDateTime("30/09/" + DateTime.Now.Year + " 23:59:59"),
+                                                   'P', 'C', 'N');
+                agendaOutubro.Atualiza_listAgenda(Convert.ToDateTime("01/10/" + DateTime.Now.Year + " 00:00:00"),
+                                                  Convert.ToDateTime("31/10/" + DateTime.Now.Year + " 23:59:59"),
+                                                  'P', 'C', 'N');
+                agendaNovembro.Atualiza_listAgenda(Convert.ToDateTime("01/11/" + DateTime.Now.Year + " 00:00:00"),
+                                                   Convert.ToDateTime("30/11/" + DateTime.Now.Year + " 23:59:59"),
+                                                   'P', 'C', 'N');
+                agendaDezembro.Atualiza_listAgenda(Convert.ToDateTime("01/12/" + DateTime.Now.Year + " 00:00:00"),
+                                                   Convert.ToDateTime("31/12/" + DateTime.Now.Year + " 23:59:59"),
+                                                   'P', 'C', 'N');
             }
 
             agendaMes[0] = agendaJaneiro;
@@ -1893,7 +1919,7 @@ namespace AgendaMais
             agendaDezembro.ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.mes);
         }
 
-        
+
         #endregion
 
         #endregion

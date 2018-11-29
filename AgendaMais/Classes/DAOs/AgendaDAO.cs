@@ -24,15 +24,15 @@ namespace AgendaMais.Classes.DAOs
                 agendaVO.Tel_cel = row["tel_cel"].ToString();
                 agendaVO.Id_funcionario = Convert.ToInt32(row["id_funcionario"]);
                 agendaVO.Nome_funcionario = row["nome_funcionario"].ToString();
-                agendaVO.Data = Convert.ToDateTime(row["data"]);
-                agendaVO.Hora = Convert.ToDateTime(row["hora"]);
+                agendaVO.Data_hora = Convert.ToDateTime(row["data_hora"]);
                 agendaVO.Obs = row["obs"].ToString();
                 agendaVO.Status = Convert.ToChar(row["status"]);
 
                 List<ItemVendaVO> listItemVendaVO = ItemVendaDAO.GetRegistroPorIdVenda(agendaVO.Id_venda);
                 List<ProdutoVO> listProdutoVO = new List<ProdutoVO>();
                 foreach (ItemVendaVO item in listItemVendaVO)
-                    listProdutoVO.Add(ProdutoDAO.GetRegistroPorId(item.Id_produto));
+                    for (int i = 0; i < item.Quantidade; i++)
+                        listProdutoVO.Add(ProdutoDAO.GetRegistroPorId(item.Id_produto));
 
                 agendaVO.Itens = listProdutoVO;
 
@@ -74,7 +74,7 @@ namespace AgendaMais.Classes.DAOs
                          "from agenda a " +
                          "inner join cliente c on a.id_cliente=c.id " +
                          "inner join funcionario f on a.id_funcionario=f.id " +
-                         "order by a.data, a.hora";
+                         "order by a.data_hora";
             return MontaListVO(DAO.ExecutaSelect(sql));
         }
 
@@ -102,12 +102,13 @@ namespace AgendaMais.Classes.DAOs
         {
             #region  Monta VendaVO
             VendaVO vendaVO = new VendaVO();
-            //vendaVO.Id = agendaVO.Id;
             foreach (ProdutoVO item in agendaVO.Itens)
+            {
                 vendaVO.Valor += item.Vl_venda;
+                vendaVO.Custo += item.Vl_custo;
+            }
             vendaVO.Desconto = 0;
-            vendaVO.Data = agendaVO.Data;
-            vendaVO.Hora = agendaVO.Hora;
+            vendaVO.Data_hora = agendaVO.Data_hora;
             #endregion
 
             #region Monta ItensVendaVO
@@ -141,22 +142,21 @@ namespace AgendaMais.Classes.DAOs
 
             string insert_venda = "Insert Into venda(" +
                                      "valor," +
+                                     "custo," +
                                      "desconto," +
-                                     "data," +
-                                     "hora) " +
+                                     "data_hora) " +
                                   "Values(" +
                                      vendaVO.Valor.ToString().Replace(',', '.') + "," +
+                                     vendaVO.Custo.ToString().Replace(',', '.') + "," +
                                      vendaVO.Desconto.ToString().Replace(',', '.') + "," +
-                                     "'" + vendaVO.Data + "'," +
-                                     "'" + vendaVO.Hora + "'" +
+                                     "'" + vendaVO.Data_hora + "'" +
                                   ");";
 
             string insert_agenda = "Insert Into agenda(" +
                                       "id_venda," +
                                       "id_cliente," +
                                       "id_funcionario," +
-                                      "data," +
-                                      "hora," +
+                                      "data_hora," +
                                       "obs," +
                                       "status" +
                                    ")" +
@@ -164,8 +164,7 @@ namespace AgendaMais.Classes.DAOs
                                       agendaVO.Id_venda + "," +
                                       agendaVO.Id_cliente + "," +
                                       agendaVO.Id_funcionario + "," +
-                                      "'" + agendaVO.Data + "'," +
-                                      "'" + agendaVO.Hora + "'," +
+                                      "'" + agendaVO.Data_hora + "'," +
                                       "'" + agendaVO.Obs + "'," +
                                       "'" + agendaVO.Status + "'" +
                                    ");";
@@ -245,8 +244,7 @@ namespace AgendaMais.Classes.DAOs
             foreach (ProdutoVO item in agendaVO.Itens)
                 vendaVO.Valor += item.Vl_venda;
             vendaVO.Desconto = 0;
-            vendaVO.Data = agendaVO.Data;
-            vendaVO.Hora = agendaVO.Hora;
+            vendaVO.Data_hora = agendaVO.Data_hora;
             #endregion
 
             #region Monta ItensVendaVO
@@ -282,18 +280,17 @@ namespace AgendaMais.Classes.DAOs
 
             string update_venda = "UPDATE venda SET " +
                                   "valor=" + vendaVO.Valor.ToString().Replace(',', '.') + "," +
+                                  "custo=" + vendaVO.Custo.ToString().Replace(',', '.') + "," +
                                   "desconto=" + vendaVO.Desconto.ToString().Replace(',', '.') + "," +
-                                  "data='" + vendaVO.Data + "'," +
-                                  "hora='" + vendaVO.Hora + "' " +
-                                  "WHERE id=" + vendaVO.Id;
+                                  "data_hora='" + vendaVO.Data_hora + "'" +
+                                  " WHERE id=" + vendaVO.Id;
             list_sql.Add(update_venda);
 
             string update_agenda = "Update agenda " +
                                    "Set id_venda=" + agendaVO.Id_venda + "," +
                                        "id_cliente=" + agendaVO.Id_cliente + "," +
                                        "id_funcionario=" + agendaVO.Id_funcionario + "," +
-                                       "data='" + agendaVO.Data + "'" + "," +
-                                       "hora='" + agendaVO.Hora + "'" + "," +
+                                       "data_hora='" + agendaVO.Data_hora + "'" + "," +
                                        "obs='" + agendaVO.Obs + "'" + "," +
                                        "status='" + agendaVO.Status + "'" +
                                    "where id=" + agendaVO.Id;

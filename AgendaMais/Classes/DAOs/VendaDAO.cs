@@ -17,9 +17,9 @@ namespace AgendaMais.Classes.DAOs
                 VendaVO vendaVO = new VendaVO();
                 vendaVO.Id = Convert.ToInt32(row["id"]);
                 vendaVO.Valor = Convert.ToDouble(row["valor"]);
+                vendaVO.Custo = Convert.ToDouble(row["custo"]);
                 vendaVO.Desconto = Convert.ToDouble(row["desconto"]);
-                vendaVO.Data = Convert.ToDateTime(row["data"]);
-                vendaVO.Hora = Convert.ToDateTime(row["hora"]);
+                vendaVO.Data_hora = Convert.ToDateTime(row["data_hora"]);
                 return vendaVO;
             }
             else
@@ -58,14 +58,15 @@ namespace AgendaMais.Classes.DAOs
         {
             string sql = "Insert Into venda(" +
                             "valor," +
+                            "custo," +
                             "desconto," +
-                            "data," +
-                            "hora) " +
+                            "data_hora" +
+                         ")" +
                          "Values(" +
                             venda.Valor + "," +
+                            venda.Custo + "," +
                             venda.Desconto + "," +
-                            "'" + venda.Data + "'," +
-                            "'" + venda.Hora + "'" +
+                            "'" + venda.Data_hora + "'," +
                          ")";
             ExecutaSQL(sql);
         }
@@ -73,11 +74,12 @@ namespace AgendaMais.Classes.DAOs
         public static void AtualizarRegistro(VendaVO venda)
         {
             string sql = "Update venda " +
-                         "Set valor=" + venda.Valor +
-                             "desconto=" + venda.Desconto +
-                             "data='" + venda.Data + "'" +
-                             "hora='" + venda.Hora + "'" +
-                         "where id=" + venda.Id;
+                         "Set " +
+                            "valor=" + venda.Valor + "," +
+                            "custo=" + venda.Custo + "," +
+                            "desconto=" + venda.Desconto + "," +
+                            "data_hora='" + venda.Data_hora + "'" +
+                         " where id=" + venda.Id;
             ExecutaSQL(sql);
         }
 

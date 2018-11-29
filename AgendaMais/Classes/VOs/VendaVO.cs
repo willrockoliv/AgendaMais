@@ -10,9 +10,9 @@ namespace AgendaMais.Classes.VOs
     {
         private int id;
         private double valor;
+        private double custo;
         private double desconto;
-        private DateTime data;
-        private DateTime hora;
+        private DateTime data_hora;
 
         public int Id
         {
@@ -26,8 +26,18 @@ namespace AgendaMais.Classes.VOs
             }
         }
         public double Valor { get => Math.Round(valor, 2); set => valor = Math.Round(value, 2); }
+        public double Custo { get => Math.Round(custo, 2); set => custo = Math.Round(value, 2); }
         public double Desconto { get => Math.Round(desconto, 2); set => desconto = Math.Round(value, 2); }
-        public DateTime Data { get => data; set => data = value; }
-        public DateTime Hora { get => hora; set => hora = value; }
+        public DateTime Data_hora
+        {
+            get => data_hora;
+            set
+            {
+                if (value == null)
+                    throw new Exception("Data e hora é obrigatório.");
+                else
+                    data_hora = value;
+            }
+        }
     }
 }
