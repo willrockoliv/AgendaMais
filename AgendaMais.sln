@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaMais", "AgendaMais\AgendaMais.csproj", "{281EFD40-01EC-4816-830F-0DC5C1021C6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{281EFD40-01EC-4816-830F-0DC5C1021C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281EFD40-01EC-4816-830F-0DC5C1021C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281EFD40-01EC-4816-830F-0DC5C1021C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281EFD40-01EC-4816-830F-0DC5C1021C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

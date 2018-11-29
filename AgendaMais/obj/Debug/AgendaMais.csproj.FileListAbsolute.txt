@@ -1,0 +1,413 @@
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Desktop\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.2\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.3\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.4\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\AgendaMais - 0.5\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.5 (entregue)\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.6\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Desktop\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.pdb
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\bin\Debug\AgendaMais.exe.config
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\bin\Debug\AgendaMais.exe
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\bin\Debug\AgendaMais.pdb
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.exe
+D:\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.7\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\AgendaMais - 0.8\AgendaMais\obj\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\bin\Debug\AgendaMais.exe.config
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\bin\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\bin\Debug\AgendaMais.pdb
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.exe
+C:\Users\William.Rocha\Google Drive\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.Telas.Operacionais.MvtoFinanceiro.frEntradaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\bin\Debug\AgendaMais.exe.config
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\bin\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\bin\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+\AgendaMais - 1.0\AgendaMais\bin\Debug\Npgsql.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.Telas.Operacionais.MvtoFinanceiro.frEntradaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.0\AgendaMais\obj\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.Telas.Operacionais.MvtoFinanceiro.frEntradaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\obj\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\bin\Debug\AgendaMais.exe.config
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\bin\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\bin\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.1\AgendaMais\bin\Debug\Npgsql.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frApresentacao.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frFechamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.Telas.Operacionais.MvtoFinanceiro.frEntradaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frEntradaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frMvtoFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frAberturaCaixa.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.frSaidaFinanc.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\obj\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\bin\Debug\AgendaMais.exe.config
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\bin\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\bin\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.2\AgendaMais\bin\Debug\Npgsql.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\bin\Debug\AgendaMais.exe.config
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\bin\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\bin\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\bin\Debug\Npgsql.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.frCadFormaPgto.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.frCadFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.frCadMotivoSaida.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.frCadProdServ.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.frPesquisaClientes.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.frPesquisaFuncionarios.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.frPrincipal.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.frCadCliente.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.Properties.Resources.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.csproj.GenerateResource.Cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.exe
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.pdb
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais - 1.3\AgendaMais\obj\Debug\AgendaMais.Telas.Cadastros.frCadastros.resources

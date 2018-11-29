@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{281EFD40-01EC-4816-830F-0DC5C1021C6D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AgendaMais</RootNamespace>
+    <AssemblyName>AgendaMais</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1498590843_Streamline-52.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Npgsql, Version=2.2.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Npgsql\Npgsql-2.2.3.0-net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Carregando.cs" />
+    <Compile Include="Classes\ConnectionDataBase.cs" />
+    <Compile Include="Classes\DAOs\ClienteDAO.cs" />
+    <Compile Include="Classes\DAOs\DAO.cs" />
+    <Compile Include="Classes\DAOs\GrupoProdutoDAO.cs" />
+    <Compile Include="Classes\DAOs\VendaDAO.cs" />
+    <Compile Include="Classes\DB.cs" />
+    <Compile Include="Classes\DAOs\AgendaDAO.cs" />
+    <Compile Include="Classes\DAOs\ItemVendaDAO.cs" />
+    <Compile Include="Classes\DAOs\FuncionarioDAO.cs" />
+    <Compile Include="Classes\DAOs\ProdutoDAO.cs" />
+    <Compile Include="Classes\Enums\Enum_TipoExibicaoAgenda.cs" />
+    <Compile Include="Classes\Enums\EnumDiasSemana.cs" />
+    <Compile Include="Classes\Enums\EnumMeses.cs" />
+    <Compile Include="Classes\Enums\EnumStatusAgendamento.cs" />
+    <Compile Include="Classes\MetodosAgenda.cs" />
+    <Compile Include="Classes\LayoutProdutos.cs" />
+    <Compile Include="Classes\MetodosAgendamento.cs" />
+    <Compile Include="Classes\VOs\AgendaVO.cs" />
+    <Compile Include="Classes\VOs\ClienteVO.cs" />
+    <Compile Include="Classes\VOs\FuncionarioVO.cs" />
+    <Compile Include="Classes\VOs\GrupoProdutoVO.cs" />
+    <Compile Include="Classes\VOs\ItemVendaVO.cs" />
+    <Compile Include="Classes\VOs\PessoaVO.cs" />
+    <Compile Include="Classes\Validacoes.cs" />
+    <Compile Include="Classes\VOs\ProdutoVO.cs" />
+    <Compile Include="Classes\VOs\VendaVO.cs" />
+    <Compile Include="Classes\Windows\CMD.cs" />
+    <Compile Include="Classes\Windows\ExecutarComoAdmin.cs" />
+    <Compile Include="Classes\Windows\ServicosWindows.cs" />
+    <Compile Include="Telas\Agenda\frAgendados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Agenda\frAgendados.Designer.cs">
+      <DependentUpon>frAgendados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Agenda\frAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Agenda\frAgendamento.Designer.cs">
+      <DependentUpon>frAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Cadastros\frCadastros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastros\frCadastros.Designer.cs">
+      <DependentUpon>frCadastros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Cadastros\Financeiro\frCadFormaPgto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastros\Financeiro\frCadFormaPgto.Designer.cs">
+      <DependentUpon>frCadFormaPgto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Cadastros\Pessoas\frCadFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastros\Pessoas\frCadFuncionarios.Designer.cs">
+      <DependentUpon>frCadFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Cadastros\Estoque\frCadProdServ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastros\Estoque\frCadProdServ.Designer.cs">
+      <DependentUpon>frCadProdServ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Cadastros\Financeiro\frCadMotivoSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastros\Financeiro\frCadMotivoSaida.Designer.cs">
+      <DependentUpon>frCadMotivoSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Pesquisas\frPesquisaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Pesquisas\frPesquisaClientes.Designer.cs">
+      <DependentUpon>frPesquisaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Pesquisas\frPesquisaFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Pesquisas\frPesquisaFuncionarios.Designer.cs">
+      <DependentUpon>frPesquisaFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Principal\frPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Principal\frPrincipal.Designer.cs">
+      <DependentUpon>frPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Cadastros\Pessoas\frCadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastros\Pessoas\frCadCliente.Designer.cs">
+      <DependentUpon>frCadCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Telas\Agenda\frAgendados.resx">
+      <DependentUpon>frAgendados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Agenda\frAgendamento.resx">
+      <DependentUpon>frAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastros\frCadastros.resx">
+      <DependentUpon>frCadastros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastros\Financeiro\frCadFormaPgto.resx">
+      <DependentUpon>frCadFormaPgto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastros\Pessoas\frCadFuncionarios.resx">
+      <DependentUpon>frCadFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastros\Financeiro\frCadMotivoSaida.resx">
+      <DependentUpon>frCadMotivoSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastros\Estoque\frCadProdServ.resx">
+      <DependentUpon>frCadProdServ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Pesquisas\frPesquisaClientes.resx">
+      <DependentUpon>frPesquisaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Pesquisas\frPesquisaFuncionarios.resx">
+      <DependentUpon>frPesquisaFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Principal\frPrincipal.resx">
+      <DependentUpon>frPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastros\Pessoas\frCadCliente.resx">
+      <DependentUpon>frCadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1496821243_finance-21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_plus_13%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linha_16 %281%29%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1495088216_search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1496894063_magnifyingglass.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1496821243_finance-211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1496894173_search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1496949496_money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1496949447_note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1496949804_marty-mcfly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1496968705_Online-Shopping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1497563442_bulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linha_16 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1498590839_Streamline-52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1498590843_Streamline-52.ico" />
+    <None Include="Resources\perfil_add.png" />
+    <None Include="Resources\perfil.jpg" />
+    <None Include="Resources\remove.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\anterior.png" />
+    <None Include="Resources\proximo.png" />
+    <None Include="Resources\Cadastros.jpg" />
+    <None Include="Resources\carregando.gif" />
+    <None Include="Resources\290145-512 %281%29.png" />
+    <None Include="Resources\panQtdItens.png" />
+    <None Include="Resources\panMenu4_tranparency.png" />
+    <None Include="Resources\panMenu4.png" />
+    <None Include="Resources\panMenu3_tranparency.png" />
+    <None Include="Resources\panMenu3.png" />
+    <None Include="Resources\panMenu2_tranparency.png" />
+    <None Include="Resources\panMenu2.png" />
+    <None Include="Resources\panMenu1_tranparency.png" />
+    <None Include="Resources\panMenu1.png" />
+    <None Include="Resources\panMenuFuncionario_tranparency.png" />
+    <None Include="Resources\panMenuConclusao_tranparency.png" />
+    <None Include="Resources\panMenuCliente_tranparency.png" />
+    <None Include="Resources\panMenuCliente.png" />
+    <None Include="Resources\panMenuAgendamento_tranparency.png" />
+    <None Include="Resources\panMenuAgendamento.png" />
+    <None Include="Resources\panMenuConclusao.png" />
+    <None Include="Resources\panMenuFuncionario.png" />
+    <None Include="Resources\panProximo_claro.png" />
+    <None Include="Resources\panProximo_escuro.png" />
+    <None Include="Resources\877015-32.png" />
+    <None Include="Resources\cart1.png" />
+    <None Include="Resources\cart.png" />
+    <None Include="Resources\interrogacao1.png" />
+    <None Include="Resources\interrogacao.png" />
+    <None Include="Resources\bk_agendamento.jpg" />
+    <None Include="Resources\pan_escuro_1.png" />
+    <None Include="Resources\pan_escuro_2.png" />
+    <None Include="Resources\pan_claro_1.png" />
+    <None Include="Resources\pan_claro_2.png" />
+    <None Include="Resources\panAgendamento_escuro.png" />
+    <None Include="Resources\panAgendamento_claro.png" />
+    <None Include="Resources\status_pendente.png" />
+    <None Include="Resources\status_cancelado.png" />
+    <None Include="Resources\status_confirmado.png" />
+    <None Include="Resources\Imagem3.png" />
+    <None Include="Resources\Imagem2.png" />
+    <None Include="Resources\Imagem1.png" />
+    <None Include="Resources\fundo.jpg" />
+    <None Include="Resources\peaple %284%29 transparency.png" />
+    <None Include="Resources\calendary-transparency.png" />
+    <None Include="Resources\peaple %284%29.png" />
+    <None Include="Resources\calendary.png" />
+    <None Include="Resources\excluir.png" />
+    <None Include="Resources\edit %282%29.png" />
+    <None Include="Resources\checked %282%29.png" />
+    <None Include="Resources\backgroundAgendaMais.png" />
+    <None Include="Resources\rawpixel-633847-unsplash.jpg" />
+    <None Include="Resources\peaple %282%291.png" />
+    <None Include="Resources\peaple %282%29 transparency1.png" />
+    <None Include="Resources\peaple %282%29 transparency.png" />
+    <None Include="Resources\peaple %282%29.png" />
+    <None Include="Resources\Calendario transparency.png" />
+    <None Include="Resources\Calendario.png" />
+    <None Include="Resources\money %284%29 tranparency.png" />
+    <None Include="Resources\money %284%29.png" />
+    <None Include="Resources\BackLabel2.png" />
+    <None Include="Resources\BackLabel1.png" />
+    <None Include="Resources\BackLabel.png" />
+    <None Include="Resources\Barra_clara1.png" />
+    <None Include="Resources\Barra2.png" />
+    <None Include="Resources\Barra1.png" />
+    <None Include="Resources\Barra_clara.png" />
+    <None Include="Resources\Barra.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
