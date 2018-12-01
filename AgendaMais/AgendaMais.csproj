@@ -64,6 +64,7 @@
     <Compile Include="Classes\DAOs\ItemVendaDAO.cs" />
     <Compile Include="Classes\DAOs\FuncionarioDAO.cs" />
     <Compile Include="Classes\DAOs\ProdutoDAO.cs" />
+    <Compile Include="Classes\Enums\EnumPesquisa.cs" />
     <Compile Include="Classes\Enums\Enum_TipoExibicaoAgenda.cs" />
     <Compile Include="Classes\Enums\EnumDiasSemana.cs" />
     <Compile Include="Classes\Enums\EnumMeses.cs" />
@@ -101,12 +102,6 @@
     <Compile Include="Telas\Cadastros\frCadastros.Designer.cs">
       <DependentUpon>frCadastros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Cadastros\Financeiro\frCadFormaPgto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\Cadastros\Financeiro\frCadFormaPgto.Designer.cs">
-      <DependentUpon>frCadFormaPgto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Telas\Cadastros\Pessoas\frCadFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,23 +114,11 @@
     <Compile Include="Telas\Cadastros\Estoque\frCadProdServ.Designer.cs">
       <DependentUpon>frCadProdServ.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Cadastros\Financeiro\frCadMotivoSaida.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\Cadastros\Financeiro\frCadMotivoSaida.Designer.cs">
-      <DependentUpon>frCadMotivoSaida.cs</DependentUpon>
-    </Compile>
     <Compile Include="Telas\Pesquisas\frPesquisaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\Pesquisas\frPesquisaClientes.Designer.cs">
       <DependentUpon>frPesquisaClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\Pesquisas\frPesquisaFuncionarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\Pesquisas\frPesquisaFuncionarios.Designer.cs">
-      <DependentUpon>frPesquisaFuncionarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Principal\frPrincipal.cs">
       <SubType>Form</SubType>
@@ -160,23 +143,14 @@
     <EmbeddedResource Include="Telas\Cadastros\frCadastros.resx">
       <DependentUpon>frCadastros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Cadastros\Financeiro\frCadFormaPgto.resx">
-      <DependentUpon>frCadFormaPgto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastros\Pessoas\frCadFuncionarios.resx">
       <DependentUpon>frCadFuncionarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Cadastros\Financeiro\frCadMotivoSaida.resx">
-      <DependentUpon>frCadMotivoSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastros\Estoque\frCadProdServ.resx">
       <DependentUpon>frCadProdServ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Pesquisas\frPesquisaClientes.resx">
       <DependentUpon>frPesquisaClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Pesquisas\frPesquisaFuncionarios.resx">
-      <DependentUpon>frPesquisaFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Principal\frPrincipal.resx">
       <DependentUpon>frPrincipal.cs</DependentUpon>
@@ -260,6 +234,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1498590843_Streamline-52.ico" />
+    <None Include="Resources\proximo2.png" />
+    <None Include="Resources\ultimo_hover.png" />
+    <None Include="Resources\ultimo.png" />
+    <None Include="Resources\proximo_hover.png" />
+    <None Include="Resources\proximo1.png" />
+    <None Include="Resources\primeiro_hover.png" />
+    <None Include="Resources\primeiro.png" />
+    <None Include="Resources\anterior_hover.png" />
+    <None Include="Resources\anterior1.png" />
     <None Include="Resources\perfil_add.png" />
     <None Include="Resources\perfil.jpg" />
     <None Include="Resources\remove.png" />

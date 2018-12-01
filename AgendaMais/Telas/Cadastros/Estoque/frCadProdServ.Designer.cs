@@ -34,7 +34,9 @@
             this.ptbAgenda = new System.Windows.Forms.PictureBox();
             this.ptbFinanceiro = new System.Windows.Forms.PictureBox();
             this.panDados = new System.Windows.Forms.Panel();
+            this.ptbPesquisa = new System.Windows.Forms.PictureBox();
             this.panCadGrupo = new System.Windows.Forms.Panel();
+            this.ptbPesquisaGrupo = new System.Windows.Forms.PictureBox();
             this.panCancelarGrupo = new System.Windows.Forms.Panel();
             this.lblCancelarGrupo = new System.Windows.Forms.Label();
             this.panSalvarGrupo = new System.Windows.Forms.Panel();
@@ -68,7 +70,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).BeginInit();
             this.panDados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).BeginInit();
             this.panCadGrupo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisaGrupo)).BeginInit();
             this.panCancelarGrupo.SuspendLayout();
             this.panSalvarGrupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAddGrupo)).BeginInit();
@@ -120,6 +124,7 @@
             // 
             this.panDados.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panDados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.panDados.Controls.Add(this.ptbPesquisa);
             this.panDados.Controls.Add(this.panCadGrupo);
             this.panDados.Controls.Add(this.txtDescricao);
             this.panDados.Controls.Add(this.ptbAddGrupo);
@@ -144,8 +149,21 @@
             this.panDados.Size = new System.Drawing.Size(1138, 486);
             this.panDados.TabIndex = 20;
             // 
+            // ptbPesquisa
+            // 
+            this.ptbPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.ptbPesquisa.Image = global::AgendaMais.Properties.Resources.lupa;
+            this.ptbPesquisa.Location = new System.Drawing.Point(752, 79);
+            this.ptbPesquisa.Name = "ptbPesquisa";
+            this.ptbPesquisa.Size = new System.Drawing.Size(32, 32);
+            this.ptbPesquisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPesquisa.TabIndex = 83;
+            this.ptbPesquisa.TabStop = false;
+            this.ptbPesquisa.Click += new System.EventHandler(this.ptbPesquisa_Click);
+            // 
             // panCadGrupo
             // 
+            this.panCadGrupo.Controls.Add(this.ptbPesquisaGrupo);
             this.panCadGrupo.Controls.Add(this.panCancelarGrupo);
             this.panCadGrupo.Controls.Add(this.panSalvarGrupo);
             this.panCadGrupo.Controls.Add(this.label9);
@@ -156,6 +174,18 @@
             this.panCadGrupo.Size = new System.Drawing.Size(325, 124);
             this.panCadGrupo.TabIndex = 82;
             this.panCadGrupo.Visible = false;
+            // 
+            // ptbPesquisaGrupo
+            // 
+            this.ptbPesquisaGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.ptbPesquisaGrupo.Image = global::AgendaMais.Properties.Resources.lupa;
+            this.ptbPesquisaGrupo.Location = new System.Drawing.Point(10, 57);
+            this.ptbPesquisaGrupo.Name = "ptbPesquisaGrupo";
+            this.ptbPesquisaGrupo.Size = new System.Drawing.Size(26, 26);
+            this.ptbPesquisaGrupo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPesquisaGrupo.TabIndex = 82;
+            this.ptbPesquisaGrupo.TabStop = false;
+            this.ptbPesquisaGrupo.Click += new System.EventHandler(this.ptbPesquisaGrupo_Click);
             // 
             // panCancelarGrupo
             // 
@@ -235,9 +265,9 @@
             this.txtDescricaoGrupo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescricaoGrupo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricaoGrupo.ForeColor = System.Drawing.Color.Black;
-            this.txtDescricaoGrupo.Location = new System.Drawing.Point(10, 57);
+            this.txtDescricaoGrupo.Location = new System.Drawing.Point(42, 57);
             this.txtDescricaoGrupo.Name = "txtDescricaoGrupo";
-            this.txtDescricaoGrupo.Size = new System.Drawing.Size(289, 26);
+            this.txtDescricaoGrupo.Size = new System.Drawing.Size(257, 26);
             this.txtDescricaoGrupo.TabIndex = 67;
             this.txtDescricaoGrupo.TextChanged += new System.EventHandler(this.txtDescricaoGrupo_TextChanged);
             // 
@@ -568,8 +598,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();
             this.panDados.ResumeLayout(false);
             this.panDados.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).EndInit();
             this.panCadGrupo.ResumeLayout(false);
             this.panCadGrupo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisaGrupo)).EndInit();
             this.panCancelarGrupo.ResumeLayout(false);
             this.panCancelarGrupo.PerformLayout();
             this.panSalvarGrupo.ResumeLayout(false);
@@ -621,5 +653,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox ptbPesquisa;
+        private System.Windows.Forms.PictureBox ptbPesquisaGrupo;
     }
 }

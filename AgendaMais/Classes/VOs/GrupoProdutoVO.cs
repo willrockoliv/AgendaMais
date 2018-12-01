@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgendaMais.Classes.VOs
 {
-    class GrupoProdutoVO
+    public class GrupoProdutoVO
     {
         private int id;
         private string descricao;

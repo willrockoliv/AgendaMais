@@ -1,88 +1,308 @@
 ﻿using AgendaMais.Classes;
+using AgendaMais.Classes.DAOs;
+using AgendaMais.Classes.Enums;
+using AgendaMais.Classes.VOs;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AgendaMais
 {
-    public partial class frPesquisaClientes : Form
+    public partial class frPesquisa : Form
     {
-        public DataRow cliente = null;
-        DataTable Clientes = new DataTable();
+        #region Variáveis
+        EnumPesquisa enumPesquisa;
+        List<ClienteVO> listClienteVO = new List<ClienteVO>();
+        List<FuncionarioVO> listFuncionarioVO = new List<FuncionarioVO>();
+        List<ProdutoVO> listProdutoVO = new List<ProdutoVO>();
+        List<GrupoProdutoVO> listGrupoProdutoVO = new List<GrupoProdutoVO>();
+        public int index = -1;
+        public ClienteVO clienteVO;
+        public FuncionarioVO funcionarioVO;
+        public ProdutoVO produtoVO;
+        public GrupoProdutoVO grupoProdutoVO;
+        #endregion
 
-        public frPesquisaClientes()
+        #region Métodos Auxiliares
+        TextBox Construtor(string nome)
+        {
+            TextBox txtNome = new TextBox();
+            txtNome.BackColor = Color.White;
+            txtNome.BorderStyle = BorderStyle.None;
+            txtNome.Cursor = Cursors.Hand;
+            txtNome.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNome.ForeColor = Color.Black;
+            txtNome.Location = new Point(6, 5);
+            txtNome.Name = flpAgendamentos.Controls.Count.ToString();
+            txtNome.Text = nome;
+            txtNome.Size = new Size(681, 26);
+            txtNome.Click += new EventHandler(Click_Cadastro);
+            txtNome.ReadOnly = true;
+
+            return txtNome;
+        }
+
+        void ExibeCadastros()
+        {
+            flpAgendamentos.Controls.Clear();
+            if (enumPesquisa == EnumPesquisa.cliente)
+            {
+                foreach (ClienteVO clienteVO in listClienteVO)
+                    flpAgendamentos.Controls.Add(Construtor(clienteVO.Nome));
+            }
+            else if (enumPesquisa == EnumPesquisa.funcionario)
+            {
+                foreach (FuncionarioVO funcionarioVO in listFuncionarioVO)
+                    flpAgendamentos.Controls.Add(Construtor(funcionarioVO.Nome));
+            }
+            else if (enumPesquisa == EnumPesquisa.produto)
+            {
+                foreach (ProdutoVO produtoVO in listProdutoVO)
+                    flpAgendamentos.Controls.Add(Construtor(produtoVO.Descricao));
+            }
+            else
+            {
+                foreach (GrupoProdutoVO grupoProdutoVO in listGrupoProdutoVO)
+                    flpAgendamentos.Controls.Add(Construtor(grupoProdutoVO.Descricao));
+            }
+        }
+
+        void CadastroSelecionado()
+        {
+            if (enumPesquisa == EnumPesquisa.cliente)
+            {
+                clienteVO = listClienteVO[index];
+            }
+            else if (enumPesquisa == EnumPesquisa.funcionario)
+            {
+                funcionarioVO = listFuncionarioVO[index];
+            }
+            else if (enumPesquisa == EnumPesquisa.produto)
+            {
+                produtoVO = listProdutoVO[index];
+            }
+            else
+            {
+                grupoProdutoVO = listGrupoProdutoVO[index];
+            }
+        }
+
+        void CarregaGrupos()
+        {
+            listGrupoProdutoVO = GrupoProdutoDAO.GetTodosRegistros();
+            if (listGrupoProdutoVO != null)
+            {
+                cbGrupo.Items.Clear();
+                cbGrupo.Items.Add("Todos");
+                foreach (GrupoProdutoVO grupoProdutoVO in listGrupoProdutoVO)
+                    cbGrupo.Items.Add(grupoProdutoVO.Descricao);
+            }
+        }
+
+        void CarregaProdutosPorGrupo(int id_grupo_produto)
+        {
+            try
+            {
+                using (new Carregando())
+                {
+                    listProdutoVO = ProdutoDAO.GetRegistrosPorGrupo(id_grupo_produto);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            ExibeCadastros();
+        }
+
+        void CarregaCadastros()
+        {
+            try
+            {
+                using (new Carregando())
+                {
+                    if (enumPesquisa == EnumPesquisa.cliente)
+                    {
+                        listClienteVO = ClienteDAO.GetTodosRegistros();
+                    }
+                    else if (enumPesquisa == EnumPesquisa.funcionario)
+                    {
+                        listFuncionarioVO = FuncionarioDAO.GetTodosRegistros();
+                    }
+                    else if (enumPesquisa == EnumPesquisa.produto)
+                    {
+                        listProdutoVO = ProdutoDAO.GetTodosRegistros();
+                        CarregaGrupos();
+                        lblGrupo.Visible = true;
+                        cbGrupo.Visible = true;
+                    }
+                    else
+                    {
+                        listGrupoProdutoVO = GrupoProdutoDAO.GetTodosRegistros();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            ExibeCadastros();
+        }
+        #endregion
+
+        #region Load e Initialize
+        public frPesquisa(EnumPesquisa p_enumPesquisa)
         {
             InitializeComponent();
+            enumPesquisa = p_enumPesquisa;
+            CarregaCadastros();
+            ExibeCadastros();
+        }
+        #endregion
 
-            FuncionarioDAO TablePessoa = new FuncionarioDAO();
-            Clientes = TablePessoa.DBCommand("SELECT p.nome FROM pessoa p JOIN grupo_pessoa gp ON p.id_grupo_pessoa = gp.id_grupo_pessoa WHERE gp.tipo_grupo = 'C' ORDER BY nome");
-
-            foreach (DataRow cliente in Clientes.Rows)
-            {
-                ltbClientes.Items.Add(cliente["nome"]);
-            }
-
-            #region OLD
-            /*
-            //Carrega o arquivo clientes.txt e lista na ltbClientes
-
-            CarregaArquivo Arquivo = new CarregaArquivo();
-            string[] arquivoClientes = Arquivo.Clientes();
-            string[] lista = new string[arquivoClientes.Length];
-
-            for (int i = 0; i < arquivoClientes.Length; i++)
-            {
-                string[] temp = arquivoClientes[i].Split('|');
-                lista[i] = temp[0] + "  >>  " + temp[3];
-                ltbClientes.Items.Add(lista[i]);
-            }
-            */
-            #endregion
+        #region Eventos
+        private void Abrir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
-        /// <summary>
-        /// Neste evento a variável int codigo recebe o código do cliente selecionado da ltbClientes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAbrir_Click(object sender, EventArgs e)
+        private void panCancelar_Click(object sender, EventArgs e)
         {
-            if (ltbClientes.SelectedIndex == -1)
+            clienteVO = null;
+            funcionarioVO = null;
+            produtoVO = null;
+            grupoProdutoVO = null;
+            Close();
+        }
+
+        private void Click_Cadastro(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+
+            if (clienteVO == null &&
+                funcionarioVO == null &&
+                produtoVO == null &&
+                grupoProdutoVO == null)
+            {
+                index = Convert.ToInt32(txt.Name);
+                CadastroSelecionado();
+                txt.BackColor = Color.Gainsboro;
                 return;
+            }
+
+
+            if (index == Convert.ToInt32(txt.Name))
+            {
+                clienteVO = null;
+                funcionarioVO = null;
+                produtoVO = null;
+                grupoProdutoVO = null;
+                txt.BackColor = Color.White;
+            }
             else
             {
-                cliente = Clientes.Rows[ltbClientes.SelectedIndex];
-                this.Close();
-            }
+                clienteVO = null;
+                funcionarioVO = null;
+                produtoVO = null;
+                grupoProdutoVO = null;
+                TextBox txt_anterior = (TextBox)flpAgendamentos.Controls[index];
+                txt_anterior.BackColor = Color.White;
 
-            #region OLD
-            /*
-            if (ltbClientes.SelectedIndex != -1)
+                index = Convert.ToInt32(txt.Name);
+                CadastroSelecionado();
+                txt.BackColor = Color.Gainsboro;
+            }
+        }
+
+        private void cbGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbGrupo.SelectedIndex == 0)
+                CarregaCadastros();
+
+            else
+                CarregaProdutosPorGrupo(cbGrupo.SelectedIndex);
+        }
+
+        private void ptbExcluiCadastro_Click(object sender, EventArgs e)
+        {
+            if (enumPesquisa == EnumPesquisa.cliente)
             {
-                string[] temp = ltbClientes.SelectedItem.ToString().Replace(">>", "|").Split('|');
-                codigo = Convert.ToInt16(temp[0].Trim());
-                this.Close();
+                if (clienteVO != null)
+                {
+                    if (MessageBox.Show($"Tem certeza que deseja exlcuir o cadastro do cliente {clienteVO.Nome} ?", "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            ClienteDAO.DeletarRegistro(clienteVO.Id);
+                            MessageBox.Show("Cliente excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception erro)
+                        {
+                            MessageBox.Show(erro.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            else if (enumPesquisa == EnumPesquisa.funcionario)
+            {
+                if (funcionarioVO != null)
+                {
+                    if (MessageBox.Show($"Tem certeza que deseja exlcuir o cadastro do funcionário {funcionarioVO.Nome} ?", "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            FuncionarioDAO.DeletarRegistro(funcionarioVO.Id);
+                            MessageBox.Show("Funcionário excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception erro)
+                        {
+                            MessageBox.Show(erro.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            else if (enumPesquisa == EnumPesquisa.produto)
+            {
+                if (produtoVO != null)
+                {
+                    if (MessageBox.Show("OBS.: Excluir um produto ou serviço exluirá toda movimentação vinculada à ele!" +
+                                       $"\n\nTem certeza que deseja exlcuir o cadastro do produto {produtoVO.Descricao} ?", "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            ProdutoDAO.DeletarRegistro(produtoVO.Id);
+                            MessageBox.Show("Produto excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception erro)
+                        {
+                            MessageBox.Show(erro.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
             }
             else
-                return;
-            */
-            #endregion
+            {
+                if (grupoProdutoVO != null)
+                {
+                    if (MessageBox.Show("OBS.: Excluir um Grupo excluirá o cadastro de todos os produtos vinculados à ele" +
+                                       $"\n\nTem certeza que deseja exlcuir o cadastro do Grupo de Produtos {grupoProdutoVO.Descricao} ?",
+                                       "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            GrupoProdutoDAO.DeletarRegistro(grupoProdutoVO.Id);
+                            MessageBox.Show("Grupo de Produtos excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception erro)
+                        {
+                            MessageBox.Show(erro.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
         }
-
-        /// <summary>
-        /// Fecha a tela
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #endregion
     }
 }

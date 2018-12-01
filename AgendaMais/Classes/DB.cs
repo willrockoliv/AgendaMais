@@ -46,7 +46,25 @@ namespace AgendaMais.Classes.DAOs
             {
                 using (var connect = ConnectionDataBase.ConnectionDataBases())
                 {
-                    NpgsqlCommand cmd = new NpgsqlCommand(sql);
+                    NpgsqlCommand cmd = new NpgsqlCommand("begin");
+                    cmd.Connection = connect;
+                    cmd.ExecuteNonQuery();
+
+                    try
+                    {
+                        cmd = new NpgsqlCommand(sql);
+                        cmd.Connection = connect;
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        cmd = new NpgsqlCommand("rollback");
+                        cmd.Connection = connect;
+                        cmd.ExecuteNonQuery();
+                        throw ex;
+                    }
+
+                    cmd = new NpgsqlCommand("commit");
                     cmd.Connection = connect;
                     cmd.ExecuteNonQuery();
                 }

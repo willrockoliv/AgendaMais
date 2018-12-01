@@ -4,13 +4,6 @@ using AgendaMais.Classes.VOs;
 using AgendaMais.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AgendaMais
@@ -260,6 +253,33 @@ namespace AgendaMais
 
         #region Navegação
 
+        #region Primeiro
+        private void ptbPrimeiro_Click(object sender, EventArgs e)
+        {
+            if (listClienteVO == null)
+                return;
+
+            if (index < 0)
+                return;
+            else
+            {
+                index = -1;
+                lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
+                LimpaCampos();
+            }
+        }
+
+        private void ptbPrimeiro_MouseHover(object sender, EventArgs e)
+        {
+            ptbPrimeiro.Image = Resources.primeiro_hover;
+        }
+
+        private void ptbPrimeiro_MouseLeave(object sender, EventArgs e)
+        {
+            ptbPrimeiro.Image = Resources.primeiro;
+        }
+        #endregion
+
         #region Anterior
         private void ptbAnterior_Click(object sender, EventArgs e)
         {
@@ -272,22 +292,24 @@ namespace AgendaMais
             {
                 index--;
                 LimpaCampos();
+                lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
             }
             else
             {
                 index--;
                 ExibeCliente(listClienteVO[index]);
+                lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
             }
         }
 
         private void ptbAnterior_MouseHover(object sender, EventArgs e)
         {
-            ptbAnterior.BackColor = Color.FromArgb(115, 115, 115);
+            ptbAnterior.Image = Resources.anterior_hover;
         }
 
         private void ptbAnterior_MouseLeave(object sender, EventArgs e)
         {
-            ptbAnterior.BackColor = Color.Transparent;
+            ptbAnterior.Image = Resources.anterior1;
         }
         #endregion
 
@@ -305,17 +327,47 @@ namespace AgendaMais
             {
                 index++;
                 ExibeCliente(listClienteVO[index]);
+                lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
             }
         }
 
         private void ptbProximo_MouseHover(object sender, EventArgs e)
         {
-            ptbProximo.BackColor = Color.FromArgb(115, 115, 115);
+            ptbProximo.Image = Resources.proximo_hover;
         }
 
         private void ptbProximo_MouseLeave(object sender, EventArgs e)
         {
-            ptbProximo.BackColor = Color.Transparent;
+            ptbProximo.Image = Resources.proximo1;
+        }
+        #endregion
+
+        #region Ultimo
+        private void ptbUltimo_Click(object sender, EventArgs e)
+        {
+            if (listClienteVO == null)
+                return;
+
+            if (index >= listClienteVO.Count)
+                return;
+            else if (index == listClienteVO.Count - 1)
+                return;
+            else
+            {
+                index = listClienteVO.Count - 1;
+                lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
+                ExibeCliente(listClienteVO[index]);
+            }
+        }
+
+        private void ptbUltimo_MouseHover(object sender, EventArgs e)
+        {
+            ptbUltimo.Image = Resources.ultimo_hover;
+        }
+
+        private void ptbUltimo_MouseLeave(object sender, EventArgs e)
+        {
+            ptbUltimo.Image = Resources.ultimo;
         }
         #endregion
 

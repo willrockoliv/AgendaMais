@@ -123,6 +123,26 @@ namespace AgendaMais.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anterior_hover {
+            get {
+                object obj = ResourceManager.GetObject("anterior_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap anterior1 {
+            get {
+                object obj = ResourceManager.GetObject("anterior1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backgroundAgendaMais {
             get {
                 object obj = ResourceManager.GetObject("backgroundAgendaMais", resourceCulture);
@@ -793,9 +813,59 @@ namespace AgendaMais.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap primeiro {
+            get {
+                object obj = ResourceManager.GetObject("primeiro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap primeiro_hover {
+            get {
+                object obj = ResourceManager.GetObject("primeiro_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap proximo {
             get {
                 object obj = ResourceManager.GetObject("proximo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap proximo_hover {
+            get {
+                object obj = ResourceManager.GetObject("proximo_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap proximo1 {
+            get {
+                object obj = ResourceManager.GetObject("proximo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap proximo2 {
+            get {
+                object obj = ResourceManager.GetObject("proximo2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -856,6 +926,26 @@ namespace AgendaMais.Properties {
         internal static System.Drawing.Bitmap stock_plus_13_1_ {
             get {
                 object obj = ResourceManager.GetObject("stock_plus_13(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ultimo {
+            get {
+                object obj = ResourceManager.GetObject("ultimo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ultimo_hover {
+            get {
+                object obj = ResourceManager.GetObject("ultimo_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

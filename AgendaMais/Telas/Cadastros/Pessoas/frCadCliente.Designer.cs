@@ -32,7 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frCadCliente));
             this.label1 = new System.Windows.Forms.Label();
             this.panDados = new System.Windows.Forms.Panel();
+            this.ptbPrimeiro = new System.Windows.Forms.PictureBox();
+            this.ptbUltimo = new System.Windows.Forms.PictureBox();
             this.ptbProximo = new System.Windows.Forms.PictureBox();
+            this.lblQtdCliente = new System.Windows.Forms.Label();
             this.ptbAnterior = new System.Windows.Forms.PictureBox();
             this.panCancelar = new System.Windows.Forms.Panel();
             this.lblCancelar = new System.Windows.Forms.Label();
@@ -69,6 +72,8 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panDados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPrimeiro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbUltimo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbProximo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnterior)).BeginInit();
             this.panCancelar.SuspendLayout();
@@ -97,7 +102,10 @@
             // 
             this.panDados.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panDados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.panDados.Controls.Add(this.ptbPrimeiro);
+            this.panDados.Controls.Add(this.ptbUltimo);
             this.panDados.Controls.Add(this.ptbProximo);
+            this.panDados.Controls.Add(this.lblQtdCliente);
             this.panDados.Controls.Add(this.ptbAnterior);
             this.panDados.Controls.Add(this.panCancelar);
             this.panDados.Controls.Add(this.panSalvar);
@@ -131,33 +139,76 @@
             this.panDados.Size = new System.Drawing.Size(1138, 486);
             this.panDados.TabIndex = 2;
             // 
+            // ptbPrimeiro
+            // 
+            this.ptbPrimeiro.BackColor = System.Drawing.Color.Transparent;
+            this.ptbPrimeiro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbPrimeiro.Image = global::AgendaMais.Properties.Resources.primeiro;
+            this.ptbPrimeiro.Location = new System.Drawing.Point(211, 420);
+            this.ptbPrimeiro.Name = "ptbPrimeiro";
+            this.ptbPrimeiro.Size = new System.Drawing.Size(23, 37);
+            this.ptbPrimeiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbPrimeiro.TabIndex = 63;
+            this.ptbPrimeiro.TabStop = false;
+            this.ptbPrimeiro.Click += new System.EventHandler(this.ptbPrimeiro_Click);
+            this.ptbPrimeiro.MouseLeave += new System.EventHandler(this.ptbPrimeiro_MouseLeave);
+            this.ptbPrimeiro.MouseHover += new System.EventHandler(this.ptbPrimeiro_MouseHover);
+            // 
+            // ptbUltimo
+            // 
+            this.ptbUltimo.BackColor = System.Drawing.Color.Transparent;
+            this.ptbUltimo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbUltimo.Image = global::AgendaMais.Properties.Resources.ultimo;
+            this.ptbUltimo.Location = new System.Drawing.Point(353, 420);
+            this.ptbUltimo.Name = "ptbUltimo";
+            this.ptbUltimo.Size = new System.Drawing.Size(23, 37);
+            this.ptbUltimo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbUltimo.TabIndex = 62;
+            this.ptbUltimo.TabStop = false;
+            this.ptbUltimo.Click += new System.EventHandler(this.ptbUltimo_Click);
+            this.ptbUltimo.MouseLeave += new System.EventHandler(this.ptbUltimo_MouseLeave);
+            this.ptbUltimo.MouseHover += new System.EventHandler(this.ptbUltimo_MouseHover);
+            // 
             // ptbProximo
             // 
             this.ptbProximo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ptbProximo.BackColor = System.Drawing.Color.Transparent;
-            this.ptbProximo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ptbProximo.Image = global::AgendaMais.Properties.Resources.proximo;
-            this.ptbProximo.Location = new System.Drawing.Point(380, 84);
+            this.ptbProximo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbProximo.Image = global::AgendaMais.Properties.Resources.proximo1;
+            this.ptbProximo.Location = new System.Drawing.Point(335, 424);
             this.ptbProximo.Name = "ptbProximo";
-            this.ptbProximo.Size = new System.Drawing.Size(53, 120);
-            this.ptbProximo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbProximo.TabIndex = 20;
+            this.ptbProximo.Size = new System.Drawing.Size(20, 29);
+            this.ptbProximo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbProximo.TabIndex = 61;
             this.ptbProximo.TabStop = false;
             this.ptbProximo.Click += new System.EventHandler(this.ptbProximo_Click);
             this.ptbProximo.MouseLeave += new System.EventHandler(this.ptbProximo_MouseLeave);
             this.ptbProximo.MouseHover += new System.EventHandler(this.ptbProximo_MouseHover);
             // 
+            // lblQtdCliente
+            // 
+            this.lblQtdCliente.AutoSize = true;
+            this.lblQtdCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblQtdCliente.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdCliente.ForeColor = System.Drawing.Color.White;
+            this.lblQtdCliente.Location = new System.Drawing.Point(260, 425);
+            this.lblQtdCliente.Name = "lblQtdCliente";
+            this.lblQtdCliente.Size = new System.Drawing.Size(74, 24);
+            this.lblQtdCliente.TabIndex = 64;
+            this.lblQtdCliente.Text = "0 de 0";
+            this.lblQtdCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ptbAnterior
             // 
             this.ptbAnterior.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ptbAnterior.BackColor = System.Drawing.Color.Transparent;
-            this.ptbAnterior.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ptbAnterior.Image = global::AgendaMais.Properties.Resources.anterior;
-            this.ptbAnterior.Location = new System.Drawing.Point(152, 84);
+            this.ptbAnterior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbAnterior.Image = global::AgendaMais.Properties.Resources.anterior1;
+            this.ptbAnterior.Location = new System.Drawing.Point(234, 424);
             this.ptbAnterior.Name = "ptbAnterior";
-            this.ptbAnterior.Size = new System.Drawing.Size(53, 120);
-            this.ptbAnterior.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbAnterior.TabIndex = 19;
+            this.ptbAnterior.Size = new System.Drawing.Size(20, 29);
+            this.ptbAnterior.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbAnterior.TabIndex = 60;
             this.ptbAnterior.TabStop = false;
             this.ptbAnterior.Click += new System.EventHandler(this.ptbAnterior_Click);
             this.ptbAnterior.MouseLeave += new System.EventHandler(this.ptbAnterior_MouseLeave);
@@ -348,7 +399,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(827, 162);
+            this.label8.Location = new System.Drawing.Point(823, 162);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 24);
             this.label8.TabIndex = 46;
@@ -358,7 +409,7 @@
             // txtRG
             // 
             this.txtRG.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRG.Location = new System.Drawing.Point(874, 162);
+            this.txtRG.Location = new System.Drawing.Point(870, 162);
             this.txtRG.Mask = "00,000,000-aa";
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(126, 31);
@@ -371,7 +422,7 @@
             this.mkbCPF.Location = new System.Drawing.Point(678, 161);
             this.mkbCPF.Mask = "000,000,000-00";
             this.mkbCPF.Name = "mkbCPF";
-            this.mkbCPF.Size = new System.Drawing.Size(133, 31);
+            this.mkbCPF.Size = new System.Drawing.Size(139, 31);
             this.mkbCPF.TabIndex = 3;
             this.mkbCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -597,6 +648,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panDados.ResumeLayout(false);
             this.panDados.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPrimeiro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbUltimo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbProximo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnterior)).EndInit();
             this.panCancelar.ResumeLayout(false);
@@ -649,9 +702,12 @@
         private System.Windows.Forms.Label lblCancelar;
         private System.Windows.Forms.Panel panSalvar;
         private System.Windows.Forms.Label lblSalvar;
-        private System.Windows.Forms.PictureBox ptbAnterior;
-        private System.Windows.Forms.PictureBox ptbProximo;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label lblQtdCliente;
+        private System.Windows.Forms.PictureBox ptbProximo;
+        private System.Windows.Forms.PictureBox ptbAnterior;
+        private System.Windows.Forms.PictureBox ptbPrimeiro;
+        private System.Windows.Forms.PictureBox ptbUltimo;
     }
 }

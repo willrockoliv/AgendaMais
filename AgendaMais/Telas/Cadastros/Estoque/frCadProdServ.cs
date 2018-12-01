@@ -1,4 +1,5 @@
 ﻿using AgendaMais.Classes.DAOs;
+using AgendaMais.Classes.Enums;
 using AgendaMais.Classes.VOs;
 using System;
 using System.Collections.Generic;
@@ -275,6 +276,8 @@ namespace AgendaMais
                 GrupoProdutoDAO.InserirRegistros(grupoProdutoVO);
                 CarregaGrupos();
                 MessageBox.Show("Grupo de Produto cadastrado com sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                panCadGrupo.Visible = false;
+                txtDescricaoGrupo.Text = null;
             }
             catch (Exception erro)
             {
@@ -285,6 +288,7 @@ namespace AgendaMais
         private void panCancelarGrupo_Click(object sender, EventArgs e)
         {
             panCadGrupo.Visible = false;
+            txtDescricaoGrupo.Text = null;
         }
 
         private void txtDescricaoGrupo_TextChanged(object sender, EventArgs e)
@@ -296,6 +300,14 @@ namespace AgendaMais
         private void ptbAddGrupo_Click(object sender, EventArgs e)
         {
             panCadGrupo.Visible = !panCadGrupo.Visible;
+        }
+
+        private void ptbPesquisaGrupo_Click(object sender, EventArgs e)
+        {
+            frPesquisa frPesquisa = new frPesquisa(EnumPesquisa.grupo_produto);
+            frPesquisa.ShowDialog();
+            if (frPesquisa.grupoProdutoVO != null)
+                txtDescricaoGrupo.Text = frPesquisa.grupoProdutoVO.Descricao;
         }
         #endregion
 
@@ -323,19 +335,20 @@ namespace AgendaMais
                 txtQtde.Text = null;
         }
 
-        //private void ptbPesquisa_Click(object sender, EventArgs e)
-        //{
-        //    frPesquisa frPesquisa = new frPesquisa(EnumPesquisa.produto);
-        //    frPesquisa.ShowDialog();
-        //    if (frPesquisa.produtoVO != null)
-        //        for (int i = 0; i < listProdutoVO.Count; i++)
-        //            if (frPesquisa.produtoVO.Descricao == listProdutoVO[i].Descricao)
-        //            {
-        //                ExibeProduto(listProdutoVO[i]);
-        //                break;
-        //            }
-        //}
+        private void ptbPesquisa_Click(object sender, EventArgs e)
+        {
+            frPesquisa frPesquisa = new frPesquisa(EnumPesquisa.produto);
+            frPesquisa.ShowDialog();
+            if (frPesquisa.produtoVO != null)
+                for (int i = 0; i < listProdutoVO.Count; i++)
+                    if (frPesquisa.produtoVO.Descricao == listProdutoVO[i].Descricao)
+                    {
+                        ExibeProduto(listProdutoVO[i]);
+                        break;
+                    }
+        }
 
+        
         #endregion
 
         /* old

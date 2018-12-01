@@ -60,6 +60,11 @@ namespace AgendaMais.Classes.DAOs
             return MontaListVO(DAO.GetRegistros("produto", condicao));
         }
 
+        public static List<ProdutoVO> GetRegistrosPorGrupo(int id_grupo_produto)
+        {
+            return MontaListVO(DAO.GetRegistros("produto", $"where id_grupo_produto={id_grupo_produto}"));
+        }
+
         public static void InserirRegistros(ProdutoVO produto)
         {
             string sql = "Insert Into produto(" +
@@ -73,7 +78,7 @@ namespace AgendaMais.Classes.DAOs
                           "values(" +
                             "'" + produto.Descricao + "'," +
                             "'" + produto.Cod_barras + "'," +
-                            produto.Vl_custo.ToString().Replace(',','.') + "," +
+                            produto.Vl_custo.ToString().Replace(',', '.') + "," +
                             produto.Vl_venda.ToString().Replace(',', '.') + "," +
                             produto.Qtd_estoque + "," +
                             produto.Id_grupo_produto + "," +
@@ -97,7 +102,9 @@ namespace AgendaMais.Classes.DAOs
 
         public static void DeletarRegistro(int id)
         {
-            string sql = "DELETE produto WHERE id=" + id;
+            List<string> sql = new List<string>();
+            sql.Add($"DELETE from item_venda WHERE id_produto={id}");
+            sql.Add($"DELETE from produto WHERE id={id}");
             DAO.ExecutaSQL(sql);
         }
     }
