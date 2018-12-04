@@ -152,6 +152,7 @@
             // ptbPesquisa
             // 
             this.ptbPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.ptbPesquisa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbPesquisa.Image = global::AgendaMais.Properties.Resources.lupa;
             this.ptbPesquisa.Location = new System.Drawing.Point(752, 79);
             this.ptbPesquisa.Name = "ptbPesquisa";
@@ -178,6 +179,7 @@
             // ptbPesquisaGrupo
             // 
             this.ptbPesquisaGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.ptbPesquisaGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbPesquisaGrupo.Image = global::AgendaMais.Properties.Resources.lupa;
             this.ptbPesquisaGrupo.Location = new System.Drawing.Point(10, 57);
             this.ptbPesquisaGrupo.Name = "ptbPesquisaGrupo";

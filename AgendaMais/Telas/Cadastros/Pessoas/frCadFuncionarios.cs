@@ -1,5 +1,6 @@
 ﻿using AgendaMais.Classes;
 using AgendaMais.Classes.DAOs;
+using AgendaMais.Classes.Enums;
 using AgendaMais.Classes.VOs;
 using AgendaMais.Properties;
 using System;
@@ -143,6 +144,7 @@ namespace AgendaMais
         {
             InitializeComponent();
             CarregamentoInicial();
+            lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
         }
 
         public frCadFuncionarios(FuncionarioVO funcionarioVO)
@@ -150,6 +152,12 @@ namespace AgendaMais
             CarregamentoInicial();
             InitializeComponent();
             ExibeFuncionario(funcionarioVO);
+            for (int i = 0; i < listFuncionarioVO.Count; i++)
+                if (funcionarioVO.Nome == listFuncionarioVO[i].Nome)
+                {
+                    index = i;
+                    lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
+                }
         }
         #endregion
 
@@ -259,6 +267,33 @@ namespace AgendaMais
 
         #region Navegação
 
+        #region Primeiro
+        private void ptbPrimeiro_MouseHover(object sender, EventArgs e)
+        {
+            ptbPrimeiro.Image = Resources.primeiro_hover;
+        }
+
+        private void ptbPrimeiro_MouseLeave(object sender, EventArgs e)
+        {
+            ptbPrimeiro.Image = Resources.primeiro;
+        }
+
+        private void ptbPrimeiro_Click(object sender, EventArgs e)
+        {
+            if (listFuncionarioVO == null)
+                return;
+
+            if (index < 0)
+                return;
+            else
+            {
+                index = -1;
+                lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
+                LimpaCampos();
+            }
+        }
+        #endregion
+
         #region Anterior
         private void ptbAnterior_Click(object sender, EventArgs e)
         {
@@ -271,22 +306,24 @@ namespace AgendaMais
             {
                 index--;
                 LimpaCampos();
+                lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
             }
             else
             {
                 index--;
                 ExibeFuncionario(listFuncionarioVO[index]);
+                lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
             }
         }
 
         private void ptbAnterior_MouseHover(object sender, EventArgs e)
         {
-            ptbAnterior.BackColor = Color.FromArgb(115, 115, 115);
+            ptbAnterior.Image = Resources.anterior_hover;
         }
 
         private void ptbAnterior_MouseLeave(object sender, EventArgs e)
         {
-            ptbAnterior.BackColor = Color.Transparent;
+            ptbAnterior.Image = Resources.anterior1;
         }
         #endregion
 
@@ -303,18 +340,48 @@ namespace AgendaMais
             else
             {
                 index++;
+                lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
                 ExibeFuncionario(listFuncionarioVO[index]);
             }
         }
 
         private void ptbProximo_MouseHover(object sender, EventArgs e)
         {
-            ptbProximo.BackColor = Color.FromArgb(115, 115, 115);
+            ptbProximo.Image = Resources.proximo_hover;
         }
 
         private void ptbProximo_MouseLeave(object sender, EventArgs e)
         {
-            ptbProximo.BackColor = Color.Transparent;
+            ptbProximo.Image = Resources.proximo1;
+        }
+        #endregion
+
+        #region Ultimo
+        private void ptbUltimo_MouseHover(object sender, EventArgs e)
+        {
+            ptbUltimo.Image = Resources.ultimo_hover;
+        }
+
+        private void ptbUltimo_MouseLeave(object sender, EventArgs e)
+        {
+            ptbUltimo.Image = Resources.ultimo;
+        }
+
+        private void ptbUltimo_Click(object sender, EventArgs e)
+        {
+            if (listFuncionarioVO == null)
+                return;
+
+            if (index >= listFuncionarioVO.Count)
+                return;
+            else if (index == listFuncionarioVO.Count - 1)
+                return;
+            else
+            {
+                index = listFuncionarioVO.Count - 1;
+                lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
+                ExibeFuncionario(listFuncionarioVO[index]);
+            }
         }
         #endregion
 
@@ -344,6 +411,22 @@ namespace AgendaMais
         }
         #endregion
 
+        private void ptbPesquisa_Click(object sender, EventArgs e)
+        {
+            frPesquisa frPesquisa = new frPesquisa(EnumPesquisa.funcionario);
+            frPesquisa.ShowDialog();
+            if (frPesquisa.funcionarioVO != null)
+                for (int i = 0; i < listFuncionarioVO.Count; i++)
+                    if (frPesquisa.funcionarioVO.Nome == listFuncionarioVO[i].Nome)
+                    {
+                        index = i;
+                        lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
+                        ExibeFuncionario(listFuncionarioVO[i]);
+                        break;
+                    }
+        }
+
         #endregion
+
     }
 }

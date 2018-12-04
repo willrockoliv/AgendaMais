@@ -127,11 +127,14 @@
   <data name="excluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\excluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="peaple (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\peaple (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cadastros" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cadastros.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="panMenu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panMenu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="anterior_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anterior_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +148,14 @@
   <data name="interrogacao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\interrogacao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="panMenuConclusao_tranparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\panMenuConclusao_tranparency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Relatorios_transparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Relatorios_transparency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rawpixel-633847-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rawpixel-633847-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendary.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="panMenu4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panMenu4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,9 +171,6 @@
   </data>
   <data name="Barra1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Barra1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ultimo_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ultimo_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BackLabel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackLabel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,8 +190,8 @@
   <data name="status_cancelado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\status_cancelado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="panMenu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\panMenu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="panMenuConclusao_tranparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panMenuConclusao_tranparency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ultimo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ultimo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,9 +223,6 @@
   <data name="panMenu2_tranparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panMenu2_tranparency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="290145-512 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\290145-512 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="panMenu4_tranparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panMenu4_tranparency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -241,14 +244,8 @@
   <data name="peaple (2) transparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\peaple (2) transparency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calendary.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="lupa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lupa1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="interrogacao1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\interrogacao1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Calendario transparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Calendario transparency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,8 +256,8 @@
   <data name="Barra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Barra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Calendario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Calendario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="panQtdItens" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panQtdItens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,8 +265,8 @@
   <data name="status_pendente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\status_pendente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Calendario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Calendario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="290145-512 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\290145-512 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="anterior1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anterior1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,8 +277,8 @@
   <data name="calendary-transparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendary-transparency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="money (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\money (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="interrogacao1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\interrogacao1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="linha_16 (1)(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\linha_16 (1)(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,6 +319,12 @@
   <data name="lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cadastros" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cadastros.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Relatorios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Relatorios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="primeiro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\primeiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -337,8 +340,8 @@
   <data name="panMenuCliente_tranparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panMenuCliente_tranparency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rawpixel-633847-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rawpixel-633847-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="checked0.3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checked0.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="panProximo_claro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panProximo_claro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -355,11 +358,17 @@
   <data name="proximo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proximo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="proximo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proximo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="peaple (4) transparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\peaple (4) transparency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="money (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\money (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="primeiro_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\primeiro_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -367,11 +376,11 @@
   <data name="pan_claro_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pan_claro_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ultimo_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ultimo_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Barra_clara1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Barra_clara1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="checked0.3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checked0.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="status_confirmado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\status_confirmado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -382,7 +391,7 @@
   <data name="panMenuFuncionario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panMenuFuncionario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="proximo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\proximo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DRE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DRE2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

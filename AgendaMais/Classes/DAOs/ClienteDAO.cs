@@ -118,7 +118,9 @@ namespace AgendaMais.Classes.DAOs
 
         public static void DeletarRegistro(int id)
         {
-            string sql = String.Format("Delete From cliente Where id = {0}", id);
+            List<string> sql = new List<string>();
+            sql.Add($"Delete From agenda Where id_cliente = {id}");
+            sql.Add($"Delete From cliente Where id = {id}");
             ExecutaSQL(sql);
         }
     }

@@ -71,6 +71,7 @@
             this.ptbFinanceiro = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ptbPesquisa = new System.Windows.Forms.PictureBox();
             this.panDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPrimeiro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUltimo)).BeginInit();
@@ -83,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,6 +104,7 @@
             // 
             this.panDados.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panDados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.panDados.Controls.Add(this.ptbPesquisa);
             this.panDados.Controls.Add(this.ptbPrimeiro);
             this.panDados.Controls.Add(this.ptbUltimo);
             this.panDados.Controls.Add(this.ptbProximo);
@@ -144,7 +147,7 @@
             this.ptbPrimeiro.BackColor = System.Drawing.Color.Transparent;
             this.ptbPrimeiro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbPrimeiro.Image = global::AgendaMais.Properties.Resources.primeiro;
-            this.ptbPrimeiro.Location = new System.Drawing.Point(211, 420);
+            this.ptbPrimeiro.Location = new System.Drawing.Point(214, 420);
             this.ptbPrimeiro.Name = "ptbPrimeiro";
             this.ptbPrimeiro.Size = new System.Drawing.Size(23, 37);
             this.ptbPrimeiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -546,7 +549,7 @@
             this.txtNome.ForeColor = System.Drawing.Color.Black;
             this.txtNome.Location = new System.Drawing.Point(127, 282);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(415, 26);
+            this.txtNome.Size = new System.Drawing.Size(380, 26);
             this.txtNome.TabIndex = 0;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
@@ -627,6 +630,19 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // ptbPesquisa
+            // 
+            this.ptbPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.ptbPesquisa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbPesquisa.Image = global::AgendaMais.Properties.Resources.lupa;
+            this.ptbPesquisa.Location = new System.Drawing.Point(535, 282);
+            this.ptbPesquisa.Name = "ptbPesquisa";
+            this.ptbPesquisa.Size = new System.Drawing.Size(26, 26);
+            this.ptbPesquisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPesquisa.TabIndex = 84;
+            this.ptbPesquisa.TabStop = false;
+            this.ptbPesquisa.Click += new System.EventHandler(this.ptbPesquisa_Click);
+            // 
             // frCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,6 +677,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -709,5 +726,6 @@
         private System.Windows.Forms.PictureBox ptbAnterior;
         private System.Windows.Forms.PictureBox ptbPrimeiro;
         private System.Windows.Forms.PictureBox ptbUltimo;
+        private System.Windows.Forms.PictureBox ptbPesquisa;
     }
 }

@@ -117,7 +117,8 @@ namespace AgendaMais.Classes
             cbServProd.FormattingEnabled = true;
             foreach (ProdutoVO x in Serv_prod)
                 cbServProd.Items.Add(x.Descricao);
-            cbServProd.SelectedIndex = 0;
+            if (cbServProd.Items.Count != 0)
+                cbServProd.SelectedIndex = 0;
             cbServProd.Location = new System.Drawing.Point(830, 5);
             cbServProd.Size = new System.Drawing.Size(243, 30);
             #endregion
@@ -280,7 +281,8 @@ namespace AgendaMais.Classes
             cbServProd.FormattingEnabled = true;
             foreach (ProdutoVO x in Serv_prod)
                 cbServProd.Items.Add(x.Descricao);
-            cbServProd.SelectedIndex = 0;
+            if (cbServProd.Items.Count != 0)
+                cbServProd.SelectedIndex = 0;
             cbServProd.Location = new System.Drawing.Point(905, 5);
             cbServProd.Size = new System.Drawing.Size(231, 30);
             #endregion

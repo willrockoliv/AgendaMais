@@ -130,26 +130,32 @@ namespace AgendaMais.Classes
             cbItensServicosCliente.Size = new Size(197, 30);
             foreach (ProdutoVO x in Serv_prod)
                 cbItensServicosCliente.Items.Add(x.Descricao);
-            cbItensServicosCliente.SelectedIndex = 0;
+            if (cbItensServicosCliente.Items.Count != 0)
+                cbItensServicosCliente.SelectedIndex = 0;
             cbItensServicosCliente.SelectedIndexChanged += new EventHandler(cbItensServicosCliente_SelectedIndexChanged);
             #endregion
 
             #region txtValorItensServico 
-            TextBox txtValorItensServico = new TextBox();
-            txtValorItensServico.BackColor = Color.FromArgb(215, 217, 223);
-            txtValorItensServico.BorderStyle = BorderStyle.None;
-            txtValorItensServico.Enabled = false;
-            txtValorItensServico.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtValorItensServico.ForeColor = Color.FromArgb(64, 64, 64);
-            txtValorItensServico.Location = new Point(374, 37);
-            txtValorItensServico.Name = "txtValorItensServico" + id;
-            txtValorItensServico.ReadOnly = true;
-            txtValorItensServico.Size = new Size(97, 20);
-            txtValorItensServico.Text = Serv_prod[0].Vl_venda.ToString("C");
-            txtValorItensServico.TextAlign = HorizontalAlignment.Right;
+            if (Serv_prod.Count != 0)
+            {
+                TextBox txtValorItensServico = new TextBox();
+                txtValorItensServico.BackColor = Color.FromArgb(215, 217, 223);
+                txtValorItensServico.BorderStyle = BorderStyle.None;
+                txtValorItensServico.Enabled = false;
+                txtValorItensServico.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+                txtValorItensServico.ForeColor = Color.FromArgb(64, 64, 64);
+                txtValorItensServico.Location = new Point(374, 37);
+                txtValorItensServico.Name = "txtValorItensServico" + id;
+                txtValorItensServico.ReadOnly = true;
+                txtValorItensServico.Size = new Size(97, 20);
+                txtValorItensServico.Text = Serv_prod[0].Vl_venda.ToString("C");
+                txtValorItensServico.TextAlign = HorizontalAlignment.Right;
+
+                panAgendaFuncionario.Controls.Add(txtValorItensServico);
+            }
             #endregion
 
-            panAgendaFuncionario.Controls.Add(txtValorItensServico);
+            
             panAgendaFuncionario.Controls.Add(cbItensServicosCliente);
             panAgendaFuncionario.Controls.Add(txtNomeCliente);
             panAgendaFuncionario.Controls.Add(txtHorario);
@@ -333,20 +339,21 @@ namespace AgendaMais.Classes
 
         public void ExibeItens(FlowLayoutPanel flpItens, AgendaVO agendaVO)
         {
-            List<ItemVendaVO> listItemVenda = ItemVendaDAO.GetRegistroPorIdVenda(agendaVO.Id_venda);
+            List<ItemAgendaVO> listItemAgenda = ItemAgendaDAO.GetRegistroPorIdAgenda(agendaVO.Id);
 
-            foreach (ItemVendaVO item in listItemVenda)
-            {
-                for (int i = 0; i < item.Quantidade; i++)
+            if (listItemAgenda != null)
+                foreach (ItemAgendaVO item in listItemAgenda)
                 {
-                    ProdutoVO p = new ProdutoVO();
-                    p = ProdutoDAO.GetRegistroPorId(item.Id_produto);
-                    listItens.Add(p);
-                    TextBox txtItem = ConstrutorProdutoOuItem(flpItens.Controls.Count, p.Descricao, p.Vl_venda, ProdutoOuItem.item);
-                    flpItens.Controls.Add(txtItem);
-                    listTxtItens.Add(txtItem);
+                    for (int i = 0; i < item.Quantidade; i++)
+                    {
+                        ProdutoVO p = new ProdutoVO();
+                        p = ProdutoDAO.GetRegistroPorId(item.Id_produto);
+                        listItens.Add(p);
+                        TextBox txtItem = ConstrutorProdutoOuItem(flpItens.Controls.Count, p.Descricao, p.Vl_venda, ProdutoOuItem.item);
+                        flpItens.Controls.Add(txtItem);
+                        listTxtItens.Add(txtItem);
+                    }
                 }
-            }
         }
         #endregion
 

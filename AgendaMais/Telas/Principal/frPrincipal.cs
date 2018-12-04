@@ -112,18 +112,52 @@ namespace AgendaMais
 
         #region Menu
 
-        #region panFinanceiro
-        private void panFinanceiro_MouseHover(object sender, EventArgs e)
+        #region panRelatorios
+        private void panRelatorios_Click(object sender, EventArgs e)
         {
-            panFinanceiro.BackColor = Color.FromArgb(170, 16, 41, 99);
-            lblFinanceiro.ForeColor = Color.PowderBlue;
+            panDRE.Visible = panFreqAgendamento.Visible = !panFreqAgendamento.Visible;
         }
 
-        private void panFinanceiro_MouseLeave(object sender, EventArgs e)
+        private void panRelatorios_MouseHover(object sender, EventArgs e)
         {
-            panFinanceiro.BackColor = Color.FromArgb(0, 16, 41, 99);
-            lblFinanceiro.ForeColor = Color.White;
+            panRelatorios.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblRelatorios.ForeColor = Color.PowderBlue;
         }
+
+        private void panRelatorios_MouseLeave(object sender, EventArgs e)
+        {
+            panRelatorios.BackColor = Color.FromArgb(0, 16, 41, 99);
+            lblRelatorios.ForeColor = Color.White;
+        }
+
+        #region panFreqAgendamento
+        private void panFreqAgendamento_MouseHover(object sender, EventArgs e)
+        {
+            panFreqAgendamento.BackColor = Color.FromArgb(16, 41, 99);
+            lblFreqAgendamento.ForeColor = Color.PowderBlue;
+        }
+
+        private void panFreqAgendamento_MouseLeave(object sender, EventArgs e)
+        {
+            panFreqAgendamento.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblFreqAgendamento.ForeColor = Color.White;
+        }
+        #endregion
+
+        #region panDRE
+        private void panDRE_MouseHover(object sender, EventArgs e)
+        {
+            panDRE.BackColor = Color.FromArgb(16, 41, 99);
+            lblDRE.ForeColor = Color.PowderBlue;
+        }
+
+        private void panDRE_MouseLeave(object sender, EventArgs e)
+        {
+            panDRE.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblDRE.ForeColor = Color.White;
+        }
+        #endregion
+
         #endregion
 
         #region Agenda
@@ -178,32 +212,20 @@ namespace AgendaMais
 
         #region Eventos Botões Principais
 
-        #region ptbFinanceiro
-        private void ptbFinanceiro_Click(object sender, EventArgs e)
+        #region ptbRelatorios
+        private void ptbRelatorios_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ptbFinanceiro_MouseHover(object sender, EventArgs e)
+        private void ptbRelatorios_MouseHover(object sender, EventArgs e)
         {
-            try
-            {
-                ptbFinanceiro.Image = Image.FromFile(mainPath + "\\BD\\money.png");
-            }
-            catch
-            {
-            }
+            ptbRelatorios.Image = Resources.Relatorios;
         }
 
-        private void ptbFinanceiro_MouseLeave(object sender, EventArgs e)
+        private void ptbRelatorios_MouseLeave(object sender, EventArgs e)
         {
-            try
-            {
-                ptbFinanceiro.Image = Image.FromFile(mainPath + "\\BD\\money-transparency.png");
-            }
-            catch
-            {
-            }
+            ptbRelatorios.Image = ptbRelatorios.Image = Resources.Relatorios_transparency;
         }
         #endregion
 
@@ -269,5 +291,7 @@ namespace AgendaMais
             frCadastros frCadastros = new frCadastros();
             frCadastros.Show();
         }
+
+
     }
 }

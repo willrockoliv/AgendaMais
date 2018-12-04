@@ -67,7 +67,29 @@ namespace AgendaMais.Classes.DAOs
 
         public static void DeletarRegistro(int id)
         {
-            string sql = "DELETE grupo_produto WHERE id=" + id;
+            List<ProdutoVO> listProdutoVO = ProdutoDAO.GetRegistrosPorGrupo(id);
+            int id_produto;
+            string sql_delete_item_venda = "delete from item_venda where id_produto in (";
+            string sql_delete_produtos = "delete from produto where id in (";
+            for (int i = 0; i < listProdutoVO.Count; i++)
+            {
+                id_produto = listProdutoVO[i].Id;
+
+                if (i == listProdutoVO.Count - 1)
+                {
+                    sql_delete_item_venda += id_produto + ")";
+                    sql_delete_produtos += id_produto + ")";
+                    break;
+                }
+
+                sql_delete_item_venda += id_produto + ",";
+                sql_delete_produtos += id_produto + ",";
+            }
+
+            List<string> sql = new List<string>();
+            sql.Add(sql_delete_item_venda);
+            sql.Add(sql_delete_produtos);
+            sql.Add($"DELETE grupo_produto WHERE id={id}");
             DAO.ExecutaSQL(sql);
         }
     }

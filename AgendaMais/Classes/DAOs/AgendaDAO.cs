@@ -18,7 +18,6 @@ namespace AgendaMais.Classes.DAOs
             {
                 AgendaVO agendaVO = new AgendaVO();
                 agendaVO.Id = Convert.ToInt32(row["id"]);
-                agendaVO.Id_venda = Convert.ToInt32(row["id_venda"]);
                 agendaVO.Id_cliente = Convert.ToInt32(row["id_cliente"]);
                 agendaVO.Nome_cliente = row["nome_cliente"].ToString();
                 agendaVO.Tel_cel = row["tel_cel"].ToString();
@@ -28,11 +27,12 @@ namespace AgendaMais.Classes.DAOs
                 agendaVO.Obs = row["obs"].ToString();
                 agendaVO.Status = Convert.ToChar(row["status"]);
 
-                List<ItemVendaVO> listItemVendaVO = ItemVendaDAO.GetRegistroPorIdVenda(agendaVO.Id_venda);
+                List<ItemAgendaVO> listItemVendaVO = ItemAgendaDAO.GetRegistroPorIdAgenda(agendaVO.Id);
                 List<ProdutoVO> listProdutoVO = new List<ProdutoVO>();
-                foreach (ItemVendaVO item in listItemVendaVO)
-                    for (int i = 0; i < item.Quantidade; i++)
-                        listProdutoVO.Add(ProdutoDAO.GetRegistroPorId(item.Id_produto));
+                if (listItemVendaVO != null)
+                    foreach (ItemAgendaVO item in listItemVendaVO)
+                        for (int i = 0; i < item.Quantidade; i++)
+                            listProdutoVO.Add(ProdutoDAO.GetRegistroPorId(item.Id_produto));
 
                 agendaVO.Itens = listProdutoVO;
 
@@ -100,60 +100,36 @@ namespace AgendaMais.Classes.DAOs
 
         public static void InserirRegistros(AgendaVO agendaVO)
         {
-            #region  Monta VendaVO
-            VendaVO vendaVO = new VendaVO();
-            foreach (ProdutoVO item in agendaVO.Itens)
-            {
-                vendaVO.Valor += item.Vl_venda;
-                vendaVO.Custo += item.Vl_custo;
-            }
-            vendaVO.Desconto = 0;
-            vendaVO.Data_hora = agendaVO.Data_hora;
-            #endregion
-
             #region Monta ItensVendaVO
-            List<ItemVendaVO> listItemVendaVO = new List<ItemVendaVO>();
+            List<ItemAgendaVO> listItemAgendaVO = new List<ItemAgendaVO>();
             foreach (ProdutoVO p in agendaVO.Itens)
             {
-                ItemVendaVO item = new ItemVendaVO();
+                ItemAgendaVO item = new ItemAgendaVO();
                 item.Id_produto = p.Id;
-                item.Id_venda = agendaVO.Id_venda;
+                item.Id_agenda = agendaVO.Id;
                 item.Quantidade = 1;
                 item.Desconto = 0;
 
-                for (int i = 0; i < listItemVendaVO.Count; i++)
+                for (int i = 0; i < listItemAgendaVO.Count; i++)
                 {
-                    if (listItemVendaVO[i].Id_produto == item.Id_produto)
+                    if (listItemAgendaVO[i].Id_produto == item.Id_produto)
                     {
-                        listItemVendaVO[i].Quantidade++;
+                        listItemAgendaVO[i].Quantidade++;
                         break;
                     }
-                    else if (i == listItemVendaVO.Count - 1)
+                    else if (i == listItemAgendaVO.Count - 1)
                     {
-                        listItemVendaVO.Add(item);
+                        listItemAgendaVO.Add(item);
                         break;
                     }
                 }
 
-                if (listItemVendaVO.Count == 0)
-                    listItemVendaVO.Add(item);
+                if (listItemAgendaVO.Count == 0)
+                    listItemAgendaVO.Add(item);
             }
             #endregion
 
-            string insert_venda = "Insert Into venda(" +
-                                     "valor," +
-                                     "custo," +
-                                     "desconto," +
-                                     "data_hora) " +
-                                  "Values(" +
-                                     vendaVO.Valor.ToString().Replace(',', '.') + "," +
-                                     vendaVO.Custo.ToString().Replace(',', '.') + "," +
-                                     vendaVO.Desconto.ToString().Replace(',', '.') + "," +
-                                     "'" + vendaVO.Data_hora + "'" +
-                                  ");";
-
             string insert_agenda = "Insert Into agenda(" +
-                                      "id_venda," +
                                       "id_cliente," +
                                       "id_funcionario," +
                                       "data_hora," +
@@ -161,7 +137,6 @@ namespace AgendaMais.Classes.DAOs
                                       "status" +
                                    ")" +
                                    "Values(" +
-                                      agendaVO.Id_venda + "," +
                                       agendaVO.Id_cliente + "," +
                                       agendaVO.Id_funcionario + "," +
                                       "'" + agendaVO.Data_hora + "'," +
@@ -169,126 +144,69 @@ namespace AgendaMais.Classes.DAOs
                                       "'" + agendaVO.Status + "'" +
                                    ");";
 
-            string insert_item_venda = "Insert Into item_venda(" +
-                                         "id_produto, " +
-                                         "id_venda, " +
-                                         "quantidade, " +
-                                         "desconto) " +
+            string insert_item_agenda = "Insert Into item_agenda(" +
+                                            "id_produto, " +
+                                            "id_agenda, " +
+                                            "quantidade, " +
+                                            "desconto) " +
                                        "values ";
 
-            string values_item_venda = "";
-            for (int i = 0; i < listItemVendaVO.Count; i++)
+            string values_item_agenda = "";
+            for (int i = 0; i < listItemAgendaVO.Count; i++)
             {
-                values_item_venda += "(" +
-                                        listItemVendaVO[i].Id_produto + "," +
-                                        listItemVendaVO[i].Id_venda + "," +
-                                        listItemVendaVO[i].Quantidade + "," +
-                                        listItemVendaVO[i].Desconto.ToString().Replace(',', '.') +
+                values_item_agenda += "(" +
+                                        listItemAgendaVO[i].Id_produto + "," +
+                                        listItemAgendaVO[i].Id_agenda + "," +
+                                        listItemAgendaVO[i].Quantidade + "," +
+                                        listItemAgendaVO[i].Desconto.ToString().Replace(',', '.') +
                                      ")";
-                if (i != listItemVendaVO.Count - 1)
-                    values_item_venda += ",";
+                if (i != listItemAgendaVO.Count - 1)
+                    values_item_agenda += ",";
             }
-            values_item_venda += ";";
-            insert_item_venda += values_item_venda;
+            values_item_agenda += ";";
+            insert_item_agenda += values_item_agenda;
 
             List<string> list_sql = new List<string>();
-            list_sql.Add(insert_venda);
             list_sql.Add(insert_agenda);
-            list_sql.Add(insert_item_venda);
+            list_sql.Add(insert_item_agenda);
             ExecutaSQL(list_sql);
-
-            #region old
-            //try
-            //{
-            //    ExecutaSQL(insert_venda);
-            //}
-            //catch (Exception erro)
-            //{
-            //    throw new Exception("Erro ao inserir na tabela venda: " + erro.Message);
-            //}
-
-            //try
-            //{
-            //    ExecutaSQL(insert_agenda);
-            //}
-            //catch (Exception erro)
-            //{
-            //    ExecutaSQL("delete from venda where id=" + agendaVO.Id_venda);
-            //    ExecutaSQL("alter sequence venda_id_seq restart with " + agendaVO.Id_venda);
-
-            //    throw new Exception("Erro ao inserir na tabela agenda: " + erro.Message);
-            //}
-
-            //try
-            //{
-            //    ExecutaSQL(insert_item_venda);
-            //}
-            //catch (Exception erro)
-            //{
-            //    ExecutaSQL("delete from agenda where id_venda=" + agendaVO.Id_venda);
-            //    ExecutaSQL("alter sequence agenda_id_seq restart with " + agendaVO.Id_venda);
-
-            //    ExecutaSQL("delete from venda where id=" + agendaVO.Id_venda);
-            //    ExecutaSQL("alter sequence venda_id_seq restart with " + agendaVO.Id_venda);
-
-            //    throw new Exception("Erro ao inserir na tabela item_venda: " + erro.Message);
-            //}
-            #endregion
         }
 
         public static void AtualizarRegistro(AgendaVO agendaVO)
         {
-            #region  Monta VendaVO
-            VendaVO vendaVO = new VendaVO();
-            vendaVO.Id = agendaVO.Id_venda;
-            foreach (ProdutoVO item in agendaVO.Itens)
-                vendaVO.Valor += item.Vl_venda;
-            vendaVO.Desconto = 0;
-            vendaVO.Data_hora = agendaVO.Data_hora;
-            #endregion
-
-            #region Monta ItensVendaVO
-            List<ItemVendaVO> listItemVendaVO = new List<ItemVendaVO>();
+            #region Monta ItemAgendaVO
+            List<ItemAgendaVO> listItemAgendaVO = new List<ItemAgendaVO>();
             foreach (ProdutoVO p in agendaVO.Itens)
             {
-                ItemVendaVO item = new ItemVendaVO();
+                ItemAgendaVO item = new ItemAgendaVO();
                 item.Id_produto = p.Id;
-                item.Id_venda = agendaVO.Id_venda;
+                item.Id_agenda = agendaVO.Id;
                 item.Quantidade = 1;
                 item.Desconto = 0;
 
-                for (int i = 0; i < listItemVendaVO.Count; i++)
+                for (int i = 0; i < listItemAgendaVO.Count; i++)
                 {
-                    if (listItemVendaVO[i].Id_produto == item.Id_produto)
+                    if (listItemAgendaVO[i].Id_produto == item.Id_produto)
                     {
-                        listItemVendaVO[i].Quantidade++;
+                        listItemAgendaVO[i].Quantidade++;
                         break;
                     }
-                    else if (i == listItemVendaVO.Count - 1)
+                    else if (i == listItemAgendaVO.Count - 1)
                     {
-                        listItemVendaVO.Add(item);
+                        listItemAgendaVO.Add(item);
                         break;
                     }
                 }
 
-                if (listItemVendaVO.Count == 0)
-                    listItemVendaVO.Add(item);
+                if (listItemAgendaVO.Count == 0)
+                    listItemAgendaVO.Add(item);
             }
             #endregion
 
             List<string> list_sql = new List<string>();
 
-            string update_venda = "UPDATE venda SET " +
-                                  "valor=" + vendaVO.Valor.ToString().Replace(',', '.') + "," +
-                                  "custo=" + vendaVO.Custo.ToString().Replace(',', '.') + "," +
-                                  "desconto=" + vendaVO.Desconto.ToString().Replace(',', '.') + "," +
-                                  "data_hora='" + vendaVO.Data_hora + "'" +
-                                  " WHERE id=" + vendaVO.Id;
-            list_sql.Add(update_venda);
-
             string update_agenda = "Update agenda " +
-                                   "Set id_venda=" + agendaVO.Id_venda + "," +
-                                       "id_cliente=" + agendaVO.Id_cliente + "," +
+                                   "Set id_cliente=" + agendaVO.Id_cliente + "," +
                                        "id_funcionario=" + agendaVO.Id_funcionario + "," +
                                        "data_hora='" + agendaVO.Data_hora + "'" + "," +
                                        "obs='" + agendaVO.Obs + "'" + "," +
@@ -296,52 +214,14 @@ namespace AgendaMais.Classes.DAOs
                                    "where id=" + agendaVO.Id;
             list_sql.Add(update_agenda);
 
-            foreach (ItemVendaVO item in listItemVendaVO)
+            foreach (ItemAgendaVO item in listItemAgendaVO)
                 list_sql.Add("UPDATE item_venda SET " +
                                        "quantidade=" + item.Quantidade + ", " +
                                        "desconto=" + item.Desconto.ToString().Replace(',', '.') + " " +
                                        "WHERE id_produto=" + item.Id_produto + " and " +
-                                              "id_venda=" + item.Id_venda);
+                                              "id_agenda=" + item.Id_agenda);
 
             ExecutaSQL(list_sql);
-
-            #region old
-            //try
-            //{
-            //    ExecutaSQL(update_venda);
-            //}
-            //catch (Exception erro)
-            //{
-            //    throw new Exception("Erro ao atualizar na tabela venda: " + erro.Message);
-            //}
-
-            //try
-            //{
-            //    ExecutaSQL(update_agenda);
-            //}
-            //catch (Exception erro)
-            //{
-            //    ExecutaSQL("delete from venda where id=" + agendaVO.Id_venda);
-            //    ExecutaSQL("alter sequence venda_id_seq restart with " + agendaVO.Id_venda);
-
-            //    throw new Exception("Erro ao atualizar na tabela agenda: " + erro.Message);
-            //}
-
-            //try
-            //{
-            //    ExecutaSQL(insert_item_venda);
-            //}
-            //catch (Exception erro)
-            //{
-            //    ExecutaSQL("delete from agenda where id_venda=" + agendaVO.Id_venda);
-            //    ExecutaSQL("alter sequence agenda_id_seq restart with " + agendaVO.Id_venda);
-
-            //    ExecutaSQL("delete from venda where id=" + agendaVO.Id_venda);
-            //    ExecutaSQL("alter sequence venda_id_seq restart with " + agendaVO.Id_venda);
-
-            //    throw new Exception("Erro ao inserir na tabela item_venda: " + erro.Message);
-            //}
-            #endregion
         }
 
         public static void DeletarRegistro(int id)

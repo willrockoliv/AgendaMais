@@ -9,7 +9,6 @@ namespace AgendaMais.Classes.VOs
     public class AgendaVO
     {
         private int id;
-        private int id_venda;
         private List<ProdutoVO> serv_prod;
         private int id_cliente;
         private string nome_cliente;
@@ -28,16 +27,6 @@ namespace AgendaMais.Classes.VOs
                     throw new Exception("id não pode ser menor ou igual a zero");
                 else
                     id = value;
-            }
-        }
-        public int Id_venda
-        {
-            get => id_venda; set
-            {
-                if (value <= 0)
-                    throw new Exception("id_venda não pode ser menor ou igual a zero");
-                else
-                    id_venda = value;
             }
         }
         public int Id_cliente

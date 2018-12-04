@@ -1,5 +1,6 @@
 ﻿using AgendaMais.Classes;
 using AgendaMais.Classes.DAOs;
+using AgendaMais.Classes.Enums;
 using AgendaMais.Classes.VOs;
 using AgendaMais.Properties;
 using System;
@@ -88,7 +89,7 @@ namespace AgendaMais
 
             bool ok = true;
 
-            if(String.IsNullOrEmpty(txtNome.Text))
+            if (String.IsNullOrEmpty(txtNome.Text))
             {
                 errorProvider.SetError(txtNome, "Ops! Acho que você esqueceu de informar o nome!");
                 ok = false;
@@ -137,6 +138,7 @@ namespace AgendaMais
         {
             InitializeComponent();
             CarregamentoInicial();
+            lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
         }
 
         public frCadCliente(ClienteVO clienteVO)
@@ -144,6 +146,13 @@ namespace AgendaMais
             CarregamentoInicial();
             InitializeComponent();
             ExibeCliente(clienteVO);
+            for (int i = 0; i < listClienteVO.Count; i++)
+                if (clienteVO.Nome == listClienteVO[i].Nome)
+                {
+                    index = i;
+                    lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
+                    break;
+                }
         }
         #endregion
 
@@ -396,6 +405,21 @@ namespace AgendaMais
                 ptbImagemCliente.ImageLocation = openFileDialog.FileName;
         }
         #endregion
+
+        private void ptbPesquisa_Click(object sender, EventArgs e)
+        {
+            frPesquisa frPesquisa = new frPesquisa(EnumPesquisa.cliente);
+            frPesquisa.ShowDialog();
+            if (frPesquisa.clienteVO != null)
+                for (int i = 0; i < listClienteVO.Count; i++)
+                    if (frPesquisa.clienteVO.Nome == listClienteVO[i].Nome)
+                    {
+                        index = i;
+                        lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
+                        ExibeCliente(listClienteVO[i]);
+                        break;
+                    }
+        }
 
         #endregion
     }

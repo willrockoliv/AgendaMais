@@ -343,6 +343,16 @@ namespace AgendaMais.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DRE2 {
+            get {
+                object obj = ResourceManager.GetObject("DRE2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit__2_ {
             get {
                 object obj = ResourceManager.GetObject("edit (2)", resourceCulture);
@@ -876,6 +886,26 @@ namespace AgendaMais.Properties {
         internal static System.Drawing.Bitmap rawpixel_633847_unsplash {
             get {
                 object obj = ResourceManager.GetObject("rawpixel-633847-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Relatorios {
+            get {
+                object obj = ResourceManager.GetObject("Relatorios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Relatorios_transparency {
+            get {
+                object obj = ResourceManager.GetObject("Relatorios_transparency", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

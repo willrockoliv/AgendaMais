@@ -58,10 +58,9 @@
     <Compile Include="Classes\DAOs\ClienteDAO.cs" />
     <Compile Include="Classes\DAOs\DAO.cs" />
     <Compile Include="Classes\DAOs\GrupoProdutoDAO.cs" />
-    <Compile Include="Classes\DAOs\VendaDAO.cs" />
     <Compile Include="Classes\DB.cs" />
     <Compile Include="Classes\DAOs\AgendaDAO.cs" />
-    <Compile Include="Classes\DAOs\ItemVendaDAO.cs" />
+    <Compile Include="Classes\DAOs\ItemAgendaDAO.cs" />
     <Compile Include="Classes\DAOs\FuncionarioDAO.cs" />
     <Compile Include="Classes\DAOs\ProdutoDAO.cs" />
     <Compile Include="Classes\Enums\EnumPesquisa.cs" />
@@ -76,11 +75,10 @@
     <Compile Include="Classes\VOs\ClienteVO.cs" />
     <Compile Include="Classes\VOs\FuncionarioVO.cs" />
     <Compile Include="Classes\VOs\GrupoProdutoVO.cs" />
-    <Compile Include="Classes\VOs\ItemVendaVO.cs" />
+    <Compile Include="Classes\VOs\ItemAgendaVO.cs" />
     <Compile Include="Classes\VOs\PessoaVO.cs" />
     <Compile Include="Classes\Validacoes.cs" />
     <Compile Include="Classes\VOs\ProdutoVO.cs" />
-    <Compile Include="Classes\VOs\VendaVO.cs" />
     <Compile Include="Classes\Windows\CMD.cs" />
     <Compile Include="Classes\Windows\ExecutarComoAdmin.cs" />
     <Compile Include="Classes\Windows\ServicosWindows.cs" />
@@ -114,11 +112,17 @@
     <Compile Include="Telas\Cadastros\Estoque\frCadProdServ.Designer.cs">
       <DependentUpon>frCadProdServ.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Pesquisas\frPesquisaClientes.cs">
+    <Compile Include="Telas\Relatórios\frDRE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Pesquisas\frPesquisaClientes.Designer.cs">
-      <DependentUpon>frPesquisaClientes.cs</DependentUpon>
+    <Compile Include="Telas\Relatórios\frDRE.Designer.cs">
+      <DependentUpon>frDRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Pesquisas\frPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Pesquisas\frPesquisa.Designer.cs">
+      <DependentUpon>frPesquisa.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Principal\frPrincipal.cs">
       <SubType>Form</SubType>
@@ -149,8 +153,8 @@
     <EmbeddedResource Include="Telas\Cadastros\Estoque\frCadProdServ.resx">
       <DependentUpon>frCadProdServ.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Pesquisas\frPesquisaClientes.resx">
-      <DependentUpon>frPesquisaClientes.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Pesquisas\frPesquisa.resx">
+      <DependentUpon>frPesquisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Principal\frPrincipal.resx">
       <DependentUpon>frPrincipal.cs</DependentUpon>
@@ -168,6 +172,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Telas\Relatórios\frDRE.resx">
+      <DependentUpon>frDRE.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -234,6 +241,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1498590843_Streamline-52.ico" />
+    <None Include="Resources\DRE2.jpg" />
+    <None Include="Resources\Relatorios.png" />
+    <None Include="Resources\Relatorios_transparency.png" />
     <None Include="Resources\proximo2.png" />
     <None Include="Resources\ultimo_hover.png" />
     <None Include="Resources\ultimo.png" />

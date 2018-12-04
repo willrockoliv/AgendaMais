@@ -131,6 +131,7 @@
             this.txtFuncionarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtFuncionarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
             this.txtFuncionarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFuncionarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtFuncionarios.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFuncionarios.ForeColor = System.Drawing.Color.White;
             this.txtFuncionarios.Location = new System.Drawing.Point(3, 8);
@@ -164,6 +165,7 @@
             this.txtProdServ.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtProdServ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
             this.txtProdServ.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProdServ.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtProdServ.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProdServ.ForeColor = System.Drawing.Color.White;
             this.txtProdServ.Location = new System.Drawing.Point(3, 8);

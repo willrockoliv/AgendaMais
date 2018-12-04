@@ -143,24 +143,25 @@ namespace AgendaMais
         int VerificaAlteracaoCliente(int id)
         {
             int retorno = 0;
+            ClienteVO clienteVO = ClienteDAO.GetRegistroPorId(id);
 
-            if (listCliente[id - 1].Tel_cel != mkbTelCel.Text.Trim())
+            if (clienteVO.Tel_cel != mkbTelCel.Text.Trim())
                 retorno = 1;
-            if (listCliente[id - 1].Email != txtEmail.Text.Trim())
+            if (clienteVO.Email != txtEmail.Text.Trim())
                 retorno = 1;
-            if (listCliente[id - 1].Cpf.Replace(".", "").Replace("-", "").Trim() != mkbCPF.Text.Replace(".", "").Replace("-", "").Trim())
+            if (clienteVO.Cpf.Replace(".", "").Replace("-", "").Trim() != mkbCPF.Text.Replace(".", "").Replace("-", "").Trim())
                 retorno = 1;
-            if (listCliente[id - 1].Rg.Replace(".", "").Replace("-", "").Trim() != txtRG.Text.Replace(".", "").Replace("-", "").Trim())
+            if (clienteVO.Rg.Replace(".", "").Replace("-", "").Trim() != txtRG.Text.Replace(".", "").Replace("-", "").Trim())
                 retorno = 1;
-            if (listCliente[id - 1].Endereco != txtEndereco.Text.Trim())
+            if (clienteVO.Endereco != txtEndereco.Text.Trim())
                 retorno = 1;
-            if (listCliente[id - 1].Bairro != txtBairro.Text.Trim())
+            if (clienteVO.Bairro != txtBairro.Text.Trim())
                 retorno = 1;
-            if (listCliente[id - 1].Numero != txtNr.Text.Trim())
+            if (clienteVO.Numero != txtNr.Text.Trim())
                 retorno = 1;
-            if (listCliente[id - 1].Cidade != txtCidade.Text.Trim())
+            if (clienteVO.Cidade != txtCidade.Text.Trim())
                 retorno = 1;
-            if (listCliente[id - 1].Complemento != txtComplemento.Text.Trim())
+            if (clienteVO.Complemento != txtComplemento.Text.Trim())
                 retorno = 1;
 
             return retorno;
@@ -769,7 +770,6 @@ namespace AgendaMais
                     #region Monta AgendaVO
                     agendaVO.Id_cliente = clienteVO.Id;
                     agendaVO.Id_funcionario = funcionarioVOSelecionado.Id;
-                    agendaVO.Id_venda = Convert.ToInt32(AgendaDAO.ExecutaSelect("select id from agenda order by id desc limit 1").Rows[0]["id"]) + 1;
                     agendaVO.Data_hora = Convert.ToDateTime(dtpData.Text + " " + mkbHorario.Text);
                     agendaVO.Obs = "";
                     agendaVO.Status = 'P';
@@ -778,7 +778,6 @@ namespace AgendaMais
 
                     if (alteracao)
                     {
-                        agendaVO.Id_venda = agendaVO.Id;
                         AgendaDAO.AtualizarRegistro(agendaVO);
                     }
                     else
