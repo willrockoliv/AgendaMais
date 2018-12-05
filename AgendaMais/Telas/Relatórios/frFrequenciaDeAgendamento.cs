@@ -75,7 +75,7 @@ namespace AgendaMais.Telas.Relatórios
             txtFrequencia.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFrequencia.Location = new Point(552, 7);
             txtFrequencia.Size = new Size(149, 20);
-            if (frequencia == 0)
+            if (confirmados < 3)
                 txtFrequencia.Text = "-";
             else
                 txtFrequencia.Text = $"a cada {frequencia.ToString()} dias";
@@ -90,7 +90,7 @@ namespace AgendaMais.Telas.Relatórios
             txtPossivelDataRetorno.ForeColor = Color.Black;
             txtPossivelDataRetorno.Location = new Point(707, 7);
             txtPossivelDataRetorno.Size = new Size(72, 20);
-            if (frequencia == 0)
+            if (confirmados < 3)
                 txtPossivelDataRetorno.Text = "-";
             else
                 txtPossivelDataRetorno.Text = possivel_data_retorno.ToString("dd/MM");
@@ -99,7 +99,7 @@ namespace AgendaMais.Telas.Relatórios
 
             #region ptbStatus
             PictureBox ptbStatus = new PictureBox();
-            if (frequencia == 0)
+            if (confirmados < 3)
                 ptbStatus.Image = null;
             else
             {

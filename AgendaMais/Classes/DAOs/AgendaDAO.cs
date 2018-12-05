@@ -27,10 +27,10 @@ namespace AgendaMais.Classes.DAOs
                 agendaVO.Obs = row["obs"].ToString();
                 agendaVO.Status = Convert.ToChar(row["status"]);
 
-                List<ItemAgendaVO> listItemVendaVO = ItemAgendaDAO.GetRegistroPorIdAgenda(agendaVO.Id);
+                List<ItemAgendaVO> listItemAgendaVO = ItemAgendaDAO.GetRegistroPorIdAgenda(agendaVO.Id);
                 List<ProdutoVO> listProdutoVO = new List<ProdutoVO>();
-                if (listItemVendaVO != null)
-                    foreach (ItemAgendaVO item in listItemVendaVO)
+                if (listItemAgendaVO != null)
+                    foreach (ItemAgendaVO item in listItemAgendaVO)
                         for (int i = 0; i < item.Quantidade; i++)
                             listProdutoVO.Add(ProdutoDAO.GetRegistroPorId(item.Id_produto));
 
@@ -215,7 +215,7 @@ namespace AgendaMais.Classes.DAOs
             list_sql.Add(update_agenda);
 
             foreach (ItemAgendaVO item in listItemAgendaVO)
-                list_sql.Add("UPDATE item_venda SET " +
+                list_sql.Add("UPDATE item_agenda SET " +
                                        "quantidade=" + item.Quantidade + ", " +
                                        "desconto=" + item.Desconto.ToString().Replace(',', '.') + " " +
                                        "WHERE id_produto=" + item.Id_produto + " and " +

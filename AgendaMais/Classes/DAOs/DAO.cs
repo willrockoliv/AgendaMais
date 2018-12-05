@@ -52,7 +52,7 @@ namespace AgendaMais.Classes.DAOs
         /// <returns></returns>
         public static DataTable GetRegistros(string tabela, string condicao)
         {
-            string sql = string.Format("Select * from {0} {1}", tabela, condicao);
+            string sql = $"Select * from {tabela} {condicao}";
             return ExecutaSelect(sql);
         }
 

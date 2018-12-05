@@ -123,7 +123,7 @@ namespace AgendaMais.Classes.DAOs
                                 "data_hora " +
                              "from " +
                                 "agenda " +
-                            $"where id_cliente={clienteVO.Id}" +
+                            $"where id_cliente={clienteVO.Id} " +
                              "order by " +
                                 "data_hora";
 
@@ -147,19 +147,19 @@ namespace AgendaMais.Classes.DAOs
                         f.pendentes++;
                     f.qtd_agendamentos++;
 
-                    if (f.qtd_agendamentos == 1)
+                    if (f.confirmados == 1)
                         data_anterior = Convert.ToDateTime(row["data_hora"]);
                     else if(f.qtd_agendamentos == dt.Rows.Count)
                     {
-                        if (Convert.ToChar(row["status"]) != 'P')
+                        if (Convert.ToChar(row["status"]) == 'C')
                         {
                             TimeSpan data = Convert.ToDateTime(row["data_hora"]) - data_anterior;
                             f.frequencia += data.Days;
                         }
                         if (f.confirmados > 1)
                         {
-                            f.frequencia = f.frequencia / f.qtd_agendamentos;
-                            f.possivel_data_retorno = Convert.ToDateTime(row["data_hora"]).AddDays(f.frequencia);
+                            f.frequencia = f.frequencia / (f.confirmados - 1);
+                            f.possivel_data_retorno = data_anterior.AddDays(f.frequencia);
                         }
                     }
                     else if(Convert.ToChar(row["status"]) == 'C')

@@ -15,7 +15,7 @@ namespace AgendaMais.Classes.DAOs
         {
             ItemAgendaVO itemVendaVO = new ItemAgendaVO();
             itemVendaVO.Id_produto = Convert.ToInt32(row["id_produto"]);
-            itemVendaVO.Id_agenda = Convert.ToInt32(row["id_venda"]);
+            itemVendaVO.Id_agenda = Convert.ToInt32(row["id_agenda"]);
             itemVendaVO.Quantidade = Convert.ToInt32(row["quantidade"]);
             itemVendaVO.Desconto = Convert.ToDouble(row["desconto"]);
             return itemVendaVO;
@@ -25,7 +25,7 @@ namespace AgendaMais.Classes.DAOs
         {
             List<ItemAgendaVO> listItemVendaVO = new List<ItemAgendaVO>();
 
-            if (listItemVendaVO.Count == 0)
+            if (table.Rows.Count == 0)
                 return null;
 
             foreach (DataRow row in table.Rows)
@@ -52,8 +52,8 @@ namespace AgendaMais.Classes.DAOs
 
         public static List<ItemAgendaVO> GetRegistroPorIdAgenda(int id_agenda)
         {
-            string condicao = string.Format("where id_venda={0}", id_agenda);
-            return MontaListItemVenda(DAO.GetRegistros("item_venda", condicao));
+            string condicao = $"where id_agenda={id_agenda}";
+            return MontaListItemVenda(DAO.GetRegistros("item_agenda", condicao));
         }
 
         public static List<ItemAgendaVO> GetRegistros(string condicao)
