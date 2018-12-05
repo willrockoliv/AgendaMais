@@ -57,7 +57,7 @@
             // 
             // ptbClientes
             // 
-            this.ptbClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbClientes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ptbClientes.BackColor = System.Drawing.Color.Transparent;
             this.ptbClientes.Cursor = System.Windows.Forms.Cursors.Default;
             this.ptbClientes.Image = global::AgendaMais.Properties.Resources.peaple__4__transparency;
@@ -70,7 +70,7 @@
             // 
             // ptbAgenda
             // 
-            this.ptbAgenda.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbAgenda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ptbAgenda.BackColor = System.Drawing.Color.Transparent;
             this.ptbAgenda.Cursor = System.Windows.Forms.Cursors.Default;
             this.ptbAgenda.Image = global::AgendaMais.Properties.Resources.calendary_transparency;
@@ -83,7 +83,7 @@
             // 
             // ptbFinanceiro
             // 
-            this.ptbFinanceiro.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbFinanceiro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ptbFinanceiro.BackColor = System.Drawing.Color.Transparent;
             this.ptbFinanceiro.Cursor = System.Windows.Forms.Cursors.Default;
             this.ptbFinanceiro.Image = global::AgendaMais.Properties.Resources.money__4__tranparency;
@@ -96,7 +96,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(83)))), ((int)(((byte)(122)))), ((int)(((byte)(87)))));
             this.panel1.Controls.Add(this.ptbCarregar);
             this.panel1.Controls.Add(this.lblLucroLiquido);
@@ -119,6 +119,7 @@
             // 
             // ptbCarregar
             // 
+            this.ptbCarregar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ptbCarregar.BackColor = System.Drawing.Color.Transparent;
             this.ptbCarregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbCarregar.Image = global::AgendaMais.Properties.Resources.status_confirmado;
@@ -128,9 +129,13 @@
             this.ptbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbCarregar.TabIndex = 50;
             this.ptbCarregar.TabStop = false;
+            this.ptbCarregar.Click += new System.EventHandler(this.ptbCarregar_Click);
+            this.ptbCarregar.MouseLeave += new System.EventHandler(this.ptbCarregar_MouseLeave);
+            this.ptbCarregar.MouseHover += new System.EventHandler(this.ptbCarregar_MouseHover);
             // 
             // lblLucroLiquido
             // 
+            this.lblLucroLiquido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblLucroLiquido.AutoSize = true;
             this.lblLucroLiquido.BackColor = System.Drawing.Color.Transparent;
             this.lblLucroLiquido.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,6 +149,7 @@
             // 
             // lblCustoTotal
             // 
+            this.lblCustoTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCustoTotal.AutoSize = true;
             this.lblCustoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblCustoTotal.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,6 +163,7 @@
             // 
             // lblCustoProd
             // 
+            this.lblCustoProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCustoProd.AutoSize = true;
             this.lblCustoProd.BackColor = System.Drawing.Color.Transparent;
             this.lblCustoProd.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,6 +177,7 @@
             // 
             // lblCustoServ
             // 
+            this.lblCustoServ.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCustoServ.AutoSize = true;
             this.lblCustoServ.BackColor = System.Drawing.Color.Transparent;
             this.lblCustoServ.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -183,6 +191,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,6 +205,7 @@
             // 
             // lblReceitaTotal
             // 
+            this.lblReceitaTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblReceitaTotal.AutoSize = true;
             this.lblReceitaTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblReceitaTotal.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -209,6 +219,7 @@
             // 
             // lblReceitaProd
             // 
+            this.lblReceitaProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblReceitaProd.AutoSize = true;
             this.lblReceitaProd.BackColor = System.Drawing.Color.Transparent;
             this.lblReceitaProd.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -222,6 +233,7 @@
             // 
             // lblReceitaServ
             // 
+            this.lblReceitaServ.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblReceitaServ.AutoSize = true;
             this.lblReceitaServ.BackColor = System.Drawing.Color.Transparent;
             this.lblReceitaServ.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,6 +247,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,6 +261,7 @@
             // 
             // dtpDataFim
             // 
+            this.dtpDataFim.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpDataFim.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataFim.Location = new System.Drawing.Point(512, 44);
@@ -258,6 +272,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -271,6 +286,7 @@
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -284,6 +300,7 @@
             // 
             // dtpDataIni
             // 
+            this.dtpDataIni.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpDataIni.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataIni.Location = new System.Drawing.Point(322, 44);
@@ -311,7 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImage = global::AgendaMais.Properties.Resources.DRE2;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.ptbClientes);
             this.Controls.Add(this.ptbAgenda);
@@ -323,6 +340,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Demonstrativo de Resultado";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frDRE_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();

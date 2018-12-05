@@ -3,7 +3,9 @@ using AgendaMais.Classes.DAOs;
 using AgendaMais.Classes.VOs;
 using AgendaMais.Classes.Windows;
 using AgendaMais.Properties;
+using AgendaMais.Telas;
 using AgendaMais.Telas.Cadastros;
+using AgendaMais.Telas.Relatórios;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -292,6 +294,16 @@ namespace AgendaMais
             frCadastros.Show();
         }
 
+        private void panDRE_Click(object sender, EventArgs e)
+        {
+            frDRE frDRE = new frDRE();
+            frDRE.Show();
+        }
 
+        private void panFreqAgendamento_Click(object sender, EventArgs e)
+        {
+            frFrequenciaDeAgendamento frFrequenciaDeAgendamento = new frFrequenciaDeAgendamento();
+            frFrequenciaDeAgendamento.Show();
+        }
     }
 }

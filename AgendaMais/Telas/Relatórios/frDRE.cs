@@ -1,4 +1,5 @@
 ﻿using AgendaMais.Classes;
+using AgendaMais.Classes.DAOs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,31 +26,27 @@ namespace AgendaMais.Telas
         {
             using (new Carregando("Processando dados..."))
             {
-                //SqlParameter[] sqlParameters = new SqlParameter[2];
-                //sqlParameters[0] = new SqlParameter("@data_ini", SqlDbType.SmallDateTime);
-                //sqlParameters[0].Value = dataIni;
-                //sqlParameters[1] = new SqlParameter("@data_fim", SqlDbType.SmallDateTime);
-                //sqlParameters[1].Value = dataFim;
+                RelatoriosDAO relatoriosDAO = new RelatoriosDAO();
+                relatoriosDAO.relatorio_DRE(dataIni, dataFim);
 
-                //DataTable tbDRE = BD.ExecutaSelect("sp_DRE", sqlParameters);
 
-                //receitaProd = Convert.ToDouble(tbDRE.Rows[0]["receitaProd"]);
-                //receitaServ = Convert.ToDouble(tbDRE.Rows[0]["receitaServ"]);
-                //receitaTotal = Convert.ToDouble(tbDRE.Rows[0]["receitaTotal"]);
-                //CustoProd = Convert.ToDouble(tbDRE.Rows[0]["CustoProd"]);
-                //custoServ = Convert.ToDouble(tbDRE.Rows[0]["custoServ"]);
-                //custoTotal = Convert.ToDouble(tbDRE.Rows[0]["custoTotal"]);
-                //lucroLiquido = Convert.ToDouble(tbDRE.Rows[0]["lucroLiquido"]);
+                receitaProd = relatoriosDAO.Dre.receita_produto;
+                receitaServ = relatoriosDAO.Dre.receita_servico;
+                receitaTotal = relatoriosDAO.Dre.receita_total;
+                CustoProd = relatoriosDAO.Dre.custo_produto;
+                custoServ = relatoriosDAO.Dre.custo_servico;
+                custoTotal = relatoriosDAO.Dre.custo_total;
+                lucroLiquido = relatoriosDAO.Dre.receita_total - relatoriosDAO.Dre.custo_total;
 
-                //lblReceitaServ.Text = $"SERVIÇOS ...................................... {receitaServ.ToString("C")}";
-                //lblReceitaProd.Text = $"PRODUTOS .................................... {receitaProd.ToString("C")}";
-                //lblReceitaTotal.Text = $"TOTAL ............................................. {receitaTotal.ToString("C")}";
+                lblReceitaServ.Text = $"SERVIÇOS ...................................... {receitaServ.ToString("C")}";
+                lblReceitaProd.Text = $"PRODUTOS .................................... {receitaProd.ToString("C")}";
+                lblReceitaTotal.Text = $"TOTAL ............................................. {receitaTotal.ToString("C")}";
 
-                //lblCustoServ.Text = $"SERVIÇOS ...................................... {custoServ.ToString("C")}";
-                //lblCustoProd.Text = $"PRODUTOS .................................... {CustoProd.ToString("C")}";
-                //lblCustoTotal.Text = $"TOTAL ............................................. {custoTotal.ToString("C")}";
+                lblCustoServ.Text = $"SERVIÇOS ...................................... {custoServ.ToString("C")}";
+                lblCustoProd.Text = $"PRODUTOS .................................... {CustoProd.ToString("C")}";
+                lblCustoTotal.Text = $"TOTAL ............................................. {custoTotal.ToString("C")}";
 
-                //lblLucroLiquido.Text = $"LUCRO LÍQUIDO ...................................... {lucroLiquido.ToString("C")}";
+                lblLucroLiquido.Text = $"LUCRO LÍQUIDO ...................................... {lucroLiquido.ToString("C")}";
             }
         }
 
@@ -65,7 +62,7 @@ namespace AgendaMais.Telas
             ExibeDRE(dtpDataIni.Value, dtpDataFim.Value);
         }
 
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        private void ptbCarregar_MouseHover(object sender, EventArgs e)
         {
             ptbCarregar.BackColor = Color.FromArgb(83, 122, 87);
         }

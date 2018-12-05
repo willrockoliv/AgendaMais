@@ -376,6 +376,7 @@
             this.panDRE.Size = new System.Drawing.Size(311, 28);
             this.panDRE.TabIndex = 9;
             this.panDRE.Visible = false;
+            this.panDRE.Click += new System.EventHandler(this.panDRE_Click);
             this.panDRE.MouseLeave += new System.EventHandler(this.panDRE_MouseLeave);
             this.panDRE.MouseHover += new System.EventHandler(this.panDRE_MouseHover);
             // 
@@ -393,6 +394,7 @@
             this.lblDRE.TabIndex = 1;
             this.lblDRE.Text = "Demonstrativo de Resultado";
             this.lblDRE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDRE.Click += new System.EventHandler(this.panDRE_Click);
             this.lblDRE.MouseLeave += new System.EventHandler(this.panDRE_MouseLeave);
             this.lblDRE.MouseHover += new System.EventHandler(this.panDRE_MouseHover);
             // 
@@ -406,6 +408,7 @@
             this.panFreqAgendamento.Size = new System.Drawing.Size(311, 28);
             this.panFreqAgendamento.TabIndex = 8;
             this.panFreqAgendamento.Visible = false;
+            this.panFreqAgendamento.Click += new System.EventHandler(this.panFreqAgendamento_Click);
             this.panFreqAgendamento.MouseLeave += new System.EventHandler(this.panFreqAgendamento_MouseLeave);
             this.panFreqAgendamento.MouseHover += new System.EventHandler(this.panFreqAgendamento_MouseHover);
             // 
@@ -423,6 +426,7 @@
             this.lblFreqAgendamento.TabIndex = 0;
             this.lblFreqAgendamento.Text = "Frequência de Agendamento";
             this.lblFreqAgendamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFreqAgendamento.Click += new System.EventHandler(this.panFreqAgendamento_Click);
             this.lblFreqAgendamento.MouseLeave += new System.EventHandler(this.panFreqAgendamento_MouseLeave);
             this.lblFreqAgendamento.MouseHover += new System.EventHandler(this.panFreqAgendamento_MouseHover);
             // 

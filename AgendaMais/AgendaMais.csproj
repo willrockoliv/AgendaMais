@@ -58,6 +58,7 @@
     <Compile Include="Classes\DAOs\ClienteDAO.cs" />
     <Compile Include="Classes\DAOs\DAO.cs" />
     <Compile Include="Classes\DAOs\GrupoProdutoDAO.cs" />
+    <Compile Include="Classes\DAOs\RelatoriosDAO.cs" />
     <Compile Include="Classes\DB.cs" />
     <Compile Include="Classes\DAOs\AgendaDAO.cs" />
     <Compile Include="Classes\DAOs\ItemAgendaDAO.cs" />
@@ -138,6 +139,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Telas\Relatórios\frFrequenciaDeAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Relatórios\frFrequenciaDeAgendamento.Designer.cs">
+      <DependentUpon>frFrequenciaDeAgendamento.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Telas\Agenda\frAgendados.resx">
       <DependentUpon>frAgendados.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +181,9 @@
     </Compile>
     <EmbeddedResource Include="Telas\Relatórios\frDRE.resx">
       <DependentUpon>frDRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Relatórios\frFrequenciaDeAgendamento.resx">
+      <DependentUpon>frFrequenciaDeAgendamento.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -241,6 +251,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1498590843_Streamline-52.ico" />
+    <None Include="Resources\vermelho.png" />
+    <None Include="Resources\verde.png" />
+    <None Include="Resources\amarelo.png" />
+    <None Include="Resources\Rel_FrequenciaDeAgendamento.jpg" />
     <None Include="Resources\DRE2.jpg" />
     <None Include="Resources\Relatorios.png" />
     <None Include="Resources\Relatorios_transparency.png" />

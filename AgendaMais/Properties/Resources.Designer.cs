@@ -113,6 +113,16 @@ namespace AgendaMais.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap amarelo {
+            get {
+                object obj = ResourceManager.GetObject("amarelo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap anterior {
             get {
                 object obj = ResourceManager.GetObject("anterior", resourceCulture);
@@ -893,6 +903,16 @@ namespace AgendaMais.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rel_FrequenciaDeAgendamento {
+            get {
+                object obj = ResourceManager.GetObject("Rel_FrequenciaDeAgendamento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Relatorios {
             get {
                 object obj = ResourceManager.GetObject("Relatorios", resourceCulture);
@@ -976,6 +996,26 @@ namespace AgendaMais.Properties {
         internal static System.Drawing.Bitmap ultimo_hover {
             get {
                 object obj = ResourceManager.GetObject("ultimo_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verde {
+            get {
+                object obj = ResourceManager.GetObject("verde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vermelho {
+            get {
+                object obj = ResourceManager.GetObject("vermelho", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
