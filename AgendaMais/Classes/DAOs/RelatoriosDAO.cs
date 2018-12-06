@@ -129,7 +129,7 @@ namespace AgendaMais.Classes.DAOs
 
                 DataTable dt = ExecutaSelect(sql);
 
-                if (dt.Rows.Count == 0)
+                if (dt == null || dt.Rows.Count == 0)
                     return;
 
                 FreqAgendamentos f = new FreqAgendamentos();

@@ -71,7 +71,7 @@ namespace AgendaMais
         {
             FuncionarioVO c = new FuncionarioVO();
             if (id == 0)
-                c.Id = Convert.ToInt32(FuncionarioDAO.ExecutaSelect("select id from funcionario order by id desc limit 1").Rows[0]["id"]) + 1;
+                c.Id = FuncionarioDAO.ProximoID();
             else
                 c.Id = id;
             c.Nome = txtNome.Text.Trim();
@@ -144,7 +144,8 @@ namespace AgendaMais
         {
             InitializeComponent();
             CarregamentoInicial();
-            lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
+            if (listFuncionarioVO != null)
+                lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
         }
 
         public frCadFuncionarios(FuncionarioVO funcionarioVO)
@@ -199,8 +200,11 @@ namespace AgendaMais
                 {
                     FuncionarioVO funcionarioVO = MontaFuncionarioVO(0);
                     FuncionarioDAO.InserirRegistros(funcionarioVO);
+                    if (listFuncionarioVO == null)
+                        listFuncionarioVO = new List<FuncionarioVO>();
                     listFuncionarioVO.Add(funcionarioVO);
                     index = listFuncionarioVO.Count - 1;
+                    lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
                     MessageBox.Show("Funcionario salvo com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception erro)

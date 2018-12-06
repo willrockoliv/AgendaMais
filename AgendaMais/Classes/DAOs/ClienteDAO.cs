@@ -48,6 +48,11 @@ namespace AgendaMais.Classes.DAOs
                 return null;
         }
 
+        public static int ProximoID()
+        {
+            return DB.ProximoID("cliente");
+        }
+
         public static List<ClienteVO> GetTodosRegistros()
         {
             return MontaListVO(DAO.GetTodosRegistros("cliente"));

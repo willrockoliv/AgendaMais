@@ -53,7 +53,7 @@ namespace AgendaMais.Classes.DAOs
 
         public static void InserirRegistros(GrupoProdutoVO grupo_produto)
         {
-            string sql = "Insert Into grupo_produto values('" + grupo_produto.Descricao + "')";
+            string sql = "Insert Into grupo_produto(nome) values('" + grupo_produto.Descricao + "')";
             DAO.ExecutaSQL(sql);
         }
 

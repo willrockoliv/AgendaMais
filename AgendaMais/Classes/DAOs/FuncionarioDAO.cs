@@ -51,6 +51,11 @@ namespace AgendaMais.Classes
                 return null;
         }
 
+        public static int ProximoID()
+        {
+            return DB.ProximoID("funcionario");
+        }
+
         public static List<FuncionarioVO> GetTodosRegistros()
         {
             return MontaListVO(DAO.GetTodosRegistros("funcionario"));
@@ -112,7 +117,7 @@ namespace AgendaMais.Classes
                               " cidade='" + funcionario.Cidade + "'," +
                               " bairro='" + funcionario.Bairro + "'," +
                               " endereco='" + funcionario.Endereco + "'," +
-                              " numero=" + funcionario.Numero + "," +
+                              " numero='" + funcionario.Numero + "'," +
                               " complemento='" + funcionario.Complemento + "'," +
                               " imagem='" + funcionario.Imagem + "'" +
                          " WHERE id=" + funcionario.Id;

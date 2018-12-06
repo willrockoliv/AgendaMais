@@ -261,12 +261,13 @@ namespace AgendaMais
             if (String.IsNullOrEmpty(txtDescricaoGrupo.Text))
                 return;
 
-            foreach (GrupoProdutoVO gpVO in listGrupoProduto)
-                if (txtDescricaoGrupo.Text.Trim() == gpVO.Descricao)
-                {
-                    errorProvider.SetError(txtDescricaoGrupo, "Esse grupo já foi cadastrado");
-                    return;
-                }
+            if (listGrupoProduto != null)
+                foreach (GrupoProdutoVO gpVO in listGrupoProduto)
+                    if (txtDescricaoGrupo.Text.Trim() == gpVO.Descricao)
+                    {
+                        errorProvider.SetError(txtDescricaoGrupo, "Esse grupo já foi cadastrado");
+                        return;
+                    }
 
             GrupoProdutoVO grupoProdutoVO = new GrupoProdutoVO();
             grupoProdutoVO.Descricao = txtDescricaoGrupo.Text.Trim();
@@ -348,7 +349,7 @@ namespace AgendaMais
                     }
         }
 
-        
+
         #endregion
 
         /* old

@@ -24,6 +24,7 @@ namespace AgendaMais
         MetodosAgenda metodosAgenda = new MetodosAgenda();
         #endregion
 
+        #region Validações Iniciais
         #region Valida Comunicação com PostgreSQL
         static void ValidaServicoPostgreSQL()
         {
@@ -83,6 +84,7 @@ namespace AgendaMais
             else if (!Directory.Exists(mainPath + "\\BD\\imagens"))
                 Directory.CreateDirectory(mainPath + "\\BD\\imagens");
         }
+        #endregion
 
         #region Load e Initialize
         public frPrincipal()
@@ -112,6 +114,7 @@ namespace AgendaMais
         }
         #endregion
 
+        #region Eventos
         #region Menu
 
         #region panRelatorios
@@ -133,6 +136,11 @@ namespace AgendaMais
         }
 
         #region panFreqAgendamento
+        private void panFreqAgendamento_Click(object sender, EventArgs e)
+        {
+            frFrequenciaDeAgendamento frFrequenciaDeAgendamento = new frFrequenciaDeAgendamento();
+            frFrequenciaDeAgendamento.Show();
+        }
         private void panFreqAgendamento_MouseHover(object sender, EventArgs e)
         {
             panFreqAgendamento.BackColor = Color.FromArgb(16, 41, 99);
@@ -147,6 +155,11 @@ namespace AgendaMais
         #endregion
 
         #region panDRE
+        private void panDRE_Click(object sender, EventArgs e)
+        {
+            frDRE frDRE = new frDRE();
+            frDRE.Show();
+        }
         private void panDRE_MouseHover(object sender, EventArgs e)
         {
             panDRE.BackColor = Color.FromArgb(16, 41, 99);
@@ -183,6 +196,11 @@ namespace AgendaMais
         #endregion
 
         #region panCadastros
+        private void Cadastros_Click(object sender, EventArgs e)
+        {
+            frCadastros frCadastros = new frCadastros();
+            frCadastros.Show();
+        }
         private void panCadastros_MouseHover(object sender, EventArgs e)
         {
             panCadastros.BackColor = Color.FromArgb(170, 16, 41, 99);
@@ -217,7 +235,8 @@ namespace AgendaMais
         #region ptbRelatorios
         private void ptbRelatorios_Click(object sender, EventArgs e)
         {
-
+            frFrequenciaDeAgendamento frFrequenciaDeAgendamento = new frFrequenciaDeAgendamento();
+            frFrequenciaDeAgendamento.Show();
         }
 
         private void ptbRelatorios_MouseHover(object sender, EventArgs e)
@@ -239,13 +258,14 @@ namespace AgendaMais
                 frAgendamento = new frAgendamento();
             frAgendamento.ShowDialog();
 
-            if (metodosAgenda.listAgenda != null)
+            using (new Carregando())
             {
-                using (new Carregando())
+                metodosAgenda.Atualiza_listAgenda(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
+                                                  Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 23:59:59"),
+                                                  'P', 'P', 'P');
+
+                if (metodosAgenda.listAgenda != null)
                 {
-                    metodosAgenda.Atualiza_listAgenda(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
-                                                      Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 23:59:59"),
-                                                      'P', 'P', 'P');
                     metodosAgenda.ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.hoje);
                     metodosAgenda.AtualizaStatus(flpAgendamentos);
                 }
@@ -287,23 +307,6 @@ namespace AgendaMais
         {
             metodosAgenda.AtualizaStatus(flpAgendamentos);
         }
-
-        private void Cadastros_Click(object sender, EventArgs e)
-        {
-            frCadastros frCadastros = new frCadastros();
-            frCadastros.Show();
-        }
-
-        private void panDRE_Click(object sender, EventArgs e)
-        {
-            frDRE frDRE = new frDRE();
-            frDRE.Show();
-        }
-
-        private void panFreqAgendamento_Click(object sender, EventArgs e)
-        {
-            frFrequenciaDeAgendamento frFrequenciaDeAgendamento = new frFrequenciaDeAgendamento();
-            frFrequenciaDeAgendamento.Show();
-        }
+        #endregion
     }
 }

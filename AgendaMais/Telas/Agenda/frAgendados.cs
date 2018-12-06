@@ -1538,10 +1538,10 @@ namespace AgendaMais
             if (dia == 0)
             {
                 segunda = DateTime.Now.AddDays(-6);
-                terca = DateTime.Now.AddDays(-5);
-                quarta = DateTime.Now.AddDays(-4);
-                quinta = DateTime.Now.AddDays(-3);
-                sexta = DateTime.Now.AddDays(-2);
+                terca =   DateTime.Now.AddDays(-5);
+                quarta =  DateTime.Now.AddDays(-4);
+                quinta =  DateTime.Now.AddDays(-3);
+                sexta =   DateTime.Now.AddDays(-2);
                 sabado = DateTime.Now.AddDays(-1);
                 domingo = DateTime.Now;
 
@@ -1681,13 +1681,13 @@ namespace AgendaMais
         {
             using (new Carregando())
             {
-                agendaDomingo.Atualiza_listAgenda(domingo, domingo, 'P', 'C', 'N');
-                agendaSegunda.Atualiza_listAgenda(segunda, segunda, 'P', 'C', 'N');
-                agendaTerca.Atualiza_listAgenda(terca, terca, 'P', 'C', 'N');
-                agendaQuarta.Atualiza_listAgenda(quarta, quarta, 'P', 'C', 'N');
-                agendaQuinta.Atualiza_listAgenda(quinta, quinta, 'P', 'C', 'N');
-                agendaSexta.Atualiza_listAgenda(sexta, sexta, 'P', 'C', 'N');
-                agendaSabado.Atualiza_listAgenda(sabado, sabado, 'P', 'C', 'N');
+                agendaDomingo.Atualiza_listAgenda(Convert.ToDateTime(domingo.ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(domingo.ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaSegunda.Atualiza_listAgenda(Convert.ToDateTime(segunda.ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(segunda.ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaTerca.Atualiza_listAgenda(  Convert.ToDateTime(terca  .ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(terca  .ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaQuarta.Atualiza_listAgenda( Convert.ToDateTime(quarta .ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(quarta .ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaQuinta.Atualiza_listAgenda( Convert.ToDateTime(quinta .ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(quinta .ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaSexta.Atualiza_listAgenda(  Convert.ToDateTime(sexta  .ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(sexta  .ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaSabado.Atualiza_listAgenda( Convert.ToDateTime(sabado .ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(sabado .ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
             }
 
             agendaSemana[0] = agendaDomingo;

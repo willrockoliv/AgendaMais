@@ -10,7 +10,7 @@ using AgendaMais.Classes.VOs;
 
 namespace AgendaMais.Classes.DAOs
 {
-    class AgendaDAO : DB
+    class AgendaDAO
     {
         static AgendaVO MontaVO(DataRow row)
         {
@@ -66,6 +66,11 @@ namespace AgendaMais.Classes.DAOs
             }
             else
                 return null;
+        }
+
+        public static int ProximoId()
+        {
+            return DB.ProximoID("agenda");
         }
 
         public static List<AgendaVO> GetTodosRegistros()
@@ -169,7 +174,7 @@ namespace AgendaMais.Classes.DAOs
             List<string> list_sql = new List<string>();
             list_sql.Add(insert_agenda);
             list_sql.Add(insert_item_agenda);
-            ExecutaSQL(list_sql);
+            DB.ExecutaSQL(list_sql);
         }
 
         public static void AtualizarRegistro(AgendaVO agendaVO)
@@ -221,13 +226,13 @@ namespace AgendaMais.Classes.DAOs
                                        "WHERE id_produto=" + item.Id_produto + " and " +
                                               "id_agenda=" + item.Id_agenda);
 
-            ExecutaSQL(list_sql);
+            DB.ExecutaSQL(list_sql);
         }
 
         public static void DeletarRegistro(int id)
         {
             string sql = String.Format("Delete From agenda Where id={0}", id);
-            ExecutaSQL(sql);
+            DB.ExecutaSQL(sql);
         }
     }
 }

@@ -777,11 +777,12 @@ namespace AgendaMais
                     #endregion
 
                     if (alteracao)
-                    {
                         AgendaDAO.AtualizarRegistro(agendaVO);
-                    }
                     else
+                    {
+                        agendaVO.Id = AgendaDAO.ProximoId();
                         AgendaDAO.InserirRegistros(agendaVO);
+                    }
                 }
                 MessageBox.Show("Agendamento Salvo com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

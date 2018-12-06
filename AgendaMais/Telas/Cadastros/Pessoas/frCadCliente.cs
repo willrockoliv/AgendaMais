@@ -65,7 +65,7 @@ namespace AgendaMais
         {
             ClienteVO c = new ClienteVO();
             if (id == 0)
-                c.Id = Convert.ToInt32(ClienteDAO.ExecutaSelect("select id from cliente order by id desc limit 1").Rows[0]["id"]) + 1;
+                c.Id = ClienteDAO.ProximoID();
             else
                 c.Id = id;
             c.Nome = txtNome.Text.Trim();
@@ -138,7 +138,8 @@ namespace AgendaMais
         {
             InitializeComponent();
             CarregamentoInicial();
-            lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
+            if (listClienteVO != null)
+                lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
         }
 
         public frCadCliente(ClienteVO clienteVO)
@@ -194,8 +195,11 @@ namespace AgendaMais
                 {
                     ClienteVO clienteVO = MontaClienteVO(0);
                     ClienteDAO.InserirRegistros(clienteVO);
+                    if (listClienteVO == null)
+                        listClienteVO = new List<ClienteVO>();
                     listClienteVO.Add(clienteVO);
                     index = listClienteVO.Count - 1;
+                    lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
                     MessageBox.Show("Cliente salvo com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception erro)
