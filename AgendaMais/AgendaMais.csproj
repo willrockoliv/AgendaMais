@@ -53,7 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Carregando.cs" />
+    <Compile Include="Classes\Carregando.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Classes\ConnectionDataBase.cs" />
     <Compile Include="Classes\DAOs\ClienteDAO.cs" />
     <Compile Include="Classes\DAOs\DAO.cs" />

@@ -28,50 +28,39 @@ namespace AgendaMais
         #region Valida Comunicação com PostgreSQL
         static void ValidaServicoPostgreSQL()
         {
-            string servicoPostgreSQL = "postgresql-x64-9.6";
+            string servicoPostgreSQL = "PostgreSQL9.6";
             try
             {
                 if (ServicosWindows.StatusServico(servicoPostgreSQL) == false)
                 {
                     using (new ExecutarComoAdmin())
                     {
-                        using (new Carregando())
-                        {
-                            ServicosWindows.IniciarServico(servicoPostgreSQL);
-                        }
+                        ServicosWindows.IniciarServico(servicoPostgreSQL);
                     }
                 }
             }
-
-            catch
+            catch (Exception erro)
             {
-                try
-                {
-                    Restartxlog();
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show(erro.Message);
-                }
+                MessageBox.Show(erro.Message);
             }
         }
 
-        static void Restartxlog()
-        {
-            if (File.Exists("C:\\Program Files\\PostgreSQL\\9.6\\data\\postmaster.pid"))
-            {
-                File.Delete("C:\\Program Files\\PostgreSQL\\9.6\\data\\postmaster-copia.pid");
-                File.Move("C:\\Program Files\\PostgreSQL\\9.6\\data\\postmaster.pid", "C:\\Program Files\\PostgreSQL\\9.6\\data\\postmaster-copia.pid");
-                CMD cmd = new CMD();
-                string comand = "\"C:\\Program Files\\PostgreSQL\\9.6\\bin\\pg_resetxlog\" -f ../data";
-                string result = cmd.ExecutarCMD(comand);
-                //result = cmd.ExecutarCMD("set pguser=postgres");
-                //result = cmd.ExecutarCMD("set pgpassword=postgres");
-                //result = cmd.ExecutarCMD("pg_resetxlog -f ../data");
-                //string servicoPostgreSQL = "postgresql-x64-9.6";
-                //ServicosWindows.IniciarServico(servicoPostgreSQL);
-            }
-        }
+        //static void Restartxlog()
+        //{
+        //    if (File.Exists("C:\\Program Files\\PostgreSQL\\9.6\\data\\postmaster.pid"))
+        //    {
+        //        File.Delete("C:\\Program Files\\PostgreSQL\\9.6\\data\\postmaster-copia.pid");
+        //        File.Move("C:\\Program Files\\PostgreSQL\\9.6\\data\\postmaster.pid", "C:\\Program Files\\PostgreSQL\\9.6\\data\\postmaster-copia.pid");
+        //        CMD cmd = new CMD();
+        //        string comand = "\"C:\\Program Files\\PostgreSQL\\9.6\\bin\\pg_resetxlog\" -f ../data";
+        //        string result = cmd.ExecutarCMD(comand);
+        //        //result = cmd.ExecutarCMD("set pguser=postgres");
+        //        //result = cmd.ExecutarCMD("set pgpassword=postgres");
+        //        //result = cmd.ExecutarCMD("pg_resetxlog -f ../data");
+        //        //string servicoPostgreSQL = "postgresql-x64-9.6";
+        //        //ServicosWindows.IniciarServico(servicoPostgreSQL);
+        //    }
+        //}
         #endregion
 
         void ValidaPastasDoSistema()
@@ -89,12 +78,24 @@ namespace AgendaMais
         #region Load e Initialize
         public frPrincipal()
         {
-            //ValidaServicoPostgreSQL();
-            ValidaPastasDoSistema();
-            InitializeComponent();
+            using (new Carregando("Iniciando serviço PostgresSQL 9.6"))
+            {
+                ValidaServicoPostgreSQL();
+            }
+            using (new Carregando("Validando Pastas do Sistema"))
+            {
+                ValidaPastasDoSistema();
+            }
+
+            using (new Carregando("Quase lá..."))
+            {
+                InitializeComponent();
+            }
+
             try
             {
-                using (new Carregando("Só um momentinho\nJá iremos iniciar..."))
+                File.Create(mainPath + "\\BD\\try.txt");
+                using (new Carregando("Só mais um pouquinho de paciência\nEstou preparando tudo para você!"))
                 {
                     metodosAgenda.Atualiza_listAgenda(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
                                                       Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 23:59:59"),
