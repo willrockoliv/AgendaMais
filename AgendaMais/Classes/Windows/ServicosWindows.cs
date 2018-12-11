@@ -20,7 +20,7 @@ namespace AgendaMais.Classes.Windows
                 return true;
         }
 
-        public static void IniciarServico(string servicoNome, int timeoutMilliseconds = 10000)
+        public static void IniciarServico(string servicoNome, int timeoutMilliseconds = 100000)
         {
             if (string.IsNullOrEmpty(servicoNome))
                 return;
@@ -47,7 +47,7 @@ namespace AgendaMais.Classes.Windows
             }
         }
 
-        public static void PararServico(string servicoNome, int timeoutMilliseconds = 10000)
+        public static void PararServico(string servicoNome, int timeoutMilliseconds = 100000)
         {
             if (string.IsNullOrEmpty(servicoNome))
                 return;
@@ -74,7 +74,7 @@ namespace AgendaMais.Classes.Windows
             }
         }
 
-        public static void ReiniciarServico(string servicoNome, int timeoutMilliseconds = 10000)
+        public static void ReiniciarServico(string servicoNome, int timeoutMilliseconds = 100000)
         {
             if (string.IsNullOrEmpty(servicoNome))
                 return;
