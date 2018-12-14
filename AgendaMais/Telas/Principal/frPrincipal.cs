@@ -27,22 +27,31 @@ namespace AgendaMais
 
         #region Validações Iniciais
         #region Valida Comunicação com PostgreSQL
-        static void ValidaServicoPostgreSQL()
+        void ValidaServicoPostgreSQL()
         {
             string servicoPostgreSQL = "PostgreSQL9.6";
             try
             {
                 if (ServicosWindows.StatusServico(servicoPostgreSQL) == false)
                 {
-                    using (new ExecutarComoAdmin())
+                    try
                     {
-                        try
+                        using (new Carregando("Iniciando Serviço..."))
                         {
-                            ServicosWindows.IniciarServico(servicoPostgreSQL);
+                            using (new ExecutarComoAdmin())
+                            {
+                                ServicosWindows.IniciarServico(servicoPostgreSQL);
+                            }
                         }
-                        catch
+                    }
+                    catch
+                    {
+                        using (new Carregando("Falha em iniciar serviço\nExecutando pg_restartxlog..."))
                         {
                             Restartxlog();
+                        }
+                        using (new Carregando("Tentando iniciar\nserviço novamente..."))
+                        {
                             ServicosWindows.IniciarServico(servicoPostgreSQL);
                         }
                     }
@@ -50,19 +59,34 @@ namespace AgendaMais
             }
             catch (Exception erro)
             {
-                MessageBox.Show(erro.Message);
+                MessageBox.Show("Puxa me desculpe, o Serviço de Banco de Dados está parado ou ainda está iniciando.\n" +
+                                "Aguarde mais um pouco. Caso o problema persista reinicie o computador. " +
+                                "\n\nErro: " + erro.Message);
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
         }
 
         static void Restartxlog()
         {
-            if (File.Exists($"{mainPath}\\psql\\data\\postmaster.pid"))
+            #region  Teste
+            //if (File.Exists("C:\\AgendaMais\\pgsql\\data\\postmaster.pid"))
+            //{
+            //    File.Delete("C:\\AgendaMais\\pgsql\\data\\postmaster.pid");
+            //    CMD cmd = new CMD();
+            //    string comand = "\"C:\\AgendaMais\\pgsql\\bin\\pg_resetxlog\" -f ../data";
+            //    string result = cmd.ExecutarCMD(comand);
+            //}
+            #endregion
+
+            #region oficial
+            if (File.Exists($"{mainPath}\\pgsql\\data\\postmaster.pid"))
             {
-                File.Delete($"{mainPath}\\psql\\data\\postmaster.pid");
+                File.Delete($"{mainPath}\\pgsql\\data\\postmaster.pid");
                 CMD cmd = new CMD();
-                string comand = $"\"{mainPath}\\psql\\bin\\pg_resetxlog\" -f ../data";
+                string comand = $"\"{mainPath}\\pgsql\\bin\\pg_resetxlog\" -f ../data";
                 string result = cmd.ExecutarCMD(comand);
             }
+            #endregion
         }
 
         static void ValidaConexaoBD()
@@ -74,10 +98,12 @@ namespace AgendaMais
             catch (NpgsqlException erro)
             {
                 MessageBox.Show(erro.Message);
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
         }
         #endregion
@@ -92,22 +118,74 @@ namespace AgendaMais
             else if (!Directory.Exists(mainPath + "\\BD\\imagens"))
                 Directory.CreateDirectory(mainPath + "\\BD\\imagens");
         }
-        #endregion
+#endregion
 
         #region Load e Initialize
         public frPrincipal()
         {
-            using (new Carregando("Verificando Serviço\nde Banco de Dados"))
+            try
             {
-                ValidaServicoPostgreSQL();
+                using (new Carregando("FTP"))
+                {
+
+                    using (new ExecutarComoAdmin())
+                    {
+                        FTP.BaixarArquivoFTP("ftp://ftp.lzt.com.br/upload/teste/key.txt", $"{mainPath}\\BD\\key.txt", "autosystem", "lzt3900");
+                    }
+                }
+                if (File.Exists($"{mainPath}\\BD\\key.txt"))
+                {
+                    string key = File.ReadAllText($"{mainPath}\\BD\\key.txt");
+                    if (key != "true")
+                    {
+                        MessageBox.Show("Desculpe, existe algo de errado com a sua licença de uso.");
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                }
             }
-            using (new Carregando("Verificando Conexão\ncom Banco de Dados"))
+            catch (Exception erro)
             {
-                ValidaConexaoBD();
+                MessageBox.Show(erro.Message, "Erro ao consultar Licença de Uso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
-            using (new Carregando("Verificando\nPastas do Sistema"))
+
+            try
             {
-                ValidaPastasDoSistema();
+                using (new Carregando("Verificando Serviço\nde Banco de Dados"))
+                {
+                    ValidaServicoPostgreSQL();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro ao iniciar Serviço PostgreSQL9.6", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
+
+            try
+            {
+                using (new Carregando("Verificando Conexão\ncom Banco de Dados"))
+                {
+                    ValidaConexaoBD();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Sem conexão com Banco de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
+
+            try
+            {
+                using (new Carregando("Verificando\nPastas do Sistema"))
+                {
+                    ValidaPastasDoSistema();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro na validação de pastas do sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
 
             using (new Carregando("Quase lá..."))

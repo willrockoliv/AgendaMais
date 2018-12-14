@@ -430,3 +430,12 @@ D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaM
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frPesquisa.resources
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.Telas.frDRE.resources
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.Telas.Relatórios.frFrequenciaDeAgendamento.resources
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Newtonsoft.Json.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Twilio.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Newtonsoft.Json.xml
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Twilio.xml

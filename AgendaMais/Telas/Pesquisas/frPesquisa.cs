@@ -49,23 +49,27 @@ namespace AgendaMais
             flpAgendamentos.Controls.Clear();
             if (enumPesquisa == EnumPesquisa.cliente)
             {
-                foreach (ClienteVO clienteVO in listClienteVO)
-                    flpAgendamentos.Controls.Add(Construtor(clienteVO.Nome));
+                if (listClienteVO != null)
+                    foreach (ClienteVO clienteVO in listClienteVO)
+                        flpAgendamentos.Controls.Add(Construtor(clienteVO.Nome));
             }
             else if (enumPesquisa == EnumPesquisa.funcionario)
             {
-                foreach (FuncionarioVO funcionarioVO in listFuncionarioVO)
-                    flpAgendamentos.Controls.Add(Construtor(funcionarioVO.Nome));
+                if (listFuncionarioVO != null)
+                    foreach (FuncionarioVO funcionarioVO in listFuncionarioVO)
+                        flpAgendamentos.Controls.Add(Construtor(funcionarioVO.Nome));
             }
             else if (enumPesquisa == EnumPesquisa.produto)
             {
-                foreach (ProdutoVO produtoVO in listProdutoVO)
-                    flpAgendamentos.Controls.Add(Construtor(produtoVO.Descricao));
+                if (listProdutoVO != null)
+                    foreach (ProdutoVO produtoVO in listProdutoVO)
+                        flpAgendamentos.Controls.Add(Construtor(produtoVO.Descricao));
             }
             else
             {
-                foreach (GrupoProdutoVO grupoProdutoVO in listGrupoProdutoVO)
-                    flpAgendamentos.Controls.Add(Construtor(grupoProdutoVO.Descricao));
+                if (listGrupoProdutoVO != null)
+                    foreach (GrupoProdutoVO grupoProdutoVO in listGrupoProdutoVO)
+                        flpAgendamentos.Controls.Add(Construtor(grupoProdutoVO.Descricao));
             }
         }
 

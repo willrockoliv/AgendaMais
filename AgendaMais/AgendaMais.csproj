@@ -35,12 +35,25 @@
     <ApplicationIcon>1498590843_Streamline-52.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Npgsql, Version=2.2.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Npgsql\Npgsql-2.2.3.0-net45\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,37 +64,41 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Twilio, Version=5.23.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.23.0\lib\net451\Twilio.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Carregando.cs">
+    <Compile Include="Classes\FTP.cs" />
+    <Compile Include="Classes\WhatsApp.cs" />
+    <Compile Include="Telas\Carregando.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Classes\ConnectionDataBase.cs" />
-    <Compile Include="Classes\DAOs\ClienteDAO.cs" />
-    <Compile Include="Classes\DAOs\DAO.cs" />
-    <Compile Include="Classes\DAOs\GrupoProdutoDAO.cs" />
-    <Compile Include="Classes\DAOs\RelatoriosDAO.cs" />
-    <Compile Include="Classes\DB.cs" />
-    <Compile Include="Classes\DAOs\AgendaDAO.cs" />
-    <Compile Include="Classes\DAOs\ItemAgendaDAO.cs" />
-    <Compile Include="Classes\DAOs\FuncionarioDAO.cs" />
-    <Compile Include="Classes\DAOs\ProdutoDAO.cs" />
+    <Compile Include="Classes\BD\ConnectionDataBase.cs" />
+    <Compile Include="Classes\BD\DAOs\ClienteDAO.cs" />
+    <Compile Include="Classes\BD\DAOs\DAO.cs" />
+    <Compile Include="Classes\BD\DAOs\GrupoProdutoDAO.cs" />
+    <Compile Include="Classes\BD\DAOs\RelatoriosDAO.cs" />
+    <Compile Include="Classes\BD\DB.cs" />
+    <Compile Include="Classes\BD\DAOs\AgendaDAO.cs" />
+    <Compile Include="Classes\BD\DAOs\ItemAgendaDAO.cs" />
+    <Compile Include="Classes\BD\DAOs\FuncionarioDAO.cs" />
+    <Compile Include="Classes\BD\DAOs\ProdutoDAO.cs" />
     <Compile Include="Classes\Enums\EnumPesquisa.cs" />
     <Compile Include="Classes\Enums\Enum_TipoExibicaoAgenda.cs" />
     <Compile Include="Classes\Enums\EnumDiasSemana.cs" />
     <Compile Include="Classes\Enums\EnumMeses.cs" />
     <Compile Include="Classes\Enums\EnumStatusAgendamento.cs" />
     <Compile Include="Classes\MetodosAgenda.cs" />
-    <Compile Include="Classes\LayoutProdutos.cs" />
     <Compile Include="Classes\MetodosAgendamento.cs" />
-    <Compile Include="Classes\VOs\AgendaVO.cs" />
-    <Compile Include="Classes\VOs\ClienteVO.cs" />
-    <Compile Include="Classes\VOs\FuncionarioVO.cs" />
-    <Compile Include="Classes\VOs\GrupoProdutoVO.cs" />
-    <Compile Include="Classes\VOs\ItemAgendaVO.cs" />
-    <Compile Include="Classes\VOs\PessoaVO.cs" />
+    <Compile Include="Classes\BD\VOs\AgendaVO.cs" />
+    <Compile Include="Classes\BD\VOs\ClienteVO.cs" />
+    <Compile Include="Classes\BD\VOs\FuncionarioVO.cs" />
+    <Compile Include="Classes\BD\VOs\GrupoProdutoVO.cs" />
+    <Compile Include="Classes\BD\VOs\ItemAgendaVO.cs" />
+    <Compile Include="Classes\BD\VOs\PessoaVO.cs" />
     <Compile Include="Classes\Validacoes.cs" />
-    <Compile Include="Classes\VOs\ProdutoVO.cs" />
+    <Compile Include="Classes\BD\VOs\ProdutoVO.cs" />
     <Compile Include="Classes\Windows\CMD.cs" />
     <Compile Include="Classes\Windows\ExecutarComoAdmin.cs" />
     <Compile Include="Classes\Windows\ServicosWindows.cs" />
@@ -187,6 +204,7 @@
     <EmbeddedResource Include="Telas\Relatórios\frFrequenciaDeAgendamento.resx">
       <DependentUpon>frFrequenciaDeAgendamento.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
