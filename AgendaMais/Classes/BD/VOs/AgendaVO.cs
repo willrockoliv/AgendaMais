@@ -18,6 +18,7 @@ namespace AgendaMais.Classes.VOs
         private DateTime data_hora;
         private string obs;
         private char status;
+        private bool notificar = false;
 
         public int Id
         {
@@ -77,6 +78,6 @@ namespace AgendaMais.Classes.VOs
             }
         }
 
-
+        public bool Notificar { get => notificar; set => notificar = value; }
     }
 }

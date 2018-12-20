@@ -69,23 +69,23 @@ namespace AgendaMais
         static void Restartxlog()
         {
             #region  Teste
-            //if (File.Exists("C:\\AgendaMais\\pgsql\\data\\postmaster.pid"))
-            //{
-            //    File.Delete("C:\\AgendaMais\\pgsql\\data\\postmaster.pid");
-            //    CMD cmd = new CMD();
-            //    string comand = "\"C:\\AgendaMais\\pgsql\\bin\\pg_resetxlog\" -f ../data";
-            //    string result = cmd.ExecutarCMD(comand);
-            //}
+            if (File.Exists("C:\\AgendaMais\\pgsql\\data\\postmaster.pid"))
+            {
+                File.Delete("C:\\AgendaMais\\pgsql\\data\\postmaster.pid");
+                CMD cmd = new CMD();
+                string comand = "\"C:\\AgendaMais\\pgsql\\bin\\pg_resetxlog\" -f ../data";
+                string result = cmd.ExecutarCMD(comand);
+            }
             #endregion
 
             #region oficial
-            if (File.Exists($"{mainPath}\\pgsql\\data\\postmaster.pid"))
-            {
-                File.Delete($"{mainPath}\\pgsql\\data\\postmaster.pid");
-                CMD cmd = new CMD();
-                string comand = $"\"{mainPath}\\pgsql\\bin\\pg_resetxlog\" -f ../data";
-                string result = cmd.ExecutarCMD(comand);
-            }
+            //if (File.Exists($"{mainPath}\\pgsql\\data\\postmaster.pid"))
+            //{
+            //    File.Delete($"{mainPath}\\pgsql\\data\\postmaster.pid");
+            //    CMD cmd = new CMD();
+            //    string comand = $"\"{mainPath}\\pgsql\\bin\\pg_resetxlog\" -f ../data";
+            //    string result = cmd.ExecutarCMD(comand);
+            //}
             #endregion
         }
 
@@ -118,19 +118,20 @@ namespace AgendaMais
             else if (!Directory.Exists(mainPath + "\\BD\\imagens"))
                 Directory.CreateDirectory(mainPath + "\\BD\\imagens");
         }
-#endregion
+        #endregion
 
         #region Load e Initialize
         public frPrincipal()
         {
+            #region Validações iniciais
+            // Verificação de licença
             try
             {
-                using (new Carregando("FTP"))
+                using (new Carregando("Verificando Licença..."))
                 {
-
                     using (new ExecutarComoAdmin())
                     {
-                        FTP.BaixarArquivoFTP("ftp://ftp.lzt.com.br/upload/teste/key.txt", $"{mainPath}\\BD\\key.txt", "autosystem", "lzt3900");
+                        GoogleDrive.Download("key.txt", $"{mainPath}\\BD\\key.txt");
                     }
                 }
                 if (File.Exists($"{mainPath}\\BD\\key.txt"))
@@ -139,16 +140,21 @@ namespace AgendaMais
                     if (key != "true")
                     {
                         MessageBox.Show("Desculpe, existe algo de errado com a sua licença de uso.");
+                        File.Delete($"{mainPath}\\BD\\key.txt");
                         System.Diagnostics.Process.GetCurrentProcess().Kill();
                     }
+                    File.Delete($"{mainPath}\\BD\\key.txt");
                 }
+                else
+                    throw new Exception("Ops! Me desculpe, mas não encontrei uma licença de uso");
             }
             catch (Exception erro)
             {
-                MessageBox.Show(erro.Message, "Erro ao consultar Licença de Uso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao consultar Licença de Uso\n\n" + erro.Message, "Erro ao consultar Licença de Uso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
 
+            // Verificação de Serviço de Banco de Dados
             try
             {
                 using (new Carregando("Verificando Serviço\nde Banco de Dados"))
@@ -162,6 +168,7 @@ namespace AgendaMais
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
 
+            // Verificação de Conexão com Banco de Dados
             try
             {
                 using (new Carregando("Verificando Conexão\ncom Banco de Dados"))
@@ -175,6 +182,7 @@ namespace AgendaMais
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
 
+            // Verificação de Pastas do Sistema
             try
             {
                 using (new Carregando("Verificando\nPastas do Sistema"))
@@ -187,6 +195,7 @@ namespace AgendaMais
                 MessageBox.Show(erro.Message, "Erro na validação de pastas do sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
+            #endregion
 
             using (new Carregando("Quase lá..."))
             {
