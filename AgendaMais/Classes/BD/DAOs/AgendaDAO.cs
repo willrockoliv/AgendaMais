@@ -21,7 +21,8 @@ namespace AgendaMais.Classes.DAOs
                 agendaVO.Id_cliente = Convert.ToInt32(row["id_cliente"]);
                 agendaVO.Nome_cliente = row["nome_cliente"].ToString();
                 agendaVO.Tel_cel = row["tel_cel"].ToString();
-                agendaVO.Id_funcionario = Convert.ToInt32(row["id_funcionario"]);
+                if (Int32.TryParse(row["id_funcionario"].ToString(), out int id_funcionario))
+                    agendaVO.Id_funcionario = Convert.ToInt32(row["id_funcionario"]);
                 agendaVO.Nome_funcionario = row["nome_funcionario"].ToString();
                 agendaVO.Data_hora = Convert.ToDateTime(row["data_hora"]);
                 agendaVO.Obs = row["obs"].ToString();
@@ -88,7 +89,7 @@ namespace AgendaMais.Classes.DAOs
             string sql = "select a.*, c.nome as nome_cliente, c.tel_cel as tel_cel, f.nome as nome_funcionario " +
                          "from agenda a " +
                          "inner join cliente c on a.id_cliente=c.id " +
-                         "inner join funcionario f on a.id_funcionario=f.id " +
+                         "full join funcionario f on a.id_funcionario=f.id " +
                          condicao;
             return MontaListVO(DAO.ExecutaSelect(sql));
         }
@@ -133,13 +134,18 @@ namespace AgendaMais.Classes.DAOs
                                       "notificar" +
                                    ")" +
                                    "Values(" +
-                                      agendaVO.Id_cliente + "," +
-                                      agendaVO.Id_funcionario + "," +
-                                      "'" + agendaVO.Data_hora + "'," +
-                                      "'" + agendaVO.Obs + "'," +
-                                      "'" + agendaVO.Status + "'," +
-                                      "'" + agendaVO.Notificar + "'" +
-                                   ");";
+                                      agendaVO.Id_cliente + ",";
+
+            if (agendaVO.Id_funcionario == 0)
+                insert_agenda += "null,";
+            else
+                insert_agenda += agendaVO.Id_funcionario + ",";
+
+            insert_agenda += "'" + agendaVO.Data_hora + "'," +
+                             "'" + agendaVO.Obs + "'," +
+                             "'" + agendaVO.Status + "'," +
+                             "'" + agendaVO.Notificar + "'" +
+                             ");";
 
             string insert_item_agenda = "Insert Into item_agenda(" +
                                             "id_produto, " +
@@ -203,13 +209,19 @@ namespace AgendaMais.Classes.DAOs
             List<string> list_sql = new List<string>();
 
             string update_agenda = "Update agenda " +
-                                   "Set id_cliente=" + agendaVO.Id_cliente + "," +
-                                       "id_funcionario=" + agendaVO.Id_funcionario + "," +
-                                       "data_hora='" + agendaVO.Data_hora + "'" + "," +
-                                       "obs='" + agendaVO.Obs + "'" + "," +
-                                       "status='" + agendaVO.Status + "'," +
-                                       "notificar='" + agendaVO.Notificar + "'" +
-                                   " where id=" + agendaVO.Id;
+                                   "Set id_cliente=" + agendaVO.Id_cliente + ",";
+
+            if (agendaVO.Id_funcionario == 0)
+                update_agenda += "id_funcionario=null,";
+            else
+                update_agenda += "id_funcionario=" + agendaVO.Id_funcionario + ",";
+
+            update_agenda += "data_hora='" + agendaVO.Data_hora + "'" + "," +
+                                 "obs='" + agendaVO.Obs + "'" + "," +
+                                 "status='" + agendaVO.Status + "'," +
+                                 "notificar='" + agendaVO.Notificar + "'" +
+                             " where id=" + agendaVO.Id;
+
             list_sql.Add(update_agenda);
 
             foreach (ItemAgendaVO item in listItemAgendaVO)

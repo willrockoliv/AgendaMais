@@ -63,16 +63,19 @@ namespace AgendaMais.Classes
             #region txtAtendente
             TextBox txtAtendente = new TextBox();
             txtAtendente.Name = "txtAtentende" + posicao;
-            txtAtendente.BackColor = System.Drawing.Color.White;
-            txtAtendente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtAtendente.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular);
-            txtAtendente.ForeColor = System.Drawing.Color.Black;
-            txtAtendente.Location = new System.Drawing.Point(129, 8);
+            txtAtendente.BackColor = Color.White;
+            txtAtendente.BorderStyle = BorderStyle.None;
+            txtAtendente.Font = new Font("Century Gothic", 14F, FontStyle.Regular);
+            txtAtendente.ForeColor = Color.Black;
+            txtAtendente.Location = new Point(129, 8);
             txtAtendente.ReadOnly = true;
-            txtAtendente.Size = new System.Drawing.Size(275, 23);
-            txtAtendente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtAtendente.Size = new Size(275, 23);
+            txtAtendente.TextAlign = HorizontalAlignment.Center;
             txtAtendente.Enabled = false;
-            txtAtendente.Text = atendente;
+            if (atendente != "")
+                txtAtendente.Text = atendente;
+            else
+                txtAtendente.Text = "Não informado";
             #endregion
 
             #region txtCliente
@@ -108,24 +111,24 @@ namespace AgendaMais.Classes
             #region cbSerProd
             ComboBox cbServProd = new ComboBox();
             cbServProd.Name = "cbServProd" + posicao;
-            cbServProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            cbServProd.BackColor = System.Drawing.Color.White;
-            cbServProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            cbServProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cbServProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            cbServProd.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cbServProd.Anchor = AnchorStyles.Top;
+            cbServProd.BackColor = Color.White;
+            cbServProd.Cursor = Cursors.Hand;
+            cbServProd.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbServProd.FlatStyle = FlatStyle.Flat;
+            cbServProd.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point, (0));
             cbServProd.FormattingEnabled = true;
             foreach (ProdutoVO x in Serv_prod)
                 cbServProd.Items.Add(x.Descricao);
             if (cbServProd.Items.Count != 0)
                 cbServProd.SelectedIndex = 0;
-            cbServProd.Location = new System.Drawing.Point(830, 5);
-            cbServProd.Size = new System.Drawing.Size(243, 30);
+            cbServProd.Location = new Point(813, 5);
+            cbServProd.Size = new Size(243, 30);
             #endregion
 
             #region ckbNotificar
             CheckBox ckbNotificar = new CheckBox();
-            ckbNotificar.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
+            ckbNotificar.Anchor = AnchorStyles.Top;
             ckbNotificar.Appearance = Appearance.Button;
             ckbNotificar.BackColor = Color.White;
             ckbNotificar.Checked = notificar;
@@ -137,11 +140,11 @@ namespace AgendaMais.Classes
             ckbNotificar.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ckbNotificar.ForeColor = Color.Black;
             ckbNotificar.Location = new Point(1061, 7);
-            ckbNotificar.Name = "ckbNotificar";
+            ckbNotificar.Name = "ckbNotificar" + posicao;
             ckbNotificar.Size = new Size(75, 26);
             ckbNotificar.Text = "NOTIFICAR";
             ckbNotificar.TextAlign = ContentAlignment.MiddleCenter;
-            ckbNotificar.UseVisualStyleBackColor = false;
+            ckbNotificar.CheckedChanged += new EventHandler(ckbNotificar_CheckedChanged);
             #endregion
 
             #region ptbConfirmar
@@ -199,7 +202,7 @@ namespace AgendaMais.Classes
         /// <param name="serv_prod"></param>
         /// <param name="posicao"></param>
         /// <returns></returns>
-        Panel ConstrutorAgendamentos(Enum_TipoExibicaoAgenda p_Enum_TipoExibicaoAgenda, EnumStatusAgendamento p_enumStatusAgendamento, string data, string hora, string atendente, string cliente, string tel_cel, List<ProdutoVO> Serv_prod, int posicao)
+        Panel ConstrutorAgendamentos(Enum_TipoExibicaoAgenda p_Enum_TipoExibicaoAgenda, EnumStatusAgendamento p_enumStatusAgendamento, string data, string hora, string atendente, string cliente, string tel_cel, List<ProdutoVO> Serv_prod, bool notificar, int posicao)
         {
             #region panAgendamento
             Panel panAgendamento = new Panel();
@@ -216,29 +219,29 @@ namespace AgendaMais.Classes
             #region ptbStatus
             PictureBox ptbStatus = new PictureBox();
             ptbStatus.Name = "ptbStatus" + posicao;
-            ptbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            ptbStatus.Anchor = AnchorStyles.Top;
             if (EnumStatusAgendamento.confirmado == p_enumStatusAgendamento)
-                ptbStatus.BackgroundImage = global::AgendaMais.Properties.Resources.status_confirmado;
+                ptbStatus.BackgroundImage = Properties.Resources.status_confirmado;
             else if (EnumStatusAgendamento.cancelado == p_enumStatusAgendamento)
-                ptbStatus.BackgroundImage = global::AgendaMais.Properties.Resources.status_cancelado;
+                ptbStatus.BackgroundImage = Properties.Resources.status_cancelado;
             else if (EnumStatusAgendamento.pendente == p_enumStatusAgendamento)
-                ptbStatus.BackgroundImage = global::AgendaMais.Properties.Resources.status_pendente;
-            ptbStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ptbStatus.Location = new System.Drawing.Point(38, 3);
-            ptbStatus.Size = new System.Drawing.Size(34, 34);
+                ptbStatus.BackgroundImage = Properties.Resources.status_pendente;
+            ptbStatus.BackgroundImageLayout = ImageLayout.Zoom;
+            ptbStatus.Location = new Point(38, 3);
+            ptbStatus.Size = new Size(34, 34);
             #endregion
 
-            #region txtDataHorario
+            #region txtHorario
             TextBox txtHorario = new TextBox();
             txtHorario.Name = "txtHorario" + posicao;
-            txtHorario.BackColor = System.Drawing.Color.White;
-            txtHorario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtHorario.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular);
-            txtHorario.ForeColor = System.Drawing.Color.Black;
-            txtHorario.Location = new System.Drawing.Point(100, 8);
+            txtHorario.BackColor = Color.White;
+            txtHorario.BorderStyle = BorderStyle.None;
+            txtHorario.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, (0));
+            txtHorario.ForeColor = Color.Black;
+            txtHorario.Location = new Point(100, 8);
             txtHorario.ReadOnly = true;
-            txtHorario.Size = new System.Drawing.Size(175, 24);
-            txtHorario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtHorario.Size = new Size(128, 20);
+            txtHorario.TextAlign = HorizontalAlignment.Center;
             txtHorario.Enabled = false;
             if (p_Enum_TipoExibicaoAgenda == Enum_TipoExibicaoAgenda.mes)
                 txtHorario.Text = data + " " + hora;
@@ -249,29 +252,32 @@ namespace AgendaMais.Classes
             #region txtAtendente
             TextBox txtAtendente = new TextBox();
             txtAtendente.Name = "txtAtentende" + posicao;
-            txtAtendente.BackColor = System.Drawing.Color.White;
-            txtAtendente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtAtendente.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular);
-            txtAtendente.ForeColor = System.Drawing.Color.Black;
-            txtAtendente.Location = new System.Drawing.Point(281, 8);
+            txtAtendente.BackColor = Color.White;
+            txtAtendente.BorderStyle = BorderStyle.None;
+            txtAtendente.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, (0));
+            txtAtendente.ForeColor = Color.Black;
+            txtAtendente.Location = new Point(234, 8);
             txtAtendente.ReadOnly = true;
-            txtAtendente.Size = new System.Drawing.Size(217, 24);
-            txtAtendente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtAtendente.Size = new Size(200, 20);
+            txtAtendente.TextAlign = HorizontalAlignment.Center;
             txtAtendente.Enabled = false;
-            txtAtendente.Text = atendente;
+            if (atendente != "")
+                txtAtendente.Text = atendente;
+            else
+                txtAtendente.Text = "Não informado";
             #endregion
 
             #region txtCliente
             TextBox txtCliente = new TextBox();
             txtCliente.Name = "txtCliente" + posicao;
-            txtCliente.BackColor = System.Drawing.Color.White;
-            txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtCliente.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular);
-            txtCliente.ForeColor = System.Drawing.Color.Black;
-            txtCliente.Location = new System.Drawing.Point(506, 8);
+            txtCliente.BackColor = Color.White;
+            txtCliente.BorderStyle = BorderStyle.None;
+            txtCliente.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, (0));
+            txtCliente.ForeColor = Color.Black;
+            txtCliente.Location = new Point(440, 8);
             txtCliente.ReadOnly = true;
-            txtCliente.Size = new System.Drawing.Size(212, 24);
-            txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtCliente.Size = new Size(205, 20);
+            txtCliente.TextAlign = HorizontalAlignment.Center;
             txtCliente.Enabled = false;
             txtCliente.Text = cliente;
             #endregion
@@ -279,14 +285,14 @@ namespace AgendaMais.Classes
             #region txtTelCel
             TextBox txtTelCel = new TextBox();
             txtTelCel.Name = "txtTelCel" + posicao;
-            txtTelCel.BackColor = System.Drawing.Color.White;
-            txtTelCel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtTelCel.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular);
-            txtTelCel.ForeColor = System.Drawing.Color.Black;
-            txtTelCel.Location = new System.Drawing.Point(724, 8);
+            txtTelCel.BackColor = Color.White;
+            txtTelCel.BorderStyle = BorderStyle.None;
+            txtTelCel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, (0));
+            txtTelCel.ForeColor = Color.Black;
+            txtTelCel.Location = new Point(651, 8);
             txtTelCel.ReadOnly = true;
-            txtTelCel.Size = new System.Drawing.Size(175, 24);
-            txtTelCel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtTelCel.Size = new Size(167, 24);
+            txtTelCel.TextAlign = HorizontalAlignment.Center;
             txtTelCel.Enabled = false;
             txtTelCel.Text = tel_cel;
             #endregion
@@ -294,46 +300,68 @@ namespace AgendaMais.Classes
             #region cbSerProd
             ComboBox cbServProd = new ComboBox();
             cbServProd.Name = "cbServProd" + posicao;
-            cbServProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            cbServProd.BackColor = System.Drawing.Color.White;
-            cbServProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            cbServProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cbServProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            cbServProd.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cbServProd.Anchor = AnchorStyles.Top;
+            cbServProd.BackColor = Color.White;
+            cbServProd.Cursor = Cursors.Hand;
+            cbServProd.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbServProd.FlatStyle = FlatStyle.Flat;
+            cbServProd.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, (0));
             cbServProd.FormattingEnabled = true;
             foreach (ProdutoVO x in Serv_prod)
                 cbServProd.Items.Add(x.Descricao);
             if (cbServProd.Items.Count != 0)
                 cbServProd.SelectedIndex = 0;
-            cbServProd.Location = new System.Drawing.Point(905, 5);
-            cbServProd.Size = new System.Drawing.Size(231, 30);
+            cbServProd.Location = new Point(824, 5);
+            cbServProd.Size = new Size(231, 29);
+            #endregion
+
+            #region ckbNotificar
+            CheckBox ckbNotificar = new CheckBox();
+            ckbNotificar.Anchor = AnchorStyles.Top;
+            ckbNotificar.Appearance = Appearance.Button;
+            ckbNotificar.AutoSize = true;
+            ckbNotificar.BackColor = Color.White;
+            ckbNotificar.Checked = notificar;
+            ckbNotificar.Cursor = Cursors.Hand;
+            ckbNotificar.FlatAppearance.BorderColor = Color.White;
+            ckbNotificar.FlatAppearance.BorderSize = 0;
+            ckbNotificar.FlatAppearance.CheckedBackColor = Color.DarkSeaGreen;
+            ckbNotificar.FlatStyle = FlatStyle.Flat;
+            ckbNotificar.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ckbNotificar.ForeColor = Color.Black;
+            ckbNotificar.Location = new Point(1061, 7);
+            ckbNotificar.Name = "ckbNotificar" + posicao;
+            ckbNotificar.Size = new Size(75, 26);
+            ckbNotificar.Text = "NOTIFICAR";
+            ckbNotificar.TextAlign = ContentAlignment.MiddleCenter;
+            ckbNotificar.CheckedChanged += new EventHandler(ckbNotificar_CheckedChanged);
             #endregion
 
             #region ptbConfirmar
             PictureBox ptbConfirmar = new PictureBox();
             ptbConfirmar.Name = "ptbConfirmar" + posicao;
-            ptbConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            ptbConfirmar.BackColor = System.Drawing.Color.DarkSeaGreen;
-            ptbConfirmar.BackgroundImage = global::AgendaMais.Properties.Resources.checked__2_;
-            ptbConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ptbConfirmar.Location = new System.Drawing.Point(1142, 3);
-            ptbConfirmar.Size = new System.Drawing.Size(34, 34);
-            ptbConfirmar.MouseLeave += new System.EventHandler(ptbConfirmar_MouseLeave);
-            ptbConfirmar.MouseHover += new System.EventHandler(ptbConfirmar_MouseHover);
+            ptbConfirmar.Anchor = AnchorStyles.Top;
+            ptbConfirmar.BackColor = Color.DarkSeaGreen;
+            ptbConfirmar.BackgroundImage = Properties.Resources.checked__2_;
+            ptbConfirmar.BackgroundImageLayout = ImageLayout.Zoom;
+            ptbConfirmar.Location = new Point(1142, 3);
+            ptbConfirmar.Size = new Size(34, 34);
+            ptbConfirmar.MouseLeave += new EventHandler(ptbConfirmar_MouseLeave);
+            ptbConfirmar.MouseHover += new EventHandler(ptbConfirmar_MouseHover);
             ptbConfirmar.Click += new EventHandler(ptbConfirmar_Click);
             #endregion
 
             #region ptbCancelar
             PictureBox ptbCancelar = new PictureBox();
             ptbCancelar.Name = "ptbCancelar" + posicao;
-            ptbCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            ptbCancelar.BackColor = System.Drawing.Color.IndianRed;
-            ptbCancelar.BackgroundImage = global::AgendaMais.Properties.Resources.excluir;
-            ptbCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ptbCancelar.Location = new System.Drawing.Point(1180, 3);
-            ptbCancelar.Size = new System.Drawing.Size(34, 34);
-            ptbCancelar.MouseLeave += new System.EventHandler(ptbCancelar_MouseLeave);
-            ptbCancelar.MouseHover += new System.EventHandler(ptbCancelar_MouseHover);
+            ptbCancelar.Anchor = AnchorStyles.Top;
+            ptbCancelar.BackColor = Color.IndianRed;
+            ptbCancelar.BackgroundImage = Properties.Resources.excluir;
+            ptbCancelar.BackgroundImageLayout = ImageLayout.Zoom;
+            ptbCancelar.Location = new Point(1180, 3);
+            ptbCancelar.Size = new Size(34, 34);
+            ptbCancelar.MouseLeave += new EventHandler(ptbCancelar_MouseLeave);
+            ptbCancelar.MouseHover += new EventHandler(ptbCancelar_MouseHover);
             ptbCancelar.Click += new EventHandler(ptbCancelar_Click);
             #endregion
 
@@ -345,7 +373,10 @@ namespace AgendaMais.Classes
             panAgendamento.Controls.Add(txtTelCel);
             panAgendamento.Controls.Add(cbServProd);
             if (Convert.ToDateTime(data) <= DateTime.Now)
+            {
                 panAgendamento.Controls.Add(ptbConfirmar);
+                panAgendamento.Controls.Add(ckbNotificar);
+            }
             panAgendamento.Controls.Add(ptbCancelar);
             #endregion
 
@@ -389,7 +420,9 @@ namespace AgendaMais.Classes
                                                                        listAgenda[i].Nome_funcionario,
                                                                        listAgenda[i].Nome_cliente,
                                                                        listAgenda[i].Tel_cel,
-                                                                       listAgenda[i].Itens, i));
+                                                                       listAgenda[i].Itens,
+                                                                       listAgenda[i].Notificar,
+                                                                       i));
                     else if (p_Enum_TipoExibicaoAgenda == Enum_TipoExibicaoAgenda.mes)
                         listPanAgendamentos.Add(ConstrutorAgendamentos(Enum_TipoExibicaoAgenda.mes,
                                                                        (EnumStatusAgendamento)(listAgenda[i].Status),
@@ -398,7 +431,9 @@ namespace AgendaMais.Classes
                                                                        listAgenda[i].Nome_funcionario,
                                                                        listAgenda[i].Nome_cliente,
                                                                        listAgenda[i].Tel_cel,
-                                                                       listAgenda[i].Itens, i));
+                                                                       listAgenda[i].Itens,
+                                                                       listAgenda[i].Notificar,
+                                                                       i));
                     flpAgendamentos.Controls.Add(listPanAgendamentos[i]);
                 }
             }
@@ -582,6 +617,30 @@ namespace AgendaMais.Classes
             }
             else
                 return;
+        }
+        #endregion
+
+        #region Notificar
+        private void ckbNotificar_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox ckbNotificar = new CheckBox();
+            ckbNotificar = (CheckBox)sender;
+            int posicao = Convert.ToInt32(ckbNotificar.Name.Replace("ckbNotificar", ""));
+            agendaVO = new AgendaVO();
+            agendaVO = listAgenda[posicao];
+            agendaVO.Notificar = ckbNotificar.Checked;
+            AgendaDAO.AtualizarRegistro(agendaVO);
+            FlowLayoutPanel flpAgendamentos = (FlowLayoutPanel)(ckbNotificar.FindForm().Controls.Find("flpAgendamentos", false)[0]);
+            if (ckbNotificar.FindForm().Name == "frPrincipal")
+            {
+                AtualizaStatus(flpAgendamentos);
+                ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.hoje);
+            }
+            else if (ckbNotificar.FindForm().Name == "frAgendados")
+                if ((ckbNotificar.FindForm().Controls.Find("panSemana", false)) != null)
+                    ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.semana);
+                else if ((ckbNotificar.FindForm().Controls.Find("panSemana", false)) != null)
+                    ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.mes);
         }
         #endregion
 

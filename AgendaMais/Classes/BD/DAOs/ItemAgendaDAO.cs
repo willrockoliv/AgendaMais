@@ -25,7 +25,7 @@ namespace AgendaMais.Classes.DAOs
         {
             List<ItemAgendaVO> listItemVendaVO = new List<ItemAgendaVO>();
 
-            if (table.Rows.Count == 0)
+            if (table == null || table.Rows.Count == 0)
                 return null;
 
             foreach (DataRow row in table.Rows)

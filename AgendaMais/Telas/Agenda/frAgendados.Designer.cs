@@ -50,8 +50,7 @@
             this.lblSemana = new System.Windows.Forms.Label();
             this.panMes = new System.Windows.Forms.Panel();
             this.lblMes = new System.Windows.Forms.Label();
-            this.pgbCarregandoAgendamentos = new System.Windows.Forms.ProgressBar();
-            this.panTopSemana = new System.Windows.Forms.Panel();
+            this.panTop = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,15 +58,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.flpAgendamentos = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panAgendamento = new System.Windows.Forms.Panel();
             this.ptbStatus = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbServProd = new System.Windows.Forms.ComboBox();
+            this.txtTelCel = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtFuncionario = new System.Windows.Forms.TextBox();
+            this.txtHorario = new System.Windows.Forms.TextBox();
             this.panMesContainer = new System.Windows.Forms.Panel();
             this.panDez = new System.Windows.Forms.Panel();
             this.lblDez = new System.Windows.Forms.Label();
@@ -93,17 +90,12 @@
             this.lblJan = new System.Windows.Forms.Label();
             this.panFev = new System.Windows.Forms.Panel();
             this.lblFev = new System.Windows.Forms.Label();
-            this.panTopMes = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.ptbFinanceiro = new System.Windows.Forms.PictureBox();
             this.ptbAgenda = new System.Windows.Forms.PictureBox();
             this.ptbClientes = new System.Windows.Forms.PictureBox();
+            this.ckbNotificar = new System.Windows.Forms.CheckBox();
+            this.ptbConfirmar = new System.Windows.Forms.PictureBox();
+            this.ptbCancelar = new System.Windows.Forms.PictureBox();
             this.panSeg.SuspendLayout();
             this.panTer.SuspendLayout();
             this.panQua.SuspendLayout();
@@ -114,11 +106,9 @@
             this.panSemanaContainer.SuspendLayout();
             this.panSemana.SuspendLayout();
             this.panMes.SuspendLayout();
-            this.panTopSemana.SuspendLayout();
+            this.panTop.SuspendLayout();
             this.flpAgendamentos.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panAgendamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).BeginInit();
             this.panMesContainer.SuspendLayout();
             this.panDez.SuspendLayout();
@@ -133,10 +123,11 @@
             this.panMar.SuspendLayout();
             this.panJan.SuspendLayout();
             this.panFev.SuspendLayout();
-            this.panTopMes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbCancelar)).BeginInit();
             this.SuspendLayout();
             // 
             // panSeg
@@ -407,33 +398,20 @@
             this.lblMes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMes.Click += new System.EventHandler(this.panMes_Click);
             // 
-            // pgbCarregandoAgendamentos
+            // panTop
             // 
-            this.pgbCarregandoAgendamentos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pgbCarregandoAgendamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(87)))), ((int)(((byte)(140)))));
-            this.pgbCarregandoAgendamentos.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pgbCarregandoAgendamentos.Location = new System.Drawing.Point(0, 34);
-            this.pgbCarregandoAgendamentos.Name = "pgbCarregandoAgendamentos";
-            this.pgbCarregandoAgendamentos.Size = new System.Drawing.Size(1244, 10);
-            this.pgbCarregandoAgendamentos.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pgbCarregandoAgendamentos.TabIndex = 8;
-            this.pgbCarregandoAgendamentos.Visible = false;
-            // 
-            // panTopSemana
-            // 
-            this.panTopSemana.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panTopSemana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(173)))), ((int)(((byte)(177)))), ((int)(((byte)(195)))));
-            this.panTopSemana.Controls.Add(this.label12);
-            this.panTopSemana.Controls.Add(this.pgbCarregandoAgendamentos);
-            this.panTopSemana.Controls.Add(this.label10);
-            this.panTopSemana.Controls.Add(this.label8);
-            this.panTopSemana.Controls.Add(this.label7);
-            this.panTopSemana.Controls.Add(this.label6);
-            this.panTopSemana.Controls.Add(this.label9);
-            this.panTopSemana.Location = new System.Drawing.Point(7, 269);
-            this.panTopSemana.Name = "panTopSemana";
-            this.panTopSemana.Size = new System.Drawing.Size(1244, 40);
-            this.panTopSemana.TabIndex = 5;
+            this.panTop.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(173)))), ((int)(((byte)(177)))), ((int)(((byte)(195)))));
+            this.panTop.Controls.Add(this.label12);
+            this.panTop.Controls.Add(this.label10);
+            this.panTop.Controls.Add(this.label8);
+            this.panTop.Controls.Add(this.label7);
+            this.panTop.Controls.Add(this.label6);
+            this.panTop.Controls.Add(this.label9);
+            this.panTop.Location = new System.Drawing.Point(7, 269);
+            this.panTop.Name = "panTop";
+            this.panTop.Size = new System.Drawing.Size(1244, 40);
+            this.panTop.TabIndex = 5;
             // 
             // label12
             // 
@@ -454,7 +432,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(759, 8);
+            this.label10.Location = new System.Drawing.Point(691, 8);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 23);
             this.label10.TabIndex = 4;
@@ -467,7 +445,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(947, 8);
+            this.label8.Location = new System.Drawing.Point(864, 8);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(124, 23);
             this.label8.TabIndex = 3;
@@ -480,7 +458,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(574, 8);
+            this.label7.Location = new System.Drawing.Point(505, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 23);
             this.label7.TabIndex = 2;
@@ -493,7 +471,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(335, 8);
+            this.label6.Location = new System.Drawing.Point(278, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 23);
             this.label6.TabIndex = 1;
@@ -506,7 +484,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(145, 8);
+            this.label9.Location = new System.Drawing.Point(117, 8);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 23);
             this.label9.TabIndex = 0;
@@ -518,49 +496,32 @@
             this.flpAgendamentos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.flpAgendamentos.AutoScroll = true;
             this.flpAgendamentos.BackColor = System.Drawing.Color.Transparent;
-            this.flpAgendamentos.Controls.Add(this.panel3);
+            this.flpAgendamentos.Controls.Add(this.panAgendamento);
             this.flpAgendamentos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpAgendamentos.Location = new System.Drawing.Point(4, 315);
+            this.flpAgendamentos.Location = new System.Drawing.Point(5, 315);
             this.flpAgendamentos.Name = "flpAgendamentos";
             this.flpAgendamentos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.flpAgendamentos.Size = new System.Drawing.Size(1248, 281);
             this.flpAgendamentos.TabIndex = 7;
             this.flpAgendamentos.WrapContents = false;
             // 
-            // panel3
+            // panAgendamento
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.ptbStatus);
-            this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1218, 40);
-            this.panel3.TabIndex = 4;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Maroon;
-            this.pictureBox3.Location = new System.Drawing.Point(1180, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Maroon;
-            this.pictureBox2.Location = new System.Drawing.Point(1142, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.panAgendamento.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panAgendamento.BackColor = System.Drawing.Color.White;
+            this.panAgendamento.Controls.Add(this.ptbCancelar);
+            this.panAgendamento.Controls.Add(this.ptbConfirmar);
+            this.panAgendamento.Controls.Add(this.ckbNotificar);
+            this.panAgendamento.Controls.Add(this.ptbStatus);
+            this.panAgendamento.Controls.Add(this.cbServProd);
+            this.panAgendamento.Controls.Add(this.txtTelCel);
+            this.panAgendamento.Controls.Add(this.txtCliente);
+            this.panAgendamento.Controls.Add(this.txtFuncionario);
+            this.panAgendamento.Controls.Add(this.txtHorario);
+            this.panAgendamento.Location = new System.Drawing.Point(3, 3);
+            this.panAgendamento.Name = "panAgendamento";
+            this.panAgendamento.Size = new System.Drawing.Size(1218, 40);
+            this.panAgendamento.TabIndex = 4;
             // 
             // ptbStatus
             // 
@@ -572,71 +533,76 @@
             this.ptbStatus.TabIndex = 5;
             this.ptbStatus.TabStop = false;
             // 
-            // comboBox1
+            // cbServProd
             // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(905, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(231, 30);
-            this.comboBox1.TabIndex = 4;
+            this.cbServProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbServProd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbServProd.FormattingEnabled = true;
+            this.cbServProd.Location = new System.Drawing.Point(824, 5);
+            this.cbServProd.Name = "cbServProd";
+            this.cbServProd.Size = new System.Drawing.Size(231, 29);
+            this.cbServProd.TabIndex = 4;
+            this.cbServProd.Text = "CORTE DE CABELO";
             // 
-            // textBox4
+            // txtTelCel
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Black;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Location = new System.Drawing.Point(724, 8);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(175, 24);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTelCel.BackColor = System.Drawing.Color.White;
+            this.txtTelCel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelCel.Enabled = false;
+            this.txtTelCel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelCel.ForeColor = System.Drawing.Color.Black;
+            this.txtTelCel.Location = new System.Drawing.Point(651, 8);
+            this.txtTelCel.Name = "txtTelCel";
+            this.txtTelCel.ReadOnly = true;
+            this.txtTelCel.Size = new System.Drawing.Size(167, 20);
+            this.txtTelCel.TabIndex = 3;
+            this.txtTelCel.Text = "(11) 11111-1111";
+            this.txtTelCel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // txtCliente
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Black;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(506, 8);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(212, 24);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCliente.BackColor = System.Drawing.Color.White;
+            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.ForeColor = System.Drawing.Color.Black;
+            this.txtCliente.Location = new System.Drawing.Point(440, 8);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(205, 20);
+            this.txtCliente.TabIndex = 2;
+            this.txtCliente.Text = "LANNY SANTOS";
+            this.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // txtFuncionario
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Black;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(281, 8);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(217, 24);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFuncionario.BackColor = System.Drawing.Color.White;
+            this.txtFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFuncionario.Enabled = false;
+            this.txtFuncionario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFuncionario.ForeColor = System.Drawing.Color.Black;
+            this.txtFuncionario.Location = new System.Drawing.Point(234, 8);
+            this.txtFuncionario.Name = "txtFuncionario";
+            this.txtFuncionario.ReadOnly = true;
+            this.txtFuncionario.Size = new System.Drawing.Size(200, 20);
+            this.txtFuncionario.TabIndex = 1;
+            this.txtFuncionario.Text = "WILLIAM ROCHA";
+            this.txtFuncionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // txtHorario
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Black;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(100, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(175, 24);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtHorario.BackColor = System.Drawing.Color.White;
+            this.txtHorario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHorario.Enabled = false;
+            this.txtHorario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHorario.ForeColor = System.Drawing.Color.Black;
+            this.txtHorario.Location = new System.Drawing.Point(100, 8);
+            this.txtHorario.Name = "txtHorario";
+            this.txtHorario.ReadOnly = true;
+            this.txtHorario.Size = new System.Drawing.Size(128, 20);
+            this.txtHorario.TabIndex = 0;
+            this.txtHorario.Text = "20/12 10:00";
+            this.txtHorario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panMesContainer
             // 
@@ -959,112 +925,6 @@
             this.lblFev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblFev.Click += new System.EventHandler(this.panFev_Click);
             // 
-            // panTopMes
-            // 
-            this.panTopMes.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panTopMes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(173)))), ((int)(((byte)(177)))), ((int)(((byte)(195)))));
-            this.panTopMes.Controls.Add(this.label11);
-            this.panTopMes.Controls.Add(this.progressBar1);
-            this.panTopMes.Controls.Add(this.label1);
-            this.panTopMes.Controls.Add(this.label2);
-            this.panTopMes.Controls.Add(this.label3);
-            this.panTopMes.Controls.Add(this.label4);
-            this.panTopMes.Controls.Add(this.label5);
-            this.panTopMes.Location = new System.Drawing.Point(7, 269);
-            this.panTopMes.Name = "panTopMes";
-            this.panTopMes.Size = new System.Drawing.Size(1244, 40);
-            this.panTopMes.TabIndex = 9;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(22, 8);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 23);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "STATUS";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.progressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(87)))), ((int)(((byte)(140)))));
-            this.progressBar1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.progressBar1.Location = new System.Drawing.Point(0, 34);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1244, 10);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 8;
-            this.progressBar1.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(763, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 23);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "TEL./CEL.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(956, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 23);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "SERV./PROD.";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(562, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "CLIENTE";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(337, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 23);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "ATENDENTE";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(112, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "DATA/HORÁRIO";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ptbFinanceiro
             // 
             this.ptbFinanceiro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -1104,6 +964,54 @@
             this.ptbClientes.TabIndex = 12;
             this.ptbClientes.TabStop = false;
             // 
+            // ckbNotificar
+            // 
+            this.ckbNotificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbNotificar.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ckbNotificar.AutoSize = true;
+            this.ckbNotificar.BackColor = System.Drawing.Color.White;
+            this.ckbNotificar.CausesValidation = false;
+            this.ckbNotificar.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ckbNotificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbNotificar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ckbNotificar.FlatAppearance.BorderSize = 0;
+            this.ckbNotificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ckbNotificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ckbNotificar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbNotificar.ForeColor = System.Drawing.Color.Black;
+            this.ckbNotificar.Location = new System.Drawing.Point(1061, 7);
+            this.ckbNotificar.Name = "ckbNotificar";
+            this.ckbNotificar.Size = new System.Drawing.Size(75, 26);
+            this.ckbNotificar.TabIndex = 100;
+            this.ckbNotificar.TabStop = false;
+            this.ckbNotificar.Text = "NOTIFICAR";
+            this.ckbNotificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ckbNotificar.UseVisualStyleBackColor = false;
+            // 
+            // ptbConfirmar
+            // 
+            this.ptbConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbConfirmar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ptbConfirmar.BackgroundImage = global::AgendaMais.Properties.Resources.checked__2_;
+            this.ptbConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ptbConfirmar.Location = new System.Drawing.Point(1143, 3);
+            this.ptbConfirmar.Name = "ptbConfirmar";
+            this.ptbConfirmar.Size = new System.Drawing.Size(34, 34);
+            this.ptbConfirmar.TabIndex = 101;
+            this.ptbConfirmar.TabStop = false;
+            // 
+            // ptbCancelar
+            // 
+            this.ptbCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbCancelar.BackColor = System.Drawing.Color.IndianRed;
+            this.ptbCancelar.BackgroundImage = global::AgendaMais.Properties.Resources.excluir;
+            this.ptbCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ptbCancelar.Location = new System.Drawing.Point(1180, 3);
+            this.ptbCancelar.Name = "ptbCancelar";
+            this.ptbCancelar.Size = new System.Drawing.Size(34, 34);
+            this.ptbCancelar.TabIndex = 102;
+            this.ptbCancelar.TabStop = false;
+            // 
             // frAgendados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1120,9 +1028,8 @@
             this.Controls.Add(this.panSemana);
             this.Controls.Add(this.flpAgendamentos);
             this.Controls.Add(this.panMesContainer);
-            this.Controls.Add(this.panTopSemana);
-            this.Controls.Add(this.panTopMes);
             this.Controls.Add(this.panSemanaContainer);
+            this.Controls.Add(this.panTop);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frAgendados";
@@ -1147,13 +1054,11 @@
             this.panSemana.PerformLayout();
             this.panMes.ResumeLayout(false);
             this.panMes.PerformLayout();
-            this.panTopSemana.ResumeLayout(false);
-            this.panTopSemana.PerformLayout();
+            this.panTop.ResumeLayout(false);
+            this.panTop.PerformLayout();
             this.flpAgendamentos.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panAgendamento.ResumeLayout(false);
+            this.panAgendamento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).EndInit();
             this.panMesContainer.ResumeLayout(false);
             this.panDez.ResumeLayout(false);
@@ -1180,11 +1085,11 @@
             this.panJan.PerformLayout();
             this.panFev.ResumeLayout(false);
             this.panFev.PerformLayout();
-            this.panTopMes.ResumeLayout(false);
-            this.panTopMes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbCancelar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1202,8 +1107,7 @@
         private System.Windows.Forms.Panel panSemanaContainer;
         private System.Windows.Forms.Panel panSemana;
         private System.Windows.Forms.Panel panMes;
-        private System.Windows.Forms.ProgressBar pgbCarregandoAgendamentos;
-        private System.Windows.Forms.Panel panTopSemana;
+        private System.Windows.Forms.Panel panTop;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -1244,26 +1148,19 @@
         private System.Windows.Forms.Label lblMar;
         private System.Windows.Forms.Label lblJan;
         private System.Windows.Forms.Label lblFev;
-        private System.Windows.Forms.Panel panTopMes;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panAgendamento;
+        private System.Windows.Forms.TextBox txtHorario;
+        private System.Windows.Forms.TextBox txtFuncionario;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.TextBox txtTelCel;
+        private System.Windows.Forms.ComboBox cbServProd;
         private System.Windows.Forms.PictureBox ptbStatus;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox ptbFinanceiro;
         private System.Windows.Forms.PictureBox ptbAgenda;
         private System.Windows.Forms.PictureBox ptbClientes;
+        private System.Windows.Forms.CheckBox ckbNotificar;
+        private System.Windows.Forms.PictureBox ptbConfirmar;
+        private System.Windows.Forms.PictureBox ptbCancelar;
     }
 }

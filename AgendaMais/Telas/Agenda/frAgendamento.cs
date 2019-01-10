@@ -119,14 +119,15 @@ namespace AgendaMais
         {
             int retorno = 0;
 
-            foreach (ClienteVO c in listCliente)
-            {
-                if (txtNome.Text == c.Nome)
+            if (listCliente != null)
+                foreach (ClienteVO c in listCliente)
                 {
-                    retorno = 1;
-                    break;
+                    if (txtNome.Text == c.Nome)
+                    {
+                        retorno = 1;
+                        break;
+                    }
                 }
-            }
 
             return retorno;
         }
@@ -173,16 +174,17 @@ namespace AgendaMais
         /// <param name="nome">nome do cliente</param>
         int ClienteId(string nome)
         {
-            int retorno = Convert.ToInt32(ClienteDAO.ExecutaSelect("select id from cliente order by id desc limit 1").Rows[0]["id"]) + 1;
+            int retorno = ClienteDAO.ProximoID();
 
-            foreach (ClienteVO c in listCliente)
-            {
-                if (txtNome.Text == c.Nome)
+            if (listCliente != null)
+                foreach (ClienteVO c in listCliente)
                 {
-                    retorno = c.Id;
-                    break;
+                    if (txtNome.Text == c.Nome)
+                    {
+                        retorno = c.Id;
+                        break;
+                    }
                 }
-            }
 
             return retorno;
         }
@@ -344,7 +346,7 @@ namespace AgendaMais
             txtDataHorarioConclusao.Text = metodosAgendamento.DiaSemana(dtpData.Value).ToUpper().Substring(0, 3) + " " +
                                                dtpData.Value.ToString("dd/MM/yyyy") + " " +
                                                mkbHorario.Text;
-            if (String.IsNullOrEmpty(funcionarioVOSelecionado.Nome.ToUpper()))
+            if (String.IsNullOrEmpty(funcionarioVOSelecionado.Nome))
                 txtFuncionarioConclusao.Text = "Não informado";
             else
                 txtFuncionarioConclusao.Text = funcionarioVOSelecionado.Nome.ToUpper();
@@ -661,6 +663,7 @@ namespace AgendaMais
         #endregion
 
         #region Conclusão
+
         #region Menu
         private void panConclusaoMenu_Click(object sender, EventArgs e)
         {
@@ -684,7 +687,14 @@ namespace AgendaMais
         }
         #endregion
 
-        #region Botão Próximo
+        #region Componentes
+        private void ckbNotificar_CheckedChanged(object sender, EventArgs e)
+        {
+            agendaVO.Notificar = ckbNotificar.Checked;
+        }
+        #endregion
+
+        #region Botão Concluir
         private void panConcluir_Click(object sender, EventArgs e)
         {
             #region Monta ClienteVO
@@ -769,11 +779,13 @@ namespace AgendaMais
 
                     #region Monta AgendaVO
                     agendaVO.Id_cliente = clienteVO.Id;
-                    agendaVO.Id_funcionario = funcionarioVOSelecionado.Id;
+                    if (funcionarioVOSelecionado.Id != 0)
+                        agendaVO.Id_funcionario = funcionarioVOSelecionado.Id;
                     agendaVO.Data_hora = Convert.ToDateTime(dtpData.Text + " " + mkbHorario.Text);
                     agendaVO.Obs = "";
                     agendaVO.Status = 'P';
                     agendaVO.Itens = metodosAgendamento.listItens;
+                    agendaVO.Notificar = ckbNotificar.Checked;
                     #endregion
 
                     if (alteracao)
@@ -798,7 +810,6 @@ namespace AgendaMais
         {
             panConcluir.BackgroundImage = Properties.Resources.panAgendamento_claro;
         }
-
 
         #endregion
 
