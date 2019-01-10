@@ -69,23 +69,23 @@ namespace AgendaMais
         static void Restartxlog()
         {
             #region  Teste
-            if (File.Exists("C:\\AgendaMais\\pgsql\\data\\postmaster.pid"))
-            {
-                File.Delete("C:\\AgendaMais\\pgsql\\data\\postmaster.pid");
-                CMD cmd = new CMD();
-                string comand = "\"C:\\AgendaMais\\pgsql\\bin\\pg_resetxlog\" -f ../data";
-                string result = cmd.ExecutarCMD(comand);
-            }
+            //if (File.Exists("C:\\AgendaMais\\pgsql\\data\\postmaster.pid"))
+            //{
+            //    File.Delete("C:\\AgendaMais\\pgsql\\data\\postmaster.pid");
+            //    CMD cmd = new CMD();
+            //    string comand = "\"C:\\AgendaMais\\pgsql\\bin\\pg_resetxlog\" -f ../data";
+            //    string result = cmd.ExecutarCMD(comand);
+            //}
             #endregion
 
             #region oficial
-            //if (File.Exists($"{mainPath}\\pgsql\\data\\postmaster.pid"))
-            //{
-            //    File.Delete($"{mainPath}\\pgsql\\data\\postmaster.pid");
-            //    CMD cmd = new CMD();
-            //    string comand = $"\"{mainPath}\\pgsql\\bin\\pg_resetxlog\" -f ../data";
-            //    string result = cmd.ExecutarCMD(comand);
-            //}
+            if (File.Exists($"{mainPath}\\pgsql\\data\\postmaster.pid"))
+            {
+                File.Delete($"{mainPath}\\pgsql\\data\\postmaster.pid");
+                CMD cmd = new CMD();
+                string comand = $"\"{mainPath}\\pgsql\\bin\\pg_resetxlog\" -f ../data";
+                string result = cmd.ExecutarCMD(comand);
+            }
             #endregion
         }
 
