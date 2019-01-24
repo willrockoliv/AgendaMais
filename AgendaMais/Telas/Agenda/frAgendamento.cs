@@ -687,13 +687,6 @@ namespace AgendaMais
         }
         #endregion
 
-        #region Componentes
-        private void ckbNotificar_CheckedChanged(object sender, EventArgs e)
-        {
-            agendaVO.Notificar = ckbNotificar.Checked;
-        }
-        #endregion
-
         #region Botão Concluir
         private void panConcluir_Click(object sender, EventArgs e)
         {
@@ -785,7 +778,6 @@ namespace AgendaMais
                     agendaVO.Obs = "";
                     agendaVO.Status = 'P';
                     agendaVO.Itens = metodosAgendamento.listItens;
-                    agendaVO.Notificar = ckbNotificar.Checked;
                     #endregion
 
                     if (alteracao)

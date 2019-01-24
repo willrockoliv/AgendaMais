@@ -289,6 +289,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1498590843_Streamline-52.ico" />
+    <None Include="Resources\1498590839_Streamline-521.png" />
     <None Include="Resources\whatsapp.png" />
     <None Include="Resources\vermelho.png" />
     <None Include="Resources\verde.png" />

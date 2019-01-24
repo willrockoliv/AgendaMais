@@ -19,7 +19,7 @@ namespace AgendaMais.Classes
     class GoogleDrive
     {
         //https://console.developers.google.com/apis/credentials?project=exemplary-vista-226116&authuser=2
-        private static string client_id = Path.GetDirectoryName(Application.ExecutablePath) + "\\BD\\client_id.json";
+        private static string client_id = Path.GetDirectoryName(Application.ExecutablePath) + "\\client_id.json";
 
         private static UserCredential Autenticar()
         {

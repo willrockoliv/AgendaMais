@@ -63,6 +63,16 @@ namespace AgendaMais.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1498590839_Streamline_52 {
+            get {
+                object obj = ResourceManager.GetObject("1498590839_Streamline-52", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _290145_512__1_ {
             get {
                 object obj = ResourceManager.GetObject("290145-512 (1)", resourceCulture);

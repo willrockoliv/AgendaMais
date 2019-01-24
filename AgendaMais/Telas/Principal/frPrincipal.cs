@@ -26,6 +26,49 @@ namespace AgendaMais
         #endregion
 
         #region Validações Iniciais
+        bool ValidaLicenca(string login, string senha)
+        {
+            login += ".txt";
+
+            try
+            {
+                using (new Carregando("Verificando..."))
+                {
+                    using (new ExecutarComoAdmin())
+                    {
+                        GoogleDrive.Download(login, $"{mainPath}\\BD\\{login}");
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao consultar Licença de Uso\n\n" + erro.Message);
+            }
+
+            if (File.Exists($"{mainPath}\\BD\\{login}"))
+            {
+                string[] licenca = File.ReadAllLines($"{mainPath}\\BD\\{login}");
+
+                if (licenca[0] != "key=true")
+                {
+                    MessageBox.Show("Desculpe, existe algo de errado com a sua licença de uso.");
+                    File.Delete($"{mainPath}\\BD\\{login}");
+                    return false;
+                }
+                if (licenca[1] != "senha=" + senha)
+                {
+                    MessageBox.Show("Ops! Senha icorreta");
+                    File.Delete($"{mainPath}\\BD\\{login}");
+                    return false;
+                }
+                File.Delete($"{mainPath}\\BD\\{login}");
+
+                return true;
+            }
+            else
+                throw new Exception("Ops! Não encontrei o usuário informado!");
+        }
+
         #region Valida Comunicação com PostgreSQL
         void ValidaServicoPostgreSQL()
         {
@@ -124,36 +167,6 @@ namespace AgendaMais
         public frPrincipal()
         {
             #region Validações iniciais
-            // Verificação de licença
-            try
-            {
-                using (new Carregando("Verificando Licença..."))
-                {
-                    using (new ExecutarComoAdmin())
-                    {
-                        GoogleDrive.Download("key.txt", $"{mainPath}\\BD\\key.txt");
-                    }
-                }
-                if (File.Exists($"{mainPath}\\BD\\key.txt"))
-                {
-                    string key = File.ReadAllText($"{mainPath}\\BD\\key.txt");
-                    if (key != "true")
-                    {
-                        MessageBox.Show("Desculpe, existe algo de errado com a sua licença de uso.");
-                        File.Delete($"{mainPath}\\BD\\key.txt");
-                        System.Diagnostics.Process.GetCurrentProcess().Kill();
-                    }
-                    File.Delete($"{mainPath}\\BD\\key.txt");
-                }
-                else
-                    throw new Exception("Ops! Me desculpe, mas não encontrei uma licença de uso");
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro ao consultar Licença de Uso\n\n" + erro.Message, "Erro ao consultar Licença de Uso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                System.Diagnostics.Process.GetCurrentProcess().Kill();
-            }
-
             // Verificação de Serviço de Banco de Dados
             try
             {
@@ -209,6 +222,7 @@ namespace AgendaMais
                     metodosAgenda.Atualiza_listAgenda(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
                                                       Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 23:59:59"),
                                                       'P', 'P', 'P');
+                    flpAgendamentos.Controls.Clear();
                     if (metodosAgenda.listAgenda != null)
                     {
                         metodosAgenda.ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.hoje);
@@ -418,5 +432,46 @@ namespace AgendaMais
             metodosAgenda.AtualizaStatus(flpAgendamentos);
         }
         #endregion
+
+        private void panEntrar_MouseHover(object sender, EventArgs e)
+        {
+            panEntrar.BackColor = Color.FromArgb(41, 57, 85);
+        }
+
+        private void panEntrar_MouseLeave(object sender, EventArgs e)
+        {
+            panEntrar.BackColor = Color.FromArgb(54, 78, 111);
+        }
+
+        private void panEntrar_Click(object sender, EventArgs e)
+        {
+            if (txtLogin.Text == "")
+            {
+                errorProvider.SetError(txtLogin, "Informe o usuário");
+                return;
+            }
+            if (txtSenha.Text == "")
+            {
+                errorProvider.SetError(txtSenha, "Informe a senha");
+                return;
+            }
+
+            try
+            {
+                panLogin.Visible = !ValidaLicenca(txtLogin.Text.Trim(), txtSenha.Text.Trim());
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+
+        private void txtSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                panEntrar_Click(panEntrar, e);
+            }
+        }
     }
 }

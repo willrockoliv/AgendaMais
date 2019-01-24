@@ -27,7 +27,6 @@ namespace AgendaMais.Classes.DAOs
                 agendaVO.Data_hora = Convert.ToDateTime(row["data_hora"]);
                 agendaVO.Obs = row["obs"].ToString();
                 agendaVO.Status = Convert.ToChar(row["status"]);
-                agendaVO.Notificar = Convert.ToBoolean(row["notificar"]);
 
                 List<ItemAgendaVO> listItemAgendaVO = ItemAgendaDAO.GetRegistroPorIdAgenda(agendaVO.Id);
                 List<ProdutoVO> listProdutoVO = new List<ProdutoVO>();
@@ -130,8 +129,7 @@ namespace AgendaMais.Classes.DAOs
                                       "id_funcionario," +
                                       "data_hora," +
                                       "obs," +
-                                      "status," +
-                                      "notificar" +
+                                      "status" +
                                    ")" +
                                    "Values(" +
                                       agendaVO.Id_cliente + ",";
@@ -143,8 +141,7 @@ namespace AgendaMais.Classes.DAOs
 
             insert_agenda += "'" + agendaVO.Data_hora + "'," +
                              "'" + agendaVO.Obs + "'," +
-                             "'" + agendaVO.Status + "'," +
-                             "'" + agendaVO.Notificar + "'" +
+                             "'" + agendaVO.Status + "'" +
                              ");";
 
             string insert_item_agenda = "Insert Into item_agenda(" +
@@ -218,8 +215,7 @@ namespace AgendaMais.Classes.DAOs
 
             update_agenda += "data_hora='" + agendaVO.Data_hora + "'" + "," +
                                  "obs='" + agendaVO.Obs + "'" + "," +
-                                 "status='" + agendaVO.Status + "'," +
-                                 "notificar='" + agendaVO.Notificar + "'" +
+                                 "status='" + agendaVO.Status + "'" +
                              " where id=" + agendaVO.Id;
 
             list_sql.Add(update_agenda);

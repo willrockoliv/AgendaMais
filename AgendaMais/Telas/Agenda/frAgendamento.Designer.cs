@@ -110,7 +110,6 @@
             this.panProximoItensEServicos = new System.Windows.Forms.Panel();
             this.lblProximoItensEServicos = new System.Windows.Forms.Label();
             this.panConclusao = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.flpConclusao = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.mbkTelCelConclusao = new System.Windows.Forms.MaskedTextBox();
@@ -134,7 +133,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtTotalConclusao = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.ckbNotificar = new System.Windows.Forms.CheckBox();
             this.panCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagemCliente)).BeginInit();
             this.panProximoCliente.SuspendLayout();
@@ -1259,8 +1257,6 @@
             // 
             this.panConclusao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panConclusao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
-            this.panConclusao.Controls.Add(this.ckbNotificar);
-            this.panConclusao.Controls.Add(this.panel11);
             this.panConclusao.Controls.Add(this.flpConclusao);
             this.panConclusao.Controls.Add(this.panConcluir);
             this.panConclusao.Controls.Add(this.panel8);
@@ -1268,17 +1264,6 @@
             this.panConclusao.Name = "panConclusao";
             this.panConclusao.Size = new System.Drawing.Size(1140, 455);
             this.panConclusao.TabIndex = 35;
-            // 
-            // panel11
-            // 
-            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel11.BackColor = System.Drawing.Color.Transparent;
-            this.panel11.BackgroundImage = global::AgendaMais.Properties.Resources.whatsapp;
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel11.Location = new System.Drawing.Point(924, 353);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(34, 34);
-            this.panel11.TabIndex = 60;
             // 
             // flpConclusao
             // 
@@ -1550,31 +1535,6 @@
             this.label23.TabIndex = 5;
             this.label23.Text = "TOTAL:";
             // 
-            // ckbNotificar
-            // 
-            this.ckbNotificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ckbNotificar.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbNotificar.AutoSize = true;
-            this.ckbNotificar.BackColor = System.Drawing.Color.White;
-            this.ckbNotificar.CausesValidation = false;
-            this.ckbNotificar.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ckbNotificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbNotificar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.ckbNotificar.FlatAppearance.BorderSize = 0;
-            this.ckbNotificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ckbNotificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckbNotificar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNotificar.ForeColor = System.Drawing.Color.Black;
-            this.ckbNotificar.Location = new System.Drawing.Point(964, 356);
-            this.ckbNotificar.Name = "ckbNotificar";
-            this.ckbNotificar.Size = new System.Drawing.Size(75, 26);
-            this.ckbNotificar.TabIndex = 100;
-            this.ckbNotificar.TabStop = false;
-            this.ckbNotificar.Text = "NOTIFICAR";
-            this.ckbNotificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ckbNotificar.UseVisualStyleBackColor = false;
-            this.ckbNotificar.CheckedChanged += new System.EventHandler(this.ckbNotificar_CheckedChanged);
-            // 
             // frAgendamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1638,7 +1598,6 @@
             this.panProximoItensEServicos.ResumeLayout(false);
             this.panProximoItensEServicos.PerformLayout();
             this.panConclusao.ResumeLayout(false);
-            this.panConclusao.PerformLayout();
             this.flpConclusao.ResumeLayout(false);
             this.flpConclusao.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1765,7 +1724,5 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.MaskedTextBox mbkTelCelConclusao;
         private System.Windows.Forms.PictureBox ptbImagemCliente;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.CheckBox ckbNotificar;
     }
 }

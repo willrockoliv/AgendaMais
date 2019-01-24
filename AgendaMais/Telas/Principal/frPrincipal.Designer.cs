@@ -41,6 +41,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.flpAgendamentos = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ptbCancelar = new System.Windows.Forms.PictureBox();
+            this.ptbConfirmar = new System.Windows.Forms.PictureBox();
+            this.cbSerProd = new System.Windows.Forms.ComboBox();
+            this.txtTelCel = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtAtendente = new System.Windows.Forms.TextBox();
+            this.txtHorario = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panConfiguracoes = new System.Windows.Forms.Panel();
             this.lblConfiguracoes = new System.Windows.Forms.Label();
@@ -55,20 +63,23 @@
             this.lblDRE = new System.Windows.Forms.Label();
             this.panFreqAgendamento = new System.Windows.Forms.Panel();
             this.lblFreqAgendamento = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtHorario = new System.Windows.Forms.TextBox();
-            this.txtAtendente = new System.Windows.Forms.TextBox();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.txtTelCel = new System.Windows.Forms.TextBox();
-            this.cbSerProd = new System.Windows.Forms.ComboBox();
-            this.ptbConfirmar = new System.Windows.Forms.PictureBox();
-            this.ptbCancelar = new System.Windows.Forms.PictureBox();
-            this.ckbNotificar = new System.Windows.Forms.CheckBox();
+            this.panLogin = new System.Windows.Forms.Panel();
+            this.panEntrar = new System.Windows.Forms.Panel();
+            this.lblEntrar = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).BeginInit();
             this.panel2.SuspendLayout();
             this.flpAgendamentos.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbCancelar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).BeginInit();
             this.panConfiguracoes.SuspendLayout();
             this.panRelatorios.SuspendLayout();
             this.panCadastros.SuspendLayout();
@@ -76,9 +87,10 @@
             this.flpMenu.SuspendLayout();
             this.panDRE.SuspendLayout();
             this.panFreqAgendamento.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbCancelar)).BeginInit();
+            this.panLogin.SuspendLayout();
+            this.panEntrar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // ptbRelatorios
@@ -235,6 +247,123 @@
             this.flpAgendamentos.Size = new System.Drawing.Size(1248, 247);
             this.flpAgendamentos.TabIndex = 6;
             this.flpAgendamentos.WrapContents = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.ptbCancelar);
+            this.panel1.Controls.Add(this.ptbConfirmar);
+            this.panel1.Controls.Add(this.cbSerProd);
+            this.panel1.Controls.Add(this.txtTelCel);
+            this.panel1.Controls.Add(this.txtCliente);
+            this.panel1.Controls.Add(this.txtAtendente);
+            this.panel1.Controls.Add(this.txtHorario);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1218, 40);
+            this.panel1.TabIndex = 0;
+            // 
+            // ptbCancelar
+            // 
+            this.ptbCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbCancelar.BackColor = System.Drawing.Color.IndianRed;
+            this.ptbCancelar.BackgroundImage = global::AgendaMais.Properties.Resources.excluir;
+            this.ptbCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ptbCancelar.Location = new System.Drawing.Point(1180, 3);
+            this.ptbCancelar.Name = "ptbCancelar";
+            this.ptbCancelar.Size = new System.Drawing.Size(34, 34);
+            this.ptbCancelar.TabIndex = 6;
+            this.ptbCancelar.TabStop = false;
+            // 
+            // ptbConfirmar
+            // 
+            this.ptbConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbConfirmar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ptbConfirmar.BackgroundImage = global::AgendaMais.Properties.Resources.checked__2_;
+            this.ptbConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ptbConfirmar.Location = new System.Drawing.Point(1142, 3);
+            this.ptbConfirmar.Name = "ptbConfirmar";
+            this.ptbConfirmar.Size = new System.Drawing.Size(34, 34);
+            this.ptbConfirmar.TabIndex = 5;
+            this.ptbConfirmar.TabStop = false;
+            // 
+            // cbSerProd
+            // 
+            this.cbSerProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbSerProd.BackColor = System.Drawing.Color.White;
+            this.cbSerProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSerProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbSerProd.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSerProd.FormattingEnabled = true;
+            this.cbSerProd.Items.AddRange(new object[] {
+            "CORTE",
+            "BARBA"});
+            this.cbSerProd.Location = new System.Drawing.Point(813, 5);
+            this.cbSerProd.Name = "cbSerProd";
+            this.cbSerProd.Size = new System.Drawing.Size(313, 30);
+            this.cbSerProd.TabIndex = 4;
+            // 
+            // txtTelCel
+            // 
+            this.txtTelCel.BackColor = System.Drawing.Color.White;
+            this.txtTelCel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelCel.Enabled = false;
+            this.txtTelCel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelCel.ForeColor = System.Drawing.Color.Black;
+            this.txtTelCel.Location = new System.Drawing.Point(628, 8);
+            this.txtTelCel.Name = "txtTelCel";
+            this.txtTelCel.ReadOnly = true;
+            this.txtTelCel.Size = new System.Drawing.Size(165, 24);
+            this.txtTelCel.TabIndex = 3;
+            this.txtTelCel.Text = "(11) 97361-3079";
+            this.txtTelCel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.BackColor = System.Drawing.Color.White;
+            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.ForeColor = System.Drawing.Color.Black;
+            this.txtCliente.Location = new System.Drawing.Point(410, 8);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(212, 24);
+            this.txtCliente.TabIndex = 2;
+            this.txtCliente.Text = "DOUGLAS";
+            this.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtAtendente
+            // 
+            this.txtAtendente.BackColor = System.Drawing.Color.White;
+            this.txtAtendente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAtendente.Enabled = false;
+            this.txtAtendente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAtendente.ForeColor = System.Drawing.Color.Black;
+            this.txtAtendente.Location = new System.Drawing.Point(129, 8);
+            this.txtAtendente.Name = "txtAtendente";
+            this.txtAtendente.ReadOnly = true;
+            this.txtAtendente.Size = new System.Drawing.Size(275, 24);
+            this.txtAtendente.TabIndex = 1;
+            this.txtAtendente.Text = "WILLIAM";
+            this.txtAtendente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtHorario
+            // 
+            this.txtHorario.BackColor = System.Drawing.Color.White;
+            this.txtHorario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHorario.Enabled = false;
+            this.txtHorario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHorario.ForeColor = System.Drawing.Color.Black;
+            this.txtHorario.Location = new System.Drawing.Point(31, 8);
+            this.txtHorario.Name = "txtHorario";
+            this.txtHorario.ReadOnly = true;
+            this.txtHorario.Size = new System.Drawing.Size(92, 24);
+            this.txtHorario.TabIndex = 0;
+            this.txtHorario.Text = "10:30";
+            this.txtHorario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // timer1
             // 
@@ -444,147 +573,114 @@
             this.lblFreqAgendamento.MouseLeave += new System.EventHandler(this.panFreqAgendamento_MouseLeave);
             this.lblFreqAgendamento.MouseHover += new System.EventHandler(this.panFreqAgendamento_MouseHover);
             // 
-            // panel1
+            // panLogin
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.ckbNotificar);
-            this.panel1.Controls.Add(this.ptbCancelar);
-            this.panel1.Controls.Add(this.ptbConfirmar);
-            this.panel1.Controls.Add(this.cbSerProd);
-            this.panel1.Controls.Add(this.txtTelCel);
-            this.panel1.Controls.Add(this.txtCliente);
-            this.panel1.Controls.Add(this.txtAtendente);
-            this.panel1.Controls.Add(this.txtHorario);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1218, 40);
-            this.panel1.TabIndex = 0;
+            this.panLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
+            this.panLogin.Controls.Add(this.panEntrar);
+            this.panLogin.Controls.Add(this.label2);
+            this.panLogin.Controls.Add(this.label1);
+            this.panLogin.Controls.Add(this.txtSenha);
+            this.panLogin.Controls.Add(this.txtLogin);
+            this.panLogin.Controls.Add(this.pictureBox1);
+            this.panLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panLogin.Location = new System.Drawing.Point(0, 0);
+            this.panLogin.Name = "panLogin";
+            this.panLogin.Size = new System.Drawing.Size(1264, 716);
+            this.panLogin.TabIndex = 10;
             // 
-            // txtHorario
+            // panEntrar
             // 
-            this.txtHorario.BackColor = System.Drawing.Color.White;
-            this.txtHorario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtHorario.Enabled = false;
-            this.txtHorario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHorario.ForeColor = System.Drawing.Color.Black;
-            this.txtHorario.Location = new System.Drawing.Point(31, 8);
-            this.txtHorario.Name = "txtHorario";
-            this.txtHorario.ReadOnly = true;
-            this.txtHorario.Size = new System.Drawing.Size(92, 24);
-            this.txtHorario.TabIndex = 0;
-            this.txtHorario.Text = "10:30";
-            this.txtHorario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.panEntrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(111)))));
+            this.panEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panEntrar.Controls.Add(this.lblEntrar);
+            this.panEntrar.Location = new System.Drawing.Point(467, 439);
+            this.panEntrar.Name = "panEntrar";
+            this.panEntrar.Size = new System.Drawing.Size(360, 52);
+            this.panEntrar.TabIndex = 11;
+            this.panEntrar.Click += new System.EventHandler(this.panEntrar_Click);
+            this.panEntrar.MouseLeave += new System.EventHandler(this.panEntrar_MouseLeave);
+            this.panEntrar.MouseHover += new System.EventHandler(this.panEntrar_MouseHover);
             // 
-            // txtAtendente
+            // lblEntrar
             // 
-            this.txtAtendente.BackColor = System.Drawing.Color.White;
-            this.txtAtendente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAtendente.Enabled = false;
-            this.txtAtendente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAtendente.ForeColor = System.Drawing.Color.Black;
-            this.txtAtendente.Location = new System.Drawing.Point(129, 8);
-            this.txtAtendente.Name = "txtAtendente";
-            this.txtAtendente.ReadOnly = true;
-            this.txtAtendente.Size = new System.Drawing.Size(275, 24);
-            this.txtAtendente.TabIndex = 1;
-            this.txtAtendente.Text = "WILLIAM";
-            this.txtAtendente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblEntrar.AutoSize = true;
+            this.lblEntrar.BackColor = System.Drawing.Color.Transparent;
+            this.lblEntrar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntrar.ForeColor = System.Drawing.Color.White;
+            this.lblEntrar.Location = new System.Drawing.Point(140, 12);
+            this.lblEntrar.Name = "lblEntrar";
+            this.lblEntrar.Size = new System.Drawing.Size(86, 24);
+            this.lblEntrar.TabIndex = 10;
+            this.lblEntrar.Text = "ENTRAR";
+            this.lblEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEntrar.Click += new System.EventHandler(this.panEntrar_Click);
+            this.lblEntrar.MouseLeave += new System.EventHandler(this.panEntrar_MouseLeave);
+            this.lblEntrar.MouseHover += new System.EventHandler(this.panEntrar_MouseHover);
             // 
-            // txtCliente
+            // label2
             // 
-            this.txtCliente.BackColor = System.Drawing.Color.White;
-            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCliente.Enabled = false;
-            this.txtCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.ForeColor = System.Drawing.Color.Black;
-            this.txtCliente.Location = new System.Drawing.Point(410, 8);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(212, 24);
-            this.txtCliente.TabIndex = 2;
-            this.txtCliente.Text = "DOUGLAS";
-            this.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(463, 377);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 22);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Senha:";
             // 
-            // txtTelCel
+            // label1
             // 
-            this.txtTelCel.BackColor = System.Drawing.Color.White;
-            this.txtTelCel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelCel.Enabled = false;
-            this.txtTelCel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelCel.ForeColor = System.Drawing.Color.Black;
-            this.txtTelCel.Location = new System.Drawing.Point(628, 8);
-            this.txtTelCel.Name = "txtTelCel";
-            this.txtTelCel.ReadOnly = true;
-            this.txtTelCel.Size = new System.Drawing.Size(165, 24);
-            this.txtTelCel.TabIndex = 3;
-            this.txtTelCel.Text = "(11) 97361-3079";
-            this.txtTelCel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(463, 318);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 22);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Usuário:";
             // 
-            // cbSerProd
+            // txtSenha
             // 
-            this.cbSerProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbSerProd.BackColor = System.Drawing.Color.White;
-            this.cbSerProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSerProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbSerProd.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSerProd.FormattingEnabled = true;
-            this.cbSerProd.Items.AddRange(new object[] {
-            "CORTE",
-            "BARBA"});
-            this.cbSerProd.Location = new System.Drawing.Point(813, 5);
-            this.cbSerProd.Name = "cbSerProd";
-            this.cbSerProd.Size = new System.Drawing.Size(243, 30);
-            this.cbSerProd.TabIndex = 4;
+            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSenha.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(467, 402);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '•';
+            this.txtSenha.Size = new System.Drawing.Size(360, 31);
+            this.txtSenha.TabIndex = 2;
+            this.txtSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyUp);
             // 
-            // ptbConfirmar
+            // txtLogin
             // 
-            this.ptbConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbConfirmar.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ptbConfirmar.BackgroundImage = global::AgendaMais.Properties.Resources.checked__2_;
-            this.ptbConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ptbConfirmar.Location = new System.Drawing.Point(1142, 3);
-            this.ptbConfirmar.Name = "ptbConfirmar";
-            this.ptbConfirmar.Size = new System.Drawing.Size(34, 34);
-            this.ptbConfirmar.TabIndex = 5;
-            this.ptbConfirmar.TabStop = false;
+            this.txtLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogin.Location = new System.Drawing.Point(467, 343);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(360, 31);
+            this.txtLogin.TabIndex = 1;
+            this.txtLogin.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyUp);
             // 
-            // ptbCancelar
+            // pictureBox1
             // 
-            this.ptbCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbCancelar.BackColor = System.Drawing.Color.IndianRed;
-            this.ptbCancelar.BackgroundImage = global::AgendaMais.Properties.Resources.excluir;
-            this.ptbCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ptbCancelar.Location = new System.Drawing.Point(1180, 3);
-            this.ptbCancelar.Name = "ptbCancelar";
-            this.ptbCancelar.Size = new System.Drawing.Size(34, 34);
-            this.ptbCancelar.TabIndex = 6;
-            this.ptbCancelar.TabStop = false;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::AgendaMais.Properties.Resources._1498590839_Streamline_52;
+            this.pictureBox1.Location = new System.Drawing.Point(572, 138);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // ckbNotificar
+            // errorProvider
             // 
-            this.ckbNotificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ckbNotificar.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbNotificar.AutoSize = true;
-            this.ckbNotificar.BackColor = System.Drawing.Color.White;
-            this.ckbNotificar.CausesValidation = false;
-            this.ckbNotificar.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ckbNotificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbNotificar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.ckbNotificar.FlatAppearance.BorderSize = 0;
-            this.ckbNotificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ckbNotificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckbNotificar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNotificar.ForeColor = System.Drawing.Color.Black;
-            this.ckbNotificar.Location = new System.Drawing.Point(1061, 7);
-            this.ckbNotificar.Name = "ckbNotificar";
-            this.ckbNotificar.Size = new System.Drawing.Size(75, 26);
-            this.ckbNotificar.TabIndex = 99;
-            this.ckbNotificar.TabStop = false;
-            this.ckbNotificar.Text = "NOTIFICAR";
-            this.ckbNotificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ckbNotificar.UseVisualStyleBackColor = false;
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // frPrincipal
             // 
@@ -595,6 +691,7 @@
             this.BackgroundImage = global::AgendaMais.Properties.Resources.Imagem2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 716);
+            this.Controls.Add(this.panLogin);
             this.Controls.Add(this.panDRE);
             this.Controls.Add(this.panFreqAgendamento);
             this.Controls.Add(this.flpMenu);
@@ -616,6 +713,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.flpAgendamentos.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbCancelar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).EndInit();
             this.panConfiguracoes.ResumeLayout(false);
             this.panConfiguracoes.PerformLayout();
             this.panRelatorios.ResumeLayout(false);
@@ -629,10 +730,12 @@
             this.panDRE.PerformLayout();
             this.panFreqAgendamento.ResumeLayout(false);
             this.panFreqAgendamento.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbCancelar)).EndInit();
+            this.panLogin.ResumeLayout(false);
+            this.panLogin.PerformLayout();
+            this.panEntrar.ResumeLayout(false);
+            this.panEntrar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -672,7 +775,15 @@
         private System.Windows.Forms.ComboBox cbSerProd;
         private System.Windows.Forms.PictureBox ptbConfirmar;
         private System.Windows.Forms.PictureBox ptbCancelar;
-        private System.Windows.Forms.CheckBox ckbNotificar;
+        private System.Windows.Forms.Panel panLogin;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.Panel panEntrar;
+        private System.Windows.Forms.Label lblEntrar;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 

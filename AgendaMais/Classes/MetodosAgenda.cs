@@ -31,7 +31,7 @@ namespace AgendaMais.Classes
         /// <param name="serv_prod"></param>
         /// <param name="posicao"></param>
         /// <returns></returns>
-        Panel ConstrutorAgendamentos(string hora, string atendente, string cliente, string tel_cel, List<ProdutoVO> Serv_prod, bool notificar, int posicao)
+        Panel ConstrutorAgendamentos(string hora, string atendente, string cliente, string tel_cel, List<ProdutoVO> Serv_prod, int posicao)
         {
             #region panAgendamento
             Panel panAgendamento = new Panel();
@@ -126,27 +126,6 @@ namespace AgendaMais.Classes
             cbServProd.Size = new Size(243, 30);
             #endregion
 
-            #region ckbNotificar
-            CheckBox ckbNotificar = new CheckBox();
-            ckbNotificar.Anchor = AnchorStyles.Top;
-            ckbNotificar.Appearance = Appearance.Button;
-            ckbNotificar.BackColor = Color.White;
-            ckbNotificar.Checked = notificar;
-            ckbNotificar.Cursor = Cursors.Hand;
-            ckbNotificar.FlatAppearance.BorderColor = Color.White;
-            ckbNotificar.FlatAppearance.BorderSize = 0;
-            ckbNotificar.FlatAppearance.CheckedBackColor = Color.DarkSeaGreen;
-            ckbNotificar.FlatStyle = FlatStyle.Flat;
-            ckbNotificar.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ckbNotificar.ForeColor = Color.Black;
-            ckbNotificar.Location = new Point(1061, 7);
-            ckbNotificar.Name = "ckbNotificar" + posicao;
-            ckbNotificar.Size = new Size(75, 26);
-            ckbNotificar.Text = "NOTIFICAR";
-            ckbNotificar.TextAlign = ContentAlignment.MiddleCenter;
-            ckbNotificar.CheckedChanged += new EventHandler(ckbNotificar_CheckedChanged);
-            #endregion
-
             #region ptbConfirmar
             PictureBox ptbConfirmar = new PictureBox();
             ptbConfirmar.Name = "ptbConfirmar" + posicao;
@@ -181,7 +160,6 @@ namespace AgendaMais.Classes
             panAgendamento.Controls.Add(txtCliente);
             panAgendamento.Controls.Add(txtTelCel);
             panAgendamento.Controls.Add(cbServProd);
-            panAgendamento.Controls.Add(ckbNotificar);
             panAgendamento.Controls.Add(ptbConfirmar);
             panAgendamento.Controls.Add(ptbCancelar);
             #endregion
@@ -202,7 +180,7 @@ namespace AgendaMais.Classes
         /// <param name="serv_prod"></param>
         /// <param name="posicao"></param>
         /// <returns></returns>
-        Panel ConstrutorAgendamentos(Enum_TipoExibicaoAgenda p_Enum_TipoExibicaoAgenda, EnumStatusAgendamento p_enumStatusAgendamento, string data, string hora, string atendente, string cliente, string tel_cel, List<ProdutoVO> Serv_prod, bool notificar, int posicao)
+        Panel ConstrutorAgendamentos(Enum_TipoExibicaoAgenda p_Enum_TipoExibicaoAgenda, EnumStatusAgendamento p_enumStatusAgendamento, string data, string hora, string atendente, string cliente, string tel_cel, List<ProdutoVO> Serv_prod, int posicao)
         {
             #region panAgendamento
             Panel panAgendamento = new Panel();
@@ -315,28 +293,6 @@ namespace AgendaMais.Classes
             cbServProd.Size = new Size(231, 29);
             #endregion
 
-            #region ckbNotificar
-            CheckBox ckbNotificar = new CheckBox();
-            ckbNotificar.Anchor = AnchorStyles.Top;
-            ckbNotificar.Appearance = Appearance.Button;
-            ckbNotificar.AutoSize = true;
-            ckbNotificar.BackColor = Color.White;
-            ckbNotificar.Checked = notificar;
-            ckbNotificar.Cursor = Cursors.Hand;
-            ckbNotificar.FlatAppearance.BorderColor = Color.White;
-            ckbNotificar.FlatAppearance.BorderSize = 0;
-            ckbNotificar.FlatAppearance.CheckedBackColor = Color.DarkSeaGreen;
-            ckbNotificar.FlatStyle = FlatStyle.Flat;
-            ckbNotificar.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ckbNotificar.ForeColor = Color.Black;
-            ckbNotificar.Location = new Point(1061, 7);
-            ckbNotificar.Name = "ckbNotificar" + posicao;
-            ckbNotificar.Size = new Size(75, 26);
-            ckbNotificar.Text = "NOTIFICAR";
-            ckbNotificar.TextAlign = ContentAlignment.MiddleCenter;
-            ckbNotificar.CheckedChanged += new EventHandler(ckbNotificar_CheckedChanged);
-            #endregion
-
             #region ptbConfirmar
             PictureBox ptbConfirmar = new PictureBox();
             ptbConfirmar.Name = "ptbConfirmar" + posicao;
@@ -373,10 +329,7 @@ namespace AgendaMais.Classes
             panAgendamento.Controls.Add(txtTelCel);
             panAgendamento.Controls.Add(cbServProd);
             if (Convert.ToDateTime(data) <= DateTime.Now)
-            {
                 panAgendamento.Controls.Add(ptbConfirmar);
-                panAgendamento.Controls.Add(ckbNotificar);
-            }
             panAgendamento.Controls.Add(ptbCancelar);
             #endregion
 
@@ -410,7 +363,6 @@ namespace AgendaMais.Classes
                                                                        listAgenda[i].Nome_cliente,
                                                                        listAgenda[i].Tel_cel,
                                                                        listAgenda[i].Itens,
-                                                                       listAgenda[i].Notificar,
                                                                        i));
                     else if (p_Enum_TipoExibicaoAgenda == Enum_TipoExibicaoAgenda.semana)
                         listPanAgendamentos.Add(ConstrutorAgendamentos(Enum_TipoExibicaoAgenda.semana,
@@ -421,7 +373,6 @@ namespace AgendaMais.Classes
                                                                        listAgenda[i].Nome_cliente,
                                                                        listAgenda[i].Tel_cel,
                                                                        listAgenda[i].Itens,
-                                                                       listAgenda[i].Notificar,
                                                                        i));
                     else if (p_Enum_TipoExibicaoAgenda == Enum_TipoExibicaoAgenda.mes)
                         listPanAgendamentos.Add(ConstrutorAgendamentos(Enum_TipoExibicaoAgenda.mes,
@@ -432,7 +383,6 @@ namespace AgendaMais.Classes
                                                                        listAgenda[i].Nome_cliente,
                                                                        listAgenda[i].Tel_cel,
                                                                        listAgenda[i].Itens,
-                                                                       listAgenda[i].Notificar,
                                                                        i));
                     flpAgendamentos.Controls.Add(listPanAgendamentos[i]);
                 }
@@ -628,7 +578,6 @@ namespace AgendaMais.Classes
             int posicao = Convert.ToInt32(ckbNotificar.Name.Replace("ckbNotificar", ""));
             agendaVO = new AgendaVO();
             agendaVO = listAgenda[posicao];
-            agendaVO.Notificar = ckbNotificar.Checked;
             AgendaDAO.AtualizarRegistro(agendaVO);
             FlowLayoutPanel flpAgendamentos = (FlowLayoutPanel)(ckbNotificar.FindForm().Controls.Find("flpAgendamentos", false)[0]);
             if (ckbNotificar.FindForm().Name == "frPrincipal")
