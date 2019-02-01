@@ -415,7 +415,6 @@ D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaM
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\AgendaMais.exe
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\AgendaMais.pdb
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Npgsql.dll
-D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csprojResolveAssemblyReference.cache
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frAgendados.resources
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.frAgendamento.resources
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.Telas.Cadastros.frCadastros.resources
@@ -453,3 +452,6 @@ D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaM
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Google.Apis.Core.xml
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Google.Apis.Drive.v3.pdb
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\Google.Apis.Drive.v3.xml
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csprojAssemblyReference.cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csproj.CoreCompileInputs.cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csproj.CopyComplete

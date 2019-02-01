@@ -103,13 +103,13 @@ namespace AgendaMais
 
             if (!Validacoes.ValidaCPF(mkbCPF.Text))
             {
-                errorProvider.SetError(mkbCPF, "Desculpe, esse CPF não é válido!");
+                errorProvider.SetError(mkbCPF, "Desculpe, esse CPF é inválido!");
                 ok = Validacoes.ValidaCPF(mkbCPF.Text);
             }
 
             if (!Validacoes.ValidaEmail(txtEmail.Text))
             {
-                errorProvider.SetError(txtEmail, "Desculpe, esse E-mail está num formato válido");
+                errorProvider.SetError(txtEmail, "Desculpe, esse E-mail está num formato inválido");
                 ok = Validacoes.ValidaEmail(txtEmail.Text);
             }
 
@@ -259,6 +259,8 @@ namespace AgendaMais
                 else
                     return;
             }
+
+            LimpaCampos();
         }
         #endregion
 

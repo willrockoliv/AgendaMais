@@ -234,6 +234,8 @@ namespace AgendaMais
             {
                 MessageBox.Show(erro.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            this.Focus();
+            txtLogin.Focus();
             timer1.Start();
         }
         #endregion
@@ -244,10 +246,10 @@ namespace AgendaMais
         #region panRelatorios
         private void panRelatorios_Click(object sender, EventArgs e)
         {
-            panDRE.Visible = panFreqAgendamento.Visible = !panFreqAgendamento.Visible;
+            panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
         }
 
-        private void panRelatorios_MouseHover(object sender, EventArgs e)
+        private void panRelatorios_MouseEnter(object sender, EventArgs e)
         {
             panRelatorios.BackColor = Color.FromArgb(170, 16, 41, 99);
             lblRelatorios.ForeColor = Color.PowderBlue;
@@ -263,17 +265,19 @@ namespace AgendaMais
         private void panFreqAgendamento_Click(object sender, EventArgs e)
         {
             frFrequenciaDeAgendamento frFrequenciaDeAgendamento = new frFrequenciaDeAgendamento();
+            panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
             frFrequenciaDeAgendamento.Show();
         }
-        private void panFreqAgendamento_MouseHover(object sender, EventArgs e)
+
+        private void panFreqAgendamento_MouseEnter(object sender, EventArgs e)
         {
-            panFreqAgendamento.BackColor = Color.FromArgb(16, 41, 99);
+            panFreqAgendamento.BackColor = Color.FromArgb(170, 16, 41, 99);
             lblFreqAgendamento.ForeColor = Color.PowderBlue;
         }
 
         private void panFreqAgendamento_MouseLeave(object sender, EventArgs e)
         {
-            panFreqAgendamento.BackColor = Color.FromArgb(170, 16, 41, 99);
+            panFreqAgendamento.BackColor = Color.FromArgb(0, 16, 41, 99);
             lblFreqAgendamento.ForeColor = Color.White;
         }
         #endregion
@@ -282,24 +286,26 @@ namespace AgendaMais
         private void panDRE_Click(object sender, EventArgs e)
         {
             frDRE frDRE = new frDRE();
+            panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
             frDRE.Show();
         }
-        private void panDRE_MouseHover(object sender, EventArgs e)
+
+        private void panDRE_MouseEnter(object sender, EventArgs e)
         {
-            panDRE.BackColor = Color.FromArgb(16, 41, 99);
+            panDRE.BackColor = Color.FromArgb(170, 16, 41, 99);
             lblDRE.ForeColor = Color.PowderBlue;
         }
 
         private void panDRE_MouseLeave(object sender, EventArgs e)
         {
-            panDRE.BackColor = Color.FromArgb(170, 16, 41, 99);
+            panDRE.BackColor = Color.FromArgb(0, 16, 41, 99);
             lblDRE.ForeColor = Color.White;
         }
         #endregion
 
         #endregion
 
-        #region Agenda
+        #region panAgenda
         private void panAgenda_MouseHover(object sender, EventArgs e)
         {
             panAgenda.BackColor = Color.FromArgb(170, 16, 41, 99);
@@ -322,10 +328,10 @@ namespace AgendaMais
         #region panCadastros
         private void Cadastros_Click(object sender, EventArgs e)
         {
-            frCadastros frCadastros = new frCadastros();
-            frCadastros.Show();
+            panMenuCadastros.Visible = !panMenuCadastros.Visible;
         }
-        private void panCadastros_MouseHover(object sender, EventArgs e)
+
+        private void panCadastros_MouseEnter(object sender, EventArgs e)
         {
             panCadastros.BackColor = Color.FromArgb(170, 16, 41, 99);
             lblCadastros.ForeColor = Color.PowderBlue;
@@ -335,7 +341,72 @@ namespace AgendaMais
         {
             panCadastros.BackColor = Color.FromArgb(0, 16, 41, 99);
             lblCadastros.ForeColor = Color.White;
+
         }
+
+        #region Clientes
+        private void panCadClientes_Click(object sender, EventArgs e)
+        {
+            frCadCliente frCadCliente = new frCadCliente();
+            panMenuCadastros.Visible = !panMenuCadastros.Visible;
+            frCadCliente.Show();
+        }
+
+        private void panCadClientes_MouseEnter(object sender, EventArgs e)
+        {
+            panCadClientes.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblCadClientes.ForeColor = Color.PowderBlue;
+        }
+
+        private void panCadClientes_MouseLeave(object sender, EventArgs e)
+        {
+            panCadClientes.BackColor = Color.FromArgb(0, 16, 41, 99);
+            lblCadClientes.ForeColor = Color.White;
+        }
+        #endregion
+
+        #region Funcionarios
+        private void panCadFuncionarios_Click(object sender, EventArgs e)
+        {
+            frCadFuncionarios frCadFuncionarios = new frCadFuncionarios();
+            panMenuCadastros.Visible = !panMenuCadastros.Visible;
+            frCadFuncionarios.Show();
+        }
+
+        private void panCadFuncionarios_MouseEnter(object sender, EventArgs e)
+        {
+            panCadFuncionarios.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblCadFuncionarios.ForeColor = Color.PowderBlue;
+        }
+
+        private void panCadFuncionarios_MouseLeave(object sender, EventArgs e)
+        {
+            panCadFuncionarios.BackColor = Color.FromArgb(0, 16, 41, 99);
+            lblCadFuncionarios.ForeColor = Color.White;
+        }
+        #endregion
+
+        #region Produtos e Serviços
+        private void panCadProdServ_Click(object sender, EventArgs e)
+        {
+            frCadProdServ frCadProdServ = new frCadProdServ();
+            panMenuCadastros.Visible = !panMenuCadastros.Visible;
+            frCadProdServ.Show();
+        }
+
+        private void panCadProdServ_MouseEnter(object sender, EventArgs e)
+        {
+            panCadProdServ.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblCadProdServ.ForeColor = Color.PowderBlue;
+        }
+
+        private void panCadProdServ_MouseLeave(object sender, EventArgs e)
+        {
+            panCadProdServ.BackColor = Color.FromArgb(0, 16, 41, 99);
+            lblCadProdServ.ForeColor = Color.White;
+        }
+        #endregion
+
         #endregion
 
         #region panConfiguracoes
@@ -427,12 +498,7 @@ namespace AgendaMais
 
         #endregion
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            metodosAgenda.AtualizaStatus(flpAgendamentos);
-        }
-        #endregion
-
+        #region Login
         private void panEntrar_MouseHover(object sender, EventArgs e)
         {
             panEntrar.BackColor = Color.FromArgb(41, 57, 85);
@@ -473,5 +539,20 @@ namespace AgendaMais
                 panEntrar_Click(panEntrar, e);
             }
         }
+        #endregion
+
+        private void frPrincipal_Click(object sender, EventArgs e)
+        {
+            panMenuRelatorios.Visible = false;
+            panMenuCadastros.Visible = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            metodosAgenda.AtualizaStatus(flpAgendamentos);
+        }
+        #endregion
+
+
     }
 }

@@ -72,6 +72,14 @@
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panMenuRelatorios = new System.Windows.Forms.Panel();
+            this.panMenuCadastros = new System.Windows.Forms.Panel();
+            this.panCadProdServ = new System.Windows.Forms.Panel();
+            this.lblCadProdServ = new System.Windows.Forms.Label();
+            this.panCadFuncionarios = new System.Windows.Forms.Panel();
+            this.lblCadFuncionarios = new System.Windows.Forms.Label();
+            this.panCadClientes = new System.Windows.Forms.Panel();
+            this.lblCadClientes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).BeginInit();
@@ -91,6 +99,11 @@
             this.panEntrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.panMenuRelatorios.SuspendLayout();
+            this.panMenuCadastros.SuspendLayout();
+            this.panCadProdServ.SuspendLayout();
+            this.panCadFuncionarios.SuspendLayout();
+            this.panCadClientes.SuspendLayout();
             this.SuspendLayout();
             // 
             // ptbRelatorios
@@ -410,8 +423,8 @@
             this.panRelatorios.Size = new System.Drawing.Size(311, 28);
             this.panRelatorios.TabIndex = 4;
             this.panRelatorios.Click += new System.EventHandler(this.panRelatorios_Click);
+            this.panRelatorios.MouseEnter += new System.EventHandler(this.panRelatorios_MouseEnter);
             this.panRelatorios.MouseLeave += new System.EventHandler(this.panRelatorios_MouseLeave);
-            this.panRelatorios.MouseHover += new System.EventHandler(this.panRelatorios_MouseHover);
             // 
             // lblRelatorios
             // 
@@ -428,8 +441,8 @@
             this.lblRelatorios.Text = "RELATÓRIOS";
             this.lblRelatorios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblRelatorios.Click += new System.EventHandler(this.panRelatorios_Click);
+            this.lblRelatorios.MouseEnter += new System.EventHandler(this.panRelatorios_MouseEnter);
             this.lblRelatorios.MouseLeave += new System.EventHandler(this.panRelatorios_MouseLeave);
-            this.lblRelatorios.MouseHover += new System.EventHandler(this.panRelatorios_MouseHover);
             // 
             // panCadastros
             // 
@@ -442,8 +455,8 @@
             this.panCadastros.Size = new System.Drawing.Size(311, 28);
             this.panCadastros.TabIndex = 6;
             this.panCadastros.Click += new System.EventHandler(this.Cadastros_Click);
+            this.panCadastros.MouseEnter += new System.EventHandler(this.panCadastros_MouseEnter);
             this.panCadastros.MouseLeave += new System.EventHandler(this.panCadastros_MouseLeave);
-            this.panCadastros.MouseHover += new System.EventHandler(this.panCadastros_MouseHover);
             // 
             // lblCadastros
             // 
@@ -460,8 +473,8 @@
             this.lblCadastros.Text = "CADASTROS";
             this.lblCadastros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCadastros.Click += new System.EventHandler(this.Cadastros_Click);
+            this.lblCadastros.MouseEnter += new System.EventHandler(this.panCadastros_MouseEnter);
             this.lblCadastros.MouseLeave += new System.EventHandler(this.panCadastros_MouseLeave);
-            this.lblCadastros.MouseHover += new System.EventHandler(this.panCadastros_MouseHover);
             // 
             // panAgenda
             // 
@@ -511,17 +524,16 @@
             // 
             // panDRE
             // 
-            this.panDRE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
+            this.panDRE.BackColor = System.Drawing.Color.Transparent;
             this.panDRE.Controls.Add(this.lblDRE);
             this.panDRE.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panDRE.Location = new System.Drawing.Point(636, 68);
+            this.panDRE.Location = new System.Drawing.Point(0, 29);
             this.panDRE.Name = "panDRE";
             this.panDRE.Size = new System.Drawing.Size(311, 28);
             this.panDRE.TabIndex = 9;
-            this.panDRE.Visible = false;
             this.panDRE.Click += new System.EventHandler(this.panDRE_Click);
+            this.panDRE.MouseEnter += new System.EventHandler(this.panDRE_MouseEnter);
             this.panDRE.MouseLeave += new System.EventHandler(this.panDRE_MouseLeave);
-            this.panDRE.MouseHover += new System.EventHandler(this.panDRE_MouseHover);
             // 
             // lblDRE
             // 
@@ -538,22 +550,21 @@
             this.lblDRE.Text = "Demonstrativo de Resultado";
             this.lblDRE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblDRE.Click += new System.EventHandler(this.panDRE_Click);
+            this.lblDRE.MouseEnter += new System.EventHandler(this.panDRE_MouseEnter);
             this.lblDRE.MouseLeave += new System.EventHandler(this.panDRE_MouseLeave);
-            this.lblDRE.MouseHover += new System.EventHandler(this.panDRE_MouseHover);
             // 
             // panFreqAgendamento
             // 
-            this.panFreqAgendamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
+            this.panFreqAgendamento.BackColor = System.Drawing.Color.Transparent;
             this.panFreqAgendamento.Controls.Add(this.lblFreqAgendamento);
             this.panFreqAgendamento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panFreqAgendamento.Location = new System.Drawing.Point(636, 40);
+            this.panFreqAgendamento.Location = new System.Drawing.Point(0, 1);
             this.panFreqAgendamento.Name = "panFreqAgendamento";
             this.panFreqAgendamento.Size = new System.Drawing.Size(311, 28);
             this.panFreqAgendamento.TabIndex = 8;
-            this.panFreqAgendamento.Visible = false;
             this.panFreqAgendamento.Click += new System.EventHandler(this.panFreqAgendamento_Click);
+            this.panFreqAgendamento.MouseEnter += new System.EventHandler(this.panFreqAgendamento_MouseEnter);
             this.panFreqAgendamento.MouseLeave += new System.EventHandler(this.panFreqAgendamento_MouseLeave);
-            this.panFreqAgendamento.MouseHover += new System.EventHandler(this.panFreqAgendamento_MouseHover);
             // 
             // lblFreqAgendamento
             // 
@@ -570,8 +581,8 @@
             this.lblFreqAgendamento.Text = "Frequência de Agendamento";
             this.lblFreqAgendamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblFreqAgendamento.Click += new System.EventHandler(this.panFreqAgendamento_Click);
+            this.lblFreqAgendamento.MouseEnter += new System.EventHandler(this.panFreqAgendamento_MouseEnter);
             this.lblFreqAgendamento.MouseLeave += new System.EventHandler(this.panFreqAgendamento_MouseLeave);
-            this.lblFreqAgendamento.MouseHover += new System.EventHandler(this.panFreqAgendamento_MouseHover);
             // 
             // panLogin
             // 
@@ -682,6 +693,122 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // panMenuRelatorios
+            // 
+            this.panMenuRelatorios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
+            this.panMenuRelatorios.Controls.Add(this.panDRE);
+            this.panMenuRelatorios.Controls.Add(this.panFreqAgendamento);
+            this.panMenuRelatorios.Location = new System.Drawing.Point(636, 40);
+            this.panMenuRelatorios.Name = "panMenuRelatorios";
+            this.panMenuRelatorios.Size = new System.Drawing.Size(311, 58);
+            this.panMenuRelatorios.TabIndex = 11;
+            this.panMenuRelatorios.Visible = false;
+            // 
+            // panMenuCadastros
+            // 
+            this.panMenuCadastros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
+            this.panMenuCadastros.Controls.Add(this.panCadProdServ);
+            this.panMenuCadastros.Controls.Add(this.panCadFuncionarios);
+            this.panMenuCadastros.Controls.Add(this.panCadClientes);
+            this.panMenuCadastros.Location = new System.Drawing.Point(319, 40);
+            this.panMenuCadastros.Name = "panMenuCadastros";
+            this.panMenuCadastros.Size = new System.Drawing.Size(311, 87);
+            this.panMenuCadastros.TabIndex = 12;
+            this.panMenuCadastros.Visible = false;
+            // 
+            // panCadProdServ
+            // 
+            this.panCadProdServ.BackColor = System.Drawing.Color.Transparent;
+            this.panCadProdServ.Controls.Add(this.lblCadProdServ);
+            this.panCadProdServ.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panCadProdServ.Location = new System.Drawing.Point(0, 59);
+            this.panCadProdServ.Name = "panCadProdServ";
+            this.panCadProdServ.Size = new System.Drawing.Size(311, 28);
+            this.panCadProdServ.TabIndex = 10;
+            this.panCadProdServ.Click += new System.EventHandler(this.panCadProdServ_Click);
+            this.panCadProdServ.MouseEnter += new System.EventHandler(this.panCadProdServ_MouseEnter);
+            this.panCadProdServ.MouseLeave += new System.EventHandler(this.panCadProdServ_MouseLeave);
+            // 
+            // lblCadProdServ
+            // 
+            this.lblCadProdServ.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblCadProdServ.AutoSize = true;
+            this.lblCadProdServ.BackColor = System.Drawing.Color.Transparent;
+            this.lblCadProdServ.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCadProdServ.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadProdServ.ForeColor = System.Drawing.Color.White;
+            this.lblCadProdServ.Location = new System.Drawing.Point(5, 4);
+            this.lblCadProdServ.Name = "lblCadProdServ";
+            this.lblCadProdServ.Size = new System.Drawing.Size(152, 20);
+            this.lblCadProdServ.TabIndex = 1;
+            this.lblCadProdServ.Text = "Produtos e Serviços";
+            this.lblCadProdServ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCadProdServ.Click += new System.EventHandler(this.panCadProdServ_Click);
+            this.lblCadProdServ.MouseEnter += new System.EventHandler(this.panCadProdServ_MouseEnter);
+            this.lblCadProdServ.MouseLeave += new System.EventHandler(this.panCadProdServ_MouseLeave);
+            // 
+            // panCadFuncionarios
+            // 
+            this.panCadFuncionarios.BackColor = System.Drawing.Color.Transparent;
+            this.panCadFuncionarios.Controls.Add(this.lblCadFuncionarios);
+            this.panCadFuncionarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panCadFuncionarios.Location = new System.Drawing.Point(0, 29);
+            this.panCadFuncionarios.Name = "panCadFuncionarios";
+            this.panCadFuncionarios.Size = new System.Drawing.Size(311, 28);
+            this.panCadFuncionarios.TabIndex = 9;
+            this.panCadFuncionarios.Click += new System.EventHandler(this.panCadFuncionarios_Click);
+            this.panCadFuncionarios.MouseEnter += new System.EventHandler(this.panCadFuncionarios_MouseEnter);
+            this.panCadFuncionarios.MouseLeave += new System.EventHandler(this.panCadFuncionarios_MouseLeave);
+            // 
+            // lblCadFuncionarios
+            // 
+            this.lblCadFuncionarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblCadFuncionarios.AutoSize = true;
+            this.lblCadFuncionarios.BackColor = System.Drawing.Color.Transparent;
+            this.lblCadFuncionarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCadFuncionarios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadFuncionarios.ForeColor = System.Drawing.Color.White;
+            this.lblCadFuncionarios.Location = new System.Drawing.Point(5, 4);
+            this.lblCadFuncionarios.Name = "lblCadFuncionarios";
+            this.lblCadFuncionarios.Size = new System.Drawing.Size(100, 20);
+            this.lblCadFuncionarios.TabIndex = 1;
+            this.lblCadFuncionarios.Text = "Funcionários";
+            this.lblCadFuncionarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCadFuncionarios.Click += new System.EventHandler(this.panCadFuncionarios_Click);
+            this.lblCadFuncionarios.MouseEnter += new System.EventHandler(this.panCadFuncionarios_MouseEnter);
+            this.lblCadFuncionarios.MouseLeave += new System.EventHandler(this.panCadFuncionarios_MouseLeave);
+            // 
+            // panCadClientes
+            // 
+            this.panCadClientes.BackColor = System.Drawing.Color.Transparent;
+            this.panCadClientes.Controls.Add(this.lblCadClientes);
+            this.panCadClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panCadClientes.Location = new System.Drawing.Point(0, 1);
+            this.panCadClientes.Name = "panCadClientes";
+            this.panCadClientes.Size = new System.Drawing.Size(311, 28);
+            this.panCadClientes.TabIndex = 8;
+            this.panCadClientes.Click += new System.EventHandler(this.panCadClientes_Click);
+            this.panCadClientes.MouseEnter += new System.EventHandler(this.panCadClientes_MouseEnter);
+            this.panCadClientes.MouseLeave += new System.EventHandler(this.panCadClientes_MouseLeave);
+            // 
+            // lblCadClientes
+            // 
+            this.lblCadClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblCadClientes.AutoSize = true;
+            this.lblCadClientes.BackColor = System.Drawing.Color.Transparent;
+            this.lblCadClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCadClientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadClientes.ForeColor = System.Drawing.Color.White;
+            this.lblCadClientes.Location = new System.Drawing.Point(5, 3);
+            this.lblCadClientes.Name = "lblCadClientes";
+            this.lblCadClientes.Size = new System.Drawing.Size(67, 20);
+            this.lblCadClientes.TabIndex = 0;
+            this.lblCadClientes.Text = "Clientes";
+            this.lblCadClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCadClientes.Click += new System.EventHandler(this.panCadClientes_Click);
+            this.lblCadClientes.MouseEnter += new System.EventHandler(this.panCadClientes_MouseEnter);
+            this.lblCadClientes.MouseLeave += new System.EventHandler(this.panCadClientes_MouseLeave);
+            // 
             // frPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,8 +819,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 716);
             this.Controls.Add(this.panLogin);
-            this.Controls.Add(this.panDRE);
-            this.Controls.Add(this.panFreqAgendamento);
+            this.Controls.Add(this.panMenuCadastros);
+            this.Controls.Add(this.panMenuRelatorios);
             this.Controls.Add(this.flpMenu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label5);
@@ -707,6 +834,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda+";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Click += new System.EventHandler(this.frPrincipal_Click);
             ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).EndInit();
@@ -736,6 +864,14 @@
             this.panEntrar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.panMenuRelatorios.ResumeLayout(false);
+            this.panMenuCadastros.ResumeLayout(false);
+            this.panCadProdServ.ResumeLayout(false);
+            this.panCadProdServ.PerformLayout();
+            this.panCadFuncionarios.ResumeLayout(false);
+            this.panCadFuncionarios.PerformLayout();
+            this.panCadClientes.ResumeLayout(false);
+            this.panCadClientes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -784,6 +920,14 @@
         private System.Windows.Forms.Panel panEntrar;
         private System.Windows.Forms.Label lblEntrar;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Panel panMenuRelatorios;
+        private System.Windows.Forms.Panel panCadProdServ;
+        private System.Windows.Forms.Label lblCadProdServ;
+        private System.Windows.Forms.Panel panMenuCadastros;
+        private System.Windows.Forms.Panel panCadFuncionarios;
+        private System.Windows.Forms.Label lblCadFuncionarios;
+        private System.Windows.Forms.Panel panCadClientes;
+        private System.Windows.Forms.Label lblCadClientes;
     }
 }
 

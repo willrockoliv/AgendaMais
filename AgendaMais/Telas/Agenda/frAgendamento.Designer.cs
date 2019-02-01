@@ -1299,7 +1299,6 @@
             this.mbkTelCelConclusao.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mbkTelCelConclusao.ForeColor = System.Drawing.Color.Gray;
             this.mbkTelCelConclusao.Location = new System.Drawing.Point(393, 29);
-            this.mbkTelCelConclusao.Mask = "(00) 00000-0000";
             this.mbkTelCelConclusao.Name = "mbkTelCelConclusao";
             this.mbkTelCelConclusao.Size = new System.Drawing.Size(176, 30);
             this.mbkTelCelConclusao.TabIndex = 4;
@@ -1546,14 +1545,14 @@
             this.Controls.Add(this.ptbClientes);
             this.Controls.Add(this.ptbAgenda);
             this.Controls.Add(this.ptbFinanceiro);
-            this.Controls.Add(this.panClienteMenu);
-            this.Controls.Add(this.panAgendamentoMenu);
-            this.Controls.Add(this.panFuncionarioMenu);
-            this.Controls.Add(this.panConclusaoMenu);
             this.Controls.Add(this.panConclusao);
             this.Controls.Add(this.panItensEServicos);
             this.Controls.Add(this.panCliente);
             this.Controls.Add(this.panAgendamento);
+            this.Controls.Add(this.panClienteMenu);
+            this.Controls.Add(this.panAgendamentoMenu);
+            this.Controls.Add(this.panFuncionarioMenu);
+            this.Controls.Add(this.panConclusaoMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frAgendamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

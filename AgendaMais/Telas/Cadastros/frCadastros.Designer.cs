@@ -40,6 +40,14 @@
             this.ptbClientes = new System.Windows.Forms.PictureBox();
             this.ptbAgenda = new System.Windows.Forms.PictureBox();
             this.ptbFinanceiro = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cad1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cad2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rel1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rel2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flpMenu.SuspendLayout();
             this.panClientes.SuspendLayout();
             this.panFuncionarios.SuspendLayout();
@@ -47,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -219,6 +228,71 @@
             this.ptbFinanceiro.TabIndex = 13;
             this.ptbFinanceiro.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agendaToolStripMenuItem,
+            this.cadastrosToolStripMenuItem,
+            this.relatóriosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 29);
+            this.menuStrip1.TabIndex = 16;
+            // 
+            // agendaToolStripMenuItem
+            // 
+            this.agendaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
+            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(95, 25);
+            this.agendaToolStripMenuItem.Text = "AGENDA";
+            // 
+            // cadastrosToolStripMenuItem
+            // 
+            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cad1ToolStripMenuItem,
+            this.cad2ToolStripMenuItem});
+            this.cadastrosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(121, 25);
+            this.cadastrosToolStripMenuItem.Text = "CADASTROS";
+            // 
+            // cad1ToolStripMenuItem
+            // 
+            this.cad1ToolStripMenuItem.Name = "cad1ToolStripMenuItem";
+            this.cad1ToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
+            this.cad1ToolStripMenuItem.Text = "cad 1";
+            // 
+            // cad2ToolStripMenuItem
+            // 
+            this.cad2ToolStripMenuItem.Name = "cad2ToolStripMenuItem";
+            this.cad2ToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
+            this.cad2ToolStripMenuItem.Text = "cad 2";
+            // 
+            // relatóriosToolStripMenuItem
+            // 
+            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rel1ToolStripMenuItem,
+            this.rel2ToolStripMenuItem});
+            this.relatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(120, 25);
+            this.relatóriosToolStripMenuItem.Text = "RELATÓRIOS";
+            // 
+            // rel1ToolStripMenuItem
+            // 
+            this.rel1ToolStripMenuItem.Name = "rel1ToolStripMenuItem";
+            this.rel1ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.rel1ToolStripMenuItem.Text = "rel 1";
+            // 
+            // rel2ToolStripMenuItem
+            // 
+            this.rel2ToolStripMenuItem.Name = "rel2ToolStripMenuItem";
+            this.rel2ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.rel2ToolStripMenuItem.Text = "rel 2";
+            // 
             // frCadastros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,7 +307,9 @@
             this.Controls.Add(this.ptbFinanceiro);
             this.Controls.Add(this.flpMenu);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frCadastros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastros";
@@ -248,6 +324,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +344,13 @@
         private System.Windows.Forms.PictureBox ptbClientes;
         private System.Windows.Forms.PictureBox ptbAgenda;
         private System.Windows.Forms.PictureBox ptbFinanceiro;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cad1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cad2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rel1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rel2ToolStripMenuItem;
     }
 }

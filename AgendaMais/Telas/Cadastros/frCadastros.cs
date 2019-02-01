@@ -61,8 +61,7 @@ namespace AgendaMais.Telas.Cadastros
                 pan.BorderStyle = BorderStyle.None;
             }
         }
-        #endregion
 
-       
+        #endregion
     }
 }

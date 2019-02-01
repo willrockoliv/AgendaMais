@@ -254,6 +254,8 @@ namespace AgendaMais
                 else
                     return;
             }
+
+            LimpaCampos();
         }
         #endregion
 
