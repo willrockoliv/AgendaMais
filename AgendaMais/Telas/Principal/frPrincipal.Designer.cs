@@ -63,14 +63,6 @@
             this.lblDRE = new System.Windows.Forms.Label();
             this.panFreqAgendamento = new System.Windows.Forms.Panel();
             this.lblFreqAgendamento = new System.Windows.Forms.Label();
-            this.panLogin = new System.Windows.Forms.Panel();
-            this.panEntrar = new System.Windows.Forms.Panel();
-            this.lblEntrar = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panMenuRelatorios = new System.Windows.Forms.Panel();
             this.panMenuCadastros = new System.Windows.Forms.Panel();
@@ -95,9 +87,6 @@
             this.flpMenu.SuspendLayout();
             this.panDRE.SuspendLayout();
             this.panFreqAgendamento.SuspendLayout();
-            this.panLogin.SuspendLayout();
-            this.panEntrar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panMenuRelatorios.SuspendLayout();
             this.panMenuCadastros.SuspendLayout();
@@ -584,110 +573,6 @@
             this.lblFreqAgendamento.MouseEnter += new System.EventHandler(this.panFreqAgendamento_MouseEnter);
             this.lblFreqAgendamento.MouseLeave += new System.EventHandler(this.panFreqAgendamento_MouseLeave);
             // 
-            // panLogin
-            // 
-            this.panLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
-            this.panLogin.Controls.Add(this.panEntrar);
-            this.panLogin.Controls.Add(this.label2);
-            this.panLogin.Controls.Add(this.label1);
-            this.panLogin.Controls.Add(this.txtSenha);
-            this.panLogin.Controls.Add(this.txtLogin);
-            this.panLogin.Controls.Add(this.pictureBox1);
-            this.panLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panLogin.Location = new System.Drawing.Point(0, 0);
-            this.panLogin.Name = "panLogin";
-            this.panLogin.Size = new System.Drawing.Size(1264, 716);
-            this.panLogin.TabIndex = 10;
-            // 
-            // panEntrar
-            // 
-            this.panEntrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(111)))));
-            this.panEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panEntrar.Controls.Add(this.lblEntrar);
-            this.panEntrar.Location = new System.Drawing.Point(467, 439);
-            this.panEntrar.Name = "panEntrar";
-            this.panEntrar.Size = new System.Drawing.Size(360, 52);
-            this.panEntrar.TabIndex = 11;
-            this.panEntrar.Click += new System.EventHandler(this.panEntrar_Click);
-            this.panEntrar.MouseLeave += new System.EventHandler(this.panEntrar_MouseLeave);
-            this.panEntrar.MouseHover += new System.EventHandler(this.panEntrar_MouseHover);
-            // 
-            // lblEntrar
-            // 
-            this.lblEntrar.AutoSize = true;
-            this.lblEntrar.BackColor = System.Drawing.Color.Transparent;
-            this.lblEntrar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntrar.ForeColor = System.Drawing.Color.White;
-            this.lblEntrar.Location = new System.Drawing.Point(140, 12);
-            this.lblEntrar.Name = "lblEntrar";
-            this.lblEntrar.Size = new System.Drawing.Size(86, 24);
-            this.lblEntrar.TabIndex = 10;
-            this.lblEntrar.Text = "ENTRAR";
-            this.lblEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEntrar.Click += new System.EventHandler(this.panEntrar_Click);
-            this.lblEntrar.MouseLeave += new System.EventHandler(this.panEntrar_MouseLeave);
-            this.lblEntrar.MouseHover += new System.EventHandler(this.panEntrar_MouseHover);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(463, 377);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 22);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Senha:";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(463, 318);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 22);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Usuário:";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSenha.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(467, 402);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '•';
-            this.txtSenha.Size = new System.Drawing.Size(360, 31);
-            this.txtSenha.TabIndex = 2;
-            this.txtSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyUp);
-            // 
-            // txtLogin
-            // 
-            this.txtLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.Location = new System.Drawing.Point(467, 343);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(360, 31);
-            this.txtLogin.TabIndex = 1;
-            this.txtLogin.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyUp);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::AgendaMais.Properties.Resources._1498590839_Streamline_52;
-            this.pictureBox1.Location = new System.Drawing.Point(572, 138);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // errorProvider
             // 
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -818,7 +703,6 @@
             this.BackgroundImage = global::AgendaMais.Properties.Resources.Imagem2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 716);
-            this.Controls.Add(this.panLogin);
             this.Controls.Add(this.panMenuCadastros);
             this.Controls.Add(this.panMenuRelatorios);
             this.Controls.Add(this.flpMenu);
@@ -858,11 +742,6 @@
             this.panDRE.PerformLayout();
             this.panFreqAgendamento.ResumeLayout(false);
             this.panFreqAgendamento.PerformLayout();
-            this.panLogin.ResumeLayout(false);
-            this.panLogin.PerformLayout();
-            this.panEntrar.ResumeLayout(false);
-            this.panEntrar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panMenuRelatorios.ResumeLayout(false);
             this.panMenuCadastros.ResumeLayout(false);
@@ -911,14 +790,6 @@
         private System.Windows.Forms.ComboBox cbSerProd;
         private System.Windows.Forms.PictureBox ptbConfirmar;
         private System.Windows.Forms.PictureBox ptbCancelar;
-        private System.Windows.Forms.Panel panLogin;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.TextBox txtLogin;
-        private System.Windows.Forms.Panel panEntrar;
-        private System.Windows.Forms.Label lblEntrar;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Panel panMenuRelatorios;
         private System.Windows.Forms.Panel panCadProdServ;

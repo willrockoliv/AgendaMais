@@ -34,24 +34,47 @@
   <PropertyGroup>
     <ApplicationIcon>1498590843_Streamline-52.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Google.Apis, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.1.36.1\lib\net45\Google.Apis.dll</HintPath>
+    <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Auth, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.36.1\lib\net45\Google.Apis.Auth.dll</HintPath>
+    <Reference Include="Google.Apis, Version=1.38.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.38.0\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.36.1\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    <Reference Include="Google.Apis.Auth, Version=1.38.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.38.0\lib\net45\Google.Apis.Auth.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Core, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Core.1.36.1\lib\net45\Google.Apis.Core.dll</HintPath>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.38.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.38.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Drive.v3, Version=1.36.1.1442, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Drive.v3.1.36.1.1442\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
+    <Reference Include="Google.Apis.Core, Version=1.38.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.38.0\lib\net45\Google.Apis.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.PlatformServices, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.1.36.1\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.38.0.1490, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Drive.v3.1.38.0.1490\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.38.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.38.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
@@ -132,12 +155,6 @@
     <Compile Include="Telas\Agenda\frAgendamento.Designer.cs">
       <DependentUpon>frAgendamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Cadastros\frCadastros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\Cadastros\frCadastros.Designer.cs">
-      <DependentUpon>frCadastros.cs</DependentUpon>
-    </Compile>
     <Compile Include="Telas\Cadastros\Pessoas\frCadFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +166,12 @@
     </Compile>
     <Compile Include="Telas\Cadastros\Estoque\frCadProdServ.Designer.cs">
       <DependentUpon>frCadProdServ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frLogin.Designer.cs">
+      <DependentUpon>frLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Relatórios\frDRE.cs">
       <SubType>Form</SubType>
@@ -188,14 +211,17 @@
     <EmbeddedResource Include="Telas\Agenda\frAgendamento.resx">
       <DependentUpon>frAgendamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Cadastros\frCadastros.resx">
-      <DependentUpon>frCadastros.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastros\Pessoas\frCadFuncionarios.resx">
       <DependentUpon>frCadFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastros\Estoque\frCadProdServ.resx">
       <DependentUpon>frCadProdServ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Carregando.resx">
+      <DependentUpon>Carregando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frLogin.resx">
+      <DependentUpon>frLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Pesquisas\frPesquisa.resx">
       <DependentUpon>frPesquisa.cs</DependentUpon>
@@ -289,6 +315,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1498590843_Streamline-52.ico" />
+    <None Include="Resources\carregando_relatorio.gif" />
     <None Include="Resources\1498590839_Streamline-521.png" />
     <None Include="Resources\whatsapp.png" />
     <None Include="Resources\vermelho.png" />

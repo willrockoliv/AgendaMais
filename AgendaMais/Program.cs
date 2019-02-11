@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgendaMais.Telas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,12 @@ namespace AgendaMais
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frPrincipal());
+            frLogin frLogin = new frLogin();
+            Application.Run(frLogin);
+            if (frLogin.Login)
+                Application.Run(new frPrincipal());
+            else
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
     }
 }

@@ -14,6 +14,7 @@ using Google.Apis.Services;
 
 namespace AgendaMais.Classes
 {
+    //Fonte:
     //http://www.andrealveslima.com.br/blog/index.php/2017/04/12/utilizando-api-google-drive-no-c-e-vb-net/
 
     class GoogleDrive
@@ -97,6 +98,28 @@ namespace AgendaMais.Classes
             {
                 throw;
             }
+        }
+
+        private static void ListarArquivos(DriveService servico)
+        {
+            var request = servico.Files.List();
+            request.Fields = "files(id, name)";
+            var resultado = request.Execute();
+            var arquivos = resultado.Files;
+            List<string> listArquivos = new List<string>();
+
+            if (arquivos != null && arquivos.Any())
+            {
+                foreach (var arquivo in arquivos)
+                {
+                    listArquivos.Add(arquivo.Name);
+                }
+            }
+        }
+
+        public static void AtualizacaoDownload()
+        {
+
         }
     }
 }
