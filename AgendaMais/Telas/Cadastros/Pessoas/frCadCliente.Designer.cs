@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frCadCliente));
             this.label1 = new System.Windows.Forms.Label();
             this.panDados = new System.Windows.Forms.Panel();
+            this.ptbPesquisa = new System.Windows.Forms.PictureBox();
             this.ptbPrimeiro = new System.Windows.Forms.PictureBox();
             this.ptbUltimo = new System.Windows.Forms.PictureBox();
             this.ptbProximo = new System.Windows.Forms.PictureBox();
@@ -71,8 +72,8 @@
             this.ptbFinanceiro = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ptbPesquisa = new System.Windows.Forms.PictureBox();
             this.panDados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPrimeiro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUltimo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbProximo)).BeginInit();
@@ -84,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -141,6 +141,19 @@
             this.panDados.Name = "panDados";
             this.panDados.Size = new System.Drawing.Size(1138, 486);
             this.panDados.TabIndex = 2;
+            // 
+            // ptbPesquisa
+            // 
+            this.ptbPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.ptbPesquisa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbPesquisa.Image = global::AgendaMais.Properties.Resources.lupa;
+            this.ptbPesquisa.Location = new System.Drawing.Point(535, 282);
+            this.ptbPesquisa.Name = "ptbPesquisa";
+            this.ptbPesquisa.Size = new System.Drawing.Size(26, 26);
+            this.ptbPesquisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPesquisa.TabIndex = 84;
+            this.ptbPesquisa.TabStop = false;
+            this.ptbPesquisa.Click += new System.EventHandler(this.ptbPesquisa_Click);
             // 
             // ptbPrimeiro
             // 
@@ -630,19 +643,6 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
-            // ptbPesquisa
-            // 
-            this.ptbPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.ptbPesquisa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbPesquisa.Image = global::AgendaMais.Properties.Resources.lupa;
-            this.ptbPesquisa.Location = new System.Drawing.Point(535, 282);
-            this.ptbPesquisa.Name = "ptbPesquisa";
-            this.ptbPesquisa.Size = new System.Drawing.Size(26, 26);
-            this.ptbPesquisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbPesquisa.TabIndex = 84;
-            this.ptbPesquisa.TabStop = false;
-            this.ptbPesquisa.Click += new System.EventHandler(this.ptbPesquisa_Click);
-            // 
             // frCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,9 +661,9 @@
             this.Name = "frCadCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panDados.ResumeLayout(false);
             this.panDados.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPrimeiro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUltimo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbProximo)).EndInit();
@@ -677,7 +677,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

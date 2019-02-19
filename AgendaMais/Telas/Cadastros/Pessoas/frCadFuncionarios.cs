@@ -267,7 +267,7 @@ namespace AgendaMais
         #region Cancelar
         private void lblCancelar_Click(object sender, EventArgs e)
         {
-            LimpaCampos();
+            this.Close();
         }
         #endregion
 

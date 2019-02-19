@@ -56,8 +56,9 @@ namespace Config_BD
                     {
                         string bat = $"cd \"{mainPath}\\pgsql\\bin\"" + Environment.NewLine +
                                      $"pg_ctl register -N \"PostgreSQL9.6\" -U \"NT AUTHORITY\\NetworkService\" -D \"../data\" -w";
-                        File.AppendAllText("register_service.cmd", bat);
-                        Process.Start("register_service.cmd");
+                        File.WriteAllText("register_service.cmd", bat);
+                        using (new ExecutarComoAdmin())
+                            Process.Start("register_service.cmd");
                         telaConfigBD.ProgressBar.Value = 100;
                     }
                     catch

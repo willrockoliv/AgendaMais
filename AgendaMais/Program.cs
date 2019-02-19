@@ -1,4 +1,5 @@
-﻿using AgendaMais.Telas;
+﻿using AgendaMais.Classes.Windows;
+using AgendaMais.Telas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,8 @@ namespace AgendaMais
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             frLogin frLogin = new frLogin();
-            Application.Run(frLogin);
+            using (new ExecutarComoAdmin())
+                Application.Run(frLogin);
             if (frLogin.Login)
                 Application.Run(new frPrincipal());
             else

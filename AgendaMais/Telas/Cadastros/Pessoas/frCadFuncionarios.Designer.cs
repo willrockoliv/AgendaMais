@@ -661,7 +661,6 @@
             this.Name = "frCadFuncionarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Funcionarios";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();

@@ -24,7 +24,7 @@ namespace Config_BD.Windows
                 try
                 {
                     Process.Start(startInfo);
-                    MessageBox.Show("Você esta executando o projeto com nível de Administrador !", "Admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Você esta executando o projeto com nível de Administrador !", "Admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch
                 {

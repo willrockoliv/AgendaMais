@@ -28,6 +28,70 @@ namespace AgendaMais.Telas
             }
         }
 
+        void ValidaVersao()
+        {
+            try
+            {
+                using (new Carregando("Buscando Atualizações..."))
+                {
+                    GoogleDrive.Download("versao.txt", $"{mainPath}\\BD\\versao.txt");
+                }
+            }
+            catch
+            {
+            }
+
+            if (File.Exists($"{mainPath}\\BD\\versao.txt"))
+            {
+                string[] versao = File.ReadAllLines($"{mainPath}\\BD\\versao.txt", Encoding.Default);
+
+                if (versao[0] == "AtualizacaoCritica=true")
+                {
+                    if (versao[1] != lblVersao.Text)
+                    {
+                        MessageBox.Show("Opa! Acho que encontrei uma atualiação muito importante! Preciso atualizar antes de iniciar tudo bem?! :)", "Atualização Encontrada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        AtualizaVersao();
+                    }
+                }
+                else
+                {
+                    if (versao[1] != lblVersao.Text)
+                    {
+                        if (MessageBox.Show("Encontrei uma versão mais atual do programa\n\n" +
+                                       "Deseja Atualizar agora?", "Atualização Encontrada!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+                            AtualizaVersao();
+                        }
+                    }
+                }
+                File.Delete($"{mainPath}\\BD\\versao.txt");
+            }
+        }
+
+        void AtualizaVersao()
+        {
+            try
+            {
+                using (new Carregando("Buscando Atualizações..."))
+                {
+                    Directory.Delete($"{mainPath}\\Update", true);
+                    Directory.CreateDirectory(mainPath + "\\Update");
+
+                    GoogleDrive.Download("Update.zip", $"{mainPath}\\Update\\Update.zip");
+                    ExtrairArquivoZip($"{mainPath}\\Update\\Update.zip", $"{mainPath}\\Update\\");
+                    File.Delete($"{mainPath}\\Update\\Update.zip");
+
+                    Process.Start($"{mainPath}\\Update\\Update.exe");
+                    Process.GetProcesses("AgendaMais.exe");
+                    Process.GetCurrentProcess().Kill();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Não consegui fazer o Download da nova versão! Vou tentar novamente mais tarde ok?");
+            }
+        }
+
         bool ValidaLicenca(string login, string senha)
         {
             login += ".txt";
@@ -36,10 +100,7 @@ namespace AgendaMais.Telas
             {
                 using (new Carregando("Verificando..."))
                 {
-                    using (new ExecutarComoAdmin())
-                    {
-                        GoogleDrive.Download(login, $"{mainPath}\\BD\\{login}");
-                    }
+                    GoogleDrive.Download(login, $"{mainPath}\\BD\\{login}");
                 }
             }
             catch (Exception erro)
@@ -83,10 +144,7 @@ namespace AgendaMais.Telas
                     {
                         using (new Carregando("Iniciando Serviço..."))
                         {
-                            using (new ExecutarComoAdmin())
-                            {
-                                ServicosWindows.IniciarServico(servicoPostgreSQL);
-                            }
+                            ServicosWindows.IniciarServico(servicoPostgreSQL);
                         }
                     }
                     catch
@@ -162,74 +220,9 @@ namespace AgendaMais.Telas
                 Directory.CreateDirectory(mainPath + "\\Update");
         }
 
-        void ValidaVersao()
-        {
-            try
-            {
-                using (new Carregando("Buscando Atualizações..."))
-                {
-                    using (new ExecutarComoAdmin())
-                    {
-                        GoogleDrive.Download("versao.txt", $"{mainPath}\\BD\\versao.txt");
-                    }
-                }
-            }
-            catch
-            {
-            }
 
-            if (File.Exists($"{mainPath}\\BD\\versao.txt"))
-            {
-                string[] versao = File.ReadAllLines($"{mainPath}\\BD\\versao.txt", Encoding.Default);
 
-                if (versao[0] == "AtualizacaoCritica=true")
-                {
-                    if (versao[1] != lblVersao.Text)
-                    {
-                        MessageBox.Show("Opa! Acho que encontrei uma atualiação muito importante! Preciso atualizar antes de iniciar tudo bem?! :)", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        AtualizaVersao();
-                    }
-                }
-                else
-                {
-                    if (versao[1] != lblVersao.Text)
-                    {
-                        if (MessageBox.Show("Atualização Encontrada!", "Encontrei uma versão mais atual do programa\n\n" +
-                                       "Deseja Atualizar agora?", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                        {
-                            AtualizaVersao();
-                        }
-                    }
-                }
-                File.Delete($"{mainPath}\\BD\\versao.txt");
-            }
-        }
-
-        void AtualizaVersao()
-        {
-            try
-            {
-                using (new Carregando("Buscando Atualizações..."))
-                {
-                    using (new ExecutarComoAdmin())
-                    {
-                        Directory.Delete($"{mainPath}\\Update", true);
-                        Directory.CreateDirectory(mainPath + "\\Update");
-
-                        GoogleDrive.Download("Update.zip", $"{mainPath}\\Update\\Update.zip");
-                        ExtrairArquivoZip($"{mainPath}\\Update\\Update.zip", $"{mainPath}\\Update\\");
-                        File.Delete($"{mainPath}\\Update\\Update.zip");
-
-                        Process.Start($"{mainPath}\\Update\\Update.exe");
-                        Process.GetCurrentProcess().Kill();
-                    }
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Não consegui fazer o Download da nova versão! Vou tentar novamente mais tarde ok?");
-            }
-        }
+        
 
         private static void ExtrairArquivoZip(string localizacaoArquivoZip, string destino)
         {

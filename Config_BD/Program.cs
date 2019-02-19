@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Config_BD.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace Config_BD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frConfigBD());
+            using (new ExecutarComoAdmin())
+                Application.Run(new frConfigBD());
         }
     }
 }

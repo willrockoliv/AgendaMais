@@ -194,7 +194,7 @@ namespace AgendaMais
 
         private void panCancelar_Click(object sender, EventArgs e)
         {
-            LimpaCampos();
+            this.Close();
         }
 
         private void Salvar_Click(object sender, EventArgs e)
@@ -237,6 +237,7 @@ namespace AgendaMais
                     ProdutoDAO.AtualizarRegistro(produtoVO);
                     CarregaProdutos();
                     MessageBox.Show("Produto atualizado com sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpaCampos();
                 }
                 catch (Exception erro)
                 {
