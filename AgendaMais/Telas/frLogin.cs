@@ -220,10 +220,6 @@ namespace AgendaMais.Telas
                 Directory.CreateDirectory(mainPath + "\\Update");
         }
 
-
-
-        
-
         private static void ExtrairArquivoZip(string localizacaoArquivoZip, string destino)
         {
             if (File.Exists(localizacaoArquivoZip))

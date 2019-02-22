@@ -17,8 +17,7 @@ namespace Config_BD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (new ExecutarComoAdmin())
-                Application.Run(new frConfigBD());
+            Application.Run(new frConfigBD());
         }
     }
 }

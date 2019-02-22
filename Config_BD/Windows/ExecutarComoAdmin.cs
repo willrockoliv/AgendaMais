@@ -24,11 +24,12 @@ namespace Config_BD.Windows
                 try
                 {
                     Process.Start(startInfo);
-                    //MessageBox.Show("Você esta executando o projeto com nível de Administrador !", "Admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch
+                catch (Exception erro)
                 {
-                    throw new Exception("Não foi possível conceder acesso como Admin" + Environment.NewLine + "As operações realizadas poderão ter Acesso Negado !");
+                    MessageBox.Show("Não foi possível conceder acesso como Admin" + Environment.NewLine +
+                                    "As operações realizadas poderão ter Acesso Negado !" + Environment.NewLine +
+                                    $"ERRO: {erro.Message}", "Admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

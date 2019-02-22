@@ -407,6 +407,5 @@
     <None Include="Resources\Barra_clara.png" />
     <None Include="Resources\Barra.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

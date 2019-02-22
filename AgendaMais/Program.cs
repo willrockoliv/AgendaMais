@@ -18,13 +18,12 @@ namespace AgendaMais
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frLogin frLogin = new frLogin();
-            using (new ExecutarComoAdmin())
-                Application.Run(frLogin);
+            Application.Run(new frLogin());
             if (frLogin.Login)
                 Application.Run(new frPrincipal());
             else
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
+
         }
     }
 }

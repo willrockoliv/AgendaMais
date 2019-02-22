@@ -57,8 +57,7 @@ namespace Config_BD
                         string bat = $"cd \"{mainPath}\\pgsql\\bin\"" + Environment.NewLine +
                                      $"pg_ctl register -N \"PostgreSQL9.6\" -U \"NT AUTHORITY\\NetworkService\" -D \"../data\" -w";
                         File.WriteAllText("register_service.cmd", bat);
-                        using (new ExecutarComoAdmin())
-                            Process.Start("register_service.cmd");
+                        Process.Start("register_service.cmd");
                         telaConfigBD.ProgressBar.Value = 100;
                     }
                     catch
@@ -227,6 +226,7 @@ namespace Config_BD
             btnMinimizar.TabIndex = 4;
             btnMinimizar.Text = "__";
             btnMinimizar.UseVisualStyleBackColor = true;
+            btnMinimizar.Click += new EventHandler(btnMinimizar_Click);
             // 
             // ptbLogo
             // 
@@ -270,7 +270,7 @@ namespace Config_BD
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            tela.WindowState = FormWindowState.Minimized;
         }
     }
 }
