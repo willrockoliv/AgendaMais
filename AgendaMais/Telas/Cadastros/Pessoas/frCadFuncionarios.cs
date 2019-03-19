@@ -24,6 +24,7 @@ namespace AgendaMais
         #endregion
 
         #region Métodos Auxiliares
+
         /// <summary>
         /// Exibe dados do funcionario selecionado nos seus respecticvos campos
         /// </summary>
@@ -101,6 +102,13 @@ namespace AgendaMais
                 ok = false;
             }
 
+            foreach (FuncionarioVO funcionarioVO in listFuncionarioVO)
+                if (funcionarioVO.Nome == txtNome.Text.Trim())
+                {
+                    errorProvider.SetError(txtNome, "Ops! Já existe um funcionário cadastrado com este nome.");
+                    ok = false;
+                }
+
             if (!Validacoes.ValidaCPF(mkbCPF.Text))
             {
                 errorProvider.SetError(mkbCPF, "Desculpe, esse CPF é inválido!");
@@ -129,7 +137,7 @@ namespace AgendaMais
             using (new Carregando())
             {
                 // Preenche o AutoComplete para sugerir funcionario
-                listFuncionarioVO = FuncionarioDAO.GetTodosRegistros();
+                listFuncionarioVO = FuncionarioDAO.GetTodosRegistrosAtivos();
                 if (listFuncionarioVO != null)
                 {
                     AutoCompleteStringCollection listNomes = new AutoCompleteStringCollection();

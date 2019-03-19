@@ -1,6 +1,7 @@
 ﻿using AgendaMais.Classes;
 using AgendaMais.Properties;
 using AgendaMais.Telas;
+using AgendaMais.Telas.Configurações;
 using AgendaMais.Telas.Relatórios;
 using System;
 using System.Drawing;
@@ -14,6 +15,37 @@ namespace AgendaMais
         #region Variáveis Globais
         public static string mainPath = Path.GetDirectoryName(Application.ExecutablePath);
         MetodosAgenda metodosAgenda = new MetodosAgenda();
+        enum EnumMenu { cadastros, relatorios, configuracoes, nenhum };
+        #endregion
+
+        #region Métodos
+        void LayoutMenu(EnumMenu enumMenu)
+        {
+            if (enumMenu == EnumMenu.cadastros)
+            {
+                panMenuCadastros.Visible = !panMenuCadastros.Visible;
+                panMenuRelatorios.Visible = false;
+                panMenuConfiguracoes.Visible = false;
+            }
+            else if (enumMenu == EnumMenu.configuracoes)
+            {
+                panMenuCadastros.Visible = false;
+                panMenuRelatorios.Visible = false;
+                panMenuConfiguracoes.Visible = !panMenuConfiguracoes.Visible;
+            }
+            else if (enumMenu == EnumMenu.relatorios)
+            {
+                panMenuCadastros.Visible = false;
+                panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
+                panMenuConfiguracoes.Visible = false;
+            }
+            else if (enumMenu == EnumMenu.nenhum)
+            {
+                panMenuCadastros.Visible = false;
+                panMenuRelatorios.Visible = false;
+                panMenuConfiguracoes.Visible = false;
+            }
+        }
         #endregion
 
         #region Load e Initialize
@@ -53,7 +85,7 @@ namespace AgendaMais
         #region panRelatorios
         private void panRelatorios_Click(object sender, EventArgs e)
         {
-            panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
+            LayoutMenu(EnumMenu.relatorios);
         }
 
         private void panRelatorios_MouseEnter(object sender, EventArgs e)
@@ -129,13 +161,14 @@ namespace AgendaMais
         {
             frAgendados frAgendados = new frAgendados();
             frAgendados.Show();
+            LayoutMenu(EnumMenu.nenhum);
         }
         #endregion
 
         #region panCadastros
         private void Cadastros_Click(object sender, EventArgs e)
         {
-            panMenuCadastros.Visible = !panMenuCadastros.Visible;
+            LayoutMenu(EnumMenu.cadastros);
         }
 
         private void panCadastros_MouseEnter(object sender, EventArgs e)
@@ -228,6 +261,32 @@ namespace AgendaMais
             panConfiguracoes.BackColor = Color.FromArgb(0, 16, 41, 99);
             lblConfiguracoes.ForeColor = Color.White;
         }
+
+        private void lblConfiguracoes_Click(object sender, EventArgs e)
+        {
+            LayoutMenu(EnumMenu.configuracoes);
+        }
+
+        #region Alterar Senha
+        private void panAlterarSenha_Click(object sender, EventArgs e)
+        {
+            frAlterarSenha frAlterarSenha = new frAlterarSenha();
+            frAlterarSenha.Show();
+        }
+
+        private void panAlterarSenha_MouseEnter(object sender, EventArgs e)
+        {
+            panAlterarSenha.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblAlterarSenha.ForeColor = Color.PowderBlue;
+        }
+
+        private void panAlterarSenha_MouseLeave(object sender, EventArgs e)
+        {
+            panAlterarSenha.BackColor = Color.FromArgb(0, 16, 41, 99);
+            lblAlterarSenha.ForeColor = Color.White;
+        }
+        #endregion
+
         #endregion
 
         #endregion
@@ -315,6 +374,11 @@ namespace AgendaMais
         {
             metodosAgenda.AtualizaStatus(flpAgendamentos);
         }
+
+
+
         #endregion
+
+        
     }
 }

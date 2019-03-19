@@ -14,10 +14,10 @@ namespace AgendaMais
         #region Variáveis
         List<ClienteVO> listClienteVO = new List<ClienteVO>();
         int index = -1;
-        //bool alterar = false;
         #endregion
 
         #region Métodos Auxiliares
+
         /// <summary>
         /// Exibe dados do cliente selecionado nos seus respecticvos campos
         /// </summary>
@@ -95,6 +95,13 @@ namespace AgendaMais
                 ok = false;
             }
 
+            foreach (ClienteVO clienteVO in listClienteVO)
+                if (clienteVO.Nome == txtNome.Text.Trim())
+                {
+                    errorProvider.SetError(txtNome, "Ops! Já existe um cliente cadastrado com este nome.");
+                    ok = false;
+                }
+
             if (!Validacoes.ValidaCPF(mkbCPF.Text))
             {
                 errorProvider.SetError(mkbCPF, "Desculpe, esse CPF não é válido!");
@@ -123,7 +130,7 @@ namespace AgendaMais
             using (new Carregando())
             {
                 // Preenche o AutoComplete para sugerir cliente
-                listClienteVO = ClienteDAO.GetTodosRegistros();
+                listClienteVO = ClienteDAO.GetTodosRegistrosAtivos();
                 if (listClienteVO != null)
                 {
                     AutoCompleteStringCollection listNomes = new AutoCompleteStringCollection();

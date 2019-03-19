@@ -82,6 +82,9 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="MimeTypeMap, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediaTypeMap.2.1.0.0\lib\net40\MimeTypeMap.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -167,6 +170,12 @@
     <Compile Include="Telas\Cadastros\Estoque\frCadProdServ.Designer.cs">
       <DependentUpon>frCadProdServ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Configurações\frAlterarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Configurações\frAlterarSenha.Designer.cs">
+      <DependentUpon>frAlterarSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\frLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Carregando.resx">
       <DependentUpon>Carregando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Configurações\frAlterarSenha.resx">
+      <DependentUpon>frAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\frLogin.resx">
       <DependentUpon>frLogin.cs</DependentUpon>

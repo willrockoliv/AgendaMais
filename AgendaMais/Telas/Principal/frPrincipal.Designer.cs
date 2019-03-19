@@ -72,6 +72,9 @@
             this.lblCadFuncionarios = new System.Windows.Forms.Label();
             this.panCadClientes = new System.Windows.Forms.Panel();
             this.lblCadClientes = new System.Windows.Forms.Label();
+            this.panMenuConfiguracoes = new System.Windows.Forms.Panel();
+            this.panAlterarSenha = new System.Windows.Forms.Panel();
+            this.lblAlterarSenha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).BeginInit();
@@ -93,6 +96,8 @@
             this.panCadProdServ.SuspendLayout();
             this.panCadFuncionarios.SuspendLayout();
             this.panCadClientes.SuspendLayout();
+            this.panMenuConfiguracoes.SuspendLayout();
+            this.panAlterarSenha.SuspendLayout();
             this.SuspendLayout();
             // 
             // ptbRelatorios
@@ -382,6 +387,7 @@
             this.panConfiguracoes.Name = "panConfiguracoes";
             this.panConfiguracoes.Size = new System.Drawing.Size(311, 28);
             this.panConfiguracoes.TabIndex = 7;
+            this.panConfiguracoes.Click += new System.EventHandler(this.lblConfiguracoes_Click);
             this.panConfiguracoes.MouseLeave += new System.EventHandler(this.panConfiguracoes_MouseLeave);
             this.panConfiguracoes.MouseHover += new System.EventHandler(this.panConfiguracoes_MouseHover);
             // 
@@ -399,6 +405,7 @@
             this.lblConfiguracoes.TabIndex = 3;
             this.lblConfiguracoes.Text = "CONFIGURAÇÕES";
             this.lblConfiguracoes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblConfiguracoes.Click += new System.EventHandler(this.lblConfiguracoes_Click);
             this.lblConfiguracoes.MouseLeave += new System.EventHandler(this.panConfiguracoes_MouseLeave);
             this.lblConfiguracoes.MouseHover += new System.EventHandler(this.panConfiguracoes_MouseHover);
             // 
@@ -694,6 +701,47 @@
             this.lblCadClientes.MouseEnter += new System.EventHandler(this.panCadClientes_MouseEnter);
             this.lblCadClientes.MouseLeave += new System.EventHandler(this.panCadClientes_MouseLeave);
             // 
+            // panMenuConfiguracoes
+            // 
+            this.panMenuConfiguracoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
+            this.panMenuConfiguracoes.Controls.Add(this.panAlterarSenha);
+            this.panMenuConfiguracoes.Location = new System.Drawing.Point(953, 40);
+            this.panMenuConfiguracoes.Name = "panMenuConfiguracoes";
+            this.panMenuConfiguracoes.Size = new System.Drawing.Size(311, 29);
+            this.panMenuConfiguracoes.TabIndex = 13;
+            this.panMenuConfiguracoes.Visible = false;
+            // 
+            // panAlterarSenha
+            // 
+            this.panAlterarSenha.BackColor = System.Drawing.Color.Transparent;
+            this.panAlterarSenha.Controls.Add(this.lblAlterarSenha);
+            this.panAlterarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panAlterarSenha.Location = new System.Drawing.Point(0, 1);
+            this.panAlterarSenha.Name = "panAlterarSenha";
+            this.panAlterarSenha.Size = new System.Drawing.Size(311, 28);
+            this.panAlterarSenha.TabIndex = 8;
+            this.panAlterarSenha.Click += new System.EventHandler(this.panAlterarSenha_Click);
+            this.panAlterarSenha.MouseEnter += new System.EventHandler(this.panAlterarSenha_MouseEnter);
+            this.panAlterarSenha.MouseLeave += new System.EventHandler(this.panAlterarSenha_MouseLeave);
+            // 
+            // lblAlterarSenha
+            // 
+            this.lblAlterarSenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblAlterarSenha.AutoSize = true;
+            this.lblAlterarSenha.BackColor = System.Drawing.Color.Transparent;
+            this.lblAlterarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAlterarSenha.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlterarSenha.ForeColor = System.Drawing.Color.White;
+            this.lblAlterarSenha.Location = new System.Drawing.Point(5, 3);
+            this.lblAlterarSenha.Name = "lblAlterarSenha";
+            this.lblAlterarSenha.Size = new System.Drawing.Size(106, 20);
+            this.lblAlterarSenha.TabIndex = 0;
+            this.lblAlterarSenha.Text = "Alterar senha";
+            this.lblAlterarSenha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAlterarSenha.Click += new System.EventHandler(this.panAlterarSenha_Click);
+            this.lblAlterarSenha.MouseEnter += new System.EventHandler(this.panAlterarSenha_MouseEnter);
+            this.lblAlterarSenha.MouseLeave += new System.EventHandler(this.panAlterarSenha_MouseLeave);
+            // 
             // frPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -703,6 +751,7 @@
             this.BackgroundImage = global::AgendaMais.Properties.Resources.Imagem2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 716);
+            this.Controls.Add(this.panMenuConfiguracoes);
             this.Controls.Add(this.panMenuCadastros);
             this.Controls.Add(this.panMenuRelatorios);
             this.Controls.Add(this.flpMenu);
@@ -751,6 +800,9 @@
             this.panCadFuncionarios.PerformLayout();
             this.panCadClientes.ResumeLayout(false);
             this.panCadClientes.PerformLayout();
+            this.panMenuConfiguracoes.ResumeLayout(false);
+            this.panAlterarSenha.ResumeLayout(false);
+            this.panAlterarSenha.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -799,6 +851,9 @@
         private System.Windows.Forms.Label lblCadFuncionarios;
         private System.Windows.Forms.Panel panCadClientes;
         private System.Windows.Forms.Label lblCadClientes;
+        private System.Windows.Forms.Panel panMenuConfiguracoes;
+        private System.Windows.Forms.Panel panAlterarSenha;
+        private System.Windows.Forms.Label lblAlterarSenha;
     }
 }
 

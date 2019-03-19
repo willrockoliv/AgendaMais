@@ -24,6 +24,7 @@ namespace AgendaMais.Classes.DAOs
                 produtoVO.Qtd_estoque = Convert.ToInt32(row["qtd_estoque"]);
                 produtoVO.Id_grupo_produto = Convert.ToInt32(row["id_grupo_produto"]);
                 produtoVO.Controla_estoque = Convert.ToBoolean(row["controla_estoque"]);
+                produtoVO.Ativo = Convert.ToBoolean(row["ativo"]);
                 return produtoVO;
             }
             else
@@ -45,6 +46,16 @@ namespace AgendaMais.Classes.DAOs
                 return null;
         }
 
+        public static List<ProdutoVO> GetTodosRegistrosAtivos()
+        {
+            return MontaListVO(DAO.GetTodosRegistrosAtivos("produto"));
+        }
+
+        public static List<ProdutoVO> GetTodosRegistrosNaoAtivos()
+        {
+            return MontaListVO(DAO.GetTodosRegistrosNaoAtivos("produto"));
+        }
+
         public static List<ProdutoVO> GetTodosRegistros()
         {
             return MontaListVO(DAO.GetTodosRegistros("produto"));
@@ -58,6 +69,16 @@ namespace AgendaMais.Classes.DAOs
         public static List<ProdutoVO> GetRegistros(string condicao)
         {
             return MontaListVO(DAO.GetRegistros("produto", condicao));
+        }
+
+        public static List<ProdutoVO> GetRegistrosAtivosPorGrupo(int id_grupo_produto)
+        {
+            return MontaListVO(DAO.GetRegistros("produto", $"where id_grupo_produto={id_grupo_produto} and ativo=true"));
+        }
+
+        public static List<ProdutoVO> GetRegistrosNaoAtivosPorGrupo(int id_grupo_produto)
+        {
+            return MontaListVO(DAO.GetRegistros("produto", $"where id_grupo_produto={id_grupo_produto} and ativo=false"));
         }
 
         public static List<ProdutoVO> GetRegistrosPorGrupo(int id_grupo_produto)
@@ -74,38 +95,42 @@ namespace AgendaMais.Classes.DAOs
                             "vl_venda, " +
                             "qtd_estoque, " +
                             "id_grupo_produto, " +
-                            "controla_estoque) " +
+                            "controla_estoque," +
+                            "ativo) " +
                           "values(" +
-                            "'" + produto.Descricao + "'," +
-                            "'" + produto.Cod_barras + "'," +
-                            produto.Vl_custo.ToString().Replace(',', '.') + "," +
-                            produto.Vl_venda.ToString().Replace(',', '.') + "," +
-                            produto.Qtd_estoque + "," +
-                            produto.Id_grupo_produto + "," +
-                            produto.Controla_estoque + ")";
+                            $"'{produto.Descricao}'," +
+                            $"'{produto.Cod_barras}'," +
+                            $"{produto.Vl_custo.ToString().Replace(',', '.')}," +
+                            $"{produto.Vl_venda.ToString().Replace(',', '.')}," +
+                            $"{produto.Qtd_estoque}," +
+                            $"{produto.Id_grupo_produto}," +
+                            $"{produto.Controla_estoque}," +
+                            $"{produto.Ativo})";
             DAO.ExecutaSQL(sql);
         }
 
         public static void AtualizarRegistro(ProdutoVO produto)
         {
             string sql = "UPDATE produto SET " +
-                            "descricao='" + produto.Descricao + "'," +
-                            "cod_barras='" + produto.Cod_barras + "'," +
-                            "vl_custo=" + produto.Vl_custo.ToString().Replace(',', '.') + "," +
-                            "vl_venda=" + produto.Vl_venda.ToString().Replace(',', '.') + "," +
-                            "qtd_estoque=" + produto.Qtd_estoque + "," +
-                            "id_grupo_produto=" + produto.Id_grupo_produto + "," +
-                            "controla_estoque=" + produto.Controla_estoque +
-                          " WHERE id=" + produto.Id;
+                            $"descricao='{produto.Descricao}'," +
+                            $"cod_barras='{produto.Cod_barras}'," +
+                            $"vl_custo={produto.Vl_custo.ToString().Replace(',', '.')}," +
+                            $"vl_venda={produto.Vl_venda.ToString().Replace(',', '.')}," +
+                            $"qtd_estoque={ produto.Qtd_estoque}," +
+                            $"id_grupo_produto={produto.Id_grupo_produto}," +
+                            $"controla_estoque={produto.Controla_estoque}," +
+                            $"ativo={produto.Ativo} " +
+                         $"WHERE id={produto.Id}";
             DAO.ExecutaSQL(sql);
         }
 
         public static void DeletarRegistro(int id)
         {
-            List<string> sql = new List<string>();
-            sql.Add($"DELETE from item_venda WHERE id_produto={id}");
-            sql.Add($"DELETE from produto WHERE id={id}");
-            DAO.ExecutaSQL(sql);
+            //List<string> sql = new List<string>();
+            //sql.Add($"DELETE from item_venda WHERE id_produto={id}");
+            //sql.Add($"DELETE from produto WHERE id={id}");
+            //DAO.ExecutaSQL(sql);
+            ExecutaSelect($"UPDATE produto SET ativo={false} WHERE id={id}");
         }
     }
 }

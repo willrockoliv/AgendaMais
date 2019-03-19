@@ -31,6 +31,7 @@ namespace AgendaMais.Classes
                 f.Numero = row["numero"].ToString();
                 f.Complemento = row["complemento"].ToString();
                 f.Imagem = row["imagem"].ToString();
+                f.Ativo = Convert.ToBoolean(row["ativo"]);
                 return f;
             }
             else
@@ -54,6 +55,16 @@ namespace AgendaMais.Classes
         public static int ProximoID()
         {
             return DB.ProximoID("funcionario");
+        }
+
+        public static List<FuncionarioVO> GetTodosRegistrosAtivos()
+        {
+            return MontaListVO(DAO.GetTodosRegistrosAtivos("funcionario"));
+        }
+
+        public static List<FuncionarioVO> GetTodosRegistrosNaoAtivos()
+        {
+            return MontaListVO(DAO.GetTodosRegistrosNaoAtivos("funcionario"));
         }
 
         public static List<FuncionarioVO> GetTodosRegistros()
@@ -88,48 +99,51 @@ namespace AgendaMais.Classes
                             "complemento," +
                             "imagem) " +
                          "values(" +
-                            "'" + funcionario.Nome + "'," +
-                            "'" + funcionario.Tel_cel + "'," +
-                            "'" + funcionario.Email + "'," +
-                            "'" + funcionario.Recado + "'," +
-                            "'" + funcionario.Cpf + "'," +
-                            "'" + funcionario.Rg + "'," +
-                            "'" + funcionario.Uf + "'," +
-                            "'" + funcionario.Cidade + "'," +
-                            "'" + funcionario.Bairro + "'," +
-                            "'" + funcionario.Endereco + "'," +
-                            "'" + funcionario.Numero + "'," +
-                            "'" + funcionario.Complemento + "'," +
-                            "'" + funcionario.Imagem + "')";
+                            $"'{funcionario.Nome}'," +
+                            $"'{funcionario.Tel_cel}'," +
+                            $"'{funcionario.Email}'," +
+                            $"'{funcionario.Recado}'," +
+                            $"'{funcionario.Cpf}'," +
+                            $"'{funcionario.Rg}'," +
+                            $"'{funcionario.Uf}'," +
+                            $"'{funcionario.Cidade}'," +
+                            $"'{funcionario.Bairro}'," +
+                            $"'{funcionario.Endereco}'," +
+                            $"'{funcionario.Numero}'," +
+                            $"'{funcionario.Complemento}'," +
+                            $"'{funcionario.Imagem}'," +
+                            $"{funcionario.Ativo})";
             ExecutaSQL(sql);
         }
 
         public static void AtualizarRegistro(FuncionarioVO funcionario)
         {
             string sql = "Update funcionario " +
-                         "Set nome='" + funcionario.Nome + "'," +
-                              " tel_cel='" + funcionario.Tel_cel + "'," +
-                              " email='" + funcionario.Email + "'," +
-                              " recado='" + funcionario.Recado + "'," +
-                              " cpf='" + funcionario.Cpf + "'," +
-                              " rg='" + funcionario.Rg + "'," +
-                              " uf='" + funcionario.Uf + "'," +
-                              " cidade='" + funcionario.Cidade + "'," +
-                              " bairro='" + funcionario.Bairro + "'," +
-                              " endereco='" + funcionario.Endereco + "'," +
-                              " numero='" + funcionario.Numero + "'," +
-                              " complemento='" + funcionario.Complemento + "'," +
-                              " imagem='" + funcionario.Imagem + "'" +
+                        $"Set nome='{funcionario.Nome}'," +
+                              $"tel_cel='{funcionario.Tel_cel}'," +
+                              $"email='{funcionario.Email}'," +
+                              $"recado='{funcionario.Recado}'," +
+                              $"cpf='{funcionario.Cpf}'," +
+                              $"rg='{funcionario.Rg}'," +
+                              $"uf='{funcionario.Uf}'," +
+                              $"cidade='{funcionario.Cidade}'," +
+                              $"bairro='{funcionario.Bairro}'," +
+                              $"endereco='{funcionario.Endereco}'," +
+                              $"numero='{funcionario.Numero}'," +
+                              $"complemento='{funcionario.Complemento}'," +
+                              $"imagem='{funcionario.Imagem}'," +
+                              $"ativo={funcionario.Ativo} " +
                          " WHERE id=" + funcionario.Id;
             ExecutaSQL(sql);
         }
 
         public static void DeletarRegistro(int id)
         {
-            List<string> sql = new List<string>();
-            sql.Add($"Delete From agenda Where id_funcionario = {id}");
-            sql.Add($"Delete From funcionario Where id = {id}");
-            ExecutaSQL(sql);
+            //List<string> sql = new List<string>();
+            //sql.Add($"Delete From agenda Where id_funcionario = {id}");
+            //sql.Add($"Delete From funcionario Where id = {id}");
+            //ExecutaSQL(sql);
+            ExecutaSQL($"UPDATE funcionario SET ativo={false} WHERE id={id}");
         }
     }
 }

@@ -16,6 +16,7 @@ namespace AgendaMais.Classes.VOs
         private int qtd_estoque;
         private int id_grupo_produto;
         private bool controla_estoque;
+        private bool ativo;
 
         public int Id
         {
@@ -73,5 +74,6 @@ namespace AgendaMais.Classes.VOs
             }
         }
         public bool Controla_estoque { get => controla_estoque; set => controla_estoque = value; }
+        public bool Ativo { get => ativo; set => ativo = value; }
     }
 }

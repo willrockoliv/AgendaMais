@@ -95,7 +95,7 @@ namespace AgendaMais
 
         void CarregaGrupos()
         {
-            listGrupoProdutoVO = GrupoProdutoDAO.GetTodosRegistros();
+            listGrupoProdutoVO = GrupoProdutoDAO.GetTodosRegistrosAtivos();
             if (listGrupoProdutoVO != null)
             {
                 cbGrupo.Items.Clear();
@@ -111,7 +111,7 @@ namespace AgendaMais
             {
                 using (new Carregando())
                 {
-                    listProdutoVO = ProdutoDAO.GetRegistrosPorGrupo(id_grupo_produto);
+                    listProdutoVO = ProdutoDAO.GetRegistrosAtivosPorGrupo(id_grupo_produto);
                 }
             }
             catch (Exception ex)
@@ -129,22 +129,22 @@ namespace AgendaMais
                 {
                     if (enumPesquisa == EnumPesquisa.cliente)
                     {
-                        listClienteVO = ClienteDAO.GetTodosRegistros();
+                        listClienteVO = ClienteDAO.GetTodosRegistrosAtivos();
                     }
                     else if (enumPesquisa == EnumPesquisa.funcionario)
                     {
-                        listFuncionarioVO = FuncionarioDAO.GetTodosRegistros();
+                        listFuncionarioVO = FuncionarioDAO.GetTodosRegistrosAtivos();
                     }
                     else if (enumPesquisa == EnumPesquisa.produto)
                     {
-                        listProdutoVO = ProdutoDAO.GetTodosRegistros();
+                        listProdutoVO = ProdutoDAO.GetTodosRegistrosAtivos();
                         CarregaGrupos();
                         lblGrupo.Visible = true;
                         cbGrupo.Visible = true;
                     }
                     else
                     {
-                        listGrupoProdutoVO = GrupoProdutoDAO.GetTodosRegistros();
+                        listGrupoProdutoVO = GrupoProdutoDAO.GetTodosRegistrosAtivos();
                     }
                 }
             }
@@ -185,7 +185,7 @@ namespace AgendaMais
         private void Click_Cadastro(object sender, EventArgs e)
         {
             TextBox txt = (TextBox)sender;
-
+            
             if (clienteVO == null &&
                 funcionarioVO == null &&
                 produtoVO == null &&
@@ -236,12 +236,12 @@ namespace AgendaMais
             {
                 if (clienteVO != null)
                 {
-                    if (MessageBox.Show("ATENÇÃO: Excluindo o cadastro de um cliente você exluirá junto todo histórico de agendamento do mesmo!" +
-                                        $"\n\nTem certeza que deseja exlcuir o cadastro do cliente {clienteVO.Nome} ?", "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show($"Tem certeza que deseja exlcuir o cadastro do cliente {clienteVO.Nome} ?", "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         try
                         {
                             ClienteDAO.DeletarRegistro(clienteVO.Id);
+                            clienteVO = null;
                             MessageBox.Show("Cliente excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception erro)
@@ -255,12 +255,12 @@ namespace AgendaMais
             {
                 if (funcionarioVO != null)
                 {
-                    if (MessageBox.Show("ATENÇÃO: Excluindo o cadastro de um funcionário você exluirá junto todo histórico de agendamento do mesmo!" +
-                                        $"\n\nTem certeza que deseja exlcuir o cadastro do funcionário {funcionarioVO.Nome} ?", "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show($"Tem certeza que deseja exlcuir o cadastro do funcionário {funcionarioVO.Nome} ?", "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         try
                         {
                             FuncionarioDAO.DeletarRegistro(funcionarioVO.Id);
+                            funcionarioVO = null;
                             MessageBox.Show("Funcionário excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception erro)
@@ -274,12 +274,12 @@ namespace AgendaMais
             {
                 if (produtoVO != null)
                 {
-                    if (MessageBox.Show("ATENÇÃO: Excluir um produto ou serviço exluirá toda movimentação vinculada à ele!" +
-                                       $"\n\nTem certeza que deseja exlcuir o cadastro do produto {produtoVO.Descricao} ?", "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show($"Tem certeza que deseja exlcuir o cadastro do produto {produtoVO.Descricao} ?", "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         try
                         {
                             ProdutoDAO.DeletarRegistro(produtoVO.Id);
+                            produtoVO = null;
                             MessageBox.Show("Produto excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception erro)
@@ -293,15 +293,16 @@ namespace AgendaMais
             {
                 if (grupoProdutoVO != null)
                 {
-                    if (MessageBox.Show("ATENÇÃO: Excluir um Grupo excluirá o cadastro de todos os produtos/serviços vinculados à ele e,\n" +
-                                        "consequentemente, todo histórico de vendas desses produtos também!" +
+                    if (MessageBox.Show("ATENÇÃO: Excluir um Grupo excluirá o cadastro de todos os produtos/serviços vinculados à ele." +
                                        $"\n\nTem certeza que deseja exlcuir o cadastro do Grupo {grupoProdutoVO.Descricao} ?",
                                        "Excluir Cadastro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         try
                         {
                             GrupoProdutoDAO.DeletarRegistro(grupoProdutoVO.Id);
+                            grupoProdutoVO = null;
                             MessageBox.Show("Grupo de Produtos excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CarregaCadastros();
                         }
                         catch (Exception erro)
                         {

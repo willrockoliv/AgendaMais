@@ -19,7 +19,7 @@ namespace AgendaMais
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frLogin());
-            if (frLogin.Login)
+            if (frLogin.Autenticacao)
                 Application.Run(new frPrincipal());
             else
                 System.Diagnostics.Process.GetCurrentProcess().Kill();

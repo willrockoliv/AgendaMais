@@ -1545,10 +1545,10 @@
             this.Controls.Add(this.ptbClientes);
             this.Controls.Add(this.ptbAgenda);
             this.Controls.Add(this.ptbFinanceiro);
-            this.Controls.Add(this.panConclusao);
-            this.Controls.Add(this.panItensEServicos);
             this.Controls.Add(this.panCliente);
             this.Controls.Add(this.panAgendamento);
+            this.Controls.Add(this.panConclusao);
+            this.Controls.Add(this.panItensEServicos);
             this.Controls.Add(this.panClienteMenu);
             this.Controls.Add(this.panAgendamentoMenu);
             this.Controls.Add(this.panFuncionarioMenu);

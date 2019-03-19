@@ -261,7 +261,7 @@ namespace AgendaMais.Classes
         /// <param name="grupoProduto">Id do produto como filtro dos produtos a serem exibidos</param>
         public void ExibeProdutos(FlowLayoutPanel flpProdutos, int grupoProduto)
         {
-            listProdutos = ProdutoDAO.GetTodosRegistros();
+            listProdutos = ProdutoDAO.GetTodosRegistrosAtivos();
 
             flpProdutos.Controls.Clear();
 

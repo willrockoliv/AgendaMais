@@ -36,12 +36,17 @@
             this.panDados = new System.Windows.Forms.Panel();
             this.ptbPesquisa = new System.Windows.Forms.PictureBox();
             this.panCadGrupo = new System.Windows.Forms.Panel();
+            this.ptbPrimeiro = new System.Windows.Forms.PictureBox();
             this.ptbPesquisaGrupo = new System.Windows.Forms.PictureBox();
+            this.ptbUltimo = new System.Windows.Forms.PictureBox();
             this.panCancelarGrupo = new System.Windows.Forms.Panel();
             this.lblCancelarGrupo = new System.Windows.Forms.Label();
+            this.ptbProximo = new System.Windows.Forms.PictureBox();
             this.panSalvarGrupo = new System.Windows.Forms.Panel();
             this.lblSalvarGrupo = new System.Windows.Forms.Label();
+            this.lblListGrupoProduto = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.ptbAnterior = new System.Windows.Forms.PictureBox();
             this.txtDescricaoGrupo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
@@ -72,9 +77,13 @@
             this.panDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).BeginInit();
             this.panCadGrupo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPrimeiro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisaGrupo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbUltimo)).BeginInit();
             this.panCancelarGrupo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProximo)).BeginInit();
             this.panSalvarGrupo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAnterior)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAddGrupo)).BeginInit();
             this.panCancelar.SuspendLayout();
             this.panSalvar.SuspendLayout();
@@ -164,17 +173,38 @@
             // 
             // panCadGrupo
             // 
+            this.panCadGrupo.Controls.Add(this.ptbPrimeiro);
             this.panCadGrupo.Controls.Add(this.ptbPesquisaGrupo);
+            this.panCadGrupo.Controls.Add(this.ptbUltimo);
             this.panCadGrupo.Controls.Add(this.panCancelarGrupo);
+            this.panCadGrupo.Controls.Add(this.ptbProximo);
             this.panCadGrupo.Controls.Add(this.panSalvarGrupo);
+            this.panCadGrupo.Controls.Add(this.lblListGrupoProduto);
             this.panCadGrupo.Controls.Add(this.label9);
+            this.panCadGrupo.Controls.Add(this.ptbAnterior);
             this.panCadGrupo.Controls.Add(this.txtDescricaoGrupo);
             this.panCadGrupo.Controls.Add(this.label8);
             this.panCadGrupo.Location = new System.Drawing.Point(790, 169);
             this.panCadGrupo.Name = "panCadGrupo";
-            this.panCadGrupo.Size = new System.Drawing.Size(325, 124);
+            this.panCadGrupo.Size = new System.Drawing.Size(325, 168);
             this.panCadGrupo.TabIndex = 82;
             this.panCadGrupo.Visible = false;
+            // 
+            // ptbPrimeiro
+            // 
+            this.ptbPrimeiro.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbPrimeiro.BackColor = System.Drawing.Color.Transparent;
+            this.ptbPrimeiro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbPrimeiro.Image = global::AgendaMais.Properties.Resources.primeiro;
+            this.ptbPrimeiro.Location = new System.Drawing.Point(104, 89);
+            this.ptbPrimeiro.Name = "ptbPrimeiro";
+            this.ptbPrimeiro.Size = new System.Drawing.Size(23, 37);
+            this.ptbPrimeiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbPrimeiro.TabIndex = 87;
+            this.ptbPrimeiro.TabStop = false;
+            this.ptbPrimeiro.Click += new System.EventHandler(this.ptbPrimeiro_Click);
+            this.ptbPrimeiro.MouseEnter += new System.EventHandler(this.ptbPrimeiro_MouseEnter);
+            this.ptbPrimeiro.MouseLeave += new System.EventHandler(this.ptbPrimeiro_MouseLeave);
             // 
             // ptbPesquisaGrupo
             // 
@@ -189,6 +219,22 @@
             this.ptbPesquisaGrupo.TabStop = false;
             this.ptbPesquisaGrupo.Click += new System.EventHandler(this.ptbPesquisaGrupo_Click);
             // 
+            // ptbUltimo
+            // 
+            this.ptbUltimo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbUltimo.BackColor = System.Drawing.Color.Transparent;
+            this.ptbUltimo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbUltimo.Image = global::AgendaMais.Properties.Resources.ultimo;
+            this.ptbUltimo.Location = new System.Drawing.Point(198, 89);
+            this.ptbUltimo.Name = "ptbUltimo";
+            this.ptbUltimo.Size = new System.Drawing.Size(23, 37);
+            this.ptbUltimo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbUltimo.TabIndex = 86;
+            this.ptbUltimo.TabStop = false;
+            this.ptbUltimo.Click += new System.EventHandler(this.ptbUltimo_Click);
+            this.ptbUltimo.MouseEnter += new System.EventHandler(this.ptbUltimo_MouseEnter);
+            this.ptbUltimo.MouseLeave += new System.EventHandler(this.ptbUltimo_MouseLeave);
+            // 
             // panCancelarGrupo
             // 
             this.panCancelarGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -196,7 +242,7 @@
             this.panCancelarGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panCancelarGrupo.Controls.Add(this.lblCancelarGrupo);
             this.panCancelarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panCancelarGrupo.Location = new System.Drawing.Point(75, 90);
+            this.panCancelarGrupo.Location = new System.Drawing.Point(75, 134);
             this.panCancelarGrupo.Name = "panCancelarGrupo";
             this.panCancelarGrupo.Size = new System.Drawing.Size(109, 23);
             this.panCancelarGrupo.TabIndex = 55;
@@ -217,6 +263,22 @@
             this.lblCancelarGrupo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCancelarGrupo.Click += new System.EventHandler(this.panCancelarGrupo_Click);
             // 
+            // ptbProximo
+            // 
+            this.ptbProximo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbProximo.BackColor = System.Drawing.Color.Transparent;
+            this.ptbProximo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbProximo.Image = global::AgendaMais.Properties.Resources.proximo1;
+            this.ptbProximo.Location = new System.Drawing.Point(180, 93);
+            this.ptbProximo.Name = "ptbProximo";
+            this.ptbProximo.Size = new System.Drawing.Size(20, 29);
+            this.ptbProximo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbProximo.TabIndex = 85;
+            this.ptbProximo.TabStop = false;
+            this.ptbProximo.Click += new System.EventHandler(this.ptbProximo_Click);
+            this.ptbProximo.MouseEnter += new System.EventHandler(this.ptbProximo_MouseEnter);
+            this.ptbProximo.MouseLeave += new System.EventHandler(this.ptbProximo_MouseLeave);
+            // 
             // panSalvarGrupo
             // 
             this.panSalvarGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -224,7 +286,7 @@
             this.panSalvarGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panSalvarGrupo.Controls.Add(this.lblSalvarGrupo);
             this.panSalvarGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panSalvarGrupo.Location = new System.Drawing.Point(189, 89);
+            this.panSalvarGrupo.Location = new System.Drawing.Point(189, 133);
             this.panSalvarGrupo.Name = "panSalvarGrupo";
             this.panSalvarGrupo.Size = new System.Drawing.Size(110, 24);
             this.panSalvarGrupo.TabIndex = 69;
@@ -246,6 +308,21 @@
             this.lblSalvarGrupo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSalvarGrupo.Click += new System.EventHandler(this.panSalvarGrupo_Click);
             // 
+            // lblCodGrupoProduto
+            // 
+            this.lblListGrupoProduto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblListGrupoProduto.AutoSize = true;
+            this.lblListGrupoProduto.BackColor = System.Drawing.Color.Transparent;
+            this.lblListGrupoProduto.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListGrupoProduto.ForeColor = System.Drawing.Color.White;
+            this.lblListGrupoProduto.Location = new System.Drawing.Point(153, 94);
+            this.lblListGrupoProduto.Name = "lblCodGrupoProduto";
+            this.lblListGrupoProduto.Size = new System.Drawing.Size(17, 24);
+            this.lblListGrupoProduto.TabIndex = 88;
+            this.lblListGrupoProduto.Text = "-";
+            this.lblListGrupoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblListGrupoProduto.TextChanged += new System.EventHandler(this.lblListGrupoProduto_TextChanged);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -258,6 +335,22 @@
             this.label9.TabIndex = 68;
             this.label9.Text = "DESCRIÇÃO";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ptbAnterior
+            // 
+            this.ptbAnterior.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbAnterior.BackColor = System.Drawing.Color.Transparent;
+            this.ptbAnterior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbAnterior.Image = global::AgendaMais.Properties.Resources.anterior1;
+            this.ptbAnterior.Location = new System.Drawing.Point(124, 93);
+            this.ptbAnterior.Name = "ptbAnterior";
+            this.ptbAnterior.Size = new System.Drawing.Size(20, 29);
+            this.ptbAnterior.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbAnterior.TabIndex = 84;
+            this.ptbAnterior.TabStop = false;
+            this.ptbAnterior.Click += new System.EventHandler(this.ptbAnterior_Click);
+            this.ptbAnterior.MouseEnter += new System.EventHandler(this.ptbAnterior_MouseEnter);
+            this.ptbAnterior.MouseLeave += new System.EventHandler(this.ptbAnterior_MouseLeave);
             // 
             // txtDescricaoGrupo
             // 
@@ -272,6 +365,7 @@
             this.txtDescricaoGrupo.Size = new System.Drawing.Size(257, 26);
             this.txtDescricaoGrupo.TabIndex = 67;
             this.txtDescricaoGrupo.TextChanged += new System.EventHandler(this.txtDescricaoGrupo_TextChanged);
+            this.txtDescricaoGrupo.Leave += new System.EventHandler(this.txtDescricaoGrupo_Leave);
             // 
             // label8
             // 
@@ -602,11 +696,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).EndInit();
             this.panCadGrupo.ResumeLayout(false);
             this.panCadGrupo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPrimeiro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisaGrupo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbUltimo)).EndInit();
             this.panCancelarGrupo.ResumeLayout(false);
             this.panCancelarGrupo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProximo)).EndInit();
             this.panSalvarGrupo.ResumeLayout(false);
             this.panSalvarGrupo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAnterior)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAddGrupo)).EndInit();
             this.panCancelar.ResumeLayout(false);
             this.panCancelar.PerformLayout();
@@ -656,5 +754,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox ptbPesquisa;
         private System.Windows.Forms.PictureBox ptbPesquisaGrupo;
+        private System.Windows.Forms.PictureBox ptbPrimeiro;
+        private System.Windows.Forms.PictureBox ptbUltimo;
+        private System.Windows.Forms.PictureBox ptbProximo;
+        private System.Windows.Forms.Label lblListGrupoProduto;
+        private System.Windows.Forms.PictureBox ptbAnterior;
     }
 }

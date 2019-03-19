@@ -22,13 +22,35 @@ namespace AgendaMais.Classes.DAOs
         }
 
         /// <summary>
-        /// Este método obtém todos os registros da tabela funcionario;
+        /// Este método obtém todos os registros da tabela informada;
         /// </summary>
         /// <param name="tabela">Tabela desejada</param>
         /// <returns>DataTable com todos os registros da tabela informada</returns>
         public static DataTable GetTodosRegistros(string tabela)
         {
             string sql = String.Format("Select * from {0} order by id", tabela);
+            return ExecutaSelect(sql);
+        }
+
+        /// <summary>
+        /// Este método obtém todos os registros da tabela informada que estejam ativos;
+        /// </summary>
+        /// <param name="tabela">Tabela desejada</param>
+        /// <returns>DataTable com todos os registros da tabela informada</returns>
+        public static DataTable GetTodosRegistrosAtivos(string tabela)
+        {
+            string sql = String.Format("Select * from {0} where ativo=true order by id", tabela);
+            return ExecutaSelect(sql);
+        }
+
+        /// <summary>
+        /// Este método obtém todos os registros da tabela informada que não estejam ativos;
+        /// </summary>
+        /// <param name="tabela">Tabela desejada</param>
+        /// <returns>DataTable com todos os registros da tabela informada</returns>
+        public static DataTable GetTodosRegistrosNaoAtivos(string tabela)
+        {
+            string sql = String.Format("Select * from {0} where ativo=false order by id", tabela);
             return ExecutaSelect(sql);
         }
 

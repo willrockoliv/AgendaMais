@@ -1,6 +1,7 @@
 ﻿using AgendaMais.Classes.DAOs;
 using AgendaMais.Classes.Enums;
 using AgendaMais.Classes.VOs;
+using AgendaMais.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace AgendaMais
         ProdutoVO produtoVOSelecionado;
         List<GrupoProdutoVO> listGrupoProduto = new List<GrupoProdutoVO>();
         GrupoProdutoVO grupoProdutoVOSelecionado = new GrupoProdutoVO();
+        int indexGrupoProduto = -1;
         #endregion
 
         #region Métodos Auxiliares
@@ -44,6 +46,18 @@ namespace AgendaMais
             txtPrecoVenda.Text = produtoVO.Vl_venda.ToString("C");
         }
 
+        void ExibeGrupoProduto(GrupoProdutoVO grupoProdutoVO)
+        {
+            txtDescricaoGrupo.Text = grupoProdutoVO.Descricao;
+            for (int i = 0; i < listGrupoProduto.Count; i++)
+                if (listGrupoProduto[i].Id == grupoProdutoVO.Id)
+                {
+                    indexGrupoProduto = i;
+                    lblListGrupoProduto.Text = i.ToString();
+                    break;
+                }
+        }
+
         void LimpaCampos()
         {
             produtoVOSelecionado = null;
@@ -56,6 +70,15 @@ namespace AgendaMais
             rdbServico.Checked = true;
             txtPrecoCusto.Text = null;
             txtPrecoVenda.Text = null;
+        }
+
+        void LimpaCamposGrupoProduto()
+        {
+            panCadGrupo.Visible = false;
+            txtDescricaoGrupo.Text = null;
+            errorProvider.Clear();
+            lblListGrupoProduto.Text = "-";
+            indexGrupoProduto = -1;
         }
 
         bool ValidaCampos()
@@ -107,7 +130,7 @@ namespace AgendaMais
 
         void CarregaProdutos()
         {
-            listProdutoVO = ProdutoDAO.GetTodosRegistros();
+            listProdutoVO = ProdutoDAO.GetTodosRegistrosAtivos();
             if (listProdutoVO != null)
             {
                 AutoCompleteStringCollection listProdutos = new AutoCompleteStringCollection();
@@ -120,12 +143,17 @@ namespace AgendaMais
 
         void CarregaGrupos()
         {
-            listGrupoProduto = GrupoProdutoDAO.GetTodosRegistros();
+            listGrupoProduto = GrupoProdutoDAO.GetTodosRegistrosAtivos();
             if (listGrupoProduto != null)
             {
                 cbGrupo.Items.Clear();
+                txtDescricaoGrupo.AutoCompleteCustomSource.Clear();
                 foreach (GrupoProdutoVO grupoProdutoVO in listGrupoProduto)
+                {
                     cbGrupo.Items.Add(grupoProdutoVO.Descricao);
+                    txtDescricaoGrupo.AutoCompleteCustomSource.Add(grupoProdutoVO.Descricao);
+                }
+                indexGrupoProduto = listGrupoProduto.Count;
             }
         }
         #endregion
@@ -159,14 +187,15 @@ namespace AgendaMais
             if (String.IsNullOrEmpty(txtCodBarras.Text.Trim()))
                 return;
 
-            foreach (ProdutoVO produtoVO in listProdutoVO)
-            {
-                if (produtoVO.Cod_barras.Trim() == txtCodBarras.Text.Trim())
+            if (listProdutoVO != null)
+                foreach (ProdutoVO produtoVO in listProdutoVO)
                 {
-                    ExibeProduto(produtoVO);
-                    break;
+                    if (produtoVO.Cod_barras.Trim() == txtCodBarras.Text.Trim())
+                    {
+                        ExibeProduto(produtoVO);
+                        break;
+                    }
                 }
-            }
         }
 
         #region txtdescricao
@@ -211,6 +240,7 @@ namespace AgendaMais
                 produtoVO.Qtd_estoque = Convert.ToInt32(txtQtde.Text);
             produtoVO.Vl_custo = Convert.ToDouble(txtPrecoCusto.Text.Replace("R$", "").Trim());
             produtoVO.Vl_venda = Convert.ToDouble(txtPrecoVenda.Text.Replace("R$", "").Trim());
+            produtoVO.Ativo = true;
 
             //Produto novo
             if (produtoVOSelecionado == null)
@@ -257,6 +287,7 @@ namespace AgendaMais
         }
 
         #region Cadastro de Grupo de Produto
+
         private void panSalvarGrupo_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtDescricaoGrupo.Text))
@@ -270,33 +301,63 @@ namespace AgendaMais
                         return;
                     }
 
-            GrupoProdutoVO grupoProdutoVO = new GrupoProdutoVO();
-            grupoProdutoVO.Descricao = txtDescricaoGrupo.Text.Trim();
-
-            try
+            if (lblSalvarGrupo.Text == "ALTERAR")
             {
-                GrupoProdutoDAO.InserirRegistros(grupoProdutoVO);
-                CarregaGrupos();
-                MessageBox.Show("Grupo de Produto cadastrado com sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                panCadGrupo.Visible = false;
-                txtDescricaoGrupo.Text = null;
+                listGrupoProduto[indexGrupoProduto].Descricao = txtDescricaoGrupo.Text.Trim();
+                try
+                {
+                    GrupoProdutoDAO.AtualizarRegistro(listGrupoProduto[indexGrupoProduto]);
+                    CarregaGrupos();
+                    MessageBox.Show("Grupo de Produto Atualizado com sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpaCamposGrupoProduto();
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception erro)
+            else if (lblSalvarGrupo.Text == "SALVAR")
             {
-                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GrupoProdutoVO grupoProdutoVO = new GrupoProdutoVO();
+                grupoProdutoVO.Descricao = txtDescricaoGrupo.Text.Trim();
+                grupoProdutoVO.Ativo = true;
+
+                try
+                {
+                    GrupoProdutoDAO.InserirRegistros(grupoProdutoVO);
+                    CarregaGrupos();
+                    MessageBox.Show("Grupo de Produto cadastrado com sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpaCamposGrupoProduto();
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void panCancelarGrupo_Click(object sender, EventArgs e)
         {
-            panCadGrupo.Visible = false;
-            txtDescricaoGrupo.Text = null;
+            LimpaCamposGrupoProduto();
         }
 
         private void txtDescricaoGrupo_TextChanged(object sender, EventArgs e)
         {
             txtDescricaoGrupo.Text = txtDescricaoGrupo.Text.ToUpper();
             txtDescricaoGrupo.Select(txtDescricaoGrupo.Text.Length, 0);
+        }
+
+        private void txtDescricaoGrupo_Leave(object sender, EventArgs e)
+        {
+            if (listGrupoProduto == null)
+                return;
+
+            foreach (GrupoProdutoVO grupoProdutoVO in listGrupoProduto)
+                if (grupoProdutoVO.Descricao.Trim() == txtDescricaoGrupo.Text.Trim())
+                {
+                    ExibeGrupoProduto(grupoProdutoVO);
+                    break;
+                }
         }
 
         private void ptbAddGrupo_Click(object sender, EventArgs e)
@@ -308,9 +369,137 @@ namespace AgendaMais
         {
             frPesquisa frPesquisa = new frPesquisa(EnumPesquisa.grupo_produto);
             frPesquisa.ShowDialog();
+            CarregaGrupos();
             if (frPesquisa.grupoProdutoVO != null)
-                txtDescricaoGrupo.Text = frPesquisa.grupoProdutoVO.Descricao;
+                ExibeGrupoProduto(frPesquisa.grupoProdutoVO);
         }
+
+        #region Navegação
+
+        #region Primeiro
+        private void ptbPrimeiro_Click(object sender, EventArgs e)
+        {
+            if (listGrupoProduto == null)
+                return;
+
+            if (indexGrupoProduto < 0)
+                return;
+            else
+            {
+                indexGrupoProduto = 0;
+                txtDescricaoGrupo.Text = listGrupoProduto[indexGrupoProduto].Descricao;
+                lblListGrupoProduto.Text = (indexGrupoProduto + 1).ToString();
+            }
+        }
+
+        private void ptbPrimeiro_MouseEnter(object sender, EventArgs e)
+        {
+            ptbPrimeiro.Image = Resources.primeiro_hover;
+        }
+
+        private void ptbPrimeiro_MouseLeave(object sender, EventArgs e)
+        {
+            ptbPrimeiro.Image = Resources.primeiro;
+        }
+        #endregion
+
+        #region Anterior
+        private void ptbAnterior_Click(object sender, EventArgs e)
+        {
+            if (listGrupoProduto == null)
+                return;
+
+            if (indexGrupoProduto <= 0)
+                return;
+            else
+            {
+                indexGrupoProduto--;
+                txtDescricaoGrupo.Text = listGrupoProduto[indexGrupoProduto].Descricao;
+                lblListGrupoProduto.Text = (indexGrupoProduto + 1).ToString();
+            }
+        }
+
+        private void ptbAnterior_MouseEnter(object sender, EventArgs e)
+        {
+            ptbAnterior.Image = Resources.anterior_hover;
+        }
+
+        private void ptbAnterior_MouseLeave(object sender, EventArgs e)
+        {
+            ptbAnterior.Image = Resources.anterior1;
+        }
+        #endregion
+
+        #region Proximo
+        private void ptbProximo_Click(object sender, EventArgs e)
+        {
+            if (listGrupoProduto == null)
+                return;
+
+            if (indexGrupoProduto >= listGrupoProduto.Count)
+                return;
+            else if (indexGrupoProduto == listGrupoProduto.Count - 1)
+            {
+                indexGrupoProduto++;
+                txtDescricaoGrupo.Text = null;
+                lblListGrupoProduto.Text = "-";
+            }
+            else
+            {
+                indexGrupoProduto++;
+                txtDescricaoGrupo.Text = listGrupoProduto[indexGrupoProduto].Descricao;
+                lblListGrupoProduto.Text = (indexGrupoProduto + 1).ToString();
+            }
+        }
+
+        private void ptbProximo_MouseEnter(object sender, EventArgs e)
+        {
+            ptbProximo.Image = Resources.proximo_hover;
+        }
+
+        private void ptbProximo_MouseLeave(object sender, EventArgs e)
+        {
+            ptbProximo.Image = Resources.proximo1;
+        }
+        #endregion
+
+        #region Ultimo
+        private void ptbUltimo_Click(object sender, EventArgs e)
+        {
+            if (listGrupoProduto == null)
+                return;
+
+            if (indexGrupoProduto >= listGrupoProduto.Count)
+                return;
+            else
+            {
+                indexGrupoProduto++;
+                txtDescricaoGrupo.Text = null;
+                lblListGrupoProduto.Text = "-";
+            }
+        }
+
+        private void ptbUltimo_MouseEnter(object sender, EventArgs e)
+        {
+            ptbUltimo.Image = Resources.ultimo_hover;
+        }
+
+        private void ptbUltimo_MouseLeave(object sender, EventArgs e)
+        {
+            ptbUltimo.Image = Resources.ultimo;
+        }
+
+        private void lblListGrupoProduto_TextChanged(object sender, EventArgs e)
+        {
+            if (lblListGrupoProduto.Text == "-")
+                lblSalvarGrupo.Text = "SALVAR";
+            else
+                lblSalvarGrupo.Text = "ALTERAR";
+        }
+        #endregion
+
+        #endregion
+
         #endregion
 
         private void txtPrecoCusto_Leave(object sender, EventArgs e)
@@ -350,198 +539,6 @@ namespace AgendaMais
                     }
         }
 
-
         #endregion
-
-        /* old
-        List<ProdutoVO> listProdutoVO = new List<ProdutoVO>();
-        ProdutoVO produtoVOSelecionado;
-        List<GrupoProdutoVO> listGrupoProduto = new List<GrupoProdutoVO>();
-        GrupoProdutoVO grupoProdutoVOSelecionado = new GrupoProdutoVO();
-
-        void ExibeProduto(ProdutoVO produtoVO)
-        {
-            produtoVOSelecionado = produtoVO;
-
-            txtCodBarras.Text = produtoVO.Cod_barras;
-            txtDescricao.Text = produtoVO.Descricao;
-            foreach (GrupoProdutoVO grupoProdutoVO in listGrupoProduto)
-                if (grupoProdutoVO.Id == produtoVO.Id_grupo_produto)
-                {
-                    cbGrupo.SelectedItem = grupoProdutoVO.Descricao;
-                    grupoProdutoVOSelecionado = grupoProdutoVO;
-                    break;
-                }
-            txtQtde.Text = produtoVO.Qtd_estoque.ToString();
-            rdbProduto.Checked = produtoVO.Controla_estoque;
-            rdbServico.Checked = !produtoVO.Controla_estoque;
-            txtPrecoCusto.Text = produtoVO.Vl_custo.ToString("C");
-            txtPrecoVenda.Text = produtoVO.Vl_venda.ToString("C");
-        }
-
-        void LimpaCampos()
-        {
-            produtoVOSelecionado = null;
-            grupoProdutoVOSelecionado = null;
-
-            txtCodBarras.Text = null;
-            txtDescricao.Text = null;
-            cbGrupo.SelectedIndex = -1;
-            txtQtde.Text = null;
-            rdbServico.Checked = true;
-            txtPrecoCusto.Text = null;
-            txtPrecoVenda.Text = null;
-        }
-
-        bool ValidaCampos()
-        {
-            errorProvider.Clear();
-            bool ok = true;
-
-            if(String.IsNullOrEmpty(txtDescricao.Text.Trim()))
-            {
-                errorProvider.SetError(txtDescricao, "Ops! Não se esqueça de informar a decrição");
-                ok = false;
-            }
-
-            if(cbGrupo.SelectedIndex == -1)
-            {
-                errorProvider.SetError(cbGrupo, "Ops, Não se esqueça de informar o Grupo");
-                ok = false;
-            }
-
-            if(string.IsNullOrEmpty(txtPrecoVenda.Text.Trim()))
-            {
-                errorProvider.SetError(txtPrecoVenda, "Qual é o valor do Serviço/Produto?");
-                ok = false;
-            }
-
-            return ok;
-        }
-
-        public frCadProdServ()
-        {
-            InitializeComponent();
-
-            listProdutoVO = ProdutoDAO.GetTodosRegistros();
-            if (listProdutoVO != null)
-            {
-                AutoCompleteStringCollection listDescricoes = new AutoCompleteStringCollection();
-                foreach (ProdutoVO produtoVO in listProdutoVO)
-                    listDescricoes.Add(produtoVO.Descricao);
-                txtDescricao.AutoCompleteCustomSource = listDescricoes;
-            }
-
-            if (listGrupoProduto != null)
-            {
-                listGrupoProduto = GrupoProdutoDAO.GetTodosRegistros();
-                foreach (GrupoProdutoVO grupoProdutoVO in listGrupoProduto)
-                    cbGrupo.Items.Add(grupoProdutoVO.Descricao);
-            }
-        }
-
-        private void rdbServico_CheckedChanged(object sender, EventArgs e)
-        {
-            txtQtde.Enabled = false;
-            txtQtde.Text = null;
-        }
-
-        private void rdbProduto_CheckedChanged(object sender, EventArgs e)
-        {
-            txtQtde.Enabled = true;
-        }
-
-        private void txtCodBarras_Leave(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtCodBarras.Text.Trim()))
-                return;
-
-            foreach (ProdutoVO produtoVO in listProdutoVO)
-            {
-                if (produtoVO.Cod_barras.Trim() == txtCodBarras.Text.Trim())
-                {
-                    ExibeProduto(produtoVO);
-                    break;
-                }
-            }
-        }
-
-        private void txtDescricao_TextChanged(object sender, EventArgs e)
-        {
-            txtDescricao.Text = txtDescricao.Text.ToUpper();
-            txtDescricao.Select(txtDescricao.Text.Length, 0);
-        }
-
-        private void txtDescricao_Leave(object sender, EventArgs e)
-        {
-            if (listProdutoVO == null)
-                return;
-
-            foreach (ProdutoVO produtoVO in listProdutoVO)
-            {
-                if (produtoVO.Descricao.Trim() == txtDescricao.Text.Trim())
-                {
-                    ExibeProduto(produtoVO);
-                    break;
-                }
-            }
-        }
-
-        private void panCancelar_Click(object sender, EventArgs e)
-        {
-            LimpaCampos();
-        }
-
-        private void Salvar_Click(object sender, EventArgs e)
-        {
-            if (!ValidaCampos())
-                return;
-
-            ProdutoVO produtoVO = new ProdutoVO();
-            produtoVO.Cod_barras = txtCodBarras.Text.Trim();
-            produtoVO.Descricao = txtDescricao.Text.Trim();
-            produtoVO.Id_grupo_produto = grupoProdutoVOSelecionado.Id;
-            produtoVO.Qtd_estoque = Convert.ToInt32(txtQtde.Text);
-            produtoVO.Controla_estoque = rdbProduto.Checked;
-            produtoVO.Vl_custo = Convert.ToDouble(txtPrecoCusto.Text.Replace("R$", "").Trim());
-            produtoVO.Vl_venda = Convert.ToDouble(txtPrecoVenda.Text.Replace("R$", "").Trim());
-
-            //Produto novo
-            if (produtoVOSelecionado == null)
-            {
-                try
-                {
-                    ProdutoDAO.InserirRegistros(produtoVO);
-                    MessageBox.Show("Produto cadastrado com sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch(Exception erro)
-                {
-                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            // Atualização de cadastro já existente
-            else
-            {
-                produtoVO.Id = produtoVOSelecionado.Id;
-
-                try
-                {
-                    ProdutoDAO.AtualizarRegistro(produtoVO);
-                    MessageBox.Show("Produto atualizado com sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void cbGrupo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach (GrupoProdutoVO grupoProdutoVO in listGrupoProduto)
-                if (grupoProdutoVO.Descricao == cbGrupo.SelectedItem.ToString())
-                    grupoProdutoVOSelecionado = grupoProdutoVO;
-        }
-        */
     }
 }

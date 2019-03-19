@@ -73,7 +73,7 @@
             this.lblVersao.Name = "lblVersao";
             this.lblVersao.Size = new System.Drawing.Size(107, 22);
             this.lblVersao.TabIndex = 12;
-            this.lblVersao.Text = "Versão 1.8";
+            this.lblVersao.Text = "Versão 2.0";
             // 
             // panEntrar
             // 
@@ -145,6 +145,8 @@
             // txtLogin
             // 
             this.txtLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtLogin.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtLogin.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.Location = new System.Drawing.Point(467, 343);
             this.txtLogin.Name = "txtLogin";

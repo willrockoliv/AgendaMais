@@ -15,7 +15,8 @@ namespace AgendaMais.Telas
     {
         #region Variáveis
         public static string mainPath = Path.GetDirectoryName(Application.ExecutablePath);
-        public static bool Login { get; private set; }
+        public static bool Autenticacao { get; private set; }
+        public static string Login { get; private set; }
         #endregion
 
         #region Validações Iniciais
@@ -37,8 +38,9 @@ namespace AgendaMais.Telas
                     GoogleDrive.Download("versao.txt", $"{mainPath}\\BD\\versao.txt");
                 }
             }
-            catch
+            catch 
             {
+                //throw;
             }
 
             if (File.Exists($"{mainPath}\\BD\\versao.txt"))
@@ -82,7 +84,7 @@ namespace AgendaMais.Telas
                     File.Delete($"{mainPath}\\Update\\Update.zip");
 
                     Process.Start($"{mainPath}\\Update\\Update.exe");
-                    Process.GetProcesses("AgendaMais.exe");
+                    //Process.GetProcesses("AgendaMais.exe");
                     Process.GetCurrentProcess().Kill();
                 }
             }
@@ -105,7 +107,7 @@ namespace AgendaMais.Telas
             }
             catch (Exception erro)
             {
-                throw new Exception("Erro ao consultar Licença de Uso\n\n" + erro.Message);
+                //throw new Exception("Erro ao consultar Licença de Uso\n\n" + erro.Message);
             }
 
             if (File.Exists($"{mainPath}\\BD\\{login}"))
@@ -274,7 +276,6 @@ namespace AgendaMais.Telas
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
 
-
             // Verificação de Serviço de Banco de Dados
             try
             {
@@ -320,13 +321,31 @@ namespace AgendaMais.Telas
             // Verificação de Atualização de Versão
             try
             {
-                using (new Carregando("Verificando\nAtualizações..."))
+                //using (new Carregando("Verificando\nAtualizações..."))
+                //{
+                ValidaVersao();
+                //}
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro ao buscar atualizações", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Carrega sugestão de usuários
+            try
+            {
+                if (File.Exists($"{mainPath}\\BD\\users.bd"))
                 {
-                    ValidaVersao();
+                    string[] users = File.ReadAllLines($"{mainPath}\\BD\\users.bd", Encoding.UTF8);
+                    AutoCompleteStringCollection listUsers = new AutoCompleteStringCollection();
+                    foreach (string user in users)
+                        listUsers.Add(user);
+                    txtLogin.AutoCompleteCustomSource = listUsers;
                 }
             }
-            catch
+            catch (Exception erro)
             {
+                MessageBox.Show(erro.Message, "Erro ao carregar sugestões de usuários", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -356,9 +375,27 @@ namespace AgendaMais.Telas
 
             try
             {
-                Login = ValidaLicenca(txtLogin.Text.Trim(), txtSenha.Text.Trim());
-                if (Login)
+                Autenticacao = ValidaLicenca(txtLogin.Text.Trim(), txtSenha.Text.Trim());
+                if (Autenticacao)
+                {
+                    Login = txtLogin.Text.Trim();
+
+                    if (File.Exists($"{mainPath}\\BD\\users.bd"))
+                    {
+                        string[] users = File.ReadAllLines($"{mainPath}\\BD\\users.bd", Encoding.UTF8);
+                        bool ja_existe = false;
+                        foreach (string user in users)
+                            if (user == Login)
+                                ja_existe = true;
+
+                        if (ja_existe == false)
+                            File.AppendAllText($"{mainPath}\\BD\\users.bd", Environment.NewLine + Login);
+                    }
+                    else
+                        File.WriteAllText($"{mainPath}\\BD\\users.bd", Login);
+
                     this.Close();
+                }
             }
             catch (Exception erro)
             {

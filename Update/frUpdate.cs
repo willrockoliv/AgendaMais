@@ -29,49 +29,14 @@ namespace Update
             {
                 using (telaUpdate telaUpdate = new telaUpdate())
                 {
-                    telaUpdate.TxtInfo.Text = "Autenticando...";
-                    var credenciais = Autenticar();
-                    telaUpdate.TxtInfo.Text = "Autenticação ok!";
-                    telaUpdate.ProgressBar.Value = 14;
-
-                    telaUpdate.TxtInfo.Text = "Abrindo Serviço...";
-                    using (var servico = AbrirServico(credenciais))
-                    {
-                        telaUpdate.TxtInfo.Text = "Serviço ok!";
-                        telaUpdate.ProgressBar.Value += 14;
-
-                        telaUpdate.TxtInfo.Text = "Procurando Atualizações...";
-                        var ids = ProcurarArquivoId(servico, "AgendaMais.zip");
-                        telaUpdate.ProgressBar.Value += 14;
-
-                        if (ids != null && ids.Any())
-                        {
-                            var request = servico.Files.Get(ids.First());
-
-                            Directory.CreateDirectory(mainPath + "\\AgendaMais");
-
-                            telaUpdate.TxtInfo.Text = "Baixando Atualização...";
-                            using (var stream = new FileStream(mainPath + "\\AgendaMais\\AgendaMais.zip", FileMode.Create, FileAccess.Write))
-                            {
-                                request.Download(stream);
-                            }
-                            telaUpdate.TxtInfo.Text = "Atuzalização Baixada";
-                            telaUpdate.ProgressBar.Value += 14;
-                        }
-                    }
+                    Download(telaUpdate);
 
                     if (File.Exists(mainPath + "\\AgendaMais\\AgendaMais.zip"))
                     {
-                        telaUpdate.TxtInfo.Text = "Extraindo arquivos...";
+                        Extrair(telaUpdate);
 
-                        ExtrairArquivoZip(mainPath + "\\AgendaMais\\AgendaMais.zip", mainPath + "\\AgendaMais");
-
-                        File.Delete(mainPath + "\\AgendaMais\\AgendaMais.zip");
-
-                        foreach (var arquivos in Directory.GetFiles(mainPath + "\\AgendaMais", "*.*", SearchOption.AllDirectories))
-                            File.Copy(arquivos, arquivos.Replace(mainPath + "\\AgendaMais", mainPath.Replace("\\Update", "")), true);
-
-                        Directory.Delete(mainPath + "\\AgendaMais", true);
+                        if (File.Exists(mainPath + "\\alterBD.sql"))
+                            AlterBD(telaUpdate);
 
                         telaUpdate.TxtInfo.Text = "Tudo ok!";
                         telaUpdate.ProgressBar.Value = 100;
@@ -80,6 +45,86 @@ namespace Update
                         Process.GetCurrentProcess().Kill();
                     }
                 }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        void Download(telaUpdate telaUpdate)
+        {
+            try
+            {
+                telaUpdate.TxtInfo.Text = "Autenticando...";
+                var credenciais = Autenticar();
+                telaUpdate.TxtInfo.Text = "Autenticação ok!";
+                telaUpdate.ProgressBar.Value = 14;
+
+                telaUpdate.TxtInfo.Text = "Abrindo Serviço...";
+                using (var servico = AbrirServico(credenciais))
+                {
+                    telaUpdate.TxtInfo.Text = "Serviço ok!";
+                    telaUpdate.ProgressBar.Value += 14;
+
+                    telaUpdate.TxtInfo.Text = "Procurando Atualizações...";
+                    var ids = ProcurarArquivoId(servico, "AgendaMais.zip");
+                    telaUpdate.ProgressBar.Value += 14;
+
+                    if (ids != null && ids.Any())
+                    {
+                        var request = servico.Files.Get(ids.First());
+
+                        Directory.CreateDirectory(mainPath + "\\AgendaMais");
+
+                        telaUpdate.TxtInfo.Text = "Baixando Atualização...";
+                        using (var stream = new FileStream(mainPath + "\\AgendaMais\\AgendaMais.zip", FileMode.Create, FileAccess.Write))
+                        {
+                            request.Download(stream);
+                        }
+                        telaUpdate.TxtInfo.Text = "Atuzalização Baixada";
+                        telaUpdate.ProgressBar.Value += 14;
+                    }
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        void Extrair(telaUpdate telaUpdate)
+        {
+            try
+            {
+                telaUpdate.TxtInfo.Text = "Extraindo arquivos...";
+
+                ExtrairArquivoZip(mainPath + "\\AgendaMais\\AgendaMais.zip", mainPath + "\\AgendaMais");
+
+                File.Delete(mainPath + "\\AgendaMais\\AgendaMais.zip");
+
+                foreach (var arquivos in Directory.GetFiles(mainPath + "\\AgendaMais", "*.*", SearchOption.AllDirectories))
+                    File.Copy(arquivos, arquivos.Replace(mainPath + "\\AgendaMais", mainPath.Replace("\\Update", "")), true);
+
+                Directory.Delete(mainPath + "\\AgendaMais", true);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        void AlterBD(telaUpdate telaUpdate)
+        {
+            try
+            {
+                telaUpdate.TxtInfo.Text = "Atualizando Banco de Dados...";
+
+                string[] arquivo = File.ReadAllLines($"{mainPath}\\alterBD.sql");
+                List<string> sql = new List<string>();
+                foreach (string linha in arquivo)
+                    sql.Add(linha);
+                DB.ExecutaSQL(sql);
             }
             catch
             {

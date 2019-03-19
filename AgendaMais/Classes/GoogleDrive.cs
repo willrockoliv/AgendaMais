@@ -12,6 +12,7 @@ using System.Threading;
 using System.Windows.Forms;
 using Google.Apis.Services;
 
+
 namespace AgendaMais.Classes
 {
     //Fonte:
@@ -21,6 +22,7 @@ namespace AgendaMais.Classes
     {
         //https://console.developers.google.com/apis/credentials?project=exemplary-vista-226116&authuser=2
         private static string client_id = Path.GetDirectoryName(Application.ExecutablePath) + "\\client_id.json";
+        //private static string client_id = Path.GetDirectoryName(Application.ExecutablePath) + "\\My Project-cee0fadcdfaf.json";
 
         private static UserCredential Autenticar()
         {
@@ -33,7 +35,7 @@ namespace AgendaMais.Classes
 
                 credenciais = GoogleWebAuthorizationBroker.AuthorizeAsync(
                     GoogleClientSecrets.Load(stream).Secrets,
-                    new[] { DriveService.Scope.DriveReadonly },
+                    new[] { DriveService.Scope.Drive },
                     "user",
                     CancellationToken.None,
                     new FileDataStore(diretorioCredenciais, true)).Result;
@@ -117,9 +119,53 @@ namespace AgendaMais.Classes
             }
         }
 
-        public static void AtualizacaoDownload()
+        public static void DeletarItem(string nome)
         {
+            try
+            {
+                var credenciais = Autenticar();
 
+                using (var servico = AbrirServico(credenciais))
+                {
+                    var ids = ProcurarArquivoId(servico, nome);
+                    if (ids != null && ids.Any())
+                    {
+                        foreach (var id in ids)
+                        {
+                            var request = servico.Files.Delete(id);
+                            request.Execute();
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public static void Upload(string caminhoArquivo)
+        {
+            try
+            {
+                var credenciais = Autenticar();
+
+                using (var servico = AbrirServico(credenciais))
+                {
+                    var arquivo = new Google.Apis.Drive.v3.Data.File();
+                    arquivo.Name = Path.GetFileName(caminhoArquivo);
+                    arquivo.MimeType = MimeTypes.MimeTypeMap.GetMimeType(Path.GetExtension(caminhoArquivo));
+                    using (var stream = new FileStream(caminhoArquivo, FileMode.Open, FileAccess.Read))
+                    {
+                        var request = servico.Files.Create(arquivo, stream, arquivo.MimeType);
+                        request.Upload();
+                    }
+                }
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

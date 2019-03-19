@@ -22,7 +22,7 @@ namespace AgendaMais
         private AgendaVO agendaVO = new AgendaVO();
         private ClienteVO clienteVO = new ClienteVO();
         private ClienteVO novoCliente = new ClienteVO();
-        private List<FuncionarioVO> listFuncionarioVO = FuncionarioDAO.GetTodosRegistros();
+        private List<FuncionarioVO> listFuncionarioVO = FuncionarioDAO.GetTodosRegistrosAtivos();
         private FuncionarioVO funcionarioVOSelecionado = new FuncionarioVO();
         private enum TipoLayoutTela { cliente, agendamento, funcionario, conclusao }
         private MetodosAgendamento metodosAgendamento;
@@ -369,7 +369,7 @@ namespace AgendaMais
             ExibeFuncionarios();
 
             //Itens e serviços
-            List<GrupoProdutoVO> listGrupoProduto = GrupoProdutoDAO.GetTodosRegistros();
+            List<GrupoProdutoVO> listGrupoProduto = GrupoProdutoDAO.GetTodosRegistrosAtivos();
             if (listGrupoProduto != null)
             {
                 for (int i = 0; i < listGrupoProduto.Count; i++)
@@ -381,7 +381,7 @@ namespace AgendaMais
             flpItens.Controls.Clear();
 
             // Preenche o AutoComplete para sugerir cliente
-            listCliente = ClienteDAO.GetTodosRegistros();
+            listCliente = ClienteDAO.GetTodosRegistrosAtivos();
             if (listCliente != null)
             {
                 AutoCompleteStringCollection listNomes = new AutoCompleteStringCollection();

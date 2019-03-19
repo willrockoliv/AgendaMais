@@ -29,6 +29,7 @@ namespace AgendaMais.Classes.DAOs
                 c.Numero = row["numero"].ToString();
                 c.Complemento = row["complemento"].ToString();
                 c.Imagem = row["imagem"].ToString();
+                c.Ativo = Convert.ToBoolean(row["ativo"]);
                 return c;
             }
             else
@@ -51,6 +52,16 @@ namespace AgendaMais.Classes.DAOs
         public static int ProximoID()
         {
             return DB.ProximoID("cliente");
+        }
+
+        public static List<ClienteVO> GetTodosRegistrosAtivos()
+        {
+            return MontaListVO(DAO.GetTodosRegistrosAtivos("cliente"));
+        }
+
+        public static List<ClienteVO> GetTodosRegistrosNaoAtivos()
+        {
+            return MontaListVO(DAO.GetTodosRegistrosNaoAtivos("cliente"));
         }
 
         public static List<ClienteVO> GetTodosRegistros()
@@ -83,50 +94,54 @@ namespace AgendaMais.Classes.DAOs
                             "endereco, " +
                             "numero, " +
                             "complemento," +
-                            "imagem) " +
+                            "imagem," +
+                            "ativo) " +
                          "values(" +
-                            "'" + cliente.Nome + "'," +
-                            "'" + cliente.Tel_cel + "'," +
-                            "'" + cliente.Email + "'," +
-                            "'" + cliente.Recado + "'," +
-                            "'" + cliente.Cpf + "'," +
-                            "'" + cliente.Rg + "'," +
-                            "'" + cliente.Uf + "'," +
-                            "'" + cliente.Cidade + "'," +
-                            "'" + cliente.Bairro + "'," +
-                            "'" + cliente.Endereco + "'," +
-                            "'" + cliente.Numero + "'," +
-                            "'" + cliente.Complemento + "'," +
-                            "'" + cliente.Imagem + "')";
+                            $"'{cliente.Nome}'," +
+                            $"'{cliente.Tel_cel}'," +
+                            $"'{cliente.Email}'," +
+                            $"'{cliente.Recado}'," +
+                            $"'{cliente.Cpf}'," +
+                            $"'{cliente.Rg}'," +
+                            $"'{cliente.Uf}'," +
+                            $"'{cliente.Cidade}'," +
+                            $"'{cliente.Bairro}'," +
+                            $"'{cliente.Endereco}'," +
+                            $"'{cliente.Numero}'," +
+                            $"'{cliente.Complemento}'," +
+                            $"'{cliente.Imagem}'," +
+                            $"{cliente.Ativo})";
             ExecutaSQL(sql);
         }
 
         public static void AtualizarRegistro(ClienteVO cliente)
         {
             string sql = "Update cliente " +
-                         "Set nome='" + cliente.Nome + "'," +
-                              "tel_cel='" + cliente.Tel_cel + "'," +
-                              "email='" + cliente.Email + "'," +
-                              "recado='" + cliente.Recado + "'," +
-                              "cpf='" + cliente.Cpf + "'," +
-                              "rg='" + cliente.Rg + "'," +
-                              "uf='" + cliente.Uf + "'," +
-                              "cidade='" + cliente.Cidade + "'," +
-                              "bairro='" + cliente.Bairro + "'," +
-                              "endereco='" + cliente.Endereco + "'," +
-                              "numero='" + cliente.Numero + "'," +
-                              "complemento='" + cliente.Complemento + "'," +
-                              "imagem='" + cliente.Imagem + "' " +
+                        $"Set nome='{cliente.Nome}'," +
+                              $"tel_cel='{cliente.Tel_cel}'," +
+                              $"email='{cliente.Email}'," +
+                              $"recado='{cliente.Recado}'," +
+                              $"cpf='{cliente.Cpf}'," +
+                              $"rg='{cliente.Rg}'," +
+                              $"uf='{cliente.Uf}'," +
+                              $"cidade='{cliente.Cidade}'," +
+                              $"bairro='{cliente.Bairro}'," +
+                              $"endereco='{cliente.Endereco}'," +
+                              $"numero='{cliente.Numero}'," +
+                              $"complemento='{cliente.Complemento}'," +
+                              $"imagem='{cliente.Imagem}'," +
+                              $"ativo={cliente.Ativo} " +
                          "WHERE id=" + cliente.Id;
             ExecutaSQL(sql);
         }
 
         public static void DeletarRegistro(int id)
         {
-            List<string> sql = new List<string>();
-            sql.Add($"Delete From agenda Where id_cliente = {id}");
-            sql.Add($"Delete From cliente Where id = {id}");
-            ExecutaSQL(sql);
+            //List<string> sql = new List<string>();
+            //sql.Add($"Delete From agenda Where id_cliente = {id}");
+            //sql.Add($"Delete From cliente Where id = {id}");
+            //ExecutaSQL(sql);
+            ExecutaSQL($"UPDATE cliente SET ativo={false} WHERE id={id}");
         }
     }
 }

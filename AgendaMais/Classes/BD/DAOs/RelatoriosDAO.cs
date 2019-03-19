@@ -28,47 +28,51 @@ namespace AgendaMais.Classes.DAOs
         public void relatorio_DRE(DateTime data_ini, DateTime data_fim)
         {
             string sql = "select " +
-                            "(case when " +
-                                "sum(case when p.controla_estoque = 't' then(case when ia.vl_venda is null then 0 else ia.vl_venda end) else 0 end) is null " +
-                            "then " +
-                                "0 " +
-                            "else " +
-                                "sum(case when p.controla_estoque = 't' then(case when ia.vl_venda is null then 0 else ia.vl_venda end) else 0 end) " +
+                            "(case when sum " +
+                                "(case when p.controla_estoque = 't' then " +
+                                    "(case when ia.vl_venda is null then 0 else ia.vl_venda end) " +
+                                "else 0 end) is null then 0 " +
+                            "else sum " +
+                                "(case when p.controla_estoque = 't' then " +
+                                    "(case when ia.vl_venda is null then 0 else ia.vl_venda end) " +
+                                "else 0 end) " +
                             "end) as receita_produto,  " +
-                            "(case when " +
-                                "sum(case when p.controla_estoque = 'f' then(case when ia.vl_venda is null then 0 else ia.vl_venda end) else 0 end) is null " +
-                            "then " +
-                                "0 " +
-                            "else " +
-                                "sum(case when p.controla_estoque = 'f' then(case when ia.vl_venda is null then 0 else ia.vl_venda end) else 0 end) " +
+                            "(case when sum" +
+                                "(case when p.controla_estoque = 'f' then " +
+                                    "(case when ia.vl_venda is null then 0 else ia.vl_venda end) " +
+                                "else 0 end) is null then 0 " +
+                            "else sum " +
+                                "(case when p.controla_estoque = 'f' then " +
+                                    "(case when ia.vl_venda is null then 0 else ia.vl_venda end) " +
+                                "else 0 end) " +
                             "end) as receita_servico, " +
-                            "(case when " +
-                                "sum(case when ia.vl_venda is null then 0 else ia.vl_venda end) is null " +
-                            "then " +
-                                "0 " +
-                            "else " +
-                                "sum(case when ia.vl_venda is null then 0 else ia.vl_venda end) " +
+                            "(case when sum " +
+                                "(case when ia.vl_venda is null then 0 else ia.vl_venda end) is null then 0 " +
+                            "else sum " +
+                                "(case when ia.vl_venda is null then 0 else ia.vl_venda end) " +
                             "end) as receita_total, " +
-                            "(case when " +
-                                "sum(case when p.controla_estoque = 't' then(case when ia.vl_custo is null then 0 else ia.vl_custo end) else 0 end) is null " +
-                            "then " +
-                                "0 " +
-                            "else " +
-                                "sum(case when p.controla_estoque = 't' then(case when ia.vl_custo is null then 0 else ia.vl_custo end) else 0 end) " +
+                            "(case when sum " +
+                                "(case when p.controla_estoque = 't' then " +
+                                    "(case when ia.vl_custo is null then 0 else ia.vl_custo end) " +
+                                "else 0 end) is null then 0 " +
+                            "else sum " +
+                                "(case when p.controla_estoque = 't' then " +
+                                    "(case when ia.vl_custo is null then 0 else ia.vl_custo end) " +
+                                "else 0 end) " +
                             "end) as custo_produto, " +
-                            "(case when " +
-                                "sum(case when p.controla_estoque = 'f' then(case when ia.vl_custo is null then 0 else ia.vl_custo end) else 0 end) is null " +
-                            "then " +
-                                "0 " +
-                            "else " +
-                                "sum(case when p.controla_estoque = 'f' then(case when ia.vl_custo is null then 0 else ia.vl_custo end) else 0 end) " +
+                            "(case when sum " +
+                                "(case when p.controla_estoque = 'f' then " +
+                                    "(case when ia.vl_custo is null then 0 else ia.vl_custo end) " +
+                                "else 0 end) is null then 0 " +
+                            "else sum " +
+                                "(case when p.controla_estoque = 'f' then " +
+                                    "(case when ia.vl_custo is null then 0 else ia.vl_custo end) " +
+                                "else 0 end) " +
                             "end) as custo_servico, " +
-                            "(case when " +
-                                "sum(case when ia.vl_custo is null then 0 else ia.vl_custo end) is null " +
-                            "then " +
-                                "0 " +
-                            "else " +
-                                "sum(case when ia.vl_custo is null then 0 else ia.vl_custo end) " +
+                            "(case when sum " +
+                                "(case when ia.vl_custo is null then 0 else ia.vl_custo end) is null then 0 " +
+                            "else sum " +
+                                "(case when ia.vl_custo is null then 0 else ia.vl_custo end) " +
                             "end) as custo_total " +
                          "from item_agenda ia " +
                          "inner " +
@@ -114,7 +118,7 @@ namespace AgendaMais.Classes.DAOs
 
         public void relatorio_FrequenciaDeAgendamentos()
         {
-            List<ClienteVO> listClienteVO = ClienteDAO.GetTodosRegistros();
+            List<ClienteVO> listClienteVO = ClienteDAO.GetTodosRegistrosAtivos();
 
             if (listClienteVO != null)
                 foreach (ClienteVO clienteVO in listClienteVO)

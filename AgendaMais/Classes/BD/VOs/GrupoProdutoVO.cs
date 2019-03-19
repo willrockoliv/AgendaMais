@@ -10,6 +10,7 @@ namespace AgendaMais.Classes.VOs
     {
         private int id;
         private string descricao;
+        private bool ativo;
 
         public int Id
         {
@@ -22,5 +23,6 @@ namespace AgendaMais.Classes.VOs
             }
         }
         public string Descricao { get => descricao; set => descricao = value; }
+        public bool Ativo { get => ativo; set => ativo = value; }
     }
 }

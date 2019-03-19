@@ -28,3 +28,5 @@ D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Update\
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Update\bin\Debug\DotNetZip.dll
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Update\bin\Debug\DotNetZip.pdb
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Update\bin\Debug\DotNetZip.xml
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Update\bin\Debug\Npgsql.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Update\bin\Debug\Mono.Security.dll

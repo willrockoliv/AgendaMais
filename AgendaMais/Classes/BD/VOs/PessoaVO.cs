@@ -24,6 +24,7 @@ namespace AgendaMais.Classes.VOs
         private string complemento;
         private string imagem;
         private string bancoDeImagens = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\BD\\imagens\\";
+        private bool ativo;
 
         string SalvaImagem(string caminhoImagem)
         {
@@ -179,5 +180,7 @@ namespace AgendaMais.Classes.VOs
                     return bancoDeImagens + imagem;
             }
         }
+
+        public bool Ativo { get => ativo; set => ativo = value; }
     }
 }
