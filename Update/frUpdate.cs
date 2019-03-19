@@ -234,6 +234,7 @@ namespace Update
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
+                this.Close();
             }
         }
     }

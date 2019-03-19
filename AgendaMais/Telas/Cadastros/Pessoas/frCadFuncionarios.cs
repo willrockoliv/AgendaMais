@@ -102,12 +102,13 @@ namespace AgendaMais
                 ok = false;
             }
 
-            foreach (FuncionarioVO funcionarioVO in listFuncionarioVO)
-                if (funcionarioVO.Nome == txtNome.Text.Trim())
-                {
-                    errorProvider.SetError(txtNome, "Ops! Já existe um funcionário cadastrado com este nome.");
-                    ok = false;
-                }
+            if (listFuncionarioVO != null)
+                foreach (FuncionarioVO funcionarioVO in listFuncionarioVO)
+                    if (funcionarioVO.Nome == txtNome.Text.Trim())
+                    {
+                        errorProvider.SetError(txtNome, "Ops! Já existe um funcionário cadastrado com este nome.");
+                        ok = false;
+                    }
 
             if (!Validacoes.ValidaCPF(mkbCPF.Text))
             {
@@ -132,7 +133,7 @@ namespace AgendaMais
         #endregion
 
         #region Load e Initialize
-        void CarregamentoInicial()
+        void CarregaCadastros()
         {
             using (new Carregando())
             {
@@ -151,14 +152,14 @@ namespace AgendaMais
         public frCadFuncionarios()
         {
             InitializeComponent();
-            CarregamentoInicial();
+            CarregaCadastros();
             if (listFuncionarioVO != null)
                 lblQtdFuncionarios.Text = $"{index + 1} de {listFuncionarioVO.Count}";
         }
 
         public frCadFuncionarios(FuncionarioVO funcionarioVO)
         {
-            CarregamentoInicial();
+            CarregaCadastros();
             InitializeComponent();
             ExibeFuncionario(funcionarioVO);
             for (int i = 0; i < listFuncionarioVO.Count; i++)
@@ -429,6 +430,7 @@ namespace AgendaMais
         {
             frPesquisa frPesquisa = new frPesquisa(EnumPesquisa.funcionario);
             frPesquisa.ShowDialog();
+            CarregaCadastros();
             if (frPesquisa.funcionarioVO != null)
                 for (int i = 0; i < listFuncionarioVO.Count; i++)
                     if (frPesquisa.funcionarioVO.Nome == listFuncionarioVO[i].Nome)

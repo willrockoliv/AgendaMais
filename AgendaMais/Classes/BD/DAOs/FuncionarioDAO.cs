@@ -97,7 +97,8 @@ namespace AgendaMais.Classes
                             "endereco, " +
                             "numero, " +
                             "complemento," +
-                            "imagem) " +
+                            "imagem," +
+                            "ativo) " +
                          "values(" +
                             $"'{funcionario.Nome}'," +
                             $"'{funcionario.Tel_cel}'," +

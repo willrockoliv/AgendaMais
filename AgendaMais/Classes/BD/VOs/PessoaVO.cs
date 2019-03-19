@@ -24,7 +24,7 @@ namespace AgendaMais.Classes.VOs
         private string complemento;
         private string imagem;
         private string bancoDeImagens = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\BD\\imagens\\";
-        private bool ativo;
+        private bool ativo = true;
 
         string SalvaImagem(string caminhoImagem)
         {

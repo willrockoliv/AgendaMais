@@ -73,7 +73,7 @@
             this.lblVersao.Name = "lblVersao";
             this.lblVersao.Size = new System.Drawing.Size(107, 22);
             this.lblVersao.TabIndex = 12;
-            this.lblVersao.Text = "Versão 2.0";
+            this.lblVersao.Text = "Versão 2.1";
             // 
             // panEntrar
             // 

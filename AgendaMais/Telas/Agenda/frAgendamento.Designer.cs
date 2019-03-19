@@ -133,6 +133,7 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtTotalConclusao = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.ckbConfirmado = new System.Windows.Forms.CheckBox();
             this.panCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagemCliente)).BeginInit();
             this.panProximoCliente.SuspendLayout();
@@ -1257,6 +1258,7 @@
             // 
             this.panConclusao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panConclusao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.panConclusao.Controls.Add(this.ckbConfirmado);
             this.panConclusao.Controls.Add(this.flpConclusao);
             this.panConclusao.Controls.Add(this.panConcluir);
             this.panConclusao.Controls.Add(this.panel8);
@@ -1534,6 +1536,21 @@
             this.label23.TabIndex = 5;
             this.label23.Text = "TOTAL:";
             // 
+            // ckbConfirmado
+            // 
+            this.ckbConfirmado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbConfirmado.AutoSize = true;
+            this.ckbConfirmado.BackColor = System.Drawing.Color.Transparent;
+            this.ckbConfirmado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbConfirmado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbConfirmado.ForeColor = System.Drawing.Color.White;
+            this.ckbConfirmado.Location = new System.Drawing.Point(924, 359);
+            this.ckbConfirmado.Name = "ckbConfirmado";
+            this.ckbConfirmado.Size = new System.Drawing.Size(145, 25);
+            this.ckbConfirmado.TabIndex = 56;
+            this.ckbConfirmado.Text = "CONFIRMADO";
+            this.ckbConfirmado.UseVisualStyleBackColor = false;
+            // 
             // frAgendamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1545,14 +1562,14 @@
             this.Controls.Add(this.ptbClientes);
             this.Controls.Add(this.ptbAgenda);
             this.Controls.Add(this.ptbFinanceiro);
-            this.Controls.Add(this.panCliente);
-            this.Controls.Add(this.panAgendamento);
             this.Controls.Add(this.panConclusao);
             this.Controls.Add(this.panItensEServicos);
             this.Controls.Add(this.panClienteMenu);
             this.Controls.Add(this.panAgendamentoMenu);
             this.Controls.Add(this.panFuncionarioMenu);
             this.Controls.Add(this.panConclusaoMenu);
+            this.Controls.Add(this.panCliente);
+            this.Controls.Add(this.panAgendamento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frAgendamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1597,6 +1614,7 @@
             this.panProximoItensEServicos.ResumeLayout(false);
             this.panProximoItensEServicos.PerformLayout();
             this.panConclusao.ResumeLayout(false);
+            this.panConclusao.PerformLayout();
             this.flpConclusao.ResumeLayout(false);
             this.flpConclusao.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1723,5 +1741,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.MaskedTextBox mbkTelCelConclusao;
         private System.Windows.Forms.PictureBox ptbImagemCliente;
+        private System.Windows.Forms.CheckBox ckbConfirmado;
     }
 }

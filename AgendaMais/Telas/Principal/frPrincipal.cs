@@ -15,7 +15,7 @@ namespace AgendaMais
         #region Variáveis Globais
         public static string mainPath = Path.GetDirectoryName(Application.ExecutablePath);
         MetodosAgenda metodosAgenda = new MetodosAgenda();
-        enum EnumMenu { cadastros, relatorios, configuracoes, nenhum };
+        enum EnumMenu { cadastros, relatorios, configuracoes, notificacao, nenhum };
         #endregion
 
         #region Métodos
@@ -26,24 +26,35 @@ namespace AgendaMais
                 panMenuCadastros.Visible = !panMenuCadastros.Visible;
                 panMenuRelatorios.Visible = false;
                 panMenuConfiguracoes.Visible = false;
+                panMenuNotificacao.Visible = false;
             }
             else if (enumMenu == EnumMenu.configuracoes)
             {
                 panMenuCadastros.Visible = false;
                 panMenuRelatorios.Visible = false;
                 panMenuConfiguracoes.Visible = !panMenuConfiguracoes.Visible;
+                panMenuNotificacao.Visible = false;
             }
             else if (enumMenu == EnumMenu.relatorios)
             {
                 panMenuCadastros.Visible = false;
                 panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
                 panMenuConfiguracoes.Visible = false;
+                panMenuNotificacao.Visible = false;
             }
             else if (enumMenu == EnumMenu.nenhum)
             {
                 panMenuCadastros.Visible = false;
                 panMenuRelatorios.Visible = false;
                 panMenuConfiguracoes.Visible = false;
+                panMenuNotificacao.Visible = false;
+            }
+            else if(enumMenu == EnumMenu.notificacao)
+            {
+                panMenuCadastros.Visible = false;
+                panMenuRelatorios.Visible = false;
+                panMenuConfiguracoes.Visible = false;
+                panMenuNotificacao.Visible = !panMenuNotificacao.Visible;
             }
         }
         #endregion
@@ -80,72 +91,30 @@ namespace AgendaMais
         #endregion
 
         #region Eventos
+
         #region Menu
 
-        #region panRelatorios
-        private void panRelatorios_Click(object sender, EventArgs e)
+        #region Notificacao
+
+        private void panNotificacao_Click(object sender, EventArgs e)
         {
-            LayoutMenu(EnumMenu.relatorios);
+            LayoutMenu(EnumMenu.notificacao);
         }
 
-        private void panRelatorios_MouseEnter(object sender, EventArgs e)
+        private void panNotificacao_MouseEnter(object sender, EventArgs e)
         {
-            panRelatorios.BackColor = Color.FromArgb(170, 16, 41, 99);
-            lblRelatorios.ForeColor = Color.PowderBlue;
+            panNotificacao.BackColor = Color.FromArgb(170, 16, 41, 99);
         }
 
-        private void panRelatorios_MouseLeave(object sender, EventArgs e)
+        private void panNotificacao_MouseLeave(object sender, EventArgs e)
         {
-            panRelatorios.BackColor = Color.FromArgb(0, 16, 41, 99);
-            lblRelatorios.ForeColor = Color.White;
+            panNotificacao.BackColor = Color.FromArgb(0, 16, 41, 99);
         }
-
-        #region panFreqAgendamento
-        private void panFreqAgendamento_Click(object sender, EventArgs e)
-        {
-            frFrequenciaDeAgendamento frFrequenciaDeAgendamento = new frFrequenciaDeAgendamento();
-            panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
-            frFrequenciaDeAgendamento.Show();
-        }
-
-        private void panFreqAgendamento_MouseEnter(object sender, EventArgs e)
-        {
-            panFreqAgendamento.BackColor = Color.FromArgb(170, 16, 41, 99);
-            lblFreqAgendamento.ForeColor = Color.PowderBlue;
-        }
-
-        private void panFreqAgendamento_MouseLeave(object sender, EventArgs e)
-        {
-            panFreqAgendamento.BackColor = Color.FromArgb(0, 16, 41, 99);
-            lblFreqAgendamento.ForeColor = Color.White;
-        }
-        #endregion
-
-        #region panDRE
-        private void panDRE_Click(object sender, EventArgs e)
-        {
-            frDRE frDRE = new frDRE();
-            panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
-            frDRE.Show();
-        }
-
-        private void panDRE_MouseEnter(object sender, EventArgs e)
-        {
-            panDRE.BackColor = Color.FromArgb(170, 16, 41, 99);
-            lblDRE.ForeColor = Color.PowderBlue;
-        }
-
-        private void panDRE_MouseLeave(object sender, EventArgs e)
-        {
-            panDRE.BackColor = Color.FromArgb(0, 16, 41, 99);
-            lblDRE.ForeColor = Color.White;
-        }
-        #endregion
 
         #endregion
 
         #region panAgenda
-        private void panAgenda_MouseHover(object sender, EventArgs e)
+        private void panAgenda_MouseEnter(object sender, EventArgs e)
         {
             panAgenda.BackColor = Color.FromArgb(170, 16, 41, 99);
             lblAgenda.ForeColor = Color.PowderBlue;
@@ -246,11 +215,72 @@ namespace AgendaMais
             lblCadProdServ.ForeColor = Color.White;
         }
         #endregion
+        #endregion
+
+        #region panRelatorios
+        private void panRelatorios_Click(object sender, EventArgs e)
+        {
+            LayoutMenu(EnumMenu.relatorios);
+        }
+
+        private void panRelatorios_MouseEnter(object sender, EventArgs e)
+        {
+            panRelatorios.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblRelatorios.ForeColor = Color.PowderBlue;
+        }
+
+        private void panRelatorios_MouseLeave(object sender, EventArgs e)
+        {
+            panRelatorios.BackColor = Color.FromArgb(0, 16, 41, 99);
+            lblRelatorios.ForeColor = Color.White;
+        }
+
+        #region panFreqAgendamento
+        private void panFreqAgendamento_Click(object sender, EventArgs e)
+        {
+            frFrequenciaDeAgendamento frFrequenciaDeAgendamento = new frFrequenciaDeAgendamento();
+            panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
+            frFrequenciaDeAgendamento.Show();
+        }
+
+        private void panFreqAgendamento_MouseEnter(object sender, EventArgs e)
+        {
+            panFreqAgendamento.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblFreqAgendamento.ForeColor = Color.PowderBlue;
+        }
+
+        private void panFreqAgendamento_MouseLeave(object sender, EventArgs e)
+        {
+            panFreqAgendamento.BackColor = Color.FromArgb(0, 16, 41, 99);
+            lblFreqAgendamento.ForeColor = Color.White;
+        }
+        #endregion
+
+        #region panDRE
+        private void panDRE_Click(object sender, EventArgs e)
+        {
+            frDRE frDRE = new frDRE();
+            panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
+            frDRE.Show();
+        }
+
+        private void panDRE_MouseEnter(object sender, EventArgs e)
+        {
+            panDRE.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblDRE.ForeColor = Color.PowderBlue;
+        }
+
+        private void panDRE_MouseLeave(object sender, EventArgs e)
+        {
+            panDRE.BackColor = Color.FromArgb(0, 16, 41, 99);
+            lblDRE.ForeColor = Color.White;
+        }
+        #endregion
 
         #endregion
 
         #region panConfiguracoes
-        private void panConfiguracoes_MouseHover(object sender, EventArgs e)
+        private void panConfiguracoes_MouseEnter(object sender, EventArgs e)
         {
             panConfiguracoes.BackColor = Color.FromArgb(170, 16, 41, 99);
             lblConfiguracoes.ForeColor = Color.PowderBlue;
@@ -300,7 +330,7 @@ namespace AgendaMais
             frFrequenciaDeAgendamento.Show();
         }
 
-        private void ptbRelatorios_MouseHover(object sender, EventArgs e)
+        private void ptbRelatorios_MouseEnter(object sender, EventArgs e)
         {
             ptbRelatorios.Image = Resources.Relatorios;
         }
@@ -333,7 +363,7 @@ namespace AgendaMais
             }
         }
 
-        private void ptbAgendamento_MouseHover(object sender, EventArgs e)
+        private void ptbAgendamento_MouseEnter(object sender, EventArgs e)
         {
             ptbAgendamento.Image = Resources.calendary;
         }
@@ -351,7 +381,7 @@ namespace AgendaMais
             frCadCliente.ShowDialog();
         }
 
-        private void ptbClientes_MouseHover(object sender, EventArgs e)
+        private void ptbClientes_MouseEnter(object sender, EventArgs e)
         {
             ptbClientes.Image = Resources.peaple__4_;
         }
@@ -366,8 +396,7 @@ namespace AgendaMais
 
         private void frPrincipal_Click(object sender, EventArgs e)
         {
-            panMenuRelatorios.Visible = false;
-            panMenuCadastros.Visible = false;
+            LayoutMenu(EnumMenu.nenhum);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -375,10 +404,6 @@ namespace AgendaMais
             metodosAgenda.AtualizaStatus(flpAgendamentos);
         }
 
-
-
         #endregion
-
-        
     }
 }

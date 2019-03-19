@@ -523,6 +523,26 @@ namespace AgendaMais.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notificacao1 {
+            get {
+                object obj = ResourceManager.GetObject("notificacao1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notificacao2 {
+            get {
+                object obj = ResourceManager.GetObject("notificacao2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pan_claro_1 {
             get {
                 object obj = ResourceManager.GetObject("pan_claro_1", resourceCulture);

@@ -776,7 +776,10 @@ namespace AgendaMais
                         agendaVO.Id_funcionario = funcionarioVOSelecionado.Id;
                     agendaVO.Data_hora = Convert.ToDateTime(dtpData.Text + " " + mkbHorario.Text);
                     agendaVO.Obs = "";
-                    agendaVO.Status = 'P';
+                    if (ckbConfirmado.Checked)
+                        agendaVO.Status = 'C';
+                    else
+                        agendaVO.Status = 'P';
                     agendaVO.Itens = metodosAgendamento.listItens;
                     #endregion
 
@@ -803,12 +806,11 @@ namespace AgendaMais
             panConcluir.BackgroundImage = Properties.Resources.panAgendamento_claro;
         }
 
-        #endregion
 
         #endregion
 
         #endregion
 
-
+        #endregion
     }
 }

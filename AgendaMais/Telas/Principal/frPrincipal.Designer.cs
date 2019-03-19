@@ -59,6 +59,7 @@
             this.panAgenda = new System.Windows.Forms.Panel();
             this.lblAgenda = new System.Windows.Forms.Label();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.panNotificacao = new System.Windows.Forms.Panel();
             this.panDRE = new System.Windows.Forms.Panel();
             this.lblDRE = new System.Windows.Forms.Label();
             this.panFreqAgendamento = new System.Windows.Forms.Panel();
@@ -75,6 +76,9 @@
             this.panMenuConfiguracoes = new System.Windows.Forms.Panel();
             this.panAlterarSenha = new System.Windows.Forms.Panel();
             this.lblAlterarSenha = new System.Windows.Forms.Label();
+            this.panMenuNotificacao = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).BeginInit();
@@ -98,6 +102,8 @@
             this.panCadClientes.SuspendLayout();
             this.panMenuConfiguracoes.SuspendLayout();
             this.panAlterarSenha.SuspendLayout();
+            this.panMenuNotificacao.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ptbRelatorios
@@ -113,8 +119,8 @@
             this.ptbRelatorios.TabIndex = 3;
             this.ptbRelatorios.TabStop = false;
             this.ptbRelatorios.Click += new System.EventHandler(this.ptbRelatorios_Click);
+            this.ptbRelatorios.MouseEnter += new System.EventHandler(this.ptbRelatorios_MouseEnter);
             this.ptbRelatorios.MouseLeave += new System.EventHandler(this.ptbRelatorios_MouseLeave);
-            this.ptbRelatorios.MouseHover += new System.EventHandler(this.ptbRelatorios_MouseHover);
             // 
             // ptbClientes
             // 
@@ -129,8 +135,8 @@
             this.ptbClientes.TabIndex = 2;
             this.ptbClientes.TabStop = false;
             this.ptbClientes.Click += new System.EventHandler(this.ptbClientes_Click);
+            this.ptbClientes.MouseEnter += new System.EventHandler(this.ptbClientes_MouseEnter);
             this.ptbClientes.MouseLeave += new System.EventHandler(this.ptbClientes_MouseLeave);
-            this.ptbClientes.MouseHover += new System.EventHandler(this.ptbClientes_MouseHover);
             // 
             // ptbAgendamento
             // 
@@ -145,8 +151,8 @@
             this.ptbAgendamento.TabIndex = 1;
             this.ptbAgendamento.TabStop = false;
             this.ptbAgendamento.Click += new System.EventHandler(this.ptbAgendamento_Click);
+            this.ptbAgendamento.MouseEnter += new System.EventHandler(this.ptbAgendamento_MouseEnter);
             this.ptbAgendamento.MouseLeave += new System.EventHandler(this.ptbAgendamento_MouseLeave);
-            this.ptbAgendamento.MouseHover += new System.EventHandler(this.ptbAgendamento_MouseHover);
             // 
             // label5
             // 
@@ -383,13 +389,13 @@
             this.panConfiguracoes.BackColor = System.Drawing.Color.Transparent;
             this.panConfiguracoes.Controls.Add(this.lblConfiguracoes);
             this.panConfiguracoes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panConfiguracoes.Location = new System.Drawing.Point(954, 3);
+            this.panConfiguracoes.Location = new System.Drawing.Point(940, 3);
             this.panConfiguracoes.Name = "panConfiguracoes";
-            this.panConfiguracoes.Size = new System.Drawing.Size(311, 28);
+            this.panConfiguracoes.Size = new System.Drawing.Size(295, 28);
             this.panConfiguracoes.TabIndex = 7;
             this.panConfiguracoes.Click += new System.EventHandler(this.lblConfiguracoes_Click);
+            this.panConfiguracoes.MouseEnter += new System.EventHandler(this.panConfiguracoes_MouseEnter);
             this.panConfiguracoes.MouseLeave += new System.EventHandler(this.panConfiguracoes_MouseLeave);
-            this.panConfiguracoes.MouseHover += new System.EventHandler(this.panConfiguracoes_MouseHover);
             // 
             // lblConfiguracoes
             // 
@@ -399,24 +405,24 @@
             this.lblConfiguracoes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblConfiguracoes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfiguracoes.ForeColor = System.Drawing.Color.White;
-            this.lblConfiguracoes.Location = new System.Drawing.Point(67, 3);
+            this.lblConfiguracoes.Location = new System.Drawing.Point(59, 3);
             this.lblConfiguracoes.Name = "lblConfiguracoes";
             this.lblConfiguracoes.Size = new System.Drawing.Size(177, 22);
             this.lblConfiguracoes.TabIndex = 3;
             this.lblConfiguracoes.Text = "CONFIGURAÇÕES";
             this.lblConfiguracoes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblConfiguracoes.Click += new System.EventHandler(this.lblConfiguracoes_Click);
+            this.lblConfiguracoes.MouseEnter += new System.EventHandler(this.panConfiguracoes_MouseEnter);
             this.lblConfiguracoes.MouseLeave += new System.EventHandler(this.panConfiguracoes_MouseLeave);
-            this.lblConfiguracoes.MouseHover += new System.EventHandler(this.panConfiguracoes_MouseHover);
             // 
             // panRelatorios
             // 
             this.panRelatorios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
             this.panRelatorios.Controls.Add(this.lblRelatorios);
             this.panRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panRelatorios.Location = new System.Drawing.Point(637, 3);
+            this.panRelatorios.Location = new System.Drawing.Point(639, 3);
             this.panRelatorios.Name = "panRelatorios";
-            this.panRelatorios.Size = new System.Drawing.Size(311, 28);
+            this.panRelatorios.Size = new System.Drawing.Size(295, 28);
             this.panRelatorios.TabIndex = 4;
             this.panRelatorios.Click += new System.EventHandler(this.panRelatorios_Click);
             this.panRelatorios.MouseEnter += new System.EventHandler(this.panRelatorios_MouseEnter);
@@ -430,7 +436,7 @@
             this.lblRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRelatorios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRelatorios.ForeColor = System.Drawing.Color.White;
-            this.lblRelatorios.Location = new System.Drawing.Point(93, 3);
+            this.lblRelatorios.Location = new System.Drawing.Point(85, 3);
             this.lblRelatorios.Name = "lblRelatorios";
             this.lblRelatorios.Size = new System.Drawing.Size(124, 22);
             this.lblRelatorios.TabIndex = 0;
@@ -446,9 +452,9 @@
             this.panCadastros.BackColor = System.Drawing.Color.Transparent;
             this.panCadastros.Controls.Add(this.lblCadastros);
             this.panCadastros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panCadastros.Location = new System.Drawing.Point(320, 3);
+            this.panCadastros.Location = new System.Drawing.Point(338, 3);
             this.panCadastros.Name = "panCadastros";
-            this.panCadastros.Size = new System.Drawing.Size(311, 28);
+            this.panCadastros.Size = new System.Drawing.Size(295, 28);
             this.panCadastros.TabIndex = 6;
             this.panCadastros.Click += new System.EventHandler(this.Cadastros_Click);
             this.panCadastros.MouseEnter += new System.EventHandler(this.panCadastros_MouseEnter);
@@ -462,7 +468,7 @@
             this.lblCadastros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCadastros.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadastros.ForeColor = System.Drawing.Color.White;
-            this.lblCadastros.Location = new System.Drawing.Point(94, 3);
+            this.lblCadastros.Location = new System.Drawing.Point(86, 3);
             this.lblCadastros.Name = "lblCadastros";
             this.lblCadastros.Size = new System.Drawing.Size(124, 22);
             this.lblCadastros.TabIndex = 2;
@@ -477,13 +483,13 @@
             this.panAgenda.BackColor = System.Drawing.Color.Transparent;
             this.panAgenda.Controls.Add(this.lblAgenda);
             this.panAgenda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panAgenda.Location = new System.Drawing.Point(3, 3);
+            this.panAgenda.Location = new System.Drawing.Point(37, 3);
             this.panAgenda.Name = "panAgenda";
-            this.panAgenda.Size = new System.Drawing.Size(311, 28);
+            this.panAgenda.Size = new System.Drawing.Size(295, 28);
             this.panAgenda.TabIndex = 5;
             this.panAgenda.Click += new System.EventHandler(this.panAgenda_Click);
+            this.panAgenda.MouseEnter += new System.EventHandler(this.panAgenda_MouseEnter);
             this.panAgenda.MouseLeave += new System.EventHandler(this.panAgenda_MouseLeave);
-            this.panAgenda.MouseHover += new System.EventHandler(this.panAgenda_MouseHover);
             // 
             // lblAgenda
             // 
@@ -493,15 +499,15 @@
             this.lblAgenda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAgenda.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgenda.ForeColor = System.Drawing.Color.White;
-            this.lblAgenda.Location = new System.Drawing.Point(108, 3);
+            this.lblAgenda.Location = new System.Drawing.Point(100, 3);
             this.lblAgenda.Name = "lblAgenda";
             this.lblAgenda.Size = new System.Drawing.Size(95, 22);
             this.lblAgenda.TabIndex = 1;
             this.lblAgenda.Text = "AGENDA";
             this.lblAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblAgenda.Click += new System.EventHandler(this.panAgenda_Click);
+            this.lblAgenda.MouseEnter += new System.EventHandler(this.panAgenda_MouseEnter);
             this.lblAgenda.MouseLeave += new System.EventHandler(this.panAgenda_MouseLeave);
-            this.lblAgenda.MouseHover += new System.EventHandler(this.panAgenda_MouseHover);
             // 
             // flpMenu
             // 
@@ -509,6 +515,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpMenu.AutoSize = true;
             this.flpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
+            this.flpMenu.Controls.Add(this.panNotificacao);
             this.flpMenu.Controls.Add(this.panAgenda);
             this.flpMenu.Controls.Add(this.panCadastros);
             this.flpMenu.Controls.Add(this.panRelatorios);
@@ -518,6 +525,20 @@
             this.flpMenu.Size = new System.Drawing.Size(1268, 34);
             this.flpMenu.TabIndex = 7;
             // 
+            // panNotificacao
+            // 
+            this.panNotificacao.BackColor = System.Drawing.Color.Transparent;
+            this.panNotificacao.BackgroundImage = global::AgendaMais.Properties.Resources.notificacao1;
+            this.panNotificacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panNotificacao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panNotificacao.Location = new System.Drawing.Point(3, 3);
+            this.panNotificacao.Name = "panNotificacao";
+            this.panNotificacao.Size = new System.Drawing.Size(28, 28);
+            this.panNotificacao.TabIndex = 14;
+            this.panNotificacao.Click += new System.EventHandler(this.panNotificacao_Click);
+            this.panNotificacao.MouseEnter += new System.EventHandler(this.panNotificacao_MouseEnter);
+            this.panNotificacao.MouseLeave += new System.EventHandler(this.panNotificacao_MouseLeave);
+            // 
             // panDRE
             // 
             this.panDRE.BackColor = System.Drawing.Color.Transparent;
@@ -525,7 +546,7 @@
             this.panDRE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panDRE.Location = new System.Drawing.Point(0, 29);
             this.panDRE.Name = "panDRE";
-            this.panDRE.Size = new System.Drawing.Size(311, 28);
+            this.panDRE.Size = new System.Drawing.Size(292, 28);
             this.panDRE.TabIndex = 9;
             this.panDRE.Click += new System.EventHandler(this.panDRE_Click);
             this.panDRE.MouseEnter += new System.EventHandler(this.panDRE_MouseEnter);
@@ -539,7 +560,7 @@
             this.lblDRE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblDRE.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDRE.ForeColor = System.Drawing.Color.White;
-            this.lblDRE.Location = new System.Drawing.Point(5, 4);
+            this.lblDRE.Location = new System.Drawing.Point(3, 4);
             this.lblDRE.Name = "lblDRE";
             this.lblDRE.Size = new System.Drawing.Size(216, 20);
             this.lblDRE.TabIndex = 1;
@@ -556,7 +577,7 @@
             this.panFreqAgendamento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panFreqAgendamento.Location = new System.Drawing.Point(0, 1);
             this.panFreqAgendamento.Name = "panFreqAgendamento";
-            this.panFreqAgendamento.Size = new System.Drawing.Size(311, 28);
+            this.panFreqAgendamento.Size = new System.Drawing.Size(292, 28);
             this.panFreqAgendamento.TabIndex = 8;
             this.panFreqAgendamento.Click += new System.EventHandler(this.panFreqAgendamento_Click);
             this.panFreqAgendamento.MouseEnter += new System.EventHandler(this.panFreqAgendamento_MouseEnter);
@@ -570,7 +591,7 @@
             this.lblFreqAgendamento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFreqAgendamento.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFreqAgendamento.ForeColor = System.Drawing.Color.White;
-            this.lblFreqAgendamento.Location = new System.Drawing.Point(5, 3);
+            this.lblFreqAgendamento.Location = new System.Drawing.Point(3, 3);
             this.lblFreqAgendamento.Name = "lblFreqAgendamento";
             this.lblFreqAgendamento.Size = new System.Drawing.Size(227, 20);
             this.lblFreqAgendamento.TabIndex = 0;
@@ -590,9 +611,9 @@
             this.panMenuRelatorios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
             this.panMenuRelatorios.Controls.Add(this.panDRE);
             this.panMenuRelatorios.Controls.Add(this.panFreqAgendamento);
-            this.panMenuRelatorios.Location = new System.Drawing.Point(636, 40);
+            this.panMenuRelatorios.Location = new System.Drawing.Point(638, 40);
             this.panMenuRelatorios.Name = "panMenuRelatorios";
-            this.panMenuRelatorios.Size = new System.Drawing.Size(311, 58);
+            this.panMenuRelatorios.Size = new System.Drawing.Size(295, 58);
             this.panMenuRelatorios.TabIndex = 11;
             this.panMenuRelatorios.Visible = false;
             // 
@@ -602,9 +623,9 @@
             this.panMenuCadastros.Controls.Add(this.panCadProdServ);
             this.panMenuCadastros.Controls.Add(this.panCadFuncionarios);
             this.panMenuCadastros.Controls.Add(this.panCadClientes);
-            this.panMenuCadastros.Location = new System.Drawing.Point(319, 40);
+            this.panMenuCadastros.Location = new System.Drawing.Point(337, 40);
             this.panMenuCadastros.Name = "panMenuCadastros";
-            this.panMenuCadastros.Size = new System.Drawing.Size(311, 87);
+            this.panMenuCadastros.Size = new System.Drawing.Size(295, 87);
             this.panMenuCadastros.TabIndex = 12;
             this.panMenuCadastros.Visible = false;
             // 
@@ -615,7 +636,7 @@
             this.panCadProdServ.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panCadProdServ.Location = new System.Drawing.Point(0, 59);
             this.panCadProdServ.Name = "panCadProdServ";
-            this.panCadProdServ.Size = new System.Drawing.Size(311, 28);
+            this.panCadProdServ.Size = new System.Drawing.Size(295, 28);
             this.panCadProdServ.TabIndex = 10;
             this.panCadProdServ.Click += new System.EventHandler(this.panCadProdServ_Click);
             this.panCadProdServ.MouseEnter += new System.EventHandler(this.panCadProdServ_MouseEnter);
@@ -629,7 +650,7 @@
             this.lblCadProdServ.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCadProdServ.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadProdServ.ForeColor = System.Drawing.Color.White;
-            this.lblCadProdServ.Location = new System.Drawing.Point(5, 4);
+            this.lblCadProdServ.Location = new System.Drawing.Point(3, 4);
             this.lblCadProdServ.Name = "lblCadProdServ";
             this.lblCadProdServ.Size = new System.Drawing.Size(152, 20);
             this.lblCadProdServ.TabIndex = 1;
@@ -646,7 +667,7 @@
             this.panCadFuncionarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panCadFuncionarios.Location = new System.Drawing.Point(0, 29);
             this.panCadFuncionarios.Name = "panCadFuncionarios";
-            this.panCadFuncionarios.Size = new System.Drawing.Size(311, 28);
+            this.panCadFuncionarios.Size = new System.Drawing.Size(295, 28);
             this.panCadFuncionarios.TabIndex = 9;
             this.panCadFuncionarios.Click += new System.EventHandler(this.panCadFuncionarios_Click);
             this.panCadFuncionarios.MouseEnter += new System.EventHandler(this.panCadFuncionarios_MouseEnter);
@@ -660,7 +681,7 @@
             this.lblCadFuncionarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCadFuncionarios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadFuncionarios.ForeColor = System.Drawing.Color.White;
-            this.lblCadFuncionarios.Location = new System.Drawing.Point(5, 4);
+            this.lblCadFuncionarios.Location = new System.Drawing.Point(3, 4);
             this.lblCadFuncionarios.Name = "lblCadFuncionarios";
             this.lblCadFuncionarios.Size = new System.Drawing.Size(100, 20);
             this.lblCadFuncionarios.TabIndex = 1;
@@ -677,7 +698,7 @@
             this.panCadClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panCadClientes.Location = new System.Drawing.Point(0, 1);
             this.panCadClientes.Name = "panCadClientes";
-            this.panCadClientes.Size = new System.Drawing.Size(311, 28);
+            this.panCadClientes.Size = new System.Drawing.Size(295, 28);
             this.panCadClientes.TabIndex = 8;
             this.panCadClientes.Click += new System.EventHandler(this.panCadClientes_Click);
             this.panCadClientes.MouseEnter += new System.EventHandler(this.panCadClientes_MouseEnter);
@@ -691,7 +712,7 @@
             this.lblCadClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCadClientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadClientes.ForeColor = System.Drawing.Color.White;
-            this.lblCadClientes.Location = new System.Drawing.Point(5, 3);
+            this.lblCadClientes.Location = new System.Drawing.Point(3, 3);
             this.lblCadClientes.Name = "lblCadClientes";
             this.lblCadClientes.Size = new System.Drawing.Size(67, 20);
             this.lblCadClientes.TabIndex = 0;
@@ -705,9 +726,9 @@
             // 
             this.panMenuConfiguracoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
             this.panMenuConfiguracoes.Controls.Add(this.panAlterarSenha);
-            this.panMenuConfiguracoes.Location = new System.Drawing.Point(953, 40);
+            this.panMenuConfiguracoes.Location = new System.Drawing.Point(939, 40);
             this.panMenuConfiguracoes.Name = "panMenuConfiguracoes";
-            this.panMenuConfiguracoes.Size = new System.Drawing.Size(311, 29);
+            this.panMenuConfiguracoes.Size = new System.Drawing.Size(295, 29);
             this.panMenuConfiguracoes.TabIndex = 13;
             this.panMenuConfiguracoes.Visible = false;
             // 
@@ -716,9 +737,9 @@
             this.panAlterarSenha.BackColor = System.Drawing.Color.Transparent;
             this.panAlterarSenha.Controls.Add(this.lblAlterarSenha);
             this.panAlterarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panAlterarSenha.Location = new System.Drawing.Point(0, 1);
+            this.panAlterarSenha.Location = new System.Drawing.Point(3, 1);
             this.panAlterarSenha.Name = "panAlterarSenha";
-            this.panAlterarSenha.Size = new System.Drawing.Size(311, 28);
+            this.panAlterarSenha.Size = new System.Drawing.Size(292, 28);
             this.panAlterarSenha.TabIndex = 8;
             this.panAlterarSenha.Click += new System.EventHandler(this.panAlterarSenha_Click);
             this.panAlterarSenha.MouseEnter += new System.EventHandler(this.panAlterarSenha_MouseEnter);
@@ -732,7 +753,7 @@
             this.lblAlterarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAlterarSenha.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlterarSenha.ForeColor = System.Drawing.Color.White;
-            this.lblAlterarSenha.Location = new System.Drawing.Point(5, 3);
+            this.lblAlterarSenha.Location = new System.Drawing.Point(-4, 3);
             this.lblAlterarSenha.Name = "lblAlterarSenha";
             this.lblAlterarSenha.Size = new System.Drawing.Size(106, 20);
             this.lblAlterarSenha.TabIndex = 0;
@@ -741,6 +762,41 @@
             this.lblAlterarSenha.Click += new System.EventHandler(this.panAlterarSenha_Click);
             this.lblAlterarSenha.MouseEnter += new System.EventHandler(this.panAlterarSenha_MouseEnter);
             this.lblAlterarSenha.MouseLeave += new System.EventHandler(this.panAlterarSenha_MouseLeave);
+            // 
+            // panMenuNotificacao
+            // 
+            this.panMenuNotificacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
+            this.panMenuNotificacao.Controls.Add(this.panel3);
+            this.panMenuNotificacao.Location = new System.Drawing.Point(-1, 40);
+            this.panMenuNotificacao.Name = "panMenuNotificacao";
+            this.panMenuNotificacao.Size = new System.Drawing.Size(197, 153);
+            this.panMenuNotificacao.TabIndex = 13;
+            this.panMenuNotificacao.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel3.Location = new System.Drawing.Point(3, 43);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(191, 49);
+            this.panel3.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(13, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 40);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Não há notificações \r\nno momento.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frPrincipal
             // 
@@ -751,6 +807,7 @@
             this.BackgroundImage = global::AgendaMais.Properties.Resources.Imagem2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 716);
+            this.Controls.Add(this.panMenuNotificacao);
             this.Controls.Add(this.panMenuConfiguracoes);
             this.Controls.Add(this.panMenuCadastros);
             this.Controls.Add(this.panMenuRelatorios);
@@ -803,6 +860,9 @@
             this.panMenuConfiguracoes.ResumeLayout(false);
             this.panAlterarSenha.ResumeLayout(false);
             this.panAlterarSenha.PerformLayout();
+            this.panMenuNotificacao.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -854,6 +914,10 @@
         private System.Windows.Forms.Panel panMenuConfiguracoes;
         private System.Windows.Forms.Panel panAlterarSenha;
         private System.Windows.Forms.Label lblAlterarSenha;
+        private System.Windows.Forms.Panel panNotificacao;
+        private System.Windows.Forms.Panel panMenuNotificacao;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
     }
 }
 

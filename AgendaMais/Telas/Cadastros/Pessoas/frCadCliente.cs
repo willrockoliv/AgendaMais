@@ -95,12 +95,13 @@ namespace AgendaMais
                 ok = false;
             }
 
-            foreach (ClienteVO clienteVO in listClienteVO)
-                if (clienteVO.Nome == txtNome.Text.Trim())
-                {
-                    errorProvider.SetError(txtNome, "Ops! Já existe um cliente cadastrado com este nome.");
-                    ok = false;
-                }
+            if (listClienteVO != null)
+                foreach (ClienteVO clienteVO in listClienteVO)
+                    if (clienteVO.Nome == txtNome.Text.Trim())
+                    {
+                        errorProvider.SetError(txtNome, "Ops! Já existe um cliente cadastrado com este nome.");
+                        ok = false;
+                    }
 
             if (!Validacoes.ValidaCPF(mkbCPF.Text))
             {
@@ -125,7 +126,7 @@ namespace AgendaMais
         #endregion
 
         #region Load e Initialize
-        void CarregamentoInicial()
+        void CarregaCadastros()
         {
             using (new Carregando())
             {
@@ -144,14 +145,14 @@ namespace AgendaMais
         public frCadCliente()
         {
             InitializeComponent();
-            CarregamentoInicial();
+            CarregaCadastros();
             if (listClienteVO != null)
                 lblQtdCliente.Text = $"{index + 1} de {listClienteVO.Count}";
         }
 
         public frCadCliente(ClienteVO clienteVO)
         {
-            CarregamentoInicial();
+            CarregaCadastros();
             InitializeComponent();
             ExibeCliente(clienteVO);
             for (int i = 0; i < listClienteVO.Count; i++)
@@ -423,6 +424,7 @@ namespace AgendaMais
         {
             frPesquisa frPesquisa = new frPesquisa(EnumPesquisa.cliente);
             frPesquisa.ShowDialog();
+            CarregaCadastros();
             if (frPesquisa.clienteVO != null)
                 for (int i = 0; i < listClienteVO.Count; i++)
                     if (frPesquisa.clienteVO.Nome == listClienteVO[i].Nome)

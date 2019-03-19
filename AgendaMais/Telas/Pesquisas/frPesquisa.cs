@@ -243,6 +243,7 @@ namespace AgendaMais
                             ClienteDAO.DeletarRegistro(clienteVO.Id);
                             clienteVO = null;
                             MessageBox.Show("Cliente excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CarregaCadastros();
                         }
                         catch (Exception erro)
                         {
@@ -262,6 +263,7 @@ namespace AgendaMais
                             FuncionarioDAO.DeletarRegistro(funcionarioVO.Id);
                             funcionarioVO = null;
                             MessageBox.Show("Funcionário excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CarregaCadastros();
                         }
                         catch (Exception erro)
                         {
@@ -281,6 +283,7 @@ namespace AgendaMais
                             ProdutoDAO.DeletarRegistro(produtoVO.Id);
                             produtoVO = null;
                             MessageBox.Show("Produto excluído com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CarregaCadastros();
                         }
                         catch (Exception erro)
                         {
