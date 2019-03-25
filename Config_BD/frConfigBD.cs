@@ -1,30 +1,24 @@
-﻿using Config_BD.Windows;
-using Google.Apis.Auth.OAuth2;
-using Google.Apis.Drive.v3;
-using Google.Apis.Services;
-using Google.Apis.Util.Store;
+﻿using Config_BD.Classes;
+using Config_BD.Windows;
 using Ionic.Zip;
+using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Config_BD
 {
     public partial class frConfigBD : Form
     {
+        telaConfigBD telaConfigBD = new telaConfigBD();
+        
         #region Variáveis
         private static string client_id = Path.GetDirectoryName(Application.ExecutablePath) + "\\client_id.json";
         private static string mainPath = Path.GetDirectoryName(Application.ExecutablePath);
+        private int cont = 0;
         #endregion
 
         #region Métodos
@@ -32,41 +26,44 @@ namespace Config_BD
         {
             try
             {
-                using (telaConfigBD telaConfigBD = new telaConfigBD())
+                //using (telaConfigBD telaConfigBD = new telaConfigBD())
+                //{
+                if (File.Exists(mainPath + "\\pgsql.zip") && Directory.Exists(mainPath + "\\pgsql"))
+                    File.Delete(mainPath + "\\pgsql.zip");
+                else if (!File.Exists(mainPath + "\\pgsql.zip") && !Directory.Exists(mainPath + "\\pgsql"))
+                    throw new Exception("pgsql.zip não foi encontrado");
+                else if (File.Exists(mainPath + "\\pgsql.zip") && !Directory.Exists(mainPath + "\\pgsql"))
                 {
-                    if (File.Exists(mainPath + "\\pgsql.zip") && Directory.Exists(mainPath + "\\pgsql"))
-                        File.Delete(mainPath + "\\pgsql.zip");
-                    else if (!File.Exists(mainPath + "\\pgsql.zip") && !Directory.Exists(mainPath + "\\pgsql"))
-                        throw new Exception("pgsql.zip não foi encontrado");
-                    else if (File.Exists(mainPath + "\\pgsql.zip") && !Directory.Exists(mainPath + "\\pgsql"))
-                    {
-                        Directory.CreateDirectory(mainPath + "\\pgsql");
-                        telaConfigBD.ProgressBar.Value = 25;
+                    Directory.CreateDirectory(mainPath + "\\pgsql");
 
-                        telaConfigBD.TxtInfo.Text = "Extraindo arquivos...";
-                        ExtrairArquivoZip(mainPath + "\\pgsql.zip", mainPath + "\\pgsql");
-                        telaConfigBD.ProgressBar.Value = 50;
+                    telaConfigBD.ProgressBar.Value = 25;
+                    telaConfigBD.TxtInfo.Text = "Extraindo arquivos...";
 
-                        File.Delete(mainPath + "\\pgsql.zip");
-                        telaConfigBD.ProgressBar.Value = 75;
-                    }
+                    ExtrairArquivoZip(mainPath + "\\pgsql.zip", mainPath + "\\pgsql");
 
-                    telaConfigBD.TxtInfo.Text = "Registrando serviço PostgreSQL9.6...";
-                    try
-                    {
-                        string bat = $"cd \"{mainPath}\\pgsql\\bin\"" + Environment.NewLine +
-                                     $"pg_ctl register -N \"PostgreSQL9.6\" -U \"NT AUTHORITY\\NetworkService\" -D \"../data\" -w";
-                        File.WriteAllText("register_service.cmd", bat);
-                        Process.Start("register_service.cmd");
-                        telaConfigBD.ProgressBar.Value = 100;
-                    }
-                    catch
-                    {
-                        throw;
-                    }
+                    telaConfigBD.ProgressBar.Value = 50;
 
-                    telaConfigBD.TxtInfo.Text = "Tudo ok!";
+                    File.Delete(mainPath + "\\pgsql.zip");
+
+                    telaConfigBD.ProgressBar.Value = 75;
                 }
+
+                telaConfigBD.TxtInfo.Text = "Registrando serviço PostgreSQL9.6...";
+                try
+                {
+                    string bat = $"cd \"{mainPath}\\pgsql\\bin\"" + Environment.NewLine +
+                                 $"pg_ctl register -N \"PostgreSQL9.6\" -U \"NT AUTHORITY\\NetworkService\" -D \"../data\" -w";
+                    File.WriteAllText("register_service.cmd", bat);
+                    Process.Start("register_service.cmd");
+                    //telaConfigBD.ProgressBar.Value = 100;
+                }
+                catch
+                {
+                    throw;
+                }
+
+                ValidaServicoPostgreSQL();
+                //}
             }
             catch
             {
@@ -107,6 +104,86 @@ namespace Config_BD
                 throw new FileNotFoundException("O Arquivo Zip não foi localizado");
             }
         }
+
+        #region Valida Comunicação com PostgreSQL
+        void ValidaServicoPostgreSQL()
+        {
+            //using (telaConfigBD telaConfigBD = new telaConfigBD())
+            //{
+            string servicoPostgreSQL = "PostgreSQL9.6";
+            try
+            {
+                if (ServicosWindows.StatusServico(servicoPostgreSQL) == false)
+                {
+                    try
+                    {
+                        telaConfigBD.TxtInfo.Text = "Iniciando Serviço...";
+                        telaConfigBD.ProgressBar.Value = 97;
+
+                        ServicosWindows.IniciarServico(servicoPostgreSQL);
+
+                        telaConfigBD.ProgressBar.Value = 100;
+                        telaConfigBD.TxtInfo.Text = "Tudo ok!";
+                    }
+                    catch
+                    {
+                        telaConfigBD.TxtInfo.Text = "Falha em iniciar serviço\nExecutando pg_restartxlog...";
+
+                        Restartxlog();
+
+                        telaConfigBD.TxtInfo.Text = "Tentando iniciar\nserviço novamente...";
+
+                        ServicosWindows.IniciarServico(servicoPostgreSQL);
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                if (erro.Message == "Serviço PostgreSQL9.6 não foi encontrado no computador '.'." && cont < 5)
+                {
+                    cont++;
+                    ValidaServicoPostgreSQL();
+                }
+                else
+                    throw new Exception("Puxa me desculpe, não copnsegui iniciar o serviço do banco de bados,\n" +
+                                        "ou talvez esetja demorando para iniciar.\n" +
+                                        "Aguarde mais um pouco. Caso o problema persista reinicie o computador. " +
+                                        "\n\nErro: " + erro.Message);
+            }
+            //}
+        }
+
+        static void Restartxlog()
+        {
+            #region oficial
+            if (File.Exists($"{mainPath}\\pgsql\\data\\postmaster.pid"))
+            {
+                File.Delete($"{mainPath}\\pgsql\\data\\postmaster.pid");
+                CMD cmd = new CMD();
+                string comand = $"\"{mainPath}\\pgsql\\bin\\pg_resetxlog\" -f ../data";
+                string result = cmd.ExecutarCMD(comand);
+            }
+            #endregion
+        }
+
+        static void ValidaConexaoBD()
+        {
+            try
+            {
+                using (var connect = ConnectionDataBase.ConnectionDataBases()) { }
+            }
+            catch (NpgsqlException erro)
+            {
+                MessageBox.Show(erro.Message);
+                Process.GetCurrentProcess().Kill();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+                Process.GetCurrentProcess().Kill();
+            }
+        }
+        #endregion
         #endregion
 
         public frConfigBD()
@@ -185,8 +262,8 @@ namespace Config_BD
             txtConfigInicial.Location = new Point(0, 343);
             txtConfigInicial.Multiline = true;
             txtConfigInicial.Size = new Size(592, 39);
-            txtConfigInicial.Text = "Dentro de mais alguns instantes e já iremos iniciar...\r\n" +
-                                    "Apenas algumas configurações de primeiro acesso :)";
+            txtConfigInicial.Text = "Estou fazendo apenas algumas configurações de primeiro acesso \r\n" +
+                                    "Dentro de mais alguns instantes já iremos iniciar... :)";
             txtConfigInicial.TextAlign = HorizontalAlignment.Center;
             // 
             // txtInfo

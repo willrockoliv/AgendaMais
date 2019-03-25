@@ -27,4 +27,5 @@ D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Config_
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Config_BD\obj\Debug\Config_BD.csproj.CopyComplete
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Config_BD\obj\Debug\Config_BD.exe
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Config_BD\obj\Debug\Config_BD.pdb
-D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Config_BD\obj\Debug\Config_BD.csprojAssemblyReference.cache
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Config_BD\bin\Debug\Mono.Security.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\Config_BD\bin\Debug\Npgsql.dll
