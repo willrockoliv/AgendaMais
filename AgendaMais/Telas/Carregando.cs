@@ -10,6 +10,8 @@ namespace AgendaMais.Classes
     public class Carregando : Form, IDisposable
     {
         private Form frCarregando;
+        public Label lblMensagem = new Label();
+        public PictureBox ptbCarregando = new PictureBox();
         public string mensagem;
         private Bitmap animacao_gif = Properties.Resources.carregando;
     
@@ -20,6 +22,7 @@ namespace AgendaMais.Classes
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
+
         public Carregando(string p_mensagem)
         {
             mensagem = p_mensagem;
@@ -60,19 +63,16 @@ namespace AgendaMais.Classes
 
         private void workerThread()
         {
-            frCarregando = new Form();   // Substitute this with your own
-            frCarregando.StartPosition = FormStartPosition.CenterScreen;
-            frCarregando.FormBorderStyle = FormBorderStyle.None;
-            frCarregando.BackColor = Color.White;
-            frCarregando.Controls.Add(ptbCarregando());
-            frCarregando.Controls.Add(lblMensagem());
-            frCarregando.Size = new Size(324, 200);
-            Application.Run(frCarregando);
-        }
-
-        PictureBox ptbCarregando()
-        {
-            PictureBox ptbCarregando = new PictureBox();
+            //
+            // lblMensagem
+            //
+            lblMensagem.AutoSize = true;
+            lblMensagem.Font = new Font("Century Gothic", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMensagem.Location = new Point(12, 148);
+            lblMensagem.Text = mensagem;
+            //
+            // ptbCarregando
+            //
             ptbCarregando.Anchor = AnchorStyles.Top;
             ptbCarregando.BackColor = Color.Transparent;
             ptbCarregando.Cursor = Cursors.WaitCursor;
@@ -82,17 +82,14 @@ namespace AgendaMais.Classes
             ptbCarregando.Size = new Size(284, 142);
             ptbCarregando.SizeMode = PictureBoxSizeMode.Zoom;
 
-            return ptbCarregando;
-        }
-
-        Label lblMensagem()
-        {
-            Label lblMensagem = new Label();
-            lblMensagem.AutoSize = true;
-            lblMensagem.Font = new Font("Century Gothic", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMensagem.Location = new Point(12, 148);
-            lblMensagem.Text = mensagem;
-            return lblMensagem;
+            frCarregando = new Form();   // Substitute this with your own
+            frCarregando.StartPosition = FormStartPosition.CenterScreen;
+            frCarregando.FormBorderStyle = FormBorderStyle.None;
+            frCarregando.BackColor = Color.White;
+            frCarregando.Controls.Add(ptbCarregando);
+            frCarregando.Controls.Add(lblMensagem);
+            frCarregando.Size = new Size(324, 200);
+            Application.Run(frCarregando);
         }
     }
 }

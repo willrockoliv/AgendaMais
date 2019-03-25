@@ -155,7 +155,6 @@ namespace Config_BD
 
         static void Restartxlog()
         {
-            #region oficial
             if (File.Exists($"{mainPath}\\pgsql\\data\\postmaster.pid"))
             {
                 File.Delete($"{mainPath}\\pgsql\\data\\postmaster.pid");
@@ -163,27 +162,9 @@ namespace Config_BD
                 string comand = $"\"{mainPath}\\pgsql\\bin\\pg_resetxlog\" -f ../data";
                 string result = cmd.ExecutarCMD(comand);
             }
-            #endregion
-        }
-
-        static void ValidaConexaoBD()
-        {
-            try
-            {
-                using (var connect = ConnectionDataBase.ConnectionDataBases()) { }
-            }
-            catch (NpgsqlException erro)
-            {
-                MessageBox.Show(erro.Message);
-                Process.GetCurrentProcess().Kill();
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);
-                Process.GetCurrentProcess().Kill();
-            }
         }
         #endregion
+
         #endregion
 
         public frConfigBD()
@@ -228,7 +209,6 @@ namespace Config_BD
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
-
 
         public new void Dispose()
         {

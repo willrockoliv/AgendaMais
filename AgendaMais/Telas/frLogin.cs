@@ -38,9 +38,9 @@ namespace AgendaMais.Telas
                     GoogleDrive.Download("versao.txt", $"{mainPath}\\BD\\versao.txt");
                 }
             }
-            catch 
+            catch
             {
-                //throw;
+                throw;
             }
 
             if (File.Exists($"{mainPath}\\BD\\versao.txt"))
@@ -74,7 +74,7 @@ namespace AgendaMais.Telas
         {
             try
             {
-                using (new Carregando("Buscando Atualizações..."))
+                using (new Carregando("Baixando Atualizações..."))
                 {
                     Directory.Delete($"{mainPath}\\Update", true);
                     Directory.CreateDirectory(mainPath + "\\Update");
@@ -107,7 +107,7 @@ namespace AgendaMais.Telas
             }
             catch (Exception erro)
             {
-                //throw new Exception("Erro ao consultar Licença de Uso\n\n" + erro.Message);
+                throw new Exception("Erro ao consultar Licença de Uso\n\n" + erro.Message);
             }
 
             if (File.Exists($"{mainPath}\\BD\\{login}"))
@@ -140,23 +140,23 @@ namespace AgendaMais.Telas
             string servicoPostgreSQL = "PostgreSQL9.6";
             try
             {
-                if (ServicosWindows.StatusServico(servicoPostgreSQL) == false)
+                using (Carregando carregando = new Carregando())
                 {
-                    try
+                    carregando.lblMensagem.Text = "Iniciando Serviço...";
+                    if (ServicosWindows.StatusServico(servicoPostgreSQL) == false)
                     {
-                        using (new Carregando("Iniciando Serviço..."))
+                        try
                         {
                             ServicosWindows.IniciarServico(servicoPostgreSQL);
                         }
-                    }
-                    catch
-                    {
-                        using (new Carregando("Falha em iniciar serviço\nExecutando pg_restartxlog..."))
+                        catch
                         {
+                            carregando.lblMensagem.Text = "Falha em iniciar serviço\nExecutando pg_restartxlog...";
+
                             Restartxlog();
-                        }
-                        using (new Carregando("Tentando iniciar\nserviço novamente..."))
-                        {
+
+                            carregando.lblMensagem.Text = "Tentando iniciar\nserviço novamente...";
+
                             ServicosWindows.IniciarServico(servicoPostgreSQL);
                         }
                     }
@@ -178,7 +178,6 @@ namespace AgendaMais.Telas
 
         static void Restartxlog()
         {
-            #region oficial
             if (File.Exists($"{mainPath}\\pgsql\\data\\postmaster.pid"))
             {
                 File.Delete($"{mainPath}\\pgsql\\data\\postmaster.pid");
@@ -186,7 +185,6 @@ namespace AgendaMais.Telas
                 string comand = $"\"{mainPath}\\pgsql\\bin\\pg_resetxlog\" -f ../data";
                 string result = cmd.ExecutarCMD(comand);
             }
-            #endregion
         }
 
         static void ValidaConexaoBD()
@@ -279,10 +277,7 @@ namespace AgendaMais.Telas
             // Verificação de Serviço de Banco de Dados
             try
             {
-                using (new Carregando("Verificando Serviço\nde Banco de Dados"))
-                {
-                    ValidaServicoPostgreSQL();
-                }
+                ValidaServicoPostgreSQL();
             }
             catch (Exception erro)
             {
@@ -321,10 +316,7 @@ namespace AgendaMais.Telas
             // Verificação de Atualização de Versão
             try
             {
-                //using (new Carregando("Verificando\nAtualizações..."))
-                //{
                 ValidaVersao();
-                //}
             }
             catch (Exception erro)
             {

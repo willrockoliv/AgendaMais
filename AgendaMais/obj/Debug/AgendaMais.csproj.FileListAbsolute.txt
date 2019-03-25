@@ -460,3 +460,4 @@ D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaM
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\DotNetZip.xml
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.Telas.Configurações.frAlterarSenha.resources
 D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\bin\Debug\MimeTypeMap.dll
+D:\William\Computação\Projetos VS\Agenda+\Agenda+ (Desktop)\AgendaMais\AgendaMais\obj\Debug\AgendaMais.csprojAssemblyReference.cache
