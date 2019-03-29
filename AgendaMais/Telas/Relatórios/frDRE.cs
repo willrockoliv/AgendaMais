@@ -54,7 +54,7 @@ namespace AgendaMais.Telas
         private void frDRE_Load(object sender, EventArgs e)
         {
             dtpDataIni.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            dtpDataFim.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
+            dtpDataFim.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month),23,59,59);
             ExibeDRE(dtpDataIni.Value, dtpDataFim.Value);
         }
 

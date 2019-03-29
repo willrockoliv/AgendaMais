@@ -87,6 +87,14 @@ namespace AgendaMais
                 if (MessageBox.Show("Esta data é menor que a data atual \n Deseja continuar mesmo assim?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     ok = false;
 
+            if (metodosAgendamento.listAgenda != null)
+                foreach (AgendaVO agendaVO in metodosAgendamento.listAgenda)
+                {
+                    if (agendaVO.Data_hora == Convert.ToDateTime(dtpData.Text + " " + mkbHorario.Text))
+                        if (MessageBox.Show("O funcionário escolhido já possui um agendamento neste horário! \n\nDeseja continuar mesmo assim?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                            ok = false;
+                }
+
             return ok;
         }
 
@@ -321,12 +329,18 @@ namespace AgendaMais
         {
             using (new Carregando())
             {
-                MetodosAgendamento m = new MetodosAgendamento();
-                m.Atualiza_listAgendaPorFuncionario(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
-                                                    Convert.ToDateTime(DateTime.Now.AddDays(6).ToString("dd/MM/yyyy") + " 23:59:59"),
-                                                    'P', 'P', 'P',
-                                                    id_funcionario);
-                m.ExibeAgendamentosFuncionario(flpAgendaFuncionario);
+                //MetodosAgendamento m = new MetodosAgendamento();
+                //m.Atualiza_listAgendaPorFuncionario(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
+                //                                    Convert.ToDateTime(DateTime.Now.AddDays(6).ToString("dd/MM/yyyy") + " 23:59:59"),
+                //                                    'P', 'P', 'P',
+                //                                    id_funcionario);
+                //m.ExibeAgendamentosFuncionario(flpAgendaFuncionario);
+
+                metodosAgendamento.Atualiza_listAgendaPorFuncionario(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy") + " 00:00:00"),
+                                                                     Convert.ToDateTime(DateTime.Now.AddDays(6).ToString("dd/MM/yyyy") + " 23:59:59"),
+                                                                     'P', 'P', 'P',
+                                                                     id_funcionario);
+                metodosAgendamento.ExibeAgendamentosFuncionario(flpAgendaFuncionario);
             }
         }
 
@@ -541,7 +555,12 @@ namespace AgendaMais
         private void panProximoAgendamento_Click(object sender, EventArgs e)
         {
             if (ValidaCamposAgendamento())
+            {
+
+
                 LayoutTela(TipoLayoutTela.funcionario);
+            }
+
         }
 
         private void panProximoAgendamento_MouseHover(object sender, EventArgs e)
@@ -800,8 +819,6 @@ namespace AgendaMais
         {
             panConcluir.BackgroundImage = Properties.Resources.panAgendamento_claro;
         }
-
-
         #endregion
 
         #endregion

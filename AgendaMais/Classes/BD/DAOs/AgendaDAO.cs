@@ -104,6 +104,8 @@ namespace AgendaMais.Classes.DAOs
                 item.Id_agenda = agendaVO.Id;
                 item.Quantidade = 1;
                 item.Desconto = 0;
+                item.Vl_venda = p.Vl_venda;
+                item.Vl_custo = p.Vl_custo;
 
                 for (int i = 0; i < listItemAgendaVO.Count; i++)
                 {
@@ -148,7 +150,9 @@ namespace AgendaMais.Classes.DAOs
                                             "id_produto, " +
                                             "id_agenda, " +
                                             "quantidade, " +
-                                            "desconto) " +
+                                            "desconto," +
+                                            "vl_venda," +
+                                            "vl_custo) " +
                                        "values ";
 
             string values_item_agenda = "";
@@ -158,7 +162,9 @@ namespace AgendaMais.Classes.DAOs
                                         listItemAgendaVO[i].Id_produto + "," +
                                         listItemAgendaVO[i].Id_agenda + "," +
                                         listItemAgendaVO[i].Quantidade + "," +
-                                        listItemAgendaVO[i].Desconto.ToString().Replace(',', '.') +
+                                        listItemAgendaVO[i].Desconto.ToString().Replace(',', '.') + "," +
+                                        listItemAgendaVO[i].Vl_venda.ToString().Replace(',', '.') + "," +
+                                        listItemAgendaVO[i].Vl_custo.ToString().Replace(',', '.') +
                                      ")";
                 if (i != listItemAgendaVO.Count - 1)
                     values_item_agenda += ",";

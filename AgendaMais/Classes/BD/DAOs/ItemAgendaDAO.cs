@@ -18,6 +18,8 @@ namespace AgendaMais.Classes.DAOs
             itemVendaVO.Id_agenda = Convert.ToInt32(row["id_agenda"]);
             itemVendaVO.Quantidade = Convert.ToInt32(row["quantidade"]);
             itemVendaVO.Desconto = Convert.ToDouble(row["desconto"]);
+            itemVendaVO.Vl_venda = Convert.ToDouble(row["vl_venda"]);
+            itemVendaVO.Vl_custo = Convert.ToDouble(row["vl_custo"]);
             return itemVendaVO;
         }
 

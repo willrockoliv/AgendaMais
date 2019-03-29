@@ -194,7 +194,8 @@ namespace AgendaMais.Classes
         public void Atualiza_listAgendaPorFuncionario(DateTime data_ini, DateTime data_fim, char status1, char status2, char status3, int id_funcionario)
         {
             listPanAgendamentos.Clear();
-            listAgenda.Clear();
+            listAgenda = new List<AgendaVO>();
+            //listAgenda.Clear();
 
             // select agendamentos
             listAgenda = AgendaDAO.GetRegistros(string.Format("where a.data_hora between '{0}' and '{1}' and " +
