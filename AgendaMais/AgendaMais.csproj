@@ -117,6 +117,11 @@
     <Compile Include="Classes\BD\VOs\NotificacoesVO.cs" />
     <Compile Include="Classes\GoogleDrive.cs" />
     <Compile Include="Classes\WhatsApp.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Carregando.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,14 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Telas\Relatórios\frDRE.resx">
       <DependentUpon>frDRE.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +329,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1498590843_Streamline-52.ico" />
+    <None Include="Resources\agendamento_transparency.png" />
+    <None Include="Resources\agendamento.png" />
     <None Include="Resources\notificacao1.png" />
     <None Include="Resources\notificacao2.png" />
     <None Include="Resources\carregando_relatorio.gif" />

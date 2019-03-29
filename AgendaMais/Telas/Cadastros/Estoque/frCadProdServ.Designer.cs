@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frCadProdServ));
             this.ptbClientes = new System.Windows.Forms.PictureBox();
-            this.ptbAgenda = new System.Windows.Forms.PictureBox();
-            this.ptbFinanceiro = new System.Windows.Forms.PictureBox();
             this.panDados = new System.Windows.Forms.Panel();
             this.ptbPesquisa = new System.Windows.Forms.PictureBox();
             this.panCadGrupo = new System.Windows.Forms.Panel();
@@ -71,9 +69,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ptbRelatorios = new System.Windows.Forms.PictureBox();
+            this.ptbAgendamento = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).BeginInit();
             this.panDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).BeginInit();
             this.panCadGrupo.SuspendLayout();
@@ -88,6 +86,8 @@
             this.panCancelar.SuspendLayout();
             this.panSalvar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).BeginInit();
             this.SuspendLayout();
             // 
             // ptbClientes
@@ -102,32 +102,9 @@
             this.ptbClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbClientes.TabIndex = 23;
             this.ptbClientes.TabStop = false;
-            // 
-            // ptbAgenda
-            // 
-            this.ptbAgenda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ptbAgenda.BackColor = System.Drawing.Color.Transparent;
-            this.ptbAgenda.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ptbAgenda.Image = global::AgendaMais.Properties.Resources.calendary_transparency;
-            this.ptbAgenda.Location = new System.Drawing.Point(591, 602);
-            this.ptbAgenda.Name = "ptbAgenda";
-            this.ptbAgenda.Size = new System.Drawing.Size(84, 84);
-            this.ptbAgenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbAgenda.TabIndex = 22;
-            this.ptbAgenda.TabStop = false;
-            // 
-            // ptbFinanceiro
-            // 
-            this.ptbFinanceiro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ptbFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.ptbFinanceiro.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ptbFinanceiro.Image = global::AgendaMais.Properties.Resources.money__4__tranparency;
-            this.ptbFinanceiro.Location = new System.Drawing.Point(452, 602);
-            this.ptbFinanceiro.Name = "ptbFinanceiro";
-            this.ptbFinanceiro.Size = new System.Drawing.Size(84, 84);
-            this.ptbFinanceiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbFinanceiro.TabIndex = 21;
-            this.ptbFinanceiro.TabStop = false;
+            this.ptbClientes.Click += new System.EventHandler(this.ptbClientes_Click);
+            this.ptbClientes.MouseEnter += new System.EventHandler(this.ptbClientes_MouseEnter);
+            this.ptbClientes.MouseLeave += new System.EventHandler(this.ptbClientes_MouseLeave);
             // 
             // panDados
             // 
@@ -308,7 +285,7 @@
             this.lblSalvarGrupo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSalvarGrupo.Click += new System.EventHandler(this.panSalvarGrupo_Click);
             // 
-            // lblCodGrupoProduto
+            // lblListGrupoProduto
             // 
             this.lblListGrupoProduto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblListGrupoProduto.AutoSize = true;
@@ -316,7 +293,7 @@
             this.lblListGrupoProduto.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblListGrupoProduto.ForeColor = System.Drawing.Color.White;
             this.lblListGrupoProduto.Location = new System.Drawing.Point(153, 94);
-            this.lblListGrupoProduto.Name = "lblCodGrupoProduto";
+            this.lblListGrupoProduto.Name = "lblListGrupoProduto";
             this.lblListGrupoProduto.Size = new System.Drawing.Size(17, 24);
             this.lblListGrupoProduto.TabIndex = 88;
             this.lblListGrupoProduto.Text = "-";
@@ -670,6 +647,38 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // ptbRelatorios
+            // 
+            this.ptbRelatorios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbRelatorios.BackColor = System.Drawing.Color.Transparent;
+            this.ptbRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbRelatorios.Image = global::AgendaMais.Properties.Resources.Relatorios_transparency;
+            this.ptbRelatorios.Location = new System.Drawing.Point(452, 602);
+            this.ptbRelatorios.Name = "ptbRelatorios";
+            this.ptbRelatorios.Size = new System.Drawing.Size(84, 84);
+            this.ptbRelatorios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbRelatorios.TabIndex = 25;
+            this.ptbRelatorios.TabStop = false;
+            this.ptbRelatorios.Click += new System.EventHandler(this.ptbRelatorios_Click);
+            this.ptbRelatorios.MouseEnter += new System.EventHandler(this.ptbRelatorios_MouseEnter);
+            this.ptbRelatorios.MouseLeave += new System.EventHandler(this.ptbRelatorios_MouseLeave);
+            // 
+            // ptbAgendamento
+            // 
+            this.ptbAgendamento.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbAgendamento.BackColor = System.Drawing.Color.Transparent;
+            this.ptbAgendamento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbAgendamento.Image = ((System.Drawing.Image)(resources.GetObject("ptbAgendamento.Image")));
+            this.ptbAgendamento.Location = new System.Drawing.Point(591, 602);
+            this.ptbAgendamento.Name = "ptbAgendamento";
+            this.ptbAgendamento.Size = new System.Drawing.Size(84, 84);
+            this.ptbAgendamento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAgendamento.TabIndex = 24;
+            this.ptbAgendamento.TabStop = false;
+            this.ptbAgendamento.Click += new System.EventHandler(this.ptbAgendamento_Click);
+            this.ptbAgendamento.MouseEnter += new System.EventHandler(this.ptbAgendamento_MouseEnter);
+            this.ptbAgendamento.MouseLeave += new System.EventHandler(this.ptbAgendamento_MouseLeave);
+            // 
             // frCadProdServ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -680,17 +689,15 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 716);
             this.Controls.Add(this.ptbClientes);
-            this.Controls.Add(this.ptbAgenda);
-            this.Controls.Add(this.ptbFinanceiro);
             this.Controls.Add(this.panDados);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.ptbRelatorios);
+            this.Controls.Add(this.ptbAgendamento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frCadProdServ";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Produtos e Serviços";
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();
             this.panDados.ResumeLayout(false);
             this.panDados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).EndInit();
@@ -711,6 +718,8 @@
             this.panSalvar.ResumeLayout(false);
             this.panSalvar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -719,8 +728,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox ptbClientes;
-        private System.Windows.Forms.PictureBox ptbAgenda;
-        private System.Windows.Forms.PictureBox ptbFinanceiro;
         private System.Windows.Forms.Panel panDados;
         private System.Windows.Forms.Panel panCancelar;
         private System.Windows.Forms.Label lblCancelar;
@@ -759,5 +766,7 @@
         private System.Windows.Forms.PictureBox ptbProximo;
         private System.Windows.Forms.Label lblListGrupoProduto;
         private System.Windows.Forms.PictureBox ptbAnterior;
+        private System.Windows.Forms.PictureBox ptbRelatorios;
+        private System.Windows.Forms.PictureBox ptbAgendamento;
     }
 }

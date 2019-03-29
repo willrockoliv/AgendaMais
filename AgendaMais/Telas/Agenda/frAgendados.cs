@@ -1,13 +1,11 @@
 ﻿using AgendaMais.Classes;
-using AgendaMais.Classes.DAOs;
 using AgendaMais.Classes.Enums;
+using AgendaMais.Properties;
+using AgendaMais.Telas.Relatórios;
 using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Text;
 using System.Windows.Forms;
+
 
 namespace AgendaMais
 {
@@ -337,10 +335,10 @@ namespace AgendaMais
             if (dia == 0)
             {
                 segunda = DateTime.Now.AddDays(-6);
-                terca =   DateTime.Now.AddDays(-5);
-                quarta =  DateTime.Now.AddDays(-4);
-                quinta =  DateTime.Now.AddDays(-3);
-                sexta =   DateTime.Now.AddDays(-2);
+                terca = DateTime.Now.AddDays(-5);
+                quarta = DateTime.Now.AddDays(-4);
+                quinta = DateTime.Now.AddDays(-3);
+                sexta = DateTime.Now.AddDays(-2);
                 sabado = DateTime.Now.AddDays(-1);
                 domingo = DateTime.Now;
 
@@ -482,11 +480,11 @@ namespace AgendaMais
             {
                 agendaDomingo.Atualiza_listAgenda(Convert.ToDateTime(domingo.ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(domingo.ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
                 agendaSegunda.Atualiza_listAgenda(Convert.ToDateTime(segunda.ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(segunda.ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
-                agendaTerca.Atualiza_listAgenda(  Convert.ToDateTime(terca  .ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(terca  .ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
-                agendaQuarta.Atualiza_listAgenda( Convert.ToDateTime(quarta .ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(quarta .ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
-                agendaQuinta.Atualiza_listAgenda( Convert.ToDateTime(quinta .ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(quinta .ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
-                agendaSexta.Atualiza_listAgenda(  Convert.ToDateTime(sexta  .ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(sexta  .ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
-                agendaSabado.Atualiza_listAgenda( Convert.ToDateTime(sabado .ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(sabado .ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaTerca.Atualiza_listAgenda(Convert.ToDateTime(terca.ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(terca.ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaQuarta.Atualiza_listAgenda(Convert.ToDateTime(quarta.ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(quarta.ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaQuinta.Atualiza_listAgenda(Convert.ToDateTime(quinta.ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(quinta.ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaSexta.Atualiza_listAgenda(Convert.ToDateTime(sexta.ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(sexta.ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
+                agendaSabado.Atualiza_listAgenda(Convert.ToDateTime(sabado.ToString("dd/MM/yyyy") + " 00:00:00"), Convert.ToDateTime(sabado.ToString("dd/MM/yyyy") + " 23:59:59"), 'P', 'C', 'N');
             }
 
             agendaSemana[0] = agendaDomingo;
@@ -721,6 +719,63 @@ namespace AgendaMais
 
         #endregion
 
+        #endregion
+
+        #region ptbRelatorios
+        private void ptbRelatorios_Click(object sender, EventArgs e)
+        {
+            frFrequenciaDeAgendamento frFrequenciaDeAgendamento = new frFrequenciaDeAgendamento();
+            frFrequenciaDeAgendamento.Show();
+        }
+
+        private void ptbRelatorios_MouseEnter(object sender, EventArgs e)
+        {
+            ptbRelatorios.Image = Resources.Relatorios;
+        }
+
+        private void ptbRelatorios_MouseLeave(object sender, EventArgs e)
+        {
+            ptbRelatorios.Image = ptbRelatorios.Image = Resources.Relatorios_transparency;
+        }
+        #endregion
+
+        #region ptbAgendamento
+        private void ptbAgendamento_Click(object sender, EventArgs e)
+        {
+            frAgendamento frAgendamento;
+            using (new Carregando("Carregando..."))
+                frAgendamento = new frAgendamento();
+            frAgendamento.ShowDialog();
+            AtualizaTodasAgendas();
+        }
+
+        private void ptbAgendamento_MouseEnter(object sender, EventArgs e)
+        {
+            ptbAgendamento.Image = Resources.agendamento;
+        }
+
+        private void ptbAgendamento_MouseLeave(object sender, EventArgs e)
+        {
+            ptbAgendamento.Image = Resources.agendamento_transparency;
+        }
+        #endregion
+
+        #region ptbCadCliente
+        private void ptbClientes_Click(object sender, EventArgs e)
+        {
+            frCadCliente frCadCliente = new frCadCliente();
+            frCadCliente.ShowDialog();
+        }
+
+        private void ptbClientes_MouseEnter(object sender, EventArgs e)
+        {
+            ptbClientes.Image = Resources.peaple__4_;
+        }
+
+        private void ptbClientes_MouseLeave(object sender, EventArgs e)
+        {
+            ptbClientes.Image = Resources.peaple__4__transparency;
+        }
         #endregion
     }
 }

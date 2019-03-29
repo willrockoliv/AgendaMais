@@ -365,12 +365,12 @@ namespace AgendaMais
 
         private void ptbAgendamento_MouseEnter(object sender, EventArgs e)
         {
-            ptbAgendamento.Image = Resources.calendary;
+            ptbAgendamento.Image = Resources.agendamento;
         }
 
         private void ptbAgendamento_MouseLeave(object sender, EventArgs e)
         {
-            ptbAgendamento.Image = Resources.calendary_transparency;
+            ptbAgendamento.Image = Resources.agendamento_transparency;
         }
         #endregion
 

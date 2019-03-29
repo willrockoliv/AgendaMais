@@ -143,7 +143,7 @@
             this.ptbAgendamento.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ptbAgendamento.BackColor = System.Drawing.Color.Transparent;
             this.ptbAgendamento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbAgendamento.Image = global::AgendaMais.Properties.Resources.calendary_transparency;
+            this.ptbAgendamento.Image = ((System.Drawing.Image)(resources.GetObject("ptbAgendamento.Image")));
             this.ptbAgendamento.Location = new System.Drawing.Point(518, 86);
             this.ptbAgendamento.Name = "ptbAgendamento";
             this.ptbAgendamento.Size = new System.Drawing.Size(230, 230);
@@ -282,7 +282,6 @@
             // 
             this.ptbCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ptbCancelar.BackColor = System.Drawing.Color.IndianRed;
-            this.ptbCancelar.BackgroundImage = global::AgendaMais.Properties.Resources.excluir;
             this.ptbCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ptbCancelar.Location = new System.Drawing.Point(1180, 3);
             this.ptbCancelar.Name = "ptbCancelar";
@@ -294,7 +293,6 @@
             // 
             this.ptbConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ptbConfirmar.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ptbConfirmar.BackgroundImage = global::AgendaMais.Properties.Resources.checked__2_;
             this.ptbConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ptbConfirmar.Location = new System.Drawing.Point(1142, 3);
             this.ptbConfirmar.Name = "ptbConfirmar";

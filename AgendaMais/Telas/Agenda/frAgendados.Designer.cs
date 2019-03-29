@@ -59,6 +59,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.flpAgendamentos = new System.Windows.Forms.FlowLayoutPanel();
             this.panAgendamento = new System.Windows.Forms.Panel();
+            this.ptbCancelar = new System.Windows.Forms.PictureBox();
+            this.ptbConfirmar = new System.Windows.Forms.PictureBox();
+            this.ckbNotificar = new System.Windows.Forms.CheckBox();
             this.ptbStatus = new System.Windows.Forms.PictureBox();
             this.cbServProd = new System.Windows.Forms.ComboBox();
             this.txtTelCel = new System.Windows.Forms.TextBox();
@@ -90,12 +93,9 @@
             this.lblJan = new System.Windows.Forms.Label();
             this.panFev = new System.Windows.Forms.Panel();
             this.lblFev = new System.Windows.Forms.Label();
-            this.ptbFinanceiro = new System.Windows.Forms.PictureBox();
-            this.ptbAgenda = new System.Windows.Forms.PictureBox();
             this.ptbClientes = new System.Windows.Forms.PictureBox();
-            this.ckbNotificar = new System.Windows.Forms.CheckBox();
-            this.ptbConfirmar = new System.Windows.Forms.PictureBox();
-            this.ptbCancelar = new System.Windows.Forms.PictureBox();
+            this.ptbRelatorios = new System.Windows.Forms.PictureBox();
+            this.ptbAgendamento = new System.Windows.Forms.PictureBox();
             this.panSeg.SuspendLayout();
             this.panTer.SuspendLayout();
             this.panQua.SuspendLayout();
@@ -109,6 +109,8 @@
             this.panTop.SuspendLayout();
             this.flpAgendamentos.SuspendLayout();
             this.panAgendamento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbCancelar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).BeginInit();
             this.panMesContainer.SuspendLayout();
             this.panDez.SuspendLayout();
@@ -123,11 +125,9 @@
             this.panMar.SuspendLayout();
             this.panJan.SuspendLayout();
             this.panFev.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbCancelar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).BeginInit();
             this.SuspendLayout();
             // 
             // panSeg
@@ -523,6 +523,54 @@
             this.panAgendamento.Size = new System.Drawing.Size(1218, 40);
             this.panAgendamento.TabIndex = 4;
             // 
+            // ptbCancelar
+            // 
+            this.ptbCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbCancelar.BackColor = System.Drawing.Color.IndianRed;
+            this.ptbCancelar.BackgroundImage = global::AgendaMais.Properties.Resources.excluir;
+            this.ptbCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ptbCancelar.Location = new System.Drawing.Point(1180, 3);
+            this.ptbCancelar.Name = "ptbCancelar";
+            this.ptbCancelar.Size = new System.Drawing.Size(34, 34);
+            this.ptbCancelar.TabIndex = 102;
+            this.ptbCancelar.TabStop = false;
+            // 
+            // ptbConfirmar
+            // 
+            this.ptbConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbConfirmar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ptbConfirmar.BackgroundImage = global::AgendaMais.Properties.Resources.checked__2_;
+            this.ptbConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ptbConfirmar.Location = new System.Drawing.Point(1143, 3);
+            this.ptbConfirmar.Name = "ptbConfirmar";
+            this.ptbConfirmar.Size = new System.Drawing.Size(34, 34);
+            this.ptbConfirmar.TabIndex = 101;
+            this.ptbConfirmar.TabStop = false;
+            // 
+            // ckbNotificar
+            // 
+            this.ckbNotificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbNotificar.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ckbNotificar.AutoSize = true;
+            this.ckbNotificar.BackColor = System.Drawing.Color.White;
+            this.ckbNotificar.CausesValidation = false;
+            this.ckbNotificar.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ckbNotificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbNotificar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ckbNotificar.FlatAppearance.BorderSize = 0;
+            this.ckbNotificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ckbNotificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ckbNotificar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbNotificar.ForeColor = System.Drawing.Color.Black;
+            this.ckbNotificar.Location = new System.Drawing.Point(1061, 7);
+            this.ckbNotificar.Name = "ckbNotificar";
+            this.ckbNotificar.Size = new System.Drawing.Size(75, 26);
+            this.ckbNotificar.TabIndex = 100;
+            this.ckbNotificar.TabStop = false;
+            this.ckbNotificar.Text = "NOTIFICAR";
+            this.ckbNotificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ckbNotificar.UseVisualStyleBackColor = false;
+            // 
             // ptbStatus
             // 
             this.ptbStatus.BackgroundImage = global::AgendaMais.Properties.Resources.status_pendente;
@@ -571,7 +619,7 @@
             this.txtCliente.ReadOnly = true;
             this.txtCliente.Size = new System.Drawing.Size(205, 20);
             this.txtCliente.TabIndex = 2;
-            this.txtCliente.Text = "LANNY SANTOS";
+            this.txtCliente.Text = "DOUGLAS CUBA";
             this.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtFuncionario
@@ -925,32 +973,6 @@
             this.lblFev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblFev.Click += new System.EventHandler(this.panFev_Click);
             // 
-            // ptbFinanceiro
-            // 
-            this.ptbFinanceiro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ptbFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.ptbFinanceiro.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ptbFinanceiro.Image = global::AgendaMais.Properties.Resources.money__4__tranparency;
-            this.ptbFinanceiro.Location = new System.Drawing.Point(447, 611);
-            this.ptbFinanceiro.Name = "ptbFinanceiro";
-            this.ptbFinanceiro.Size = new System.Drawing.Size(84, 84);
-            this.ptbFinanceiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbFinanceiro.TabIndex = 10;
-            this.ptbFinanceiro.TabStop = false;
-            // 
-            // ptbAgenda
-            // 
-            this.ptbAgenda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ptbAgenda.BackColor = System.Drawing.Color.Transparent;
-            this.ptbAgenda.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ptbAgenda.Image = global::AgendaMais.Properties.Resources.calendary_transparency;
-            this.ptbAgenda.Location = new System.Drawing.Point(586, 611);
-            this.ptbAgenda.Name = "ptbAgenda";
-            this.ptbAgenda.Size = new System.Drawing.Size(84, 84);
-            this.ptbAgenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbAgenda.TabIndex = 11;
-            this.ptbAgenda.TabStop = false;
-            // 
             // ptbClientes
             // 
             this.ptbClientes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -963,54 +985,41 @@
             this.ptbClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbClientes.TabIndex = 12;
             this.ptbClientes.TabStop = false;
+            this.ptbClientes.Click += new System.EventHandler(this.ptbClientes_Click);
+            this.ptbClientes.MouseEnter += new System.EventHandler(this.ptbClientes_MouseEnter);
+            this.ptbClientes.MouseLeave += new System.EventHandler(this.ptbClientes_MouseLeave);
             // 
-            // ckbNotificar
+            // ptbRelatorios
             // 
-            this.ckbNotificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ckbNotificar.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbNotificar.AutoSize = true;
-            this.ckbNotificar.BackColor = System.Drawing.Color.White;
-            this.ckbNotificar.CausesValidation = false;
-            this.ckbNotificar.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ckbNotificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbNotificar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.ckbNotificar.FlatAppearance.BorderSize = 0;
-            this.ckbNotificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ckbNotificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckbNotificar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNotificar.ForeColor = System.Drawing.Color.Black;
-            this.ckbNotificar.Location = new System.Drawing.Point(1061, 7);
-            this.ckbNotificar.Name = "ckbNotificar";
-            this.ckbNotificar.Size = new System.Drawing.Size(75, 26);
-            this.ckbNotificar.TabIndex = 100;
-            this.ckbNotificar.TabStop = false;
-            this.ckbNotificar.Text = "NOTIFICAR";
-            this.ckbNotificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ckbNotificar.UseVisualStyleBackColor = false;
+            this.ptbRelatorios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbRelatorios.BackColor = System.Drawing.Color.Transparent;
+            this.ptbRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbRelatorios.Image = global::AgendaMais.Properties.Resources.Relatorios_transparency;
+            this.ptbRelatorios.Location = new System.Drawing.Point(447, 611);
+            this.ptbRelatorios.Name = "ptbRelatorios";
+            this.ptbRelatorios.Size = new System.Drawing.Size(84, 84);
+            this.ptbRelatorios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbRelatorios.TabIndex = 14;
+            this.ptbRelatorios.TabStop = false;
+            this.ptbRelatorios.Click += new System.EventHandler(this.ptbRelatorios_Click);
+            this.ptbRelatorios.MouseEnter += new System.EventHandler(this.ptbRelatorios_MouseEnter);
+            this.ptbRelatorios.MouseLeave += new System.EventHandler(this.ptbRelatorios_MouseLeave);
             // 
-            // ptbConfirmar
+            // ptbAgendamento
             // 
-            this.ptbConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbConfirmar.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ptbConfirmar.BackgroundImage = global::AgendaMais.Properties.Resources.checked__2_;
-            this.ptbConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ptbConfirmar.Location = new System.Drawing.Point(1143, 3);
-            this.ptbConfirmar.Name = "ptbConfirmar";
-            this.ptbConfirmar.Size = new System.Drawing.Size(34, 34);
-            this.ptbConfirmar.TabIndex = 101;
-            this.ptbConfirmar.TabStop = false;
-            // 
-            // ptbCancelar
-            // 
-            this.ptbCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbCancelar.BackColor = System.Drawing.Color.IndianRed;
-            this.ptbCancelar.BackgroundImage = global::AgendaMais.Properties.Resources.excluir;
-            this.ptbCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ptbCancelar.Location = new System.Drawing.Point(1180, 3);
-            this.ptbCancelar.Name = "ptbCancelar";
-            this.ptbCancelar.Size = new System.Drawing.Size(34, 34);
-            this.ptbCancelar.TabIndex = 102;
-            this.ptbCancelar.TabStop = false;
+            this.ptbAgendamento.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbAgendamento.BackColor = System.Drawing.Color.Transparent;
+            this.ptbAgendamento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbAgendamento.Image = ((System.Drawing.Image)(resources.GetObject("ptbAgendamento.Image")));
+            this.ptbAgendamento.Location = new System.Drawing.Point(586, 611);
+            this.ptbAgendamento.Name = "ptbAgendamento";
+            this.ptbAgendamento.Size = new System.Drawing.Size(84, 84);
+            this.ptbAgendamento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAgendamento.TabIndex = 13;
+            this.ptbAgendamento.TabStop = false;
+            this.ptbAgendamento.Click += new System.EventHandler(this.ptbAgendamento_Click);
+            this.ptbAgendamento.MouseEnter += new System.EventHandler(this.ptbAgendamento_MouseEnter);
+            this.ptbAgendamento.MouseLeave += new System.EventHandler(this.ptbAgendamento_MouseLeave);
             // 
             // frAgendados
             // 
@@ -1022,19 +1031,19 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 716);
             this.Controls.Add(this.ptbClientes);
-            this.Controls.Add(this.ptbAgenda);
-            this.Controls.Add(this.ptbFinanceiro);
             this.Controls.Add(this.panMes);
             this.Controls.Add(this.panSemana);
             this.Controls.Add(this.flpAgendamentos);
             this.Controls.Add(this.panMesContainer);
             this.Controls.Add(this.panSemanaContainer);
             this.Controls.Add(this.panTop);
+            this.Controls.Add(this.ptbRelatorios);
+            this.Controls.Add(this.ptbAgendamento);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frAgendados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agendados";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panSeg.ResumeLayout(false);
             this.panSeg.PerformLayout();
             this.panTer.ResumeLayout(false);
@@ -1059,6 +1068,8 @@
             this.flpAgendamentos.ResumeLayout(false);
             this.panAgendamento.ResumeLayout(false);
             this.panAgendamento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbCancelar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).EndInit();
             this.panMesContainer.ResumeLayout(false);
             this.panDez.ResumeLayout(false);
@@ -1085,11 +1096,9 @@
             this.panJan.PerformLayout();
             this.panFev.ResumeLayout(false);
             this.panFev.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbCancelar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1156,11 +1165,11 @@
         private System.Windows.Forms.ComboBox cbServProd;
         private System.Windows.Forms.PictureBox ptbStatus;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox ptbFinanceiro;
-        private System.Windows.Forms.PictureBox ptbAgenda;
         private System.Windows.Forms.PictureBox ptbClientes;
         private System.Windows.Forms.CheckBox ckbNotificar;
         private System.Windows.Forms.PictureBox ptbConfirmar;
         private System.Windows.Forms.PictureBox ptbCancelar;
+        private System.Windows.Forms.PictureBox ptbRelatorios;
+        private System.Windows.Forms.PictureBox ptbAgendamento;
     }
 }

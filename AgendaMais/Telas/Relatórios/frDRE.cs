@@ -1,13 +1,9 @@
 ﻿using AgendaMais.Classes;
 using AgendaMais.Classes.DAOs;
+using AgendaMais.Properties;
+using AgendaMais.Telas.Relatórios;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AgendaMais.Telas
@@ -76,5 +72,61 @@ namespace AgendaMais.Telas
         {
             ExibeDRE(dtpDataIni.Value, dtpDataFim.Value);
         }
+
+        #region ptbRelatorios
+        private void ptbRelatorios_Click(object sender, EventArgs e)
+        {
+            frFrequenciaDeAgendamento frFrequenciaDeAgendamento = new frFrequenciaDeAgendamento();
+            frFrequenciaDeAgendamento.Show();
+        }
+
+        private void ptbRelatorios_MouseEnter(object sender, EventArgs e)
+        {
+            ptbRelatorios.Image = Resources.Relatorios;
+        }
+
+        private void ptbRelatorios_MouseLeave(object sender, EventArgs e)
+        {
+            ptbRelatorios.Image = ptbRelatorios.Image = Resources.Relatorios_transparency;
+        }
+        #endregion
+
+        #region ptbAgendamento
+        private void ptbAgendamento_Click(object sender, EventArgs e)
+        {
+            frAgendamento frAgendamento;
+            using (new Carregando("Carregando..."))
+                frAgendamento = new frAgendamento();
+            frAgendamento.ShowDialog();
+        }
+
+        private void ptbAgendamento_MouseEnter(object sender, EventArgs e)
+        {
+            ptbAgendamento.Image = Resources.agendamento;
+        }
+
+        private void ptbAgendamento_MouseLeave(object sender, EventArgs e)
+        {
+            ptbAgendamento.Image = Resources.agendamento_transparency;
+        }
+        #endregion
+
+        #region ptbCadCliente
+        private void ptbClientes_Click(object sender, EventArgs e)
+        {
+            frCadCliente frCadCliente = new frCadCliente();
+            frCadCliente.ShowDialog();
+        }
+
+        private void ptbClientes_MouseEnter(object sender, EventArgs e)
+        {
+            ptbClientes.Image = Resources.peaple__4_;
+        }
+
+        private void ptbClientes_MouseLeave(object sender, EventArgs e)
+        {
+            ptbClientes.Image = Resources.peaple__4__transparency;
+        }
+        #endregion
     }
 }

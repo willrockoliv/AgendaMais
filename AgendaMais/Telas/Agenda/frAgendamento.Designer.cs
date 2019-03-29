@@ -60,8 +60,6 @@
             this.panClienteMenu = new System.Windows.Forms.Panel();
             this.lblCliente = new System.Windows.Forms.Label();
             this.ptbClientes = new System.Windows.Forms.PictureBox();
-            this.ptbAgenda = new System.Windows.Forms.PictureBox();
-            this.ptbFinanceiro = new System.Windows.Forms.PictureBox();
             this.panAgendamentoMenu = new System.Windows.Forms.Panel();
             this.lblAgendamento = new System.Windows.Forms.Label();
             this.panAgendamento = new System.Windows.Forms.Panel();
@@ -110,6 +108,7 @@
             this.panProximoItensEServicos = new System.Windows.Forms.Panel();
             this.lblProximoItensEServicos = new System.Windows.Forms.Label();
             this.panConclusao = new System.Windows.Forms.Panel();
+            this.ckbConfirmado = new System.Windows.Forms.CheckBox();
             this.flpConclusao = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.mbkTelCelConclusao = new System.Windows.Forms.MaskedTextBox();
@@ -133,14 +132,13 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtTotalConclusao = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.ckbConfirmado = new System.Windows.Forms.CheckBox();
+            this.ptbRelatorios = new System.Windows.Forms.PictureBox();
+            this.ptbAgendamento = new System.Windows.Forms.PictureBox();
             this.panCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagemCliente)).BeginInit();
             this.panProximoCliente.SuspendLayout();
             this.panClienteMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).BeginInit();
             this.panAgendamentoMenu.SuspendLayout();
             this.panAgendamento.SuspendLayout();
             this.flpFuncionarios.SuspendLayout();
@@ -169,6 +167,8 @@
             this.panConcluir.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).BeginInit();
             this.SuspendLayout();
             // 
             // panCliente
@@ -569,32 +569,9 @@
             this.ptbClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbClientes.TabIndex = 15;
             this.ptbClientes.TabStop = false;
-            // 
-            // ptbAgenda
-            // 
-            this.ptbAgenda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ptbAgenda.BackColor = System.Drawing.Color.Transparent;
-            this.ptbAgenda.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ptbAgenda.Image = global::AgendaMais.Properties.Resources.calendary_transparency;
-            this.ptbAgenda.Location = new System.Drawing.Point(598, 611);
-            this.ptbAgenda.Name = "ptbAgenda";
-            this.ptbAgenda.Size = new System.Drawing.Size(84, 84);
-            this.ptbAgenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbAgenda.TabIndex = 14;
-            this.ptbAgenda.TabStop = false;
-            // 
-            // ptbFinanceiro
-            // 
-            this.ptbFinanceiro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ptbFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.ptbFinanceiro.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ptbFinanceiro.Image = global::AgendaMais.Properties.Resources.money__4__tranparency;
-            this.ptbFinanceiro.Location = new System.Drawing.Point(459, 611);
-            this.ptbFinanceiro.Name = "ptbFinanceiro";
-            this.ptbFinanceiro.Size = new System.Drawing.Size(84, 84);
-            this.ptbFinanceiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbFinanceiro.TabIndex = 13;
-            this.ptbFinanceiro.TabStop = false;
+            this.ptbClientes.Click += new System.EventHandler(this.ptbClientes_Click);
+            this.ptbClientes.MouseEnter += new System.EventHandler(this.ptbClientes_MouseEnter);
+            this.ptbClientes.MouseLeave += new System.EventHandler(this.ptbClientes_MouseLeave);
             // 
             // panAgendamentoMenu
             // 
@@ -1267,6 +1244,26 @@
             this.panConclusao.Size = new System.Drawing.Size(1140, 455);
             this.panConclusao.TabIndex = 35;
             // 
+            // ckbConfirmado
+            // 
+            this.ckbConfirmado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbConfirmado.Appearance = System.Windows.Forms.Appearance.Button;
+            this.ckbConfirmado.AutoSize = true;
+            this.ckbConfirmado.BackColor = System.Drawing.Color.Transparent;
+            this.ckbConfirmado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbConfirmado.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ckbConfirmado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.ckbConfirmado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ckbConfirmado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ckbConfirmado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbConfirmado.ForeColor = System.Drawing.Color.White;
+            this.ckbConfirmado.Location = new System.Drawing.Point(924, 357);
+            this.ckbConfirmado.Name = "ckbConfirmado";
+            this.ckbConfirmado.Size = new System.Drawing.Size(91, 27);
+            this.ckbConfirmado.TabIndex = 56;
+            this.ckbConfirmado.Text = "FINALIZADO";
+            this.ckbConfirmado.UseVisualStyleBackColor = false;
+            // 
             // flpConclusao
             // 
             this.flpConclusao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -1536,20 +1533,37 @@
             this.label23.TabIndex = 5;
             this.label23.Text = "TOTAL:";
             // 
-            // ckbConfirmado
+            // ptbRelatorios
             // 
-            this.ckbConfirmado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ckbConfirmado.AutoSize = true;
-            this.ckbConfirmado.BackColor = System.Drawing.Color.Transparent;
-            this.ckbConfirmado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbConfirmado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbConfirmado.ForeColor = System.Drawing.Color.White;
-            this.ckbConfirmado.Location = new System.Drawing.Point(924, 359);
-            this.ckbConfirmado.Name = "ckbConfirmado";
-            this.ckbConfirmado.Size = new System.Drawing.Size(145, 25);
-            this.ckbConfirmado.TabIndex = 56;
-            this.ckbConfirmado.Text = "CONFIRMADO";
-            this.ckbConfirmado.UseVisualStyleBackColor = false;
+            this.ptbRelatorios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbRelatorios.BackColor = System.Drawing.Color.Transparent;
+            this.ptbRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbRelatorios.Image = global::AgendaMais.Properties.Resources.Relatorios_transparency;
+            this.ptbRelatorios.Location = new System.Drawing.Point(459, 611);
+            this.ptbRelatorios.Name = "ptbRelatorios";
+            this.ptbRelatorios.Size = new System.Drawing.Size(84, 84);
+            this.ptbRelatorios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbRelatorios.TabIndex = 37;
+            this.ptbRelatorios.TabStop = false;
+            this.ptbRelatorios.Click += new System.EventHandler(this.ptbRelatorios_Click);
+            this.ptbRelatorios.MouseEnter += new System.EventHandler(this.ptbRelatorios_MouseEnter);
+            this.ptbRelatorios.MouseLeave += new System.EventHandler(this.ptbRelatorios_MouseLeave);
+            // 
+            // ptbAgendamento
+            // 
+            this.ptbAgendamento.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbAgendamento.BackColor = System.Drawing.Color.Transparent;
+            this.ptbAgendamento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbAgendamento.Image = ((System.Drawing.Image)(resources.GetObject("ptbAgendamento.Image")));
+            this.ptbAgendamento.Location = new System.Drawing.Point(598, 611);
+            this.ptbAgendamento.Name = "ptbAgendamento";
+            this.ptbAgendamento.Size = new System.Drawing.Size(84, 84);
+            this.ptbAgendamento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAgendamento.TabIndex = 36;
+            this.ptbAgendamento.TabStop = false;
+            this.ptbAgendamento.Click += new System.EventHandler(this.ptbAgendamento_Click);
+            this.ptbAgendamento.MouseEnter += new System.EventHandler(this.ptbAgendamento_MouseEnter);
+            this.ptbAgendamento.MouseLeave += new System.EventHandler(this.ptbAgendamento_MouseLeave);
             // 
             // frAgendamento
             // 
@@ -1560,21 +1574,20 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 716);
             this.Controls.Add(this.ptbClientes);
-            this.Controls.Add(this.ptbAgenda);
-            this.Controls.Add(this.ptbFinanceiro);
             this.Controls.Add(this.panConclusao);
             this.Controls.Add(this.panItensEServicos);
+            this.Controls.Add(this.panCliente);
+            this.Controls.Add(this.panAgendamento);
             this.Controls.Add(this.panClienteMenu);
             this.Controls.Add(this.panAgendamentoMenu);
             this.Controls.Add(this.panFuncionarioMenu);
             this.Controls.Add(this.panConclusaoMenu);
-            this.Controls.Add(this.panCliente);
-            this.Controls.Add(this.panAgendamento);
+            this.Controls.Add(this.ptbRelatorios);
+            this.Controls.Add(this.ptbAgendamento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frAgendamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agendamento";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panCliente.ResumeLayout(false);
             this.panCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagemCliente)).EndInit();
@@ -1583,8 +1596,6 @@
             this.panClienteMenu.ResumeLayout(false);
             this.panClienteMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();
             this.panAgendamentoMenu.ResumeLayout(false);
             this.panAgendamentoMenu.PerformLayout();
             this.panAgendamento.ResumeLayout(false);
@@ -1633,6 +1644,8 @@
             this.panel8.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1642,8 +1655,6 @@
         private System.Windows.Forms.Panel panAgendamentoMenu;
         private System.Windows.Forms.Panel panCliente;
         private System.Windows.Forms.PictureBox ptbClientes;
-        private System.Windows.Forms.PictureBox ptbAgenda;
-        private System.Windows.Forms.PictureBox ptbFinanceiro;
         private System.Windows.Forms.Panel panAgendamento;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Label lblAgendamento;
@@ -1742,5 +1753,7 @@
         private System.Windows.Forms.MaskedTextBox mbkTelCelConclusao;
         private System.Windows.Forms.PictureBox ptbImagemCliente;
         private System.Windows.Forms.CheckBox ckbConfirmado;
+        private System.Windows.Forms.PictureBox ptbRelatorios;
+        private System.Windows.Forms.PictureBox ptbAgendamento;
     }
 }

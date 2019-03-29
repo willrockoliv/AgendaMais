@@ -68,10 +68,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ptbClientes = new System.Windows.Forms.PictureBox();
-            this.ptbAgenda = new System.Windows.Forms.PictureBox();
-            this.ptbFinanceiro = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ptbRelatorios = new System.Windows.Forms.PictureBox();
+            this.ptbAgendamento = new System.Windows.Forms.PictureBox();
             this.panDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPesquisa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPrimeiro)).BeginInit();
@@ -82,9 +82,9 @@
             this.panSalvar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagemCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -605,32 +605,9 @@
             this.ptbClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbClientes.TabIndex = 18;
             this.ptbClientes.TabStop = false;
-            // 
-            // ptbAgenda
-            // 
-            this.ptbAgenda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ptbAgenda.BackColor = System.Drawing.Color.Transparent;
-            this.ptbAgenda.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ptbAgenda.Image = global::AgendaMais.Properties.Resources.calendary_transparency;
-            this.ptbAgenda.Location = new System.Drawing.Point(591, 611);
-            this.ptbAgenda.Name = "ptbAgenda";
-            this.ptbAgenda.Size = new System.Drawing.Size(84, 84);
-            this.ptbAgenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbAgenda.TabIndex = 17;
-            this.ptbAgenda.TabStop = false;
-            // 
-            // ptbFinanceiro
-            // 
-            this.ptbFinanceiro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ptbFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.ptbFinanceiro.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ptbFinanceiro.Image = global::AgendaMais.Properties.Resources.money__4__tranparency;
-            this.ptbFinanceiro.Location = new System.Drawing.Point(452, 611);
-            this.ptbFinanceiro.Name = "ptbFinanceiro";
-            this.ptbFinanceiro.Size = new System.Drawing.Size(84, 84);
-            this.ptbFinanceiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbFinanceiro.TabIndex = 16;
-            this.ptbFinanceiro.TabStop = false;
+            this.ptbClientes.Click += new System.EventHandler(this.ptbClientes_Click);
+            this.ptbClientes.MouseEnter += new System.EventHandler(this.ptbClientes_MouseEnter);
+            this.ptbClientes.MouseLeave += new System.EventHandler(this.ptbClientes_MouseLeave);
             // 
             // openFileDialog
             // 
@@ -643,6 +620,38 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // ptbRelatorios
+            // 
+            this.ptbRelatorios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbRelatorios.BackColor = System.Drawing.Color.Transparent;
+            this.ptbRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbRelatorios.Image = global::AgendaMais.Properties.Resources.Relatorios_transparency;
+            this.ptbRelatorios.Location = new System.Drawing.Point(452, 611);
+            this.ptbRelatorios.Name = "ptbRelatorios";
+            this.ptbRelatorios.Size = new System.Drawing.Size(84, 84);
+            this.ptbRelatorios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbRelatorios.TabIndex = 20;
+            this.ptbRelatorios.TabStop = false;
+            this.ptbRelatorios.Click += new System.EventHandler(this.ptbRelatorios_Click);
+            this.ptbRelatorios.MouseEnter += new System.EventHandler(this.ptbRelatorios_MouseEnter);
+            this.ptbRelatorios.MouseLeave += new System.EventHandler(this.ptbRelatorios_MouseLeave);
+            // 
+            // ptbAgendamento
+            // 
+            this.ptbAgendamento.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbAgendamento.BackColor = System.Drawing.Color.Transparent;
+            this.ptbAgendamento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbAgendamento.Image = ((System.Drawing.Image)(resources.GetObject("ptbAgendamento.Image")));
+            this.ptbAgendamento.Location = new System.Drawing.Point(591, 611);
+            this.ptbAgendamento.Name = "ptbAgendamento";
+            this.ptbAgendamento.Size = new System.Drawing.Size(84, 84);
+            this.ptbAgendamento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAgendamento.TabIndex = 19;
+            this.ptbAgendamento.TabStop = false;
+            this.ptbAgendamento.Click += new System.EventHandler(this.ptbAgendamento_Click);
+            this.ptbAgendamento.MouseEnter += new System.EventHandler(this.ptbAgendamento_MouseEnter);
+            this.ptbAgendamento.MouseLeave += new System.EventHandler(this.ptbAgendamento_MouseLeave);
+            // 
             // frCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -653,10 +662,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 716);
             this.Controls.Add(this.ptbClientes);
-            this.Controls.Add(this.ptbAgenda);
-            this.Controls.Add(this.ptbFinanceiro);
             this.Controls.Add(this.panDados);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.ptbRelatorios);
+            this.Controls.Add(this.ptbAgendamento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frCadCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -674,9 +683,9 @@
             this.panSalvar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagemCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAgenda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbFinanceiro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,8 +696,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panDados;
         private System.Windows.Forms.PictureBox ptbClientes;
-        private System.Windows.Forms.PictureBox ptbAgenda;
-        private System.Windows.Forms.PictureBox ptbFinanceiro;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox mkbTelCel;
         private System.Windows.Forms.Label label3;
@@ -726,5 +733,7 @@
         private System.Windows.Forms.PictureBox ptbPrimeiro;
         private System.Windows.Forms.PictureBox ptbUltimo;
         private System.Windows.Forms.PictureBox ptbPesquisa;
+        private System.Windows.Forms.PictureBox ptbRelatorios;
+        private System.Windows.Forms.PictureBox ptbAgendamento;
     }
 }
