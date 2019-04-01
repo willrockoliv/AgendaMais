@@ -112,6 +112,8 @@ namespace AgendaMais.Classes.DAOs
                     if (listItemAgendaVO[i].Id_produto == item.Id_produto)
                     {
                         listItemAgendaVO[i].Quantidade++;
+                        listItemAgendaVO[i].Vl_custo += item.Vl_custo;
+                        listItemAgendaVO[i].Vl_venda += item.Vl_venda;
                         break;
                     }
                     else if (i == listItemAgendaVO.Count - 1)

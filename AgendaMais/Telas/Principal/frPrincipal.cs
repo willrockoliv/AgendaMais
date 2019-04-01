@@ -1,8 +1,9 @@
 ﻿using AgendaMais.Classes;
+using AgendaMais.Classes.BD.DAOs;
 using AgendaMais.Properties;
 using AgendaMais.Telas;
 using AgendaMais.Telas.Configurações;
-using AgendaMais.Telas.Relatórios;
+using AgendaMais.Telas.Relatorios;
 using System;
 using System.Drawing;
 using System.IO;
@@ -26,35 +27,35 @@ namespace AgendaMais
                 panMenuCadastros.Visible = !panMenuCadastros.Visible;
                 panMenuRelatorios.Visible = false;
                 panMenuConfiguracoes.Visible = false;
-                panMenuNotificacao.Visible = false;
+                flpMenuNotificacao.Visible = false;
             }
             else if (enumMenu == EnumMenu.configuracoes)
             {
                 panMenuCadastros.Visible = false;
                 panMenuRelatorios.Visible = false;
                 panMenuConfiguracoes.Visible = !panMenuConfiguracoes.Visible;
-                panMenuNotificacao.Visible = false;
+                flpMenuNotificacao.Visible = false;
             }
             else if (enumMenu == EnumMenu.relatorios)
             {
                 panMenuCadastros.Visible = false;
                 panMenuRelatorios.Visible = !panMenuRelatorios.Visible;
                 panMenuConfiguracoes.Visible = false;
-                panMenuNotificacao.Visible = false;
+                flpMenuNotificacao.Visible = false;
             }
             else if (enumMenu == EnumMenu.nenhum)
             {
                 panMenuCadastros.Visible = false;
                 panMenuRelatorios.Visible = false;
                 panMenuConfiguracoes.Visible = false;
-                panMenuNotificacao.Visible = false;
+                flpMenuNotificacao.Visible = false;
             }
             else if(enumMenu == EnumMenu.notificacao)
             {
                 panMenuCadastros.Visible = false;
                 panMenuRelatorios.Visible = false;
                 panMenuConfiguracoes.Visible = false;
-                panMenuNotificacao.Visible = !panMenuNotificacao.Visible;
+                flpMenuNotificacao.Visible = !flpMenuNotificacao.Visible;
             }
         }
         #endregion
@@ -80,6 +81,8 @@ namespace AgendaMais
                         metodosAgenda.ExibeAgendamentos(flpAgendamentos, Enum_TipoExibicaoAgenda.hoje);
                         metodosAgenda.AtualizaStatus(flpAgendamentos);
                     }
+
+                    NotificacoesDAO.CarregarNotificacoes(flpMenuNotificacao, panNotificacao);
                 }
             }
             catch (Exception erro)
@@ -99,6 +102,7 @@ namespace AgendaMais
         private void panNotificacao_Click(object sender, EventArgs e)
         {
             LayoutMenu(EnumMenu.notificacao);
+            panNotificacao.BackgroundImage = Resources.notificacao1;
         }
 
         private void panNotificacao_MouseEnter(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 using AgendaMais.Classes.DAOs;
 using AgendaMais.Classes.VOs;
 using AgendaMais.Properties;
-using AgendaMais.Telas.Relatórios;
+using AgendaMais.Telas.Relatorios;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

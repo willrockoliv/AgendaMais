@@ -1,4 +1,4 @@
-﻿namespace AgendaMais.Telas.Relatórios
+﻿namespace AgendaMais.Telas.Relatorios
 {
     partial class frFrequenciaDeAgendamento
     {

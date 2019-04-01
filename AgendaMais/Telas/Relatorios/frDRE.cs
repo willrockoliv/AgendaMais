@@ -1,7 +1,7 @@
 ﻿using AgendaMais.Classes;
 using AgendaMais.Classes.DAOs;
 using AgendaMais.Properties;
-using AgendaMais.Telas.Relatórios;
+using AgendaMais.Telas.Relatorios;
 using System;
 using System.Drawing;
 using System.Windows.Forms;

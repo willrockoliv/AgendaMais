@@ -189,10 +189,10 @@
     <Compile Include="Telas\frLogin.Designer.cs">
       <DependentUpon>frLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Relatórios\frDRE.cs">
+    <Compile Include="Telas\Relatorios\frDRE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Relatórios\frDRE.Designer.cs">
+    <Compile Include="Telas\Relatorios\frDRE.Designer.cs">
       <DependentUpon>frDRE.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Pesquisas\frPesquisa.cs">
@@ -215,10 +215,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Telas\Relatórios\frFrequenciaDeAgendamento.cs">
+    <Compile Include="Telas\Relatorios\frFrequenciaDeAgendamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Relatórios\frFrequenciaDeAgendamento.Designer.cs">
+    <Compile Include="Telas\Relatorios\frFrequenciaDeAgendamento.Designer.cs">
       <DependentUpon>frFrequenciaDeAgendamento.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Telas\Agenda\frAgendados.resx">
@@ -256,10 +256,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Relatórios\frDRE.resx">
+    <EmbeddedResource Include="Telas\Relatorios\frDRE.resx">
       <DependentUpon>frDRE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Relatórios\frFrequenciaDeAgendamento.resx">
+    <EmbeddedResource Include="Telas\Relatorios\frFrequenciaDeAgendamento.resx">
       <DependentUpon>frFrequenciaDeAgendamento.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

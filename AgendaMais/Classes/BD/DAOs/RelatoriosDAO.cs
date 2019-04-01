@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace AgendaMais.Classes.DAOs
                 custo_servico,
                 custo_total;
         }
+
         private DRE dre = new DRE();
 
         public DRE Dre { get => dre; }
@@ -110,6 +112,7 @@ namespace AgendaMais.Classes.DAOs
             public int pendentes;
             public int frequencia;
             public DateTime possivel_data_retorno;
+            public int status;
         }
 
         private List<FreqAgendamentos> listFreqAgendamentos = new List<FreqAgendamentos>();
@@ -173,6 +176,20 @@ namespace AgendaMais.Classes.DAOs
                             f.frequencia += data.Days;
                             data_anterior = Convert.ToDateTime(row["data_hora"]);
                         }
+                    }
+
+
+                    if (f.confirmados < 3)
+                        f.status = -1;
+                    else
+                    {
+                        TimeSpan diff = DateTime.Now - f.possivel_data_retorno;
+                        if (diff.Days > 10)
+                            f.status = 0;
+                        else if (diff.Days >= 1)
+                            f.status = 1;
+                        else
+                            f.status = 2;
                     }
 
                     listFreqAgendamentos.Add(f);

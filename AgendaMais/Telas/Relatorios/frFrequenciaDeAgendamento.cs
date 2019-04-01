@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Windows.Forms;
 
 
-namespace AgendaMais.Telas.Relatórios
+namespace AgendaMais.Telas.Relatorios
 {
     public partial class frFrequenciaDeAgendamento : Form
     {
-        Panel ConstrutorPanDados(string nome, int confirmados, int cancelados, int pendentes, int frequencia, DateTime possivel_data_retorno)
+        Panel ConstrutorPanDados(string nome, int confirmados, int cancelados, int pendentes, int frequencia, DateTime possivel_data_retorno, int status)
         {
             #region panDados
             Panel panDados = new Panel();
@@ -94,18 +94,26 @@ namespace AgendaMais.Telas.Relatórios
 
             #region ptbStatus
             PictureBox ptbStatus = new PictureBox();
-            if (confirmados < 3)
+            //if (confirmados < 3)
+            //    ptbStatus.Image = null;
+            //else
+            //{
+            //    TimeSpan diff = DateTime.Now - possivel_data_retorno;
+            //    if (diff.Days > 10)
+            //        ptbStatus.Image = Properties.Resources.vermelho;
+            //    else if (diff.Days >= 1)
+            //        ptbStatus.Image = Properties.Resources.amarelo;
+            //    else
+            //        ptbStatus.Image = Properties.Resources.verde;
+            //}
+            if(status == -1)
                 ptbStatus.Image = null;
-            else
-            {
-                TimeSpan diff = DateTime.Now - possivel_data_retorno;
-                if (diff.Days > 10)
-                    ptbStatus.Image = Properties.Resources.vermelho;
-                else if (diff.Days >= 1)
-                    ptbStatus.Image = Properties.Resources.amarelo;
-                else
-                    ptbStatus.Image = Properties.Resources.verde;
-            }
+            else if(status == 0)
+                ptbStatus.Image = Properties.Resources.vermelho;
+            else if(status == 1)
+                ptbStatus.Image = Properties.Resources.amarelo;
+            else if(status == 2)
+                ptbStatus.Image = Properties.Resources.verde;
             ptbStatus.Location = new Point(874, 2);
             ptbStatus.Size = new Size(30, 30);
             ptbStatus.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -138,7 +146,8 @@ namespace AgendaMais.Telas.Relatórios
                                                              relatoriosDAO.ListFreqAgendamentos[i].cancelados,
                                                              relatoriosDAO.ListFreqAgendamentos[i].pendentes,
                                                              relatoriosDAO.ListFreqAgendamentos[i].frequencia,
-                                                             relatoriosDAO.ListFreqAgendamentos[i].possivel_data_retorno));
+                                                             relatoriosDAO.ListFreqAgendamentos[i].possivel_data_retorno,
+                                                             relatoriosDAO.ListFreqAgendamentos[i].status));
             }
 
             flpDados.Visible = true;

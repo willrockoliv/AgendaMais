@@ -96,8 +96,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(592, 39);
             this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "Dentro de mais alguns instantes e já iremos iniciar...\r\nApenas algumas configuraç" +
-    "ões de primeiro acesso :)\r\n";
+            this.textBox1.Text = "Estou fazendo apenas algumas configurações de primeiro acesso\r\nDentro de mais alg" +
+    "uns instantes já iremos iniciar... :)";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // progressBar1

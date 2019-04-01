@@ -76,9 +76,12 @@
             this.panMenuConfiguracoes = new System.Windows.Forms.Panel();
             this.panAlterarSenha = new System.Windows.Forms.Panel();
             this.lblAlterarSenha = new System.Windows.Forms.Label();
-            this.panMenuNotificacao = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.flpMenuNotificacao = new System.Windows.Forms.FlowLayoutPanel();
+            this.panNotificacaoMsg = new System.Windows.Forms.Panel();
+            this.lblNotificacaoMsg = new System.Windows.Forms.Label();
+            this.lblNaoHaNotificacoes = new System.Windows.Forms.Label();
+            this.panNaoHaNotificacoes = new System.Windows.Forms.Panel();
+            this.lblFecharNotificacaoMsg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbRelatorios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAgendamento)).BeginInit();
@@ -102,8 +105,9 @@
             this.panCadClientes.SuspendLayout();
             this.panMenuConfiguracoes.SuspendLayout();
             this.panAlterarSenha.SuspendLayout();
-            this.panMenuNotificacao.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.flpMenuNotificacao.SuspendLayout();
+            this.panNotificacaoMsg.SuspendLayout();
+            this.panNaoHaNotificacoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // ptbRelatorios
@@ -518,7 +522,7 @@
             this.flpMenu.Controls.Add(this.panCadastros);
             this.flpMenu.Controls.Add(this.panRelatorios);
             this.flpMenu.Controls.Add(this.panConfiguracoes);
-            this.flpMenu.Location = new System.Drawing.Point(-1, 6);
+            this.flpMenu.Location = new System.Drawing.Point(0, 6);
             this.flpMenu.Name = "flpMenu";
             this.flpMenu.Size = new System.Drawing.Size(1268, 34);
             this.flpMenu.TabIndex = 7;
@@ -609,7 +613,7 @@
             this.panMenuRelatorios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
             this.panMenuRelatorios.Controls.Add(this.panDRE);
             this.panMenuRelatorios.Controls.Add(this.panFreqAgendamento);
-            this.panMenuRelatorios.Location = new System.Drawing.Point(638, 40);
+            this.panMenuRelatorios.Location = new System.Drawing.Point(639, 40);
             this.panMenuRelatorios.Name = "panMenuRelatorios";
             this.panMenuRelatorios.Size = new System.Drawing.Size(295, 58);
             this.panMenuRelatorios.TabIndex = 11;
@@ -621,7 +625,7 @@
             this.panMenuCadastros.Controls.Add(this.panCadProdServ);
             this.panMenuCadastros.Controls.Add(this.panCadFuncionarios);
             this.panMenuCadastros.Controls.Add(this.panCadClientes);
-            this.panMenuCadastros.Location = new System.Drawing.Point(337, 40);
+            this.panMenuCadastros.Location = new System.Drawing.Point(338, 40);
             this.panMenuCadastros.Name = "panMenuCadastros";
             this.panMenuCadastros.Size = new System.Drawing.Size(295, 87);
             this.panMenuCadastros.TabIndex = 12;
@@ -724,7 +728,7 @@
             // 
             this.panMenuConfiguracoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
             this.panMenuConfiguracoes.Controls.Add(this.panAlterarSenha);
-            this.panMenuConfiguracoes.Location = new System.Drawing.Point(939, 40);
+            this.panMenuConfiguracoes.Location = new System.Drawing.Point(940, 40);
             this.panMenuConfiguracoes.Name = "panMenuConfiguracoes";
             this.panMenuConfiguracoes.Size = new System.Drawing.Size(295, 29);
             this.panMenuConfiguracoes.TabIndex = 13;
@@ -761,40 +765,87 @@
             this.lblAlterarSenha.MouseEnter += new System.EventHandler(this.panAlterarSenha_MouseEnter);
             this.lblAlterarSenha.MouseLeave += new System.EventHandler(this.panAlterarSenha_MouseLeave);
             // 
-            // panMenuNotificacao
+            // flpMenuNotificacao
             // 
-            this.panMenuNotificacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
-            this.panMenuNotificacao.Controls.Add(this.panel3);
-            this.panMenuNotificacao.Location = new System.Drawing.Point(-1, 40);
-            this.panMenuNotificacao.Name = "panMenuNotificacao";
-            this.panMenuNotificacao.Size = new System.Drawing.Size(197, 153);
-            this.panMenuNotificacao.TabIndex = 13;
-            this.panMenuNotificacao.Visible = false;
+            this.flpMenuNotificacao.AutoScroll = true;
+            this.flpMenuNotificacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(16)))), ((int)(((byte)(41)))), ((int)(((byte)(99)))));
+            this.flpMenuNotificacao.Controls.Add(this.panNaoHaNotificacoes);
+            this.flpMenuNotificacao.Controls.Add(this.panNotificacaoMsg);
+            this.flpMenuNotificacao.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpMenuNotificacao.Location = new System.Drawing.Point(0, 40);
+            this.flpMenuNotificacao.Name = "flpMenuNotificacao";
+            this.flpMenuNotificacao.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.flpMenuNotificacao.Size = new System.Drawing.Size(315, 153);
+            this.flpMenuNotificacao.TabIndex = 14;
+            this.flpMenuNotificacao.Visible = false;
+            this.flpMenuNotificacao.WrapContents = false;
             // 
-            // panel3
+            // panNotificacaoMsg
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Location = new System.Drawing.Point(3, 43);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(191, 49);
-            this.panel3.TabIndex = 14;
+            this.panNotificacaoMsg.BackColor = System.Drawing.Color.Transparent;
+            this.panNotificacaoMsg.Controls.Add(this.lblFecharNotificacaoMsg);
+            this.panNotificacaoMsg.Controls.Add(this.lblNotificacaoMsg);
+            this.panNotificacaoMsg.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panNotificacaoMsg.Location = new System.Drawing.Point(3, 58);
+            this.panNotificacaoMsg.Name = "panNotificacaoMsg";
+            this.panNotificacaoMsg.Size = new System.Drawing.Size(289, 62);
+            this.panNotificacaoMsg.TabIndex = 15;
             // 
-            // label1
+            // lblNotificacaoMsg
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Não há notificações \r\nno momento.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNotificacaoMsg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblNotificacaoMsg.AutoSize = true;
+            this.lblNotificacaoMsg.BackColor = System.Drawing.Color.Transparent;
+            this.lblNotificacaoMsg.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblNotificacaoMsg.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificacaoMsg.ForeColor = System.Drawing.Color.White;
+            this.lblNotificacaoMsg.Location = new System.Drawing.Point(3, 5);
+            this.lblNotificacaoMsg.Name = "lblNotificacaoMsg";
+            this.lblNotificacaoMsg.Size = new System.Drawing.Size(214, 51);
+            this.lblNotificacaoMsg.TabIndex = 0;
+            this.lblNotificacaoMsg.Text = "Passando pra avisar que você\r\ntem 10 clientes que precisam\r\nde uma atenção. Que t" +
+    "al conferir?";
+            this.lblNotificacaoMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblNaoHaNotificacoes
+            // 
+            this.lblNaoHaNotificacoes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblNaoHaNotificacoes.AutoSize = true;
+            this.lblNaoHaNotificacoes.BackColor = System.Drawing.Color.Transparent;
+            this.lblNaoHaNotificacoes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblNaoHaNotificacoes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaoHaNotificacoes.ForeColor = System.Drawing.Color.White;
+            this.lblNaoHaNotificacoes.Location = new System.Drawing.Point(62, 5);
+            this.lblNaoHaNotificacoes.Name = "lblNaoHaNotificacoes";
+            this.lblNaoHaNotificacoes.Size = new System.Drawing.Size(162, 40);
+            this.lblNaoHaNotificacoes.TabIndex = 0;
+            this.lblNaoHaNotificacoes.Text = "Não há notificações \r\nno momento.";
+            this.lblNaoHaNotificacoes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panNaoHaNotificacoes
+            // 
+            this.panNaoHaNotificacoes.BackColor = System.Drawing.Color.Transparent;
+            this.panNaoHaNotificacoes.Controls.Add(this.lblNaoHaNotificacoes);
+            this.panNaoHaNotificacoes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panNaoHaNotificacoes.Location = new System.Drawing.Point(3, 3);
+            this.panNaoHaNotificacoes.Name = "panNaoHaNotificacoes";
+            this.panNaoHaNotificacoes.Size = new System.Drawing.Size(289, 49);
+            this.panNaoHaNotificacoes.TabIndex = 14;
+            // 
+            // lblFecharNotificacaoMsg
+            // 
+            this.lblFecharNotificacaoMsg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFecharNotificacaoMsg.AutoSize = true;
+            this.lblFecharNotificacaoMsg.BackColor = System.Drawing.Color.Transparent;
+            this.lblFecharNotificacaoMsg.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblFecharNotificacaoMsg.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecharNotificacaoMsg.ForeColor = System.Drawing.Color.White;
+            this.lblFecharNotificacaoMsg.Location = new System.Drawing.Point(271, 5);
+            this.lblFecharNotificacaoMsg.Name = "lblFecharNotificacaoMsg";
+            this.lblFecharNotificacaoMsg.Size = new System.Drawing.Size(15, 17);
+            this.lblFecharNotificacaoMsg.TabIndex = 1;
+            this.lblFecharNotificacaoMsg.Text = "X";
+            this.lblFecharNotificacaoMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frPrincipal
             // 
@@ -805,7 +856,7 @@
             this.BackgroundImage = global::AgendaMais.Properties.Resources.Imagem2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 716);
-            this.Controls.Add(this.panMenuNotificacao);
+            this.Controls.Add(this.flpMenuNotificacao);
             this.Controls.Add(this.panMenuConfiguracoes);
             this.Controls.Add(this.panMenuCadastros);
             this.Controls.Add(this.panMenuRelatorios);
@@ -858,9 +909,11 @@
             this.panMenuConfiguracoes.ResumeLayout(false);
             this.panAlterarSenha.ResumeLayout(false);
             this.panAlterarSenha.PerformLayout();
-            this.panMenuNotificacao.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.flpMenuNotificacao.ResumeLayout(false);
+            this.panNotificacaoMsg.ResumeLayout(false);
+            this.panNotificacaoMsg.PerformLayout();
+            this.panNaoHaNotificacoes.ResumeLayout(false);
+            this.panNaoHaNotificacoes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -913,9 +966,12 @@
         private System.Windows.Forms.Panel panAlterarSenha;
         private System.Windows.Forms.Label lblAlterarSenha;
         private System.Windows.Forms.Panel panNotificacao;
-        private System.Windows.Forms.Panel panMenuNotificacao;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flpMenuNotificacao;
+        private System.Windows.Forms.Panel panNaoHaNotificacoes;
+        private System.Windows.Forms.Label lblNaoHaNotificacoes;
+        private System.Windows.Forms.Panel panNotificacaoMsg;
+        private System.Windows.Forms.Label lblFecharNotificacaoMsg;
+        private System.Windows.Forms.Label lblNotificacaoMsg;
     }
 }
 
