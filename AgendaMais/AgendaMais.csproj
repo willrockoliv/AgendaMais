@@ -183,6 +183,12 @@
     <Compile Include="Telas\Configurações\frAlterarSenha.Designer.cs">
       <DependentUpon>frAlterarSenha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Financeiro\frFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Financeiro\frFinanceiro.Designer.cs">
+      <DependentUpon>frFinanceiro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\frLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Configurações\frAlterarSenha.resx">
       <DependentUpon>frAlterarSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Financeiro\frFinanceiro.resx">
+      <DependentUpon>frFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\frLogin.resx">
       <DependentUpon>frLogin.cs</DependentUpon>
@@ -425,5 +434,6 @@
     <None Include="Resources\Barra_clara.png" />
     <None Include="Resources\Barra.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

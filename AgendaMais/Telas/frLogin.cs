@@ -51,7 +51,7 @@ namespace AgendaMais.Telas
                 {
                     if (versao[1] != lblVersao.Text)
                     {
-                        MessageBox.Show("Opa! Acho que encontrei uma atualiação muito importante! Preciso atualizar antes de iniciar tudo bem?! :)", "Atualização Encontrada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Opa! Acho que encontrei uma atualização muito importante! Preciso atualizar antes de iniciar tudo bem?! :)", "Atualização Encontrada!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         AtualizaVersao();
                     }
                 }
@@ -122,7 +122,7 @@ namespace AgendaMais.Telas
                 }
                 if (licenca[1] != "senha=" + senha)
                 {
-                    MessageBox.Show("Ops! Senha icorreta");
+                    MessageBox.Show("Opa! Senha incorreta", "Aviso", MessageBoxButtons.OK,MessageBoxIcon.Hand);
                     File.Delete($"{mainPath}\\BD\\{login}");
                     return false;
                 }

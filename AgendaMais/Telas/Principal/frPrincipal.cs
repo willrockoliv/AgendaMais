@@ -50,7 +50,7 @@ namespace AgendaMais
                 panMenuConfiguracoes.Visible = false;
                 flpMenuNotificacao.Visible = false;
             }
-            else if(enumMenu == EnumMenu.notificacao)
+            else if (enumMenu == EnumMenu.notificacao)
             {
                 panMenuCadastros.Visible = false;
                 panMenuRelatorios.Visible = false;
@@ -117,6 +117,25 @@ namespace AgendaMais
 
         #endregion
 
+        #region panFinanceiro
+        private void panFinanceiro_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panFinanceiro_MouseEnter(object sender, EventArgs e)
+        {
+            panFinanceiro.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblFinanceiro.ForeColor = Color.PowderBlue;
+        }
+
+        private void panFinanceiro_MouseLeave(object sender, EventArgs e)
+        {
+            panFinanceiro.BackColor = Color.FromArgb(0, 16, 41, 99);
+            lblFinanceiro.ForeColor = Color.White;
+        }
+        #endregion
+
         #region panAgenda
         private void panAgenda_MouseEnter(object sender, EventArgs e)
         {
@@ -154,7 +173,6 @@ namespace AgendaMais
         {
             panCadastros.BackColor = Color.FromArgb(0, 16, 41, 99);
             lblCadastros.ForeColor = Color.White;
-
         }
 
         #region Clientes
@@ -217,6 +235,25 @@ namespace AgendaMais
         {
             panCadProdServ.BackColor = Color.FromArgb(0, 16, 41, 99);
             lblCadProdServ.ForeColor = Color.White;
+        }
+        #endregion
+
+        #region Contas
+        private void panCadContas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panCadContas_MouseEnter(object sender, EventArgs e)
+        {
+            panCadContas.BackColor = Color.FromArgb(170, 16, 41, 99);
+            lblCadContas.ForeColor = Color.PowderBlue;
+        }
+
+        private void panCadContas_MouseLeave(object sender, EventArgs e)
+        {
+            panCadContas.BackColor = Color.FromArgb(0, 16, 41, 99);
+            lblCadContas.ForeColor = Color.White;
         }
         #endregion
         #endregion
@@ -407,7 +444,6 @@ namespace AgendaMais
         {
             metodosAgenda.AtualizaStatus(flpAgendamentos);
         }
-
         #endregion
     }
 }
