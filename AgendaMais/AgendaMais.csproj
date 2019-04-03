@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BD\DAOs\NotificacoesDAO.cs" />
+    <Compile Include="Classes\BD\VOs\ContaVO.cs" />
     <Compile Include="Classes\BD\VOs\NotificacoesVO.cs" />
     <Compile Include="Classes\GoogleDrive.cs" />
     <Compile Include="Classes\WhatsApp.cs" />
@@ -338,6 +339,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1498590843_Streamline-52.ico" />
+    <None Include="Resources\contas_receber_leave.png" />
+    <None Include="Resources\contas_receber_enter.png" />
+    <None Include="Resources\contas_pagar_leave.png" />
+    <None Include="Resources\contas_pagar_enter.png" />
+    <None Include="Resources\contas_pagar.png" />
+    <None Include="Resources\contas_receber.png" />
     <None Include="Resources\agendamento_transparency.png" />
     <None Include="Resources\agendamento.png" />
     <None Include="Resources\notificacao1.png" />

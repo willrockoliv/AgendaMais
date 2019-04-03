@@ -3,6 +3,7 @@ using AgendaMais.Classes.BD.DAOs;
 using AgendaMais.Properties;
 using AgendaMais.Telas;
 using AgendaMais.Telas.Configurações;
+using AgendaMais.Telas.Financeiro;
 using AgendaMais.Telas.Relatorios;
 using System;
 using System.Drawing;
@@ -120,7 +121,8 @@ namespace AgendaMais
         #region panFinanceiro
         private void panFinanceiro_Click(object sender, EventArgs e)
         {
-            
+            frFinanceiro frFinanceiro = new frFinanceiro();
+            frFinanceiro.Show();
         }
 
         private void panFinanceiro_MouseEnter(object sender, EventArgs e)
