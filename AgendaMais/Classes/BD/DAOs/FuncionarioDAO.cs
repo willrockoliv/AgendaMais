@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using Npgsql;
 using AgendaMais.Classes.DAOs;
 using AgendaMais.Classes.VOs;
 
@@ -140,10 +136,6 @@ namespace AgendaMais.Classes
 
         public static void DeletarRegistro(int id)
         {
-            //List<string> sql = new List<string>();
-            //sql.Add($"Delete From agenda Where id_funcionario = {id}");
-            //sql.Add($"Delete From funcionario Where id = {id}");
-            //ExecutaSQL(sql);
             ExecutaSQL($"UPDATE funcionario SET ativo={false} WHERE id={id}");
         }
     }

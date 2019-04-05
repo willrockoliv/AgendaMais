@@ -9,6 +9,7 @@ namespace AgendaMais.Classes.VOs
 {
     public class PessoaVO
     {
+        private char tipo_pessoa;
         private int id;
         private string nome;
         private string tel_cel;
@@ -55,6 +56,8 @@ namespace AgendaMais.Classes.VOs
 
             return imagem = Path.GetFileName(copia);
         }
+
+        public char Tipo_pessoa { get => tipo_pessoa; set => tipo_pessoa = value; }
 
         public int Id
         {
@@ -182,5 +185,6 @@ namespace AgendaMais.Classes.VOs
         }
 
         public bool Ativo { get => ativo; set => ativo = value; }
+        
     }
 }

@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AgendaMais.Classes.DAOs
 {
@@ -137,10 +134,6 @@ namespace AgendaMais.Classes.DAOs
 
         public static void DeletarRegistro(int id)
         {
-            //List<string> sql = new List<string>();
-            //sql.Add($"Delete From agenda Where id_cliente = {id}");
-            //sql.Add($"Delete From cliente Where id = {id}");
-            //ExecutaSQL(sql);
             ExecutaSQL($"UPDATE cliente SET ativo={false} WHERE id={id}");
         }
     }
